@@ -1,0 +1,33 @@
+[flutter] flutter doctor -v
+[✓] Flutter (Channel master, 2.1.0-13.0.pre.293, on Linux, locale en_US.UTF-8)
+    • Flutter version 2.1.0-13.0.pre.293 at /home/gaz/flutter
+    • Framework revision 304f155ac2 (4 days ago), 2021-03-27 14:22:36 -0700
+    • Engine revision b5e15d055d
+    • Dart version 2.13.0 (build 2.13.0-162.0.dev)
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+    • Android SDK at /home/gaz/Android
+    • Platform android-30, build-tools 30.0.3
+    • Java binary at: /usr/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_282-b08)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • CHROME_EXECUTABLE = /usr/bin/brave
+
+[✓] Linux toolchain - develop for Linux desktop
+    • clang version 11.1.0
+    • cmake version 3.19.7
+    • ninja version 1.10.2
+    • pkg-config version 1.7.3
+
+[!] Android Studio (not installed)
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/docs/get-started/install/linux#android-setup for detailed instructions).
+
+[✓] Connected device (2 available)
+    • Linux (desktop) • linux  • linux-x64      • Linux
+    • Chrome (web)    • chrome • web-javascript • Brave Browser 88.1.20.103 unknown
+
+! Doctor found issues in 1 category.
+exit code 0

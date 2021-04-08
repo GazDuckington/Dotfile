@@ -1,0 +1,92 @@
+add_newline = false
+
+[line_break]
+disabled = false #true
+
+[character]
+success_symbol = "[=>](blue)"
+error_symbol = "[=>](red)"
+
+[directory]
+truncation_length = 1
+# truncation_symbol = "../"
+read_only = " "
+home_symbol = "home" #""
+fish_style_pwd_dir_length	= 1
+use_logical_path	= true
+
+[username]
+style_user = "white bold"
+style_root = "yellow bold"
+#format = "[$user ]($style)"
+disabled=false
+show_always=true
+
+[aws]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "

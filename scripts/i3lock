@@ -1,0 +1,36 @@
+#!/bin/sh
+
+B='#00000000'  # blank
+C='#1b2124'  # clear ish
+D='#5294e2'  # default
+T='#5294e2'  # text
+W='#ff3333'  # wrong
+V='#95e6cb'  # verifying
+BK='#383C4A'
+i3lock \
+--color=$BK \
+--insidever-color=$B   \
+--ringver-color=$V     \
+\
+--insidewrong-color=$B \
+--ringwrong-color=$W   \
+\
+--inside-color=$B      \
+--ring-color=$D        \
+--line-color=$B        \
+--separator-color=$D   \
+\
+--verif-color=$T        \
+--wrong-color=$T        \
+--time-color=$T        \
+--date-color=$T        \
+--layout-color=$T      \
+--keyhl-color=$BK       \
+--bshl-color=$BK        \
+\
+--screen 1            \
+--clock               \
+--indicator           \
+--time-str="%H:%M:%S"  \
+--date-str="%A, %m %Y" \
+# --keylayout 1         \

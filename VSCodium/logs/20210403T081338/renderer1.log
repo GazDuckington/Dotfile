@@ -1,2 +1,0 @@
-[2021-04-03 08:13:41.855] [renderer1] [warning] Ignoring the error while validating workspace folder file:///home/gaz/.i3 - Unable to resolve non-existing file '/home/gaz/.i3'
-[2021-04-03 08:13:48.568] [renderer1] [error] ENOENT: no such file or directory, scandir '/home/gaz/.i3': Error: ENOENT: no such file or directory, scandir '/home/gaz/.i3'

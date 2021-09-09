@@ -1,7 +1,0 @@
-[2021-04-03 07:36:41.199] [sharedprocess] [info] Installing extension: dart-code.dart-code
-[2021-04-03 07:36:57.897] [sharedprocess] [info] Downloaded extension: dart-code.dart-code undefined
-[2021-04-03 07:37:08.250] [sharedprocess] [info] Extracted extension to /home/gaz/.vscode-oss/extensions/.c6b82b9f-6c33-44f0-b80f-52699fc59806: dart-code.dart-code
-[2021-04-03 07:37:08.314] [sharedprocess] [info] Renamed to /home/gaz/.vscode-oss/extensions/dart-code.dart-code-3.21.1
-[2021-04-03 07:37:08.320] [sharedprocess] [info] Installation completed. dart-code.dart-code
-[2021-04-03 07:37:08.480] [sharedprocess] [info] Extensions installed successfully: dart-code.dart-code
-[2021-04-03 07:37:16.603] [sharedprocess] [info] Starting to clean up unused language packs.

@@ -1,29 +1,24 @@
 add_newline = false
 
-[line_break]
-disabled = false #true
-
-[character]
-success_symbol = "[=>](blue)"
-error_symbol = "[=>](red)"
-
-[directory]
-truncation_length = 1
-# truncation_symbol = "../"
-read_only = " "
-home_symbol = "home" #""
-fish_style_pwd_dir_length	= 1
-use_logical_path	= true
+[time]
+disabled = true
 
 [username]
-style_user = "white bold"
-style_root = "yellow bold"
-#format = "[$user ]($style)"
-disabled=false
-show_always=true
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format =  "[$hostname](bold green) "
+disabled = false
+
+[directory]
+fish_style_pwd_dir_length	= 1
+truncation_length = 3
+read_only = " "
 
 [aws]
-symbol = " "
+symbol = "  "
 
 [conda]
 symbol = " "
@@ -31,7 +26,7 @@ symbol = " "
 [dart]
 symbol = " "
 
-[docker]
+[docker_context]
 symbol = " "
 
 [elixir]
@@ -45,9 +40,6 @@ symbol = " "
 
 [golang]
 symbol = " "
-
-[haskell]
-symbol = " "
 
 [hg_branch]
 symbol = " "
@@ -67,9 +59,6 @@ symbol = " "
 [nix_shell]
 symbol = " "
 
-[nodejs]
-symbol = " "
-
 [package]
 symbol = " "
 
@@ -87,6 +76,12 @@ symbol = " "
 
 [rust]
 symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
 
 [swift]
 symbol = "ﯣ "

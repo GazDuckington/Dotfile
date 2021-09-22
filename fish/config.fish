@@ -1,16 +1,21 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 set fish_greeting
 
-set PATH ~/flutter/bin $PATH
-set PATH ~/Android/tools/bin $PATH
+set PATH ~/.local/bin $PATH
 
+set EDITOR nvim $EDITOR
+set SECERET_GH_KEY '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'
+
+alias 'br'='~/scripts/vr'
 alias 'ls'='lsd'
 alias 'll'='lsd -l'
 alias 'tree'='lsd --tree'
 alias 'vim'='lvim'
 alias 'code'='codium'
+
+if status --is-interactive
+  if test -z "$DISPLAY" -a $XDG_VTNR = 1
+    exec startx -- -keeptty
+  end
+end
 
 starship init fish | source

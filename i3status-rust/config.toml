@@ -1,0 +1,65 @@
+theme = "plain"
+icons = "awesome"
+
+[[block]]
+block = "focused_window"
+max_width = 45
+show_marks = "visible"
+
+[[block]]
+block = "temperature"
+interval = 10
+chip = "*-isa-*"
+
+[[block]]
+block = "music"
+#player = "lollypop"
+buttons = ["prev", "play", "next"]
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = "{icon} {available}"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+on_click = "~/scripts/check.sh pulsemixer"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %d/%m %R"
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage} {time}"
+
+[[block]]
+block = "networkmanager"
+on_click = "~/scripts/check.sh nmtui"
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+interface_name_include = []
+ap_format = "{ssid} {strength}"
+device_format = "{icon} {ap}"

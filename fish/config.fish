@@ -3,7 +3,6 @@ set fish_greeting
 set PATH ~/.local/bin $PATH
 
 set EDITOR nvim $EDITOR
-set SECERET_GH_KEY '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'
 
 alias 'br'='~/scripts/vr'
 alias 'ls'='lsd'

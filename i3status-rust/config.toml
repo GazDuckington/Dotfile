@@ -1,5 +1,14 @@
-theme = "plain"
-icons = "awesome"
+[theme]
+name = "plain"
+[icons]
+name = "awesome"
+[theme.overrides]
+idle_bg = "#7f292929"
+info_bg = "#7f292929"
+good_bg = "#7f292929"
+warning_bg = "#7f292929"
+separator_bg = "#7f292929"
+critical_bg = "#7f292929"
 
 [[block]]
 block = "focused_window"
@@ -63,3 +72,8 @@ interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
 interface_name_include = []
 ap_format = "{ssid} {strength}"
 device_format = "{icon} {ap}"
+
+[[block]]
+block = "custom"
+command = "echo ⏼"
+on_click = "~/scripts/power"

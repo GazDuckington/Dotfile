@@ -3,22 +3,18 @@ name = "plain"
 [icons]
 name = "awesome"
 [theme.overrides]
-idle_bg = "#7f292929"
-info_bg = "#7f292929"
-good_bg = "#7f292929"
-warning_bg = "#7f292929"
-separator_bg = "#7f292929"
-critical_bg = "#7f292929"
-
-[[block]]
-block = "focused_window"
-max_width = 45
-show_marks = "visible"
+idle_bg = "#292929"
+info_bg = "#292929"
+good_bg = "#292929"
+warning_bg = "#292929"
+separator_bg = "#292929"
+critical_bg = "#292929"
 
 [[block]]
 block = "temperature"
 interval = 10
 chip = "*-isa-*"
+collapsed = false
 
 [[block]]
 block = "music"
@@ -59,6 +55,8 @@ on_click = "~/scripts/check.sh pulsemixer"
 block = "time"
 interval = 5
 format = "%a %d/%m %R"
+[block.theme_overrides]
+idle_fg = "#0071ED"
 
 [[block]]
 block = "battery"

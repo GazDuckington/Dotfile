@@ -8,7 +8,7 @@ alias 'br'='~/scripts/vr'
 alias 'ls'='lsd'
 alias 'll'='lsd -l'
 alias 'tree'='lsd --tree'
-alias 'vim'='lvim'
+alias 'vim'='nvim'
 alias 'code'='codium'
 
 if status --is-interactive

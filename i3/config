@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -40,6 +40,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# keybind
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -54,27 +56,31 @@ bindsym Ctrl+Print exec --no-startup-id ~/scripts/scrot5
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+x exec --no-startup-id rofi -show run
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Tab exec --no-startup-id rofi -show window
+
+# web search
+bindsym $mod+Shift+w exec --no-startup-id ~/scripts/web-search.sh
+
 # dropdown
-bindsym F12 exec --no-startup-id tdrop -ma -w -4 -s dropdown kitty
+exec --no-startup-id kitty --class 'dropdown'
+for_window [class="dropdown"] floating enable
+for_window [class="dropdown"] move scratchpad; [class="dropdown"] scratchpad show; move position 22px 22px; resize shrink height 300px; resize grow width 683px; move scratchpad
+
+bindsym $mod+F1 [class="dropdown"] scratchpad show
 # flip through tabs
 bindsym Ctrl+2 exec --no-startup-id i3flip next
 bindsym Ctrl+1 exec --no-startup-id i3flip prev
 # change focus
-bindsym $mod+Left exec --no-startup-id i3viswiz left
-bindsym $mod+Down exec --no-startup-id i3viswiz down
-bindsym $mod+Up exec --no-startup-id i3viswiz up
+bindsym $mod+Left  exec --no-startup-id i3viswiz left
+bindsym $mod+Down  exec --no-startup-id i3viswiz down
+bindsym $mod+Up    exec --no-startup-id i3viswiz up
 bindsym $mod+Right exec --no-startup-id i3viswiz focus right
 
 # move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left  exec --no-startup-id i3Kornhe move --speed 10 left
+bindsym $mod+Shift+Down  exec --no-startup-id i3Kornhe move --speed 10 down
+bindsym $mod+Shift+Up 	 exec --no-startup-id i3Kornhe move --speed 10 up
+bindsym $mod+Shift+Right exec --no-startup-id i3Kornhe move --speed 10 right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -86,12 +92,11 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+s floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -139,9 +144,9 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Left  resize shrink width 10 px or 10 ppt
+        bindsym Down  resize grow height 10 px or 10 ppt
+        bindsym Up    resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
@@ -156,11 +161,16 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     id bar-1 
-    font pango:FiraCode Nerd Font 8
+    font pango:FiraCode Nerd Font, Iosevka Nerd Font 7
     position bottom
     status_command i3status-rs ~/.config/i3status-rust/config.toml
     colors {
         background #292929
+        focused_workspace  #285577 #0071ED #FFFFFF
+        active_workspace   #333333 #0c0c0c #FFFFFF
+        inactive_workspace #333333 #0c0c0c #FFFFFF
+        urgent_workspace   #2F343A #900000 #FFFFFF
+        binding_mode       #2F343A #900000 #FFFFFF
     }
 }
 
@@ -178,13 +188,16 @@ client.background       #ffffff
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id touchpad-indicator
 exec --no-startup-id picom -b
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id ~/scripts/setcursor
+exec --no-startup-id xsetroot -solid "#292929"
 exec_always --no-startup-id ~/scripts/idle
 exec_always --no-startup-id autotiling
 
 # RULES
 default_border pixel 1
 default_floating_border normal
-floating_minimum_size 350 x 100
+floating_minimum_size 350 x 350
 floating_maximum_size 800 x 600
 focus_follows_mouse no
 for_window[class="pulsemixer"] floating enable, border normal, resize set 600 300 

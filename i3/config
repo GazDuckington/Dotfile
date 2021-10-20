@@ -41,14 +41,14 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # keybind
-
+set $TERMINAL kitty
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $TERMINAL
 
 # kill focused window
 bindsym $mod+q kill
 # power menu
-bindsym $mod+F4 exec --no-startup-id ~/scripts/power
+bindsym Mod1+F4 exec --no-startup-id ~/scripts/power
 # scrots
 bindsym Print exec --no-startup-id ~/scripts/scrot
 bindsym Ctrl+Print exec --no-startup-id ~/scripts/scrot5
@@ -62,28 +62,28 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window
 bindsym $mod+Shift+w exec --no-startup-id ~/scripts/web-search.sh
 
 # dropdown
-exec --no-startup-id kitty --class 'dropdown'
+exec --no-startup-id $TERMINAL --class 'dropdown'
 for_window [class="dropdown"] floating enable
 for_window [class="dropdown"] move scratchpad; [class="dropdown"] scratchpad show; move position 22px 22px; resize shrink height 300px; resize grow width 683px; move scratchpad
 
-bindsym $mod+F1 [class="dropdown"] scratchpad show
+bindsym F1 [class="dropdown"] scratchpad show
 # flip through tabs
-bindsym Ctrl+2 exec --no-startup-id i3flip next
-bindsym Ctrl+1 exec --no-startup-id i3flip prev
+bindsym Mod1+Tab exec --no-startup-id i3flip next
+# bindsym Ctrl+1 exec --no-startup-id i3flip prev
 # change focus
-bindsym $mod+Left  exec --no-startup-id i3viswiz left
-bindsym $mod+Down  exec --no-startup-id i3viswiz down
-bindsym $mod+Up    exec --no-startup-id i3viswiz up
-bindsym $mod+Right exec --no-startup-id i3viswiz focus right
+bindsym $mod+h  exec --no-startup-id i3viswiz left
+bindsym $mod+j  exec --no-startup-id i3viswiz down
+bindsym $mod+k    exec --no-startup-id i3viswiz up
+bindsym $mod+l exec --no-startup-id i3viswiz focus right
 
 # move focused window
-bindsym $mod+Shift+Left  exec --no-startup-id i3Kornhe move --speed 10 left
-bindsym $mod+Shift+Down  exec --no-startup-id i3Kornhe move --speed 10 down
-bindsym $mod+Shift+Up 	 exec --no-startup-id i3Kornhe move --speed 10 up
-bindsym $mod+Shift+Right exec --no-startup-id i3Kornhe move --speed 10 right
+bindsym $mod+Shift+h  exec --no-startup-id i3Kornhe move --speed 10 left
+bindsym $mod+Shift+j  exec --no-startup-id i3Kornhe move --speed 10 down
+bindsym $mod+Shift+k 	 exec --no-startup-id i3Kornhe move --speed 10 up
+bindsym $mod+Shift+l exec --no-startup-id i3Kornhe move --speed 10 right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -157,12 +157,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+F2 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpaper/*
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    id bar-1 
+    #id bar-1
+    #mode hide
+    #hidden_state hide
+    #modifier Mod4
+
     font pango:FiraCode Nerd Font, Iosevka Nerd Font 7
-    position bottom
+    position top
     status_command i3status-rs ~/.config/i3status-rust/config.toml
     colors {
         background #292929
@@ -188,9 +194,9 @@ client.background       #ffffff
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id touchpad-indicator
 exec --no-startup-id picom -b
-exec --no-startup-id nitrogen --restore
 exec --no-startup-id ~/scripts/setcursor
 exec --no-startup-id xsetroot -solid "#292929"
+exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpaper/*
 exec_always --no-startup-id ~/scripts/idle
 exec_always --no-startup-id autotiling
 

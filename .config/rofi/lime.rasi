@@ -1,0 +1,90 @@
+configuration {
+  display-run: " run ";
+  display-drun: " drun ";
+  display-window: " window ";
+  modi: "run,drun";
+  show-icons: false;
+  icon-theme: "Vimix-Doder-dark";
+  background-color: @bl;
+}
+
+* {
+  wh: #DFDFDF;
+  lg: #64676C;
+  bl: #202020;
+  gr: #16A085;
+
+  sr: "";
+
+  lines: 5;
+  background-color: @bl;
+  width: 100%;  
+}
+
+window {
+  location: north west;
+  anchor: north west;
+  y-offset: 18;
+  x-offset: 0;
+  /* border-radius: 10; */
+  transparency: "real";
+  border: 1px;
+  border-color: @bl;
+  background-color: @bl;
+  font: "DejaVu Sans Mono 10";
+}
+
+inputbar {
+  /* padding: 5; */
+  children: [ prompt, entry ];
+}
+
+prompt {
+  border: 1;
+  padding: 0 0 0 2;
+  background-color: @gr;
+  text-color: @wh;
+}
+entry {
+  border: 2;
+  background-color: @bl;
+  text-color: @wh;
+}
+
+element {
+  padding: 5;
+  text-color: @wh;
+}
+
+element-icon {
+  size: 20;
+}
+
+element selected {
+  background-color: @gr;
+  text-color: @bl;
+}
+
+mainbox {
+  padding: 5;
+}
+
+listview {
+  columns: 3;
+  cycle: true;
+  scrollbar: true;
+  margin: 5;
+  spacing: 5;
+}
+scrollbar {
+  width: 1px;
+  border: 0;
+  background-color: @lg;
+  handle-color: @gr;
+  handle-width: 3px;
+}
+
+textbox {
+  text-color: @wh;
+  /* padding: 30; */
+}

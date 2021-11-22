@@ -1,0 +1,86 @@
+[theme]
+name = "plain"
+[icons]
+name = "material-nf"
+[theme.overrides]
+idle_bg = "#292929"
+info_bg = "#292929"
+good_bg = "#292929"
+warning_bg = "#292929"
+separator_bg = "#292929"
+critical_bg = "#292929"
+
+[[block]]
+block = "custom"
+interval = 1
+command = "~/scripts/cns.sh -c"
+
+[[block]]
+block = "custom"
+interval = 1
+command = "~/scripts/cns.sh -n"
+
+[[block]]
+block = "temperature"
+interval = 10
+chip = "*-isa-*"
+collapsed = false
+
+[[block]]
+block = "music"
+#player = "lollypop"
+buttons = ["prev", "play", "next"]
+
+[[block]]
+block = "pacman"
+interval = 600
+format = "PAC:{pacman} AUR:{aur}"
+format_singular = "{both}"
+format_up_to_date = "0"
+critical_updates_regex = "(linux|linux-lts|linux-zen)"
+aur_command = "yay -Qua"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+clickable = false
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+on_click = "~/scripts/check.sh pulsemixer"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %d/%m %R"
+[block.theme_overrides]
+idle_fg = "#0071ED"
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage} {time}"
+
+[[block]]
+block = "networkmanager"
+on_click = "~/scripts/check.sh nmtui"
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+interface_name_include = []
+ap_format = "{ssid} {strength}"
+device_format = "{icon} {ap}"
+
+[[block]]
+block = "custom"
+command = "echo ⏼"
+on_click = "~/scripts/power"

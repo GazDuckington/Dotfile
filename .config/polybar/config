@@ -20,7 +20,7 @@
 bg = #202020
 bg-alt = #969696
 fg = #dfdfdf
-fg-alt = #55aa55
+fg-alt = #21ff21
 color1 = #35ffdc
 color2 = #ffb86c
 color3 = #16a085
@@ -48,9 +48,9 @@ background = ${colors.bg}
 foreground = ${colors.fg}
 font-0 = "FiraCode Nerd Font:size=10;2"
 
-modules-left = apps up i3
+modules-left = apps caps num i3
 modules-center = date
-modules-right = wireless-network idle alsa xbl temperature battery powermenu
+modules-right = wireless-network up idle alsa xbl temperature battery powermenu
 
 tray-padding = 2
 tray-max-size = 9
@@ -110,8 +110,9 @@ label-muted-foreground = ${colors.primary}
 ramp-volume-0 = 
 ramp-volume-0-foreground = ${colors.fg}
 ramp-volume-1 = 
+ramp-volume-1-foreground = ${colors.color5}
 ramp-volume-2 = 
-ramp-volume-foreground = ${colors.color5}
+ramp-volume-2-foreground = ${colors.color1}
 ; ramp-volume-padding = 1
 
 [module/xbl]
@@ -167,27 +168,22 @@ battery = BAT0
 adapter = ADP1
 full-at = 100
 
-format-charging = <animation-charging><label-charging>
-format-discharging = <animation-discharging><label-discharging>
+format-charging = <label-charging>
+format-discharging = <label-discharging>
 format-full = <label-full>
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = %percentage%%
+
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.fg-alt}
 
-animation-charging-0 = " "
-animation-charging-1 = " "
-animation-charging-2 = " "
-animation-charging-foreground = ${colors.color1}
-animation-charging-framerate = 750
+format-charging-prefix = " "
+format-charging-prefix-foreground = ${colors.color1}
 
-animation-discharging-0 = " "
-animation-discharging-1 = " "
-animation-discharging-2 = " "
-animation-discharging-foreground = ${colors.color2}
-animation-discharging-framerate = 750
+format-discharging-prefix = " "
+format-discharging-prefix-foreground = ${colors.color2}
 
 [module/temperature]
 type = internal/temperature
@@ -259,7 +255,7 @@ type = custom/script
 interval = 900s
 exec = ~/scripts/checkupdates.sh
 format-prefix = " "
-format-prefix-foreground = ${colors.color3}
+format-prefix-foreground = ${colors.color4}
 click-left = ~/scripts/check.sh UpdateInTerminal
 
 [module/idle]
@@ -268,3 +264,15 @@ interval = 1s
 format-padding = 1
 exec = ~/scripts/check_idle.sh
 click-left = ~/scripts/toggle_idle.sh
+
+[module/caps]
+type = custom/script
+interval = 0.5s
+exec = ~/.config/polybar/scripts/cns.sh -c
+format-foreground = ${colors.blue-darker}
+
+[module/num]
+type = custom/script
+interval = 0.5s
+exec = ~/.config/polybar/scripts/cns.sh -n
+format-foreground = ${colors.blue}

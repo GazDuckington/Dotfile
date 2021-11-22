@@ -7,7 +7,7 @@ function capslock() {
   if [ $caps == 'off' ]; then
     echo ""
   else
-    echo "בּ"
+    echo "%{F#21ff21}בּ%{F-}"
   fi
 
 }
@@ -19,7 +19,7 @@ function numlock {
   if [ $num == 'off' ]; then
     echo ""
   else
-    echo ""
+    echo "%{F#21ff21}%{F-}"
   fi
 
 }
@@ -31,7 +31,7 @@ function scroll() {
   if [ $scroll == 'off' ]; then
     echo ""
   else
-    echo ""
+    echo "%{F#21ff21}%{F-}"
 fi
 
 }

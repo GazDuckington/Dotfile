@@ -18,7 +18,7 @@
 
 [colors]
 bg = #202020
-bg-alt = #444
+bg-alt = #969696
 fg = #dfdfdf
 fg-alt = #55aa55
 color1 = #35ffdc
@@ -30,8 +30,6 @@ alert = #ec2864
 trans = #95444444
 
 [settings]
-format-offset =
-format-margin = 1,1
 screenchange-reload = true
 throttle-output = 5
 throttle-output-for = 10
@@ -43,15 +41,16 @@ height = 15
 fixed-center = true
 wm-restack = i3
 enable-ipc = true
-border-size =2 
+separator = " "
+border-size = 1
 border-color = ${colors.bg}
 background = ${colors.bg}
 foreground = ${colors.fg}
 font-0 = "FiraCode Nerd Font:size=10;2"
 
-modules-left = net wireless-network i3
+modules-left = apps up i3
 modules-center = date
-modules-right = alsa xbl temperature battery powermenu
+modules-right = wireless-network idle alsa xbl temperature battery powermenu
 
 tray-padding = 2
 tray-max-size = 9
@@ -65,7 +64,7 @@ tray-background = ${colors.background}
 type = internal/fs
 mount-0 = /
 interval = 2
-spacing = 
+
 format-mounted-prefix = "ﲭ " 
 format-mounted = <label-mounted>
 label-mounted = %free%
@@ -105,15 +104,15 @@ speaker-soundcard = default
 headphone-soundcard = default
 headphone-id = 15
 
-format-volume = <ramp-volume><label-volume>
-label-muted =  muted
+format-volume = <ramp-volume> <label-volume>
+label-muted =  muted
 label-muted-foreground = ${colors.primary}
-ramp-volume-0 = 
+ramp-volume-0 = 
 ramp-volume-0-foreground = ${colors.fg}
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.color5}
-ramp-volume-padding = 1
+; ramp-volume-padding = 1
 
 [module/xbl]
 type = internal/xbacklight
@@ -140,22 +139,17 @@ label = %title:0:30:...%
 
 [module/i3]
 type = internal/i3
-
 label-focused = %name%
-label-focused-foreground = ${colors.color4}
-label-focused-padding = 1
+label-focused-foreground = ${colors.color5}
 
 label-visible = %name%
-label-visible-padding = 1
 label-visible-foreground = ${colors.color1}
 
 label-urgent = %name%
 label-urgent-foreground = ${colors.alert}
-label-urgent-padding = 1
 
 label-unfocused = %name%
 label-unfocused-foreground = ${colors.bg-alt}
-label-unfocused-padding = 1
 
 [module/date]
 type = internal/date
@@ -173,25 +167,25 @@ battery = BAT0
 adapter = ADP1
 full-at = 100
 
-format-charging = <animation-charging> <label-charging>
-format-discharging = <animation-discharging> <label-discharging>
+format-charging = <animation-charging><label-charging>
+format-discharging = <animation-discharging><label-discharging>
 format-full = <label-full>
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = %percentage%%
-format-full-prefix = 
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.fg-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
 animation-charging-foreground = ${colors.color1}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = " "
+animation-discharging-1 = " "
+animation-discharging-2 = " "
 animation-discharging-foreground = ${colors.color2}
 animation-discharging-framerate = 750
 
@@ -216,15 +210,17 @@ ramp-2-foreground = ${colors.alert}
 
 [module/powermenu]
 type = custom/text
-content = 襤
+#content = 襤
+content = PWR
 click-left = ~/scripts/power
 content-background = ${colors.primary}
 content-foreground = ${colors.alert}
 
 [module/apps]
 type = custom/text
-content =  
-content-foreground = ${colors.color2}
+#content =  
+content = MENU
+content-foreground = ${colors.color4}
 click-left = rofi -show drun
 
 [module/wireless-network]
@@ -232,13 +228,15 @@ type = internal/network
 interface = wlan0
 interval = 1.0
 
-format-connected-prefix = "龍 "
-format-connected-prefix-foreground = ${colors.color5}
+format-connected-prefix = "%{A1:~/scripts/check.sh nmtui:}直%{A} "
+format-connected-prefix-foreground = ${colors.color4}
 format-connected = <label-connected>
-label-connected = %essid%
+label-connected = %{A1:~/scripts/check.sh nmtui:}%signal%%{A}
 
+format-disconnected-prefix = "%{A1:~/scripts/check.sh nmtui:}睊%{A} "
+format-disconnected-prefix-foreground = ${colors.alert}
 format-disconnected = <label-disconnected>
-label-disconnected = Offline
+label-disconnected = %{A1:~/scripts/check.sh nmtui:}Off%{A}
 label-disconnected-foreground = ${colors.alert}
 
 [module/wired-network]
@@ -255,3 +253,18 @@ label-connected-foreground = ${colors.color5}
 format-disconnected = <label-disconnected>
 label-disconnected = Offline
 label-disconnected-foreground = ${colors.alert}
+
+[module/up]
+type = custom/script
+interval = 900s
+exec = ~/scripts/checkupdates.sh
+format-prefix = " "
+format-prefix-foreground = ${colors.color3}
+click-left = ~/scripts/check.sh UpdateInTerminal
+
+[module/idle]
+type = custom/script
+interval = 1s
+format-padding = 1
+exec = ~/scripts/check_idle.sh
+click-left = ~/scripts/toggle_idle.sh

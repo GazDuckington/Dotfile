@@ -43,14 +43,14 @@ floating_modifier $mod
 # keybind
 set $TERMINAL kitty
 # start a terminal
-bindsym $mod+Return exec $TERMINAL
-
+bindsym $mod+Return exec --no-startup-id $TERMINAL
 # kill focused window
 bindsym $mod+q kill
 # power menu
 bindsym Mod1+F4 exec --no-startup-id ~/scripts/power
 # scrots
 bindsym Print exec --no-startup-id ~/scripts/scrot
+bindsym shift+F2 exec --no-startup-id ~/scripts/scrot
 bindsym Ctrl+Print exec --no-startup-id ~/scripts/scrot5
 
 # start dmenu (a program launcher)
@@ -61,12 +61,15 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window
 # web search
 bindsym $mod+Shift+w exec --no-startup-id ~/scripts/web-search.sh
 
+# change wallpaper
+bindsym F2 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
+
 # dropdown
 exec --no-startup-id $TERMINAL --class 'dropdown'
 for_window [class="dropdown"] floating enable
-for_window [class="dropdown"] move scratchpad; [class="dropdown"] scratchpad show; move position 22px 22px; resize shrink height 300px; resize grow width 683px; move scratchpad
-
+for_window [class="dropdown"] move scratchpad; [class="dropdown"] scratchpad show; move position 22px 22px; resize shrink height 2020px; resize grow width 800px; move scratchpad
 bindsym F1 [class="dropdown"] scratchpad show
+
 # flip through tabs
 bindsym Mod1+Tab exec --no-startup-id i3flip next
 # bindsym Ctrl+1 exec --no-startup-id i3flip prev
@@ -109,11 +112,11 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
+set $ws1 "1:SATU"
+set $ws2 "2:DUA"
+set $ws3 "3:TIGA"
+set $ws4 "4:EMPAT"
+set $ws5 "5:LIMA"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -159,33 +162,12 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+F2 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpaper/*
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    #id bar-1
-    #mode hide
-    #hidden_state hide
-    #modifier Mod4
-
-    font pango:FiraCode Nerd Font, Iosevka Nerd Font 7
-    position top
-    status_command i3status-rs ~/.config/i3status-rust/config.toml
-    colors {
-        background #292929
-        focused_workspace  #285577 #0071ED #FFFFFF
-        active_workspace   #333333 #0c0c0c #FFFFFF
-        inactive_workspace #333333 #0c0c0c #FFFFFF
-        urgent_workspace   #2F343A #900000 #FFFFFF
-        binding_mode       #2F343A #900000 #FFFFFF
-    }
-}
-
 # COLOR
 # class                 border  backgr. text    indicator child_border
-client.focused          #0071ED #0071ED #ffffff #2e9ef4   #0071ED
+client.focused          #0FBDBD #0FBDBD #ffffff #7dc1ff   #0FBDBD
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.urgent           #2f343a #ec2864 #ffffff #ec2864   #ec2864
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
@@ -196,19 +178,29 @@ exec --no-startup-id touchpad-indicator
 exec --no-startup-id picom -b
 exec --no-startup-id ~/scripts/setcursor
 exec --no-startup-id xsetroot -solid "#292929"
-exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpaper/*
+exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 exec --no-startup-id dunst
+exec --no-startup-id /usr/bin/lxqt-policykit-agent 
+exec_always --no-startup-id ~/scripts/launchb
 exec_always --no-startup-id ~/scripts/idle
 exec_always --no-startup-id autotiling
 
 # RULES
 default_border pixel 1
-default_floating_border normal
 floating_minimum_size 350 x 350
 floating_maximum_size 800 x 600
 focus_follows_mouse no
+new_float normal
+
 for_window[class="pulsemixer"] floating enable, border normal, resize set 600 300 
 for_window[class="hint"] floating enable
 for_window[class="nmtui"] floating enable, border normal
-assign [class="^lollypop$"] 5
-assign [class="^Lollypop$"] 5
+for_window[class="UpdateInTerminal"] floating enable, border normal
+assign [class="^lollypop$"] 5:LIMA
+assign [class="^Lollypop$"] 5:LIMA
+assign [class="Stremio"] 5:LIMA
+assign [title="musikcube"] 5:LIMA
+assign [class="Code"] 2:DUA
+assign [class="kitty"] 1:SATU
+assign [class="Lxappearance"] 4:EMPAT
+assign [class="Kvantum Manager"] 4:EMPAT

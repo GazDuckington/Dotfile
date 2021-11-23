@@ -49,7 +49,7 @@ foreground = ${colors.fg}
 font-0 = "JetBrainsMono Nerd Font:size=10;2"
 
 modules-left = apps caps num i3
-modules-center = date idle
+modules-center = jam date idle
 modules-right = wireless-network up alsa xbl temperature battery powermenu
 
 tray-padding = 2
@@ -59,6 +59,12 @@ tray-position = none
 tray-background = ${colors.background}
 
 # Modules
+[module/jam]
+type = custom/script
+interval = 5
+exec = TZ=Asia/Jakarta date "+%H:%M %Z /"
+format-prefix = " "
+format-prefix-foreground = ${colors.color4}
 
 [module/fs]
 type = internal/fs
@@ -154,13 +160,10 @@ label-unfocused-foreground = ${colors.bg-alt}
 
 [module/date]
 type = internal/date
-time = %H:%M
-date = " %a, %d %b %Y"
+date = "%a, %d %b %Y"
 label-alignment = center
-label = %time%%date%
+label = %date%
 format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.color4}
 
 [module/battery]
 type = internal/battery

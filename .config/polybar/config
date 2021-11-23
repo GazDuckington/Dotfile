@@ -46,16 +46,16 @@ border-size = 1
 border-color = ${colors.bg}
 background = ${colors.bg}
 foreground = ${colors.fg}
-font-0 = "FiraCode Nerd Font:size=10;2"
+font-0 = "JetBrainsMono Nerd Font:size=10;2"
 
 modules-left = apps caps num i3
-modules-center = date
-modules-right = wireless-network up idle alsa xbl temperature battery powermenu
+modules-center = date idle
+modules-right = wireless-network up alsa xbl temperature battery powermenu
 
 tray-padding = 2
 tray-max-size = 9
 tray-scale = 1.0
-tray-position = right
+tray-position = none
 tray-background = ${colors.background}
 
 # Modules
@@ -155,7 +155,7 @@ label-unfocused-foreground = ${colors.bg-alt}
 [module/date]
 type = internal/date
 time = %H:%M
-date = " %a, %d %b %y"
+date = " %a, %d %b %Y"
 label-alignment = center
 label = %time%%date%
 format = <label>
@@ -176,13 +176,13 @@ label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = %percentage%%
 
-format-full-prefix = " "
+format-full-prefix = ""
 format-full-prefix-foreground = ${colors.fg-alt}
 
-format-charging-prefix = " "
+format-charging-prefix = ""
 format-charging-prefix-foreground = ${colors.color1}
 
-format-discharging-prefix = " "
+format-discharging-prefix = ""
 format-discharging-prefix-foreground = ${colors.color2}
 
 [module/temperature]
@@ -197,11 +197,11 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.alert}
 
-ramp-0 = " "
+ramp-0 = ""
 ramp-0-foreground = ${colors.color5}
-ramp-1 = " " 
+ramp-1 = "" 
 ramp-1-foreground = ${colors.color2}
-ramp-2 = " "
+ramp-2 = ""
 ramp-2-foreground = ${colors.alert}
 
 [module/powermenu]

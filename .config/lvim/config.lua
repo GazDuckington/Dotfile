@@ -114,11 +114,17 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
   {
-        "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("user.colorizer").config()
-        end,
-    },
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+        require("user.colorizer").config()
+    end,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("user.nvim-ts-autotag").config()
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

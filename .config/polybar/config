@@ -31,8 +31,8 @@ foreground = ${colors.fg}
 font-0 = "JetBrainsMono Nerd Font:size=10;2"
 
 modules-left = apps caps num i3
-modules-center = jam date idle
-modules-right = wireless-network up alsa xbl temperature battery powermenu
+modules-center = jam date 
+modules-right = idle wireless-network up alsa xbl temperature battery powermenu
 
 tray-padding = 2
 tray-max-size = 9
@@ -44,7 +44,7 @@ tray-background = ${colors.background}
 [module/jam]
 type = custom/script
 interval = 5
-exec = TZ=Asia/Jakarta date "+%H:%M %Z /"
+exec = TZ=Asia/Jakarta date "+%H:%M %Z -"
 format-prefix = " "
 format-prefix-foreground = ${colors.color4}
 
@@ -153,21 +153,22 @@ battery = BAT0
 adapter = ADP1
 full-at = 100
 
+time-format = %{F#7dc1ff}%{F-} %H:%M
 format-charging = <label-charging>
 format-discharging = <label-discharging>
 format-full = <label-full>
 
-label-charging = %percentage%%
-label-discharging = %percentage%%
-label-full = %percentage%%
+label-charging = %percentage%% %time%
+label-discharging = %percentage%% %time%
+label-full = %percentage%% %time%
 
-format-full-prefix = ""
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.fg-alt}
 
-format-charging-prefix = ""
+format-charging-prefix = " "
 format-charging-prefix-foreground = ${colors.color1}
 
-format-discharging-prefix = ""
+format-discharging-prefix = " "
 format-discharging-prefix-foreground = ${colors.color2}
 
 [module/temperature]
@@ -246,18 +247,18 @@ click-left = ~/scripts/check.sh UpdateInTerminal
 [module/idle]
 type = custom/script
 interval = 1s
-format-padding = 1
+#format-padding = 1
 exec = ~/scripts/check_idle.sh
 click-left = ~/scripts/toggle_idle.sh
 
 [module/caps]
 type = custom/script
 interval = 0.5s
-exec = ~/.config/polybar/scripts/cns.sh -c
+exec = ~/scripts/cns.sh -c
 format-foreground = ${colors.blue-darker}
 
 [module/num]
 type = custom/script
 interval = 0.5s
-exec = ~/.config/polybar/scripts/cns.sh -n
+exec = ~/scripts/cns.sh -n
 format-foreground = ${colors.blue}

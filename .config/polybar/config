@@ -23,15 +23,15 @@ height = 15
 fixed-center = true
 wm-restack = i3
 enable-ipc = true
-separator = " "
+#separator = " "
 border-size = 1
 border-color = ${colors.bg}
 background = ${colors.bg}
 foreground = ${colors.fg}
-font-0 = "JetBrainsMono Nerd Font:size=10;2"
+font-0 = "JetBrainsMono Nerd Font:size=9;2"
 
-modules-left = powermenu idle i3
-modules-center = jam date 
+modules-left = powermenu i3
+modules-center = jam date idle 
 modules-right = wireless-network up alsa xbl temperature battery
 
 tray-padding = 2
@@ -45,6 +45,7 @@ tray-background = ${colors.background}
 type = custom/script
 interval = 5
 exec = TZ=Asia/Jakarta date "+%H:%M %Z -"
+format-padding = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.color4}
 
@@ -92,7 +93,9 @@ speaker-soundcard = default
 headphone-soundcard = default
 headphone-id = 15
 
+format-volume-padding = 1
 format-volume = <ramp-volume> <label-volume>
+label-muted-padding = 1
 label-muted =  muted
 label-muted-foreground = ${colors.primary}
 ramp-volume-0 = 
@@ -106,6 +109,7 @@ ramp-volume-2-foreground = ${colors.color1}
 [module/xbl]
 type = internal/xbacklight
 format = <ramp> <label>
+format-padding = 1
 label = %percentage%%
 card = intel_backlight
 enable-scroll = true
@@ -152,6 +156,7 @@ type = internal/date
 date = "%a, %d %b %Y"
 label-alignment = center
 label = %date%
+format-padding = 1
 format = <label>
 
 [module/battery]
@@ -161,8 +166,11 @@ adapter = ADP1
 full-at = 100
 
 time-format = %{F#7dc1ff}%{F-} %H:%M
+format-charging-padding = 1
 format-charging = <label-charging>
+format-discharging-padding = 1
 format-discharging = <label-discharging>
+format-full-padding = 1
 format-full = <label-full>
 
 label-charging = %percentage%% 
@@ -183,8 +191,10 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 70
 
-format = <ramp><label>
-format-warn = <ramp><label-warn>
+format-padding = 1
+format = <ramp> <label>
+format-warn-padding = 1
+format-warn = <ramp> <label-warn>
 
 label = %temperature-c%
 label-warn = %temperature-c%
@@ -199,11 +209,11 @@ ramp-2-foreground = ${colors.alert}
 
 [module/powermenu]
 type = custom/text
-#content = 襤
+content-padding = 1
 content = PWR
 click-left = ~/scripts/power
-content-background = ${colors.primary}
-content-foreground = ${colors.alert}
+content-background = ${colors.alert}
+content-foreground = ${colors.bg}
 
 [module/apps]
 type = custom/text
@@ -217,11 +227,12 @@ type = internal/network
 interface = wlan0
 interval = 1.0
 
+label-connected-padding = 1
 format-connected-prefix = "%{A1:~/scripts/check.sh nmtui:}直%{A} "
 format-connected-prefix-foreground = ${colors.color4}
 format-connected = <label-connected>
 label-connected = %{A1:~/scripts/check.sh nmtui:}%signal%%{A}
-
+label-disconnected-padding = 1
 format-disconnected-prefix = "%{A1:~/scripts/check.sh nmtui:}睊%{A} "
 format-disconnected-prefix-foreground = ${colors.alert}
 format-disconnected = <label-disconnected>
@@ -247,6 +258,7 @@ label-disconnected-foreground = ${colors.alert}
 type = custom/script
 interval = 900s
 exec = ~/scripts/checkupdates.sh
+format-padding = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.color4}
 click-left = ~/scripts/check.sh UpdateInTerminal
@@ -254,7 +266,7 @@ click-left = ~/scripts/check.sh UpdateInTerminal
 [module/idle]
 type = custom/script
 interval = 1s
-#format-padding = 1
+format-padding = 1
 exec = ~/scripts/check_idle.sh
 click-left = ~/scripts/toggle_idle.sh
 

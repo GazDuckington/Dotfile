@@ -10,5 +10,5 @@ chosen="$(echo -e "$options" | $rofi_command -p 'Select Folder' -dmenu)"
 if ["$chosen" = ""]; then
 $chosen
 else
-code ~/dev/$chosen
+codium ~/dev/$chosen
 fi

@@ -1,12 +1,10 @@
 #!/bin/sh
 
 B='#00000000'  # blank
-C='#1b2124'  # clear ish
-D='#5294e2'  # default
-T='#5294e2'  # text
-W='#ff3333'  # wrong
-V='#95e6cb'  # verifying
-BK='#383C4A'
+T='#35ffdc'  # text
+W='#ec2864'  # wrong
+V='#7dc1ff'  # verifying
+BK='#202020'
 i3lock \
 --color=$BK \
 --insidever-color=$B   \
@@ -16,12 +14,12 @@ i3lock \
 --ringwrong-color=$W   \
 \
 --inside-color=$B      \
---ring-color=$D        \
+--ring-color=$T        \
 --line-color=$B        \
---separator-color=$D   \
+--separator-color=$T   \
 \
---verif-color=$T        \
---wrong-color=$T        \
+--verif-color=$V        \
+--wrong-color=$W        \
 --time-color=$T        \
 --date-color=$T        \
 --layout-color=$T      \

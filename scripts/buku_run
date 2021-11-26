@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 _rofi () {
-    rofi -dmenu -i -no-levenshtein-sort -width 1000 "$@"
+    rofi -dmenu -i -no-levenshtein-sort "$@"
 }
 
 # display settings

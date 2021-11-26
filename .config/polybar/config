@@ -30,9 +30,9 @@ background = ${colors.bg}
 foreground = ${colors.fg}
 font-0 = "JetBrainsMono Nerd Font:size=10;2"
 
-modules-left = powermenu i3
+modules-left = powermenu idle i3
 modules-center = jam date 
-modules-right = idle caps num wireless-network up alsa xbl temperature battery
+modules-right = wireless-network up alsa xbl temperature battery
 
 tray-padding = 2
 tray-max-size = 9
@@ -128,15 +128,22 @@ label = %title:0:30:...%
 
 [module/i3]
 type = internal/i3
-label-focused = %name%
-label-focused-foreground = ${colors.color5}
 
+label-focused = %name%
+label-focused-padding = 1
+label-focused-background = ${colors.color5}
+label-focused-foreground = ${colors.bg}
+
+label-visible-padding = 1
 label-visible = %name%
 label-visible-foreground = ${colors.color1}
 
+label-urgent-padding = 1
 label-urgent = %name%
-label-urgent-foreground = ${colors.alert}
+label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.bg}
 
+label-unfocused-padding = 1
 label-unfocused = %name%
 label-unfocused-foreground = ${colors.bg-alt}
 

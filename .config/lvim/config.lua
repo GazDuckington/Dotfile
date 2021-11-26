@@ -51,6 +51,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
+lvim.builtin.terminal.shell = "/usr/bin/fish"
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 
@@ -67,6 +68,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
+  "scss",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -124,6 +126,12 @@ lvim.plugins = {
     config = function()
       require("user.nvim-ts-autotag").config()
     end,
+  },
+  {
+    "kozer/emmet-language-server",
+      config = function()
+        require("user.kozer-emmet").config()
+      end,
   },
 }
 

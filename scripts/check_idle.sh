@@ -2,7 +2,7 @@
 result=`ps aux | grep -i "scripts/idle" | grep -v "grep" | wc -l`
 if [ $result -ge 1 ]
    then
-        echo "%{F#969696}%{F-}"
+        echo "%{F#969696} %{F-}"
    else
-        echo "%{F#dfdfdf}%{F-}"
+        echo "%{F#dfdfdf} %{F-}"
 fi

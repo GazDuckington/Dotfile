@@ -16,8 +16,8 @@ window {
     height:                         300px;
     location:                       northeast;
     anchor:                         northeast;
-    x-offset:                       -15;
-    y-offset:                       60;
+    x-offset:                       -5;
+    y-offset:                       20;
 }
 
 

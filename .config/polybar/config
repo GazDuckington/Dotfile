@@ -19,32 +19,27 @@ throttle-output-for = 10
 # i3wm
 [bar/example]
 width = 100%
-height = 15
+height = 14
 fixed-center = true
 wm-restack = i3
 enable-ipc = true
-#separator = " "
-border-size = 1
+
+border-size = 2
 border-color = ${colors.bg}
 background = ${colors.bg}
 foreground = ${colors.fg}
 font-0 = "JetBrainsMono Nerd Font:size=9;2"
 
-modules-left = powermenu i3
-modules-center = jam date idle 
-modules-right = wireless-network up alsa xbl temperature battery
+modules-left = apps i3
+modules-center = win 
+modules-right = jam idle wireless-network up alsa xbl temperature battery powermenu
 
-tray-padding = 2
-tray-max-size = 9
-tray-scale = 1.0
-tray-position = none
-tray-background = ${colors.background}
 
 # Modules
 [module/jam]
 type = custom/script
 interval = 5
-exec = TZ=Asia/Jakarta date "+%H:%M %Z -"
+exec = TZ=Asia/Jakarta date "+%H:%M"
 format-padding = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.color4}
@@ -126,29 +121,37 @@ ramp-0-foreground = ${colors.color2}
 scroll-up = brightnessctl s 5%+
 scroll-down = brightnessctl s 5%-
 
-[module/xwindow]
+[module/win]
 type = internal/xwindow
 label = %title:0:30:...%
+label-empty = EndeavourOS
+label-empty-foreground = ${colors.bg-alt}
+format-prefix = " "
+format-prefix-foreground = ${colors.color1}
+format = <label>
+format-padding = 1
 
 [module/i3]
 type = internal/i3
+pin-workspaces = true
+label-mode-padding = 1
 
 label-focused = %name%
 label-focused-padding = 1
 label-focused-background = ${colors.color5}
 label-focused-foreground = ${colors.bg}
 
-label-visible-padding = 1
 label-visible = %name%
+label-visible-padding = 1
 label-visible-foreground = ${colors.color1}
 
-label-urgent-padding = 1
 label-urgent = %name%
+label-urgent-padding = 1
 label-urgent-background = ${colors.alert}
 label-urgent-foreground = ${colors.bg}
 
-label-unfocused-padding = 1
 label-unfocused = %name%
+label-unfocused-padding = 1
 label-unfocused-foreground = ${colors.bg-alt}
 
 [module/date]
@@ -218,9 +221,11 @@ content-foreground = ${colors.bg}
 [module/apps]
 type = custom/text
 #content =  
-content = MENU
-content-foreground = ${colors.color4}
-click-left = rofi -show drun
+content = MNU
+content-padding = 1
+content-foreground = ${colors.bg}
+content-background = ${colors.color4}
+click-left = rofi -show drun -theme launcher.rasi
 
 [module/wireless-network]
 type = internal/network

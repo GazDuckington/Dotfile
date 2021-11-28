@@ -3,11 +3,11 @@
 
 * {
   al:  #00000000;
-  bg:  #16161e;
+  bg:  #202020;
   bga: #4b4b66;
-  bl:  #7aa2f7;
-  fg:  #c0caf5;
-  ac:  #f7768e;
+  bl:  #0FBDBD;
+  fg:  #dfdfdf;
+  ac:  #ec2864;
   gr:  #9ece6a;
   ye:  #e0af68;
   or:  #ff9e64;

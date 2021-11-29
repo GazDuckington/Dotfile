@@ -28,7 +28,9 @@ border-size = 2
 border-color = ${colors.bg}
 background = ${colors.bg}
 foreground = ${colors.fg}
+
 font-0 = "JetBrainsMono Nerd Font:size=9;2"
+font-1 = "IPAGothic:size=9;2"
 
 modules-left = apps drop i3
 modules-center = win 
@@ -123,7 +125,7 @@ scroll-down = brightnessctl s 5%-
 
 [module/win]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:20:%
 label-empty = EndeavourOS
 label-empty-foreground = ${colors.bg-alt}
 format-prefix = " "

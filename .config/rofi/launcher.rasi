@@ -1,8 +1,8 @@
 configuration {
     modi:                           "drun";
-	font:							"JetBrainsMono Nerd Font 13";
+	font:							"JetBrainsMono Nerd Font 10";
     show-icons:                     true;
-    display-drun: 					" ";
+    display-drun: 					"";
     drun-display-format:            "{icon} {name}";
 	sidebar-mode: 					true;
 }
@@ -14,8 +14,6 @@ window {
     text-color:                     @fg;
 	border:							0px;
 	border-color:					@ac;
-    border-radius:                  6px;
-	width:							450;
     location:                       northwest;
     anchor:                         northwest;
     x-offset:                       5;
@@ -24,11 +22,11 @@ window {
 
 prompt {
     enabled: 						true;
-    padding: 						0px 30px 0px 5px;
+    padding: 						0px 10px 0px 5px;
     vertical-align:                 0.5;
 	background-color: 				@al;
 	text-color: 					@bl;
-	font:							"JetBrainsMono Nerd Font 24";
+	font:							"JetBrainsMono Nerd Font 10";
 }
 
 entry {
@@ -38,7 +36,7 @@ entry {
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search";
-    padding:                        10px 0px 0px 0px;
+    padding:                        0px 0px 0px 0px;
     blink:                          true;
 }
 

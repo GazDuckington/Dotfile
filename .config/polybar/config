@@ -30,9 +30,9 @@ background = ${colors.bg}
 foreground = ${colors.fg}
 font-0 = "JetBrainsMono Nerd Font:size=9;2"
 
-modules-left = apps i3
+modules-left = apps drop i3
 modules-center = win 
-modules-right = jam idle wireless-network up alsa xbl temperature battery powermenu
+modules-right = jam idle wireless-network up alsa temperature battery powermenu
 
 
 # Modules
@@ -226,6 +226,14 @@ content-padding = 1
 content-foreground = ${colors.bg}
 content-background = ${colors.color4}
 click-left = rofi -show drun -theme launcher.rasi
+
+[module/drop]
+type = custom/text
+click-left = i3-msg scratchpad show
+content = DRP
+content-padding = 1
+content-foreground = ${colors.color4}
+content-background = ${colors.bg}
 
 [module/wireless-network]
 type = internal/network

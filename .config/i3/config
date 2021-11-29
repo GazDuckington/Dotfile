@@ -58,8 +58,8 @@ bindsym Ctrl+Print exec --no-startup-id ~/scripts/scrot5
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun -theme launcher.rasi
-bindsym $mod+x exec --no-startup-id rofi -show run
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+x exec --no-startup-id rofi -show run -theme launcher.rasi
+bindsym $mod+Tab exec --no-startup-id rofi -show window -theme launcher.rasi
 bindsym $mod+c exec --no-startup-id ~/scripts/dev.sh
 # web search
 bindsym $mod+Shift+w exec --no-startup-id ~/scripts/web-search.sh

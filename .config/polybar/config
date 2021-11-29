@@ -231,7 +231,7 @@ click-left = rofi -show drun -theme launcher.rasi
 
 [module/drop]
 type = custom/text
-click-left = i3-msg scratchpad show
+click-left = i3-msg [class="dropdown"] scratchpad show
 content = DRP
 content-padding = 1
 content-foreground = ${colors.color4}

@@ -70,7 +70,7 @@ bindsym F2 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers
 # dropdown
 exec --no-startup-id $TERMINAL --class 'dropdown'
 for_window [class="dropdown"] floating enable
-for_window [class="dropdown"] move scratchpad; [class="dropdown"] scratchpad show; move position 22px 22px; resize shrink height 2020px; resize grow width 800px; move scratchpad
+for_window [class="dropdown"] move scratchpad; [class="dropdown"] scratchpad show; move position 300px 22px; resize shrink height 2020px; resize grow width 800px; move scratchpad
 bindsym F1 [class="dropdown"] scratchpad show
 
 # flip through tabs

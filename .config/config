@@ -1,0 +1,298 @@
+[colors]
+bg = #202020
+bg-alt = #969696
+fg = #dfdfdf
+fg-alt = #21ff21
+color1 = #35ffdc
+color2 = #ffb86c
+color3 = #16a085
+color4 = #0FBDBD
+color5 = #7dc1ff
+alert = #ec2864
+trans = #95444444
+
+[settings]
+screenchange-reload = true
+throttle-output = 5
+throttle-output-for = 10
+
+# i3wm
+[bar/example]
+width = 100%
+height = 14
+fixed-center = true
+wm-restack = i3
+enable-ipc = true
+
+border-size = 2
+border-color = ${colors.bg}
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+font-0 = "JetBrainsMono Nerd Font:size=9;2"
+font-1 = "IPAGothic:size=9;2"
+
+modules-left = apps drop i3
+modules-center = win 
+modules-right = jam idle wireless-network up alsa temperature battery powermenu
+
+
+# Modules
+[module/jam]
+type = custom/script
+interval = 5
+exec = TZ=Asia/Jakarta date "+%H:%M"
+format-padding = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.color4}
+
+[module/fs]
+type = internal/fs
+mount-0 = /
+interval = 2
+
+format-mounted-prefix = "ﲭ " 
+format-mounted = <label-mounted>
+label-mounted = %free%
+format-mounted-prefix-foreground = ${colors.color5}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+label = %percentage:2%%
+format-prefix-foreground = ${colors.color5}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "﬙ "
+label = %percentage_used%%
+# label-padding = 1
+format-prefix-foreground = ${colors.color5}
+
+[module/qp]
+type = custom/script
+format-prefix = "ﱘ"
+tail = true
+label-padding=2
+exec = playerctl -p musikcube metadata --format "{{ artist }} - {{ title }}"
+click-left = playerctl -p musikcube play-pause
+scroll-up = playerctl  -p musikcube previous
+scroll-down = playerctl  -p musikcube next
+format-prefix-foreground = ${colors.primary}
+
+[module/alsa]
+type = internal/pulseaudio
+click-right = ~/scripts/check.sh pulsemixer
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+headphone-id = 15
+
+format-volume-padding = 1
+format-volume = <ramp-volume> <label-volume>
+label-muted-padding = 1
+label-muted =  muted
+label-muted-foreground = ${colors.primary}
+ramp-volume-0 = 
+ramp-volume-0-foreground = ${colors.fg}
+ramp-volume-1 = 
+ramp-volume-1-foreground = ${colors.color5}
+ramp-volume-2 = 
+ramp-volume-2-foreground = ${colors.color1}
+; ramp-volume-padding = 1
+
+[module/xbl]
+type = internal/xbacklight
+format = <ramp> <label>
+format-padding = 1
+label = %percentage%%
+card = intel_backlight
+enable-scroll = true
+ramp-4 = 
+ramp-4-foreground = ${colors.color2}
+ramp-3 = 
+ramp-3-foreground = ${colors.color2}
+ramp-2 = 
+ramp-2-foreground = ${colors.color2}
+ramp-1 = 
+ramp-1-foreground = ${colors.color2}
+ramp-0 = 
+ramp-0-foreground = ${colors.color2}
+scroll-up = brightnessctl s 5%+
+scroll-down = brightnessctl s 5%-
+
+[module/win]
+type = internal/xwindow
+label = %title:0:20:%
+label-empty = EndeavourOS
+label-empty-foreground = ${colors.bg-alt}
+format-prefix = " "
+format-prefix-foreground = ${colors.color1}
+format = <label>
+format-padding = 1
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+label-mode-padding = 1
+
+label-focused = %name%
+label-focused-padding = 1
+label-focused-background = ${colors.color5}
+label-focused-foreground = ${colors.bg}
+
+label-visible = %name%
+label-visible-padding = 1
+label-visible-foreground = ${colors.color1}
+
+label-urgent = %name%
+label-urgent-padding = 1
+label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.bg}
+
+label-unfocused = %name%
+label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.bg-alt}
+
+[module/date]
+type = internal/date
+date = "%a, %d %b %Y"
+label-alignment = center
+label = %date%
+format-padding = 1
+format = <label>
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 100
+
+time-format = %{F#7dc1ff}%{F-} %H:%M
+format-charging-padding = 1
+format-charging = <label-charging>
+format-discharging-padding = 1
+format-discharging = <label-discharging>
+format-full-padding = 1
+format-full = <label-full>
+
+label-charging = %percentage%% 
+label-discharging = %percentage%% 
+label-full = %percentage%%
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.fg-alt}
+
+format-charging-prefix = " "
+format-charging-prefix-foreground = ${colors.color1}
+
+format-discharging-prefix = " "
+format-discharging-prefix-foreground = ${colors.color2}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 70
+
+format-padding = 1
+format = <ramp> <label>
+format-warn-padding = 1
+format-warn = <ramp> <label-warn>
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.alert}
+
+ramp-0 = ""
+ramp-0-foreground = ${colors.color5}
+ramp-1 = "" 
+ramp-1-foreground = ${colors.color2}
+ramp-2 = ""
+ramp-2-foreground = ${colors.alert}
+
+[module/powermenu]
+type = custom/text
+content-padding = 1
+content = PWR
+click-left = ~/scripts/power
+content-background = ${colors.alert}
+content-foreground = ${colors.bg}
+
+[module/apps]
+type = custom/text
+#content =  
+content = MNU
+content-padding = 1
+content-foreground = ${colors.bg}
+content-background = ${colors.color4}
+click-left = rofi -show drun -theme launcher.rasi
+
+[module/drop]
+type = custom/text
+click-left = i3-msg scratchpad show
+content = DRP
+content-padding = 1
+content-foreground = ${colors.color4}
+content-background = ${colors.bg}
+
+[module/wireless-network]
+type = internal/network
+interface = wlan0
+interval = 1.0
+
+label-connected-padding = 1
+format-connected-prefix = "%{A1:~/scripts/check.sh nmtui:}直%{A} "
+format-connected-prefix-foreground = ${colors.color4}
+format-connected = <label-connected>
+label-connected = %{A1:~/scripts/check.sh nmtui:}%signal%%{A}
+label-disconnected-padding = 1
+format-disconnected-prefix = "%{A1:~/scripts/check.sh nmtui:}睊%{A} "
+format-disconnected-prefix-foreground = ${colors.alert}
+format-disconnected = <label-disconnected>
+label-disconnected = %{A1:~/scripts/check.sh nmtui:}Off%{A}
+label-disconnected-foreground = ${colors.alert}
+
+[module/wired-network]
+type = internal/network
+interface = enp12s0
+interval = 1.0
+
+format-connected-prefix = "龍 "
+format-connected-prefix-foreground = ${colors.color5}
+format-connected = <label-connected>
+label-connected = %essid%
+label-connected-foreground = ${colors.color5}
+
+format-disconnected = <label-disconnected>
+label-disconnected = Offline
+label-disconnected-foreground = ${colors.alert}
+
+[module/up]
+type = custom/script
+interval = 900s
+exec = ~/scripts/checkupdates.sh
+format-padding = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.color4}
+click-left = ~/scripts/check.sh UpdateInTerminal
+
+[module/idle]
+type = custom/script
+interval = 1s
+format-padding = 1
+exec = ~/scripts/check_idle.sh
+click-left = ~/scripts/toggle_idle.sh
+
+[module/caps]
+type = custom/script
+interval = 0.5s
+exec = ~/scripts/cns.sh -c
+format-foreground = ${colors.blue-darker}
+
+[module/num]
+type = custom/script
+interval = 0.5s
+exec = ~/scripts/cns.sh -n
+format-foreground = ${colors.blue}

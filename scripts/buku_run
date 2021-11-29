@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 _rofi () {
-    rofi -dmenu -i -no-levenshtein-sort "$@"
+    rofi -dmenu -i -no-levenshtein-sort "$@" -theme launcher.rasi
 }
 
 # display settings

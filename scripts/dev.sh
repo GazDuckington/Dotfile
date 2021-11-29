@@ -5,7 +5,7 @@ rofi_command="rofi -i -matching fuzzy"
 # Variable passed to rofi
 options="$(ls ~/dev/)"
 
-chosen="$(echo -e "$options" | $rofi_command -p 'Select Folder' -dmenu)"
+chosen="$(echo -e "$options" | $rofi_command -p 'Select' -dmenu -theme launcher.rasi)"
 
 if ["$chosen" = ""]; then
 $chosen

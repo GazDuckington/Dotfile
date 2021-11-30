@@ -57,13 +57,13 @@ bindsym shift+F2 exec --no-startup-id ~/scripts/scrot
 bindsym Ctrl+Print exec --no-startup-id ~/scripts/scrot5
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -theme launcher.rasi
+bindsym $mod+f exec --no-startup-id rofi -show drun -theme launcher.rasi
 bindsym $mod+x exec --no-startup-id rofi -show run -theme launcher.rasi
 bindsym $mod+Tab exec --no-startup-id rofi -show window -theme launcher.rasi
 bindsym $mod+c exec --no-startup-id ~/scripts/dev.sh
 # web search
-bindsym $mod+Shift+w exec --no-startup-id ~/scripts/web-search.sh
-bindsym Mod1+Shift+w exec --no-startup-id ~/scripts/buku_run
+bindsym Mod1+space exec --no-startup-id ~/scripts/web-search.sh
+# bindsym Mod1+Shift+w exec --no-startup-id ~/scripts/buku_run
 # change wallpaper
 bindsym F2 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 
@@ -77,16 +77,16 @@ bindsym F1 [class="dropdown"] scratchpad show
 bindsym Mod1+Tab exec --no-startup-id i3flip next
 # bindsym Ctrl+1 exec --no-startup-id i3flip prev
 # change focus
-bindsym $mod+h  exec --no-startup-id i3viswiz left
-bindsym $mod+j  exec --no-startup-id i3viswiz down
-bindsym $mod+k    exec --no-startup-id i3viswiz up
-bindsym $mod+l exec --no-startup-id i3viswiz focus right
+bindsym $mod+a  exec --no-startup-id i3viswiz left
+bindsym $mod+s  exec --no-startup-id i3viswiz down
+bindsym $mod+w    exec --no-startup-id i3viswiz up
+bindsym $mod+d exec --no-startup-id i3viswiz focus right
 
 # move focused window
-bindsym $mod+Shift+h  exec --no-startup-id i3Kornhe move --speed 10 left
-bindsym $mod+Shift+j  exec --no-startup-id i3Kornhe move --speed 10 down
-bindsym $mod+Shift+k 	 exec --no-startup-id i3Kornhe move --speed 10 up
-bindsym $mod+Shift+l exec --no-startup-id i3Kornhe move --speed 10 right
+bindsym $mod+Shift+a  exec --no-startup-id i3Kornhe move --speed 10 left
+bindsym $mod+Shift+s  exec --no-startup-id i3Kornhe move --speed 10 down
+bindsym $mod+Shift+w 	 exec --no-startup-id i3Kornhe move --speed 10 up
+bindsym $mod+Shift+d exec --no-startup-id i3Kornhe move --speed 10 right
 
 # split in horizontal orientation
 bindsym $mod+b split h
@@ -95,20 +95,20 @@ bindsym $mod+b split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+w layout tabbed
+bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+s floating toggle
+bindsym $mod+t floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -183,6 +183,7 @@ exec --no-startup-id ~/scripts/setcursor
 exec --no-startup-id xsetroot -solid "#292929"
 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 exec --no-startup-id dunst
+exec --no-startup-id i3wsr
 exec --no-startup-id /usr/bin/lxqt-policykit-agent 
 exec_always --no-startup-id ~/scripts/launchb
 exec_always --no-startup-id ~/scripts/idle
@@ -200,10 +201,11 @@ for_window[class="hint"] floating enable
 for_window[class="nmtui"] floating enable, border normal
 for_window[class="UpdateInTerminal"] floating enable, border normal
 for_window[class="Gcolor3"] floating enable
-assign [class="^lollypop$"] $ws5
-assign [class="^Lollypop$"] $ws5
+assign [class="^lollypop$"] $ws3
+assign [class="^Lollypop$"] $ws3
+assign [class="^Musikcube$"] $ws3
+assign [class="^musikcube$"] $ws3
 assign [class="Stremio"] $ws5
-for_window [title="musikcube"] move container to workspace $ws3
 assign [class="Codium"] $ws2
 assign [class="DesktopEditors"] $ws2
 assign [class="kitty"] $ws1

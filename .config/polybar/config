@@ -32,19 +32,11 @@ foreground = ${colors.fg}
 font-0 = "JetBrainsMono Nerd Font:size=9;2"
 font-1 = "IPAGothic:size=9;2"
 
-modules-left = apps drop i3
+modules-left = apps drop idle i3
 modules-center = win 
-modules-right = jam idle wireless-network up alsa temperature battery powermenu
-
+modules-right = date wireless-network up alsa temperature battery powermenu
 
 # Modules
-[module/jam]
-type = custom/script
-interval = 5
-exec = TZ=Asia/Jakarta date "+%H:%M"
-format-padding = 1
-format-prefix = " "
-format-prefix-foreground = ${colors.color4}
 
 [module/fs]
 type = internal/fs
@@ -125,7 +117,7 @@ scroll-down = brightnessctl s 5%-
 
 [module/win]
 type = internal/xwindow
-label = %title:0:20:%
+label = %title:0:30:%
 label-empty = EndeavourOS
 label-empty-foreground = ${colors.bg-alt}
 format-prefix = " "
@@ -158,10 +150,13 @@ label-unfocused-foreground = ${colors.bg-alt}
 
 [module/date]
 type = internal/date
-date = "%a, %d %b %Y"
+date = "%H:%M, %A"
+date-alt = "%a, %d %b %Y"
 label-alignment = center
 label = %date%
 format-padding = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.color4}
 format = <label>
 
 [module/battery]

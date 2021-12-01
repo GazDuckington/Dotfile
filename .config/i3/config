@@ -67,12 +67,6 @@ bindsym Mod1+space exec --no-startup-id ~/scripts/web-search.sh
 # change wallpaper
 bindsym F2 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 
-# dropdown
-exec --no-startup-id $TERMINAL --class 'dropdown'
-for_window [class="dropdown"] floating enable
-for_window [class="dropdown"] move scratchpad; [class="dropdown"] scratchpad show; move position 300px 22px; resize shrink height 2020px; resize grow width 800px; move scratchpad
-bindsym F1 [class="dropdown"] scratchpad show
-
 # flip through tabs
 bindsym Mod1+Tab exec --no-startup-id i3flip next
 # bindsym Ctrl+1 exec --no-startup-id i3flip prev
@@ -201,14 +195,22 @@ for_window[class="hint"] floating enable
 for_window[class="nmtui"] floating enable, border normal
 for_window[class="UpdateInTerminal"] floating enable, border normal
 for_window[class="Gcolor3"] floating enable
-assign [class="^lollypop$"] $ws3
-assign [class="^Lollypop$"] $ws3
-assign [class="^Quodlibet$"] $ws3
-assign [class="^Musikcube$"] $ws3
-assign [class="^musikcube$"] $ws3
 assign [class="Stremio"] $ws5
 assign [class="Codium"] $ws2
 assign [class="DesktopEditors"] $ws2
 assign [class="kitty"] $ws1
 assign [class="Lxappearance"] $ws4
 assign [class="Kvantum Manager"] $ws4
+
+# SCRATCHPAD
+
+# dropdown
+exec --no-startup-id $TERMINAL --class 'dropdown'
+for_window [class="dropdown"] floating enable
+for_window [class="dropdown"] move scratchpad, [class="dropdown"] scratchpad show, move position 300px 22px, resize shrink height 2020px, resize grow width 800px, move scratchpad
+bindsym F1 [class="dropdown"] scratchpad show
+# quodlibet
+exec --no-startup-id quodlibet
+assign [class="^Quodlibet$"] $ws3
+for_window [class="Quodlibet"] move scratchpad, resize grow width 800px, move position 300px 22px
+bindsym F3 [class="Quodlibet"] scratchpad show

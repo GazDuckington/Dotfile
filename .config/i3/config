@@ -203,6 +203,7 @@ for_window[class="UpdateInTerminal"] floating enable, border normal
 for_window[class="Gcolor3"] floating enable
 assign [class="^lollypop$"] $ws3
 assign [class="^Lollypop$"] $ws3
+assign [class="^Quodlibet$"] $ws3
 assign [class="^Musikcube$"] $ws3
 assign [class="^musikcube$"] $ws3
 assign [class="Stremio"] $ws5

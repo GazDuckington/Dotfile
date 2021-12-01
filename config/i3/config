@@ -44,7 +44,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 floating_modifier $mod
 
 # keybind
-set $TERMINAL kitty
+set $TERMINAL alacritty
 # start a terminal
 bindsym $mod+Return exec --no-startup-id $TERMINAL
 # kill focused window
@@ -161,13 +161,13 @@ bindsym $mod+F2 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallp
 
 # COLOR
 # class                 border  backgr. text    indicator child_border
-client.focused          #0FBDBD #0FBDBD #ffffff #7dc1ff   #0FBDBD
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #ec2864 #ffffff #ec2864   #ec2864
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #45A9F9 #45A9F9 #E6E6E6 #45A9F9   #45A9F9
+client.focused_inactive #333333 #5f676a #E6E6E6 #484e50   #5f676a
+client.unfocused        #333333 #292A2B #888888 #292A2B   #292A2B
+client.urgent           #2f343a #FF2C6D #E6E6E6 #FF2C6D   #FF2C6D
+client.placeholder      #000000 #0c0c0c #E6E6E6 #000000   #0c0c0c
 
-client.background       #ffffff
+client.background       #E6E6E6
 
 # AUTOSTART
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -199,6 +199,7 @@ assign [class="Stremio"] $ws5
 assign [class="Codium"] $ws2
 assign [class="DesktopEditors"] $ws2
 assign [class="kitty"] $ws1
+assign [class="Alacritty"] $ws1
 assign [class="Lxappearance"] $ws4
 assign [class="Kvantum Manager"] $ws4
 

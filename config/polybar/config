@@ -1,14 +1,14 @@
 [colors]
-bg = #202020
+bg = #292A2B
 bg-alt = #969696
-fg = #dfdfdf
-fg-alt = #21ff21
-color1 = #35ffdc
-color2 = #ffb86c
+fg = #E6E6E6
+fg-alt = #19f9d8
+color1 = #67d3c2
+color2 = #FFB86C
 color3 = #16a085
 color4 = #0FBDBD
-color5 = #7dc1ff
-alert = #ec2864
+color5 = #45A9F9
+alert = #FF2C6D
 trans = #95444444
 
 [settings]

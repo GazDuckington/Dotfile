@@ -109,11 +109,11 @@ bindsym $mod+p focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "SATU"
-set $ws2 "DUA"
-set $ws3 "TIGA"
-set $ws4 "EMPAT"
-set $ws5 "LIMA"
+set $ws1 "1SATU"
+set $ws2 "2DUA"
+set $ws3 "3TIGA"
+set $ws4 "4EMPAT"
+set $ws5 "5LIMA"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -202,6 +202,7 @@ assign [class="kitty"] $ws1
 assign [class="Alacritty"] $ws1
 assign [class="Lxappearance"] $ws4
 assign [class="Kvantum Manager"] $ws4
+assign [class="qBittorrent"] $ws3
 
 # SCRATCHPAD
 
@@ -218,5 +219,5 @@ bindsym F1 [class="dropdown"] scratchpad show
 # musikcube
 bindsym $mod+F3 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
-for_window [instance="musikcube"] move scratchpad, resize grow width 800px, move position 300px 22px
+for_window [instance="musikcube"] move scratchpad, resize grow width 800px, move position 300px 50px, border normal
 bindsym F3 [instance="musikcube"] scratchpad show

@@ -32,9 +32,9 @@ foreground = ${colors.fg}
 font-0 = "JetBrainsMono Nerd Font:size=9;2"
 font-1 = "IPAGothic:size=9;2"
 
-modules-left = apps drop idle i3
+modules-left = apps drop msc i3
 modules-center = win 
-modules-right = date wireless-network up alsa temperature battery powermenu
+modules-right = idle date wireless-network up alsa temperature battery powermenu
 
 # Modules
 
@@ -232,18 +232,26 @@ content-padding = 1
 content-foreground = ${colors.color4}
 content-background = ${colors.bg}
 
+[module/msc]
+type = custom/text
+click-left = i3-msg [class="musikcube"] scratchpad show
+content = MSC
+content-padding = 1
+content-foreground = ${colors.bg}
+content-background = ${colors.color2}
+
 [module/wireless-network]
 type = internal/network
 interface = wlan0
 interval = 1.0
 
 label-connected-padding = 1
-format-connected-prefix = "%{A1:~/scripts/check.sh nmtui:}直%{A} "
+format-connected-prefix = "%{A1:~/scripts/check.sh nmtui:}直%{A}"
 format-connected-prefix-foreground = ${colors.color4}
 format-connected = <label-connected>
 label-connected = %{A1:~/scripts/check.sh nmtui:}%signal%%{A}
 label-disconnected-padding = 1
-format-disconnected-prefix = "%{A1:~/scripts/check.sh nmtui:}睊%{A} "
+format-disconnected-prefix = "%{A1:~/scripts/check.sh nmtui:}睊%{A}"
 format-disconnected-prefix-foreground = ${colors.alert}
 format-disconnected = <label-disconnected>
 label-disconnected = %{A1:~/scripts/check.sh nmtui:}Off%{A}

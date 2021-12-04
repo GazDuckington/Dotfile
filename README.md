@@ -8,7 +8,7 @@ Home sweet home.
 ## Dependencies
 apps used
 ```bash 
-yay -S fish starship rofi i3lock-color feh scrot xidlehook polybar nmtui pulsemixer kitty picom-ibhagwan-git musikcube cava vscodium-bin vscodium-bin-marketplace
+yay -S fish starship rofi i3lock-color feh scrot xidlehook polybar nmtui pulsemixer kitty picom-ibhagwan-git musikcube cava vscodium-bin vscodium-bin-marketplace nerd-fonts-jetbrains-mono nerd-fonts-fira-code 
 ```
 oh-my-fish
 ```bash

@@ -57,15 +57,14 @@ bindsym shift+F2 exec --no-startup-id ~/scripts/scrot
 bindsym Ctrl+Print exec --no-startup-id ~/scripts/scrot5
 
 # start dmenu (a program launcher)
-bindsym $mod+f exec --no-startup-id rofi -show drun -theme launcher.rasi
+bindsym $mod+f exec --no-startup-id rofi -show drun -i -matching fuzzy -theme launcher.rasi
+bindsym F1 exec --no-startup-id rofi -show drun -i -matching fuzzy -theme launcher.rasi
 bindsym $mod+x exec --no-startup-id rofi -show run -theme launcher.rasi
 bindsym $mod+Tab exec --no-startup-id rofi -show window -theme launcher.rasi
 bindsym $mod+c exec --no-startup-id ~/scripts/dev.sh
 # web search
 bindsym Mod1+space exec --no-startup-id ~/scripts/web-search.sh
 # bindsym Mod1+Shift+w exec --no-startup-id ~/scripts/buku_run
-# change wallpaper
-bindsym F2 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 
 # flip through tabs
 bindsym Mod1+Tab exec --no-startup-id i3flip next
@@ -157,7 +156,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+F2 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpaper/*
+bindsym F4 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 
 # COLOR
 # class                 border  backgr. text    indicator child_border
@@ -192,6 +191,7 @@ new_float normal
 
 for_window[class="pulsemixer"] floating enable, border normal, resize set 600 300 
 for_window[class="hint"] floating enable
+for_window[class="Rum"] floating enable
 for_window[class="nmtui"] floating enable, border normal
 for_window[class="UpdateInTerminal"] floating enable, border normal
 for_window[class="Gcolor3"] floating enable
@@ -199,7 +199,7 @@ assign [class="Stremio"] $ws5
 assign [class="Codium"] $ws2
 assign [class="DesktopEditors"] $ws2
 assign [class="kitty"] $ws1
-assign [class="Alacritty"] $ws1
+assign [class="Rum"] $ws3
 assign [class="Lxappearance"] $ws4
 assign [class="Kvantum Manager"] $ws4
 assign [class="qBittorrent"] $ws3
@@ -210,7 +210,7 @@ assign [class="qBittorrent"] $ws3
 exec --no-startup-id $TERMINAL --class 'dropdown'
 for_window [class="dropdown"] floating enable
 for_window [class="dropdown"] move scratchpad, [class="dropdown"] scratchpad show, move position 300px 22px, resize shrink height 2020px, resize grow width 800px, move scratchpad
-bindsym F1 [class="dropdown"] scratchpad show
+bindsym F2 [class="dropdown"] scratchpad show
 # quodlibet
 #exec --no-startup-id quodlibet
 #assign [class="^Quodlibet$"] $ws3

@@ -29,8 +29,8 @@ border-color = ${colors.bg}
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = "JetBrainsMono Nerd Font:size=9;2"
-font-1 = "IPAGothic:size=9;2"
+font-0 = "JetBrainsMono Nerd Font:size=11;3"
+font-1 = "IPAGothic:size=11;3"
 
 modules-left = apps drop msc i3
 modules-center = win 

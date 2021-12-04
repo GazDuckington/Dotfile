@@ -1,7 +1,8 @@
 configuration {
     modi:                           "drun";
-	font:							"JetBrainsMono Nerd Font 10";
+	font:							"JetBrainsMono Nerd Font 13";
     show-icons:                     true;
+    icon-theme:                     "Tela";
     display-drun: 					"";
     drun-display-format:            "{icon} {name}";
 	sidebar-mode: 					true;
@@ -12,11 +13,11 @@ configuration {
 window {
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px;
-	border-color:					@ac;
+	border:							1px;
+	border-color:					@bl;
     location:                       northwest;
     anchor:                         northwest;
-    x-offset:                       5;
+    x-offset:                       2;
     y-offset:                       20;
 }
 
@@ -26,7 +27,6 @@ prompt {
     vertical-align:                 0.5;
 	background-color: 				@al;
 	text-color: 					@bl;
-	font:							"JetBrainsMono Nerd Font 10";
 }
 
 entry {

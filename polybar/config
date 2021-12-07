@@ -32,10 +32,11 @@ foreground = ${colors.fg}
 
 font-0 = "JetBrainsMono Nerd Font:size=9;3"
 font-1 = "IPAGothic:size=9;3"
+font-2 = "FiraCode Nerd Font=9;3"
 
 modules-left = apps up i3
 modules-center = win idle
-modules-right = date wlan eth alsa temperature battery powermenu
+modules-right = date wlan eth alsa temp battery powermenu
 
 # Modules
 
@@ -183,7 +184,7 @@ format-charging-prefix-foreground = ${colors.color1}
 format-discharging-prefix = " "
 format-discharging-prefix-foreground = ${colors.color2}
 
-[module/temperature]
+[module/temp]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 70

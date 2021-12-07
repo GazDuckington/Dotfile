@@ -2,7 +2,7 @@ configuration {
     modi:                           "drun";
 	font:							"JetBrainsMono Nerd Font 13";
     show-icons:                     true;
-    icon-theme:                     "Tela";
+    icon-theme:                     "Papirus";
     display-drun: 					"";
     drun-display-format:            "{icon} {name}";
 	sidebar-mode: 					true;

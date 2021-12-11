@@ -1,0 +1,121 @@
+# WM independendt
+
+# terminal
+super + Return
+	kitty
+
+# rofi menu
+super + space
+	rofi -show drun
+super + x
+	rofi -show run
+super + Tab
+	rofi -show window
+
+# codium menu
+super + c
+	~/scripts/dev.sh
+
+# web search
+super + s
+	~/scripts/web-search.sh
+
+# power menu
+alt + F4
+	~/scripts/powermenu.sh
+
+# brightness
+ctrl + {F8,F9}
+	brightnessctl s {5%-,5%+}
+
+{XF86MonBrightnessUp, XF86MonBrightnessUp}
+	brightnessctl s {5%+,5%-}
+
+# volume
+ctrl + {F1,F2}
+	pamixer {}
+
+XF86AudioRaiseVolume
+	pamixer -i 5
+
+XF86AudioLowerVolume
+	pamixer -d 5
+
+XF86AudioMute
+	pamixer -t
+
+XF86AudioMicMute
+	pamixer --default-source -t
+
+# screenshot
+super + p 
+	flameshot full -p ~/Pictures/Screenshots
+
+super + shift + p
+	flameshot gui -p ~/Pictures/Screenshots
+
+# random wallpaper
+super + F4
+	feh --bg-scale --randomize ~/Pictures/Wallpapers/*
+
+# sxhkd
+
+# reload sxhkd config
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# bspwm
+
+# restart bspwm
+super + shift + r
+	bspc wm -r
+
+# close & kill node
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# node focus
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# node swap
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+# focus last node
+alt + Tab
+	bspc node -f last
+
+# toggle tiling
+super + t
+	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# toggle pseudo-tiling
+super + v
+	bspc node focused.tiled -t pseudo_tiled || bspc node focused.pseudo_tiled -t tiled
+
+# toggle fullscreen
+super + f
+	bspc node focused.tiled -t fullscreen || bspc node focused.fullscreen -t tiled
+
+# swap node to the biggest node
+super + g
+	bspc node -s biggest.window
+
+# workspaces
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# move/resize
+
+# expand
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20, top 0 -20,right 20 0}
+
+# shrink
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move floating
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

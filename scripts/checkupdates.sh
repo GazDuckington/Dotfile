@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-updates=$(checkupdates)
+updates=$(checkupdates+aur)
 
 if [ -z "$updates" ]
 then

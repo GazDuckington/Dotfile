@@ -1,3 +1,16 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;==========================================================
+
 [colors]
 bg = #292A2B
 bg-alt = #969696
@@ -17,12 +30,11 @@ screenchange-reload = true
 throttle-output = 5
 throttle-output-for = 10
 
-# i3wm
 [bar/example]
 width = 100%
-height = 14
+height = 15
 fixed-center = true
-wm-restack = i3
+wm-restack = bspwm
 enable-ipc = true
 
 border-size = 2
@@ -30,42 +42,16 @@ border-color = ${colors.black}
 background = ${colors.black}
 foreground = ${colors.fg}
 
-font-0 = "JetBrainsMono Nerd Font:size=9;3"
-font-1 = "IPAGothic:size=9;3"
-font-2 = "FiraCode Nerd Font=9;3"
+font-0 = FiraCode Nerd Font:size=10;2
+font-1 = IPAGothic:size=10;2
 
-modules-left = apps up i3
-modules-center = win idle
-modules-right = date wlan eth alsa temp battery powermenu
+modules-left = apps idle up bspwm
+modules-center = win
+modules-right = date wlan eth pulse temp battery powermenu
 
 # Modules
 
-[module/fs]
-type = internal/fs
-mount-0 = /
-interval = 2
-
-format-mounted-prefix = "ﲭ " 
-format-mounted = <label-mounted>
-label-mounted = %free%
-format-mounted-prefix-foreground = ${colors.color5}
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-label = %percentage:2%%
-format-prefix-foreground = ${colors.color5}
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = "﬙ "
-label = %percentage_used%%
-# label-padding = 1
-format-prefix-foreground = ${colors.color5}
-
-[module/qp]
+[module/msc]
 type = custom/script
 format-prefix = "ﱘ"
 tail = true
@@ -76,12 +62,12 @@ scroll-up = playerctl  -p musikcube previous
 scroll-down = playerctl  -p musikcube next
 format-prefix-foreground = ${colors.primary}
 
-[module/alsa]
+[module/pulse]
 type = internal/pulseaudio
-click-right = ~/scripts/check.sh pulsemixer
+click-right = ~/scripts/kitty-launch.sh pulsemixer
 master-soundcard = default
 speaker-soundcard = default
-headphone-soundcard = default
+headphone-oundcard = default
 headphone-id = 15
 
 format-volume-padding = 1
@@ -98,12 +84,15 @@ ramp-volume-2-foreground = ${colors.color1}
 ; ramp-volume-padding = 1
 
 [module/xbl]
-type = internal/xbacklight
+type = internal/backlight
+card = intel_backlight
+
 format = <ramp> <label>
 format-padding = 1
-label = %percentage%%
-card = intel_backlight
+
 enable-scroll = true
+
+label = %percentage%%
 ramp-4 = 
 ramp-4-foreground = ${colors.color2}
 ramp-3 = 
@@ -114,37 +103,38 @@ ramp-1 = 
 ramp-1-foreground = ${colors.color2}
 ramp-0 = 
 ramp-0-foreground = ${colors.color2}
-scroll-up = brightnessctl s 5%+
-scroll-down = brightnessctl s 5%-
 
 [module/win]
 type = internal/xwindow
-label = %title:0:11:%
-label-empty = EndeavourOS
+label = %title:0:20:%
+label-empty = OpenSuse
 label-empty-foreground = ${colors.bg-alt}
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.color1}
 format = <label>
 format-padding = 1
 
-[module/i3]
-type = internal/i3
-pin-workspaces = true
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = false
+format = <label-state> 
+format-padding = 1
 
-label-focused = %name%
+label-focused = 
+label-focused-foreground = ${colors.color3}
 label-focused-padding = 1
-label-focused-foreground = ${colors.bg}
-label-focused-background = ${colors.color5}
 
-label-urgent = %name%
+label-occupied = 
+label-occupied-foreground = ${colors.fg}
+label-occupied-padding = 1
+
+label-empty = 
+label-empty-foreground = ${colors.fg}
+label-empty-padding = 1
+
+label-urgent = 
+label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 1
-label-urgent-background = ${colors.alert}
-label-urgent-foreground = ${colors.bg}
-
-label-unfocused = %name%
-label-unfocused-padding = 1
-label-unfocused-background = ${colors.bg}
-label-unfocused-foreground = ${colors.fg}
 
 [module/date]
 type = internal/date
@@ -209,7 +199,7 @@ ramp-2-foreground = ${colors.alert}
 type = custom/text
 content-padding = 1
 content = PWR
-click-left = ~/scripts/power
+click-left = ~/scripts/powermenu.sh
 content-background = ${colors.alert}
 content-foreground = ${colors.bg}
 
@@ -220,37 +210,21 @@ content = MNU
 content-padding = 1
 content-foreground = ${colors.bg}
 content-background = ${colors.color4}
-click-left = rofi -show drun -theme launcher.rasi
-
-[module/drop]
-type = custom/text
-click-left = i3-msg [class="dropdown"] scratchpad show
-content = DRP
-content-padding = 1
-content-foreground = ${colors.color4}
-content-background = ${colors.bg}
-
-[module/msc]
-type = custom/text
-click-left = i3-msg [class="musikcube"] scratchpad show
-content = MSC
-content-padding = 1
-content-foreground = ${colors.bg}
-content-background = ${colors.color2}
+click-left = rofi -show drun
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlp6s0
 interval = 1.0
 
 label-connected-padding = 1
 format-connected-prefix = "直"
 format-connected-prefix-foreground = ${colors.color4}
 format-connected = <label-connected>
-label-connected = %{A1:~/scripts/check.sh nmtui:}%signal%% %essid:0:3%%{A}
+label-connected = %{A1:~/scripts/kitty-launch.sh nmtui:}%signal%% %essid:0:3%%{A}
 
 label-disconnected-padding = 1
-format-disconnected-prefix = "%{A1:~/scripts/check.sh nmtui:}睊%{A}"
+format-disconnected-prefix = "%{A1:~/scripts/kitty-launch.sh nmtui:}睊%{A}"
 format-disconnected-prefix-foreground = ${colors.alert}
 format-disconnected = <label-disconnected>
 label-disconnected = 
@@ -264,10 +238,10 @@ interval = 1.0
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.color5}
 format-connected = <label-connected>
-label-connected = %{A1:~/scripts/check.sh nmtui:}ETH%{A}
+label-connected = %{A1:~/scripts/kitty-launch.sh nmtui:}ETH%{A}
 label-connected-foreground = ${colors.color5}
 
-format-disconnected-prefix = "%{A1:~/scripts/check.sh nmtui:}%{A} "
+format-disconnected-prefix = "%{A1:~/scripts/kitty-launch.sh nmtui:}%{A} "
 format-disconnected-prefix-foreground = ${colors.alert}
 format-disconnected = <label-disconnected>
 label-disconnected = 
@@ -279,23 +253,39 @@ exec = ~/scripts/checkupdates.sh
 format-padding = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.color4}
-click-left = ~/scripts/check.sh UpdateInTerminal
+click-left = ~/scripts/kitty-launch.sh yay -Syyu
 
 [module/idle]
 type = custom/script
-interval = 1s
+interval = 0.5s
 format-padding = 1
-exec = ~/scripts/check_idle.sh
-click-left = ~/scripts/toggle_idle.sh
+exec = ~/scripts/idle-check.sh
+click-left = ~/scripts/idle-toggle.sh
 
-[module/caps]
+[module/cap]
 type = custom/script
 interval = 0.5s
 exec = ~/scripts/cns.sh -c
-format-foreground = ${colors.blue-darker}
+format-padding = 1
+format-foreground = ${colors.color5}
 
 [module/num]
 type = custom/script
 interval = 0.5s
 exec = ~/scripts/cns.sh -n
-format-foreground = ${colors.blue}
+format-padding = 1
+format-foreground = ${colors.color5}
+
+[moduel/scr]
+type = custom/script
+interval = 0.5s
+exec = ~/scripts/cns.sh -s
+format-padding = 1
+
+[module/keyhint]
+type = custom/text
+content = 
+click-left = ~/scripts/hints.sh
+content-foreground = ${colors.color5}
+content-padding = 1
+margin-right = 0

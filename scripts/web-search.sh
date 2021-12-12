@@ -25,10 +25,10 @@ gen_list() {
 
 main() {
   # Pass the list to rofi
-  platform=$( (gen_list) | rofi -dmenu -matching fuzzy -p " engine " -i -theme launcher.rasi)
+  platform=$( (gen_list) | rofi -dmenu -matching fuzzy -p " engine " -i)
 
   if [[ -n "$platform" ]]; then
-    query=$( (echo ) | rofi -dmenu -matching fuzzy -p " query " -i -theme launcher.rasi)
+    query=$( (echo ) | rofi -dmenu -matching fuzzy -p " query " -i)
 
     if [[ -n "$query" ]]; then
       url=${URLS[$platform]}$query

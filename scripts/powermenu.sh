@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rofi_command="rofi -i -matching fuzzy -theme powermenu.rasi"
+rofi_command="rofi -i -matching fuzzy"
 
 # Options
 shutdown=" poweroff "

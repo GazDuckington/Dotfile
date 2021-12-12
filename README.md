@@ -14,7 +14,7 @@ oh-my-fish
 ```bash
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 ```
-Some scripts are only available on EndeavourOS, such as UpdateInTerminal & checkupdates. 
+Some scripts are only available on EndeavourOS, such as UpdateInTerminal 
 
 ## Screenshot
 ![Scrot 1](/scrot.png)

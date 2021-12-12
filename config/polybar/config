@@ -44,10 +44,12 @@ foreground = ${colors.fg}
 
 font-0 = FiraCode Nerd Font:size=10;2
 font-1 = IPAGothic:size=10;2
+font-2 = Baekmuk:size=10;2
+font-3 = "HAN NOM:size=10;2"
 
-modules-left = apps idle up bspwm
+modules-left = apps idle cap num up bspwm
 modules-center = win
-modules-right = date wlan eth pulse temp battery powermenu
+modules-right = date wlan eth pulse temp xbl battery powermenu
 
 # Modules
 
@@ -74,7 +76,7 @@ format-volume-padding = 1
 format-volume = <ramp-volume> <label-volume>
 label-muted-padding = 1
 label-muted =  muted
-label-muted-foreground = ${colors.primary}
+label-muted-foreground = ${colors.fg}
 ramp-volume-0 = 
 ramp-volume-0-foreground = ${colors.fg}
 ramp-volume-1 = 
@@ -84,7 +86,7 @@ ramp-volume-2-foreground = ${colors.color1}
 ; ramp-volume-padding = 1
 
 [module/xbl]
-type = internal/backlight
+type = internal/xbacklight
 card = intel_backlight
 
 format = <ramp> <label>
@@ -106,7 +108,7 @@ ramp-0-foreground = ${colors.color2}
 
 [module/win]
 type = internal/xwindow
-label = %title:0:20:%
+label = %title:0:30:%
 label-empty = OpenSuse
 label-empty-foreground = ${colors.bg-alt}
 format-prefix = " "

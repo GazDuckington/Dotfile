@@ -14,7 +14,7 @@ alias 'nv'='nvim'
 alias 'code'='codium'
 alias 'c'='codium'
 alias 'ga'='git add'
-alias 'gc'='git commit'
+alias 'gc'='git commit -am'
 alias 'gp'='git push'
 
 if status --is-interactive

@@ -35,4 +35,4 @@ xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0 &
 flameshot &
 dunst &
 lxpolkit &
-picom -b --config "~/.config/picom/picom.conf" &
+picom -b &

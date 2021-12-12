@@ -33,5 +33,6 @@ xsetroot -cursor_name left_ptr &
 feh --bg-scale --randomize ~/Pictures/Wallpapers/* &
 xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0 &
 flameshot &
+dunst &
 lxpolkit &
-picom -b --config "~/.config/picom.conf" &
+picom -b --config "~/.config/picom/picom.conf" &

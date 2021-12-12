@@ -2,7 +2,7 @@ set fish_greeting
 
 set PATH /root/.cargo/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
 
-set EDITOR nvim $EDITOR
+set EDITOR lvim $EDITOR
 
 alias 'cpr'='cp -r'
 alias 'ls'='lsd'

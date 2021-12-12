@@ -15,10 +15,13 @@ bspc config normal_border_color  "#969696"
 bspc config active_border_color  "#0FBDBD"
 
 # rules
-bspc rule -a VSCodium desktop=^2 follow=off
 bspc rule -a kitty desktop=1 follow=off
-bspc rule -a pulsemixer state=floating
+bspc rule -a VSCodium desktop=2 follow=off
 bspc rule -a musikcube desktop=3 follow=off
+bspc rule -a Stremio desktop=4 follow=off
+bspc rule -a Lxappearance desktop=5 follow=off
+bspc rule -a "Kvantum Manager" desktop=5 follow=off
+bspc rule -a pulsemixer state=floating
 bspc rule -a nmtui state=floating
 bspc rule -a hint state=floating
 

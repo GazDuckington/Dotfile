@@ -2,6 +2,12 @@ set fish_greeting
 
 set PATH /root/.cargo/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
 
+# android cmdline
+set ANDROID_HOME /opt/android-sdk $ANDROID_HOME
+set PATH $ANDROID_HOME/cmdline-tools/latest/bin/ $PATH
+
+export LIBVIRT_DEFAULT_URI='qemu:///system'
+
 set EDITOR lvim $EDITOR
 
 alias 'cpr'='cp -r'

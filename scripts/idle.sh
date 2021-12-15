@@ -7,5 +7,6 @@ xidlehook \
     '~/scripts/i3lock.sh' \
     ''\
   --timer 1200 \
+    '~/scripts/i3lock.sh' \
     'systemctl suspend' \
     ''

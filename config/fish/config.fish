@@ -1,13 +1,6 @@
 set fish_greeting
 
-set PATH /root/.cargo/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
-
-# android cmdline
-set ANDROID_HOME /opt/android-sdk $ANDROID_HOME
-set PATH $ANDROID_HOME/cmdline-tools/latest/bin/ $PATH
-
-export LIBVIRT_DEFAULT_URI='qemu:///system'
-
+set PATH ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
 set EDITOR lvim $EDITOR
 
 alias 'cpr'='cp -r'
@@ -40,5 +33,21 @@ end
 function multi-unzip
   for i in ./*.zip; unzip $i -d $argv; end
 end
+
+set ANDROID $HOME/Android $ANDROID
+set PATH $ANDROID/cmdline-tools/tools $PATH
+set PATH $ANDROID/cmdline-tools/tools/bin $PATH
+set PATH $ANDROID/platform-tools $PATH
+
+set ANDROID_SDK $HOME/Android/ $ANDROID_SDK
+set PATH $ANDROID_SDK $PATH
+
+set FLUTTER $ANDROID/flutter $FLUTTER
+set PATH $FLUTTER/bin $PATH
+
+set JAVA_HOME /usr/lib/jvm/java-8-openjdk/jre $JAVA_HOME
+set PATH $JAVA_HOME/bin $PATH
+
+set CHROME_EXECUTABLE /usr/bin/brave $CHROME_EXECUTABLE
 
 starship init fish | source

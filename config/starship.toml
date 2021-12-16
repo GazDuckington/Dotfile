@@ -13,6 +13,9 @@ ssh_only = false
 format =  "@[$hostname](bold purple) "
 disabled = false
 
+[shell]
+disabled = false
+
 [directory]
 fish_style_pwd_dir_length = 1
 truncation_length = 3

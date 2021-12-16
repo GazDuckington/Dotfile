@@ -1,7 +1,7 @@
 # My Dotfiles
 Home sweet home.
 - OS: EndeavourOS
-- WE: i3-wm
+- WE: i3-wm & bspwm
 - Status Bar: Polybar
 - Launcher: Rofi
 

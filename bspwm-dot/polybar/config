@@ -36,6 +36,8 @@ height = 15
 fixed-center = true
 wm-restack = bspwm
 enable-ipc = true
+tray-position = 
+tray-padding = 1
 
 border-size = 2
 border-color = ${colors.black}
@@ -44,10 +46,12 @@ foreground = ${colors.fg}
 
 font-0 = FiraCode Nerd Font:size=10;2
 font-1 = IPAGothic:size=10;2
+font-2 = Baekmuk:size=10;2
+font-3 = "HAN NOM:size=10;2"
 
-modules-left = apps idle bspwm
+modules-left = apps idle cap num up bspwm
 modules-center = win
-modules-right = date wlan eth pulse temp battery powermenu
+modules-right = date wlan eth pulse temp xbl battery powermenu
 
 # Modules
 
@@ -74,7 +78,7 @@ format-volume-padding = 1
 format-volume = <ramp-volume> <label-volume>
 label-muted-padding = 1
 label-muted =  muted
-label-muted-foreground = ${colors.primary}
+label-muted-foreground = ${colors.fg}
 ramp-volume-0 = 
 ramp-volume-0-foreground = ${colors.fg}
 ramp-volume-1 = 
@@ -84,7 +88,7 @@ ramp-volume-2-foreground = ${colors.color1}
 ; ramp-volume-padding = 1
 
 [module/xbl]
-type = internal/backlight
+type = internal/xbacklight
 card = intel_backlight
 
 format = <ramp> <label>
@@ -106,8 +110,8 @@ ramp-0-foreground = ${colors.color2}
 
 [module/win]
 type = internal/xwindow
-label = %title:0:20:%
-label-empty = OpenSuse
+label = %title:0:40:%
+label-empty = ArchLinux
 label-empty-foreground = ${colors.bg-alt}
 format-prefix = " "
 format-prefix-foreground = ${colors.color1}
@@ -118,7 +122,6 @@ format-padding = 1
 type = internal/bspwm
 pin-workspaces = false
 format = <label-state> 
-format-padding = 1
 
 label-focused = 
 label-focused-foreground = ${colors.color3}
@@ -253,14 +256,15 @@ exec = ~/scripts/checkupdates.sh
 format-padding = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.color4}
-click-left = ~/scripts/kitty-launch.sh UpdateInTerminal
+click-left = ~/scripts/kitty-launch.sh yay -Qu
+click-right = aarchup
 
 [module/idle]
 type = custom/script
 interval = 0.5s
 format-padding = 1
-exec = ~/scripts/idle-check.sh
-click-left = ~/scripts/idle-toggle.sh
+exec = ~/scripts/idle.sh -c
+click-left = ~/scripts/idle.sh -t
 
 [module/cap]
 type = custom/script
@@ -289,3 +293,4 @@ click-left = ~/scripts/hints.sh
 content-foreground = ${colors.color5}
 content-padding = 1
 margin-right = 0
+

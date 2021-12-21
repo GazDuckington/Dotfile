@@ -12,7 +12,7 @@ function capslock() {
 
 }
 
-function numlock {
+function numlock() {
 
   num=$(xset -q | grep Num | awk '{ print $8 }')
 
@@ -32,7 +32,7 @@ function scroll() {
     echo ""
   else
     echo "%{F#21ff21}%{F-}"
-fi
+  fi
 
 }
 

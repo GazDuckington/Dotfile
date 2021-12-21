@@ -41,4 +41,5 @@ flameshot &
 dunst &
 lxqt-policykit-agent &
 picom -b &
+setterm -powersave off -blank 0 &
 watch -n 30 ~/scripts/battery-check.sh &

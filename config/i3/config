@@ -196,7 +196,7 @@ assign [class="qBittorrent"] $ws3
 # dropdown
 exec --no-startup-id $TERMINAL --class 'dropdown'
 for_window [class="dropdown"] floating enable
-for_window [class="dropdown"] move scratchpad, [class="dropdown"] scratchpad show, move position 300px 22px, resize shrink height 2020px, resize grow width 800px, move scratchpad
+for_window [class="dropdown"] move scratchpad, [class="dropdown"] scratchpad show, move position 400px 22px, resize shrink height 2020px, resize grow width 800px, move scratchpad
 bindsym Mod1+F2 [class="dropdown"] scratchpad show
 # quodlibet
 #exec --no-startup-id quodlibet
@@ -204,7 +204,7 @@ bindsym Mod1+F2 [class="dropdown"] scratchpad show
 #for_window [class="Quodlibet"] move scratchpad, resize grow width 800px, move position 300px 22px
 #bindsym F3 [class="Quodlibet"] scratchpad show
 # musikcube
-bindsym $mod+F3 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
-exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
-for_window [instance="musikcube"] move scratchpad, resize grow width 800px, move position 300px 50px, border normal
-bindsym Mod1+F3 [instance="musikcube"] scratchpad show
+#bindsym $mod+F3 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
+#exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
+#for_window [instance="musikcube"] move scratchpad, resize grow width 800px, move position 300px 50px, border normal
+#bindsym Mod1+F3 [instance="musikcube"] scratchpad show

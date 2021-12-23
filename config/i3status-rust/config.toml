@@ -1,35 +1,24 @@
 [theme]
-name = "plain"
+name = "native"
 [icons]
 name = "material-nf"
-[theme.overrides]
-idle_bg = "#292929"
-info_bg = "#292929"
-good_bg = "#292929"
-warning_bg = "#292929"
-separator_bg = "#292929"
-critical_bg = "#292929"
-
-[[block]]
-block = "custom"
-interval = 1
-command = "~/scripts/cns.sh -c"
-
-[[block]]
-block = "custom"
-interval = 1
-command = "~/scripts/cns.sh -n"
 
 [[block]]
 block = "temperature"
+format = "{average}"
 interval = 10
 chip = "*-isa-*"
 collapsed = false
+[block.theme_overrides]
+good_fg = "#19f9d8"
+warning_fg = "#FFB86C"
+critical_fg = "#FF2C6D"
 
 [[block]]
 block = "music"
-#player = "lollypop"
 buttons = ["prev", "play", "next"]
+[block.theme_overrides]
+info_fg = "#16a085"
 
 [[block]]
 block = "pacman"
@@ -39,17 +28,38 @@ format_singular = "{both}"
 format_up_to_date = "0"
 critical_updates_regex = "(linux|linux-lts|linux-zen)"
 aur_command = "yay -Qua"
+on_click = "~/scripts/kitty-launch.sh yay -Qu"
+[block.theme_overrides]
+info_fg = "#45A9F9"
+good_fg = "#45A9F9"
+warning_fg = "#FFB86C"
+critical_fg = "#FF2C6D"
 
 [[block]]
 block = "memory"
 display_type = "memory"
 format_mem = "{mem_used_percents}"
 format_swap = "{swap_used_percents}"
-clickable = false
+warning_mem = 80
+warning_swap = 80
+critical_mem = 95
+critical_swap = 95
+on_click = "~/scripts/kitty-launch.sh btop"
+[block.theme_overrides]
+idle_fg = "#19f9d8"
+good_fg = "#19f9d8"
+warning_fg = "#FFB86C"
+critical_fg = "#FF2C6D"
 
 [[block]]
 block = "cpu"
 interval = 1
+on_click = "~/scripts/kitty-launch.sh btop"
+[block.theme_overrides]
+idle_fg = "#19f9d8"
+good_fg = "#19f9d8"
+warning_fg = "#FFB86C"
+critical_fg = "#FF2C6D"
 
 [[block]]
 block = "backlight"
@@ -58,23 +68,25 @@ device = "intel_backlight"
 [[block]]
 block = "sound"
 driver = "pulseaudio"
-on_click = "~/scripts/check.sh pulsemixer"
+on_click = "~/scripts/kitty-launch.sh pulsemixer"
 
 [[block]]
 block = "time"
 interval = 5
-format = "%a %d/%m %R"
-[block.theme_overrides]
-idle_fg = "#0071ED"
+format = "%a %d/%b %R"
 
 [[block]]
 block = "battery"
 interval = 10
 format = "{percentage} {time}"
+[block.theme_overrides]
+good_fg = "#19f9d8"
+warning_fg = "#FFB86C"
+critical_fg = "#FF2C6D"
 
 [[block]]
 block = "networkmanager"
-on_click = "~/scripts/check.sh nmtui"
+on_click = "~/scripts/kitty-launch.sh nmtui"
 interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
 interface_name_include = []
 ap_format = "{ssid} {strength}"
@@ -82,5 +94,10 @@ device_format = "{icon} {ap}"
 
 [[block]]
 block = "custom"
+command = "~/scripts/idle.sh -c"
+on_click = "~/scripts/idle.sh -t"
+
+[[block]]
+block = "custom"
 command = "echo ⏼"
-on_click = "~/scripts/power"
+on_click = "~/scripts/powermenu.sh"

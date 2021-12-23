@@ -36,6 +36,8 @@ height = 15
 fixed-center = true
 wm-restack = bspwm
 enable-ipc = true
+tray-position = 
+tray-padding = 1
 
 border-size = 2
 border-color = ${colors.black}
@@ -108,8 +110,8 @@ ramp-0-foreground = ${colors.color2}
 
 [module/win]
 type = internal/xwindow
-label = %title:0:30:%
-label-empty = OpenSuse
+label = %title:0:40:%
+label-empty = ArchLinux
 label-empty-foreground = ${colors.bg-alt}
 format-prefix = " "
 format-prefix-foreground = ${colors.color1}
@@ -261,8 +263,8 @@ click-right = aarchup
 type = custom/script
 interval = 0.5s
 format-padding = 1
-exec = ~/scripts/idle-check.sh
-click-left = ~/scripts/idle-toggle.sh
+exec = ~/scripts/idle.sh -c
+click-left = ~/scripts/idle.sh -t
 
 [module/cap]
 type = custom/script
@@ -291,3 +293,4 @@ click-left = ~/scripts/hints.sh
 content-foreground = ${colors.color5}
 content-padding = 1
 margin-right = 0
+

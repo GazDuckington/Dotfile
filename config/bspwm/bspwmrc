@@ -18,6 +18,7 @@ bspc config active_border_color  "#0FBDBD"
 bspc rule -a kitty desktop=1 follow=off
 bspc rule -a VSCodium desktop=2 follow=off
 bspc rule -a musikcube desktop=3 follow=off
+bspc rule -a Quodlibet desktop=3 follow=off
 bspc rule -a Stremio desktop=4 follow=off
 bspc rule -a Lxappearance desktop=5 follow=off
 bspc rule -a "Kvantum Manager" desktop=5 follow=off
@@ -31,11 +32,14 @@ bspc rule -a "Microsoft Windows" desktop=3
 ~/scripts/launch-polybar.sh &
 xsetroot -cursor_name left_ptr &
 ~/scripts/mount-gdrive.sh &
-~/scripts/idle.sh &
+pkill xidlehook &
+~/scripts/idle.sh -s &
 feh --bg-scale --randomize ~/Pictures/Wallpapers/* &
 xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0 &
+xinput set-prop "AT Translated Set 2 keyboard" "Device Enabled" 0 &
 flameshot &
 dunst &
 lxqt-policykit-agent &
 picom -b &
+setterm -powersave off -blank 0 &
 watch -n 30 ~/scripts/battery-check.sh &

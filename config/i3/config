@@ -38,9 +38,8 @@ bindsym $mod+q kill
 # power menu
 bindsym Mod1+F4 exec --no-startup-id ~/scripts/powermenu.sh
 # scrots
-bindsym Print exec --no-startup-id ~/scripts/scrot
-bindsym shift+F2 exec --no-startup-id ~/scripts/scrot
-bindsym Ctrl+Print exec --no-startup-id ~/scripts/scrot5
+bindsym $mod+p exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots
+bindsym $mod+shift+p exec --no-startup-id flameshot full -p ~/Pictures/Screenshots
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun -i
@@ -84,16 +83,6 @@ bindsym $mod+t floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+p focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -150,7 +139,7 @@ client.placeholder      #000000 #0c0c0c #E6E6E6 #000000   #0c0c0c
 client.background       #E6E6E6
 
 bar {
-        font pango:FiraCode Nerd Font 8
+        font pango:FiraCode Nerd Font 9
         position top
         status_command i3status-rs
         colors {
@@ -171,6 +160,10 @@ exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 exec --no-startup-id dunst
 exec --no-startup-id picom -b
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id ~/scripts/battery-check.sh
+exec --no-startup-id flameshot
+exec --no-startup-id dunst
+exec_always --no-startup-id ~/scripts/mount-gdrive.sh
 exec_always --no-startup-id ~/scripts/idle.sh -s
 exec_always --no-startup-id autotiling
 
@@ -188,6 +181,7 @@ for_window[class="Rum"] floating enable
 for_window[class="nmtui"] floating enable, border normal
 for_window[class="UpdateInTerminal"] floating enable, border normal
 for_window[class="Gcolor3"] floating enable
+
 assign [class="Stremio"] $ws5
 assign [class="Codium"] $ws2
 assign [class="DesktopEditors"] $ws2

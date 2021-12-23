@@ -19,9 +19,9 @@ function startidle(){
 function checkidle(){
   
   if [ $result -ge 1 ]; then
-    echo "%{F#909090}%{F-}"
+   echo ""
   else
-    echo "%{F#dfdfdf}%{F-}"
+   echo ""
   fi
 
 }

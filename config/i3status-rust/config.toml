@@ -4,17 +4,6 @@ name = "native"
 name = "material-nf"
 
 [[block]]
-block = "temperature"
-format = "{average}"
-interval = 10
-chip = "*-isa-*"
-collapsed = false
-[block.theme_overrides]
-good_fg = "#19f9d8"
-warning_fg = "#FFB86C"
-critical_fg = "#FF2C6D"
-
-[[block]]
 block = "music"
 buttons = ["prev", "play", "next"]
 [block.theme_overrides]
@@ -32,6 +21,17 @@ on_click = "~/scripts/kitty-launch.sh yay -Qu"
 [block.theme_overrides]
 info_fg = "#45A9F9"
 good_fg = "#45A9F9"
+warning_fg = "#FFB86C"
+critical_fg = "#FF2C6D"
+
+[[block]]
+block = "temperature"
+format = "{average}"
+interval = 10
+chip = "*-isa-*"
+collapsed = false
+[block.theme_overrides]
+good_fg = "#19f9d8"
 warning_fg = "#FFB86C"
 critical_fg = "#FF2C6D"
 
@@ -94,6 +94,7 @@ device_format = "{icon} {ap}"
 
 [[block]]
 block = "custom"
+interval = 0.5
 command = "~/scripts/idle.sh -c"
 on_click = "~/scripts/idle.sh -t"
 

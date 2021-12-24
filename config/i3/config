@@ -126,12 +126,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym Shift+F4 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
+bindsym $mod+F1 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 
 # COLOR
 # class                 border  backgr. text    indicator child_border
 client.focused          #333333 #333333 #E6E6E6 #333333   #333333
-client.focused_inactive #202020 #202020 #E6E6E6 #484e50   #5f676a
+client.focused_inactive #202020 #202020 #E6E6E6 #202020   #202020``
 client.unfocused        #333333 #292A2B #888888 #292A2B   #292A2B
 client.urgent           #FF2C6D #FF2C6D #000000 #FF2C6D   #FF2C6D
 client.placeholder      #000000 #0c0c0c #E6E6E6 #000000   #0c0c0c
@@ -166,6 +166,8 @@ exec --no-startup-id dunst
 exec_always --no-startup-id ~/scripts/mount-gdrive.sh
 exec_always --no-startup-id ~/scripts/idle.sh -s
 exec_always --no-startup-id autotiling
+exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
+exec_always --no-startup-id setterm --blank 0
 
 # RULES
 default_border pixel 1

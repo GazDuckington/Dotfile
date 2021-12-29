@@ -5,11 +5,11 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $ws1 "1:terminals"
-set $ws2 "2:editors"
-set $ws3 "3:tools"
-set $ws4 "4:media"
-set $ws5 "5:settings"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5:⚙ "
 
 # Font
 font pango:Fira Code Retina 8
@@ -139,10 +139,12 @@ client.placeholder      #000000 #0c0c0c #E6E6E6 #000000   #0c0c0c
 client.background       #E6E6E6
 
 bar {
-        font pango:FiraCode Nerd Font 8
+        font pango:FiraCode Nerd Font 9
         position top
         status_command i3status-rs
         colors {
+                background #222222
+                
                 focused_workspace  #2F343A #45A9F9 #000000
                 active_workspace   #222222 #222222 #FFFFFF
                 inactive_workspace #222222 #222222 #888888
@@ -159,7 +161,7 @@ exec --no-startup-id xsetroot -solid "#292929"
 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 exec --no-startup-id dunst
 exec --no-startup-id picom -b
-exec --no-startup-id ~/scripts/battery-check.sh
+exec_always --no-startup-id watch -n 30 ~/scripts/battery-check.sh
 exec --no-startup-id flameshot
 exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -190,6 +192,8 @@ assign [class="DesktopEditors"] $ws2
 assign [class="Rum"] $ws3
 assign [class="qBittorrent"] $ws3
 assign [class="GitHub Desktop"] $ws3
+assign [class="Nemo"] $ws3
+assign [class="Bulky.py"] $ws3
 assign [class="Stremio"] $ws4
 assign [class="Lxappearance"] $ws5
 assign [class="Kvantum Manager"] $ws5

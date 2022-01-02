@@ -21,7 +21,7 @@ case $chosen in
 	    systemctl reboot
     ;;
     $lock)
-      ~/scripts/i3lock
+      ~/scripts/i3lock.sh
     ;;
     $suspend)
     	mpc -q pause

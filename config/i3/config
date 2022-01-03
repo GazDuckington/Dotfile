@@ -10,7 +10,6 @@ set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4: "
 set $ws5 "5:⚙ "
-
 # Font
 font pango:Fira Code Retina 8
 
@@ -45,10 +44,12 @@ bindsym $mod+shift+p exec --no-startup-id flameshot full -p ~/Pictures/Screensho
 bindsym $mod+d exec --no-startup-id rofi -show drun -i
 bindsym $mod+x exec --no-startup-id rofi -show run
 bindsym $mod+Tab exec --no-startup-id rofi -show window
+# codium menu for ~/dev
 bindsym $mod+c exec --no-startup-id ~/scripts/dev.sh
 # web search
 bindsym $mod+s exec --no-startup-id ~/scripts/web-search.sh
-# bindsym Mod1+Shift+w exec --no-startup-id ~/scripts/buku_run
+# notflix launcher
+bindsym $mod+a exec --no-startup-id ~/scripts/notflix
 
 # flip through tabs
 bindsym Mod1+Tab exec --no-startup-id i3flip next
@@ -197,7 +198,7 @@ assign [class="Bulky.py"] $ws3
 assign [class="Stremio"] $ws4
 assign [class="Quodlibet"] $ws4
 assign [class="Rhythmbox"] $ws4
-assign [class="Lollypop"] $ws4
+assign [class="mpv"] $ws4
 assign [class="Lxappearance"] $ws5
 assign [class="Kvantum Manager"] $ws5
 
@@ -214,7 +215,7 @@ bindsym Mod1+F2 [class="dropdown"] scratchpad show
 #for_window [class="Quodlibet"] move scratchpad, resize grow width 800px, move position 300px 22px
 #bindsym F3 [class="Quodlibet"] scratchpad show
 # musikcube
-#bindsym $mod+F3 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
-#exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
-#for_window [instance="musikcube"] move scratchpad, resize grow width 800px, move position 300px 50px, border normal
-#bindsym Mod1+F3 [instance="musikcube"] scratchpad show
+bindsym $mod+F3 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
+exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
+for_window [instance="musikcube"] move scratchpad, resize grow width 800px, move position 400px 22px, border normal
+bindsym Mod1+F3 [instance="musikcube"] scratchpad show

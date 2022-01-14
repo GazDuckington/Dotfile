@@ -131,7 +131,7 @@ bindsym $mod+F1 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallp
 
 # COLOR
 # class                 border  backgr. text    indicator child_border
-client.focused          #333333 #333333 #E6E6E6 #333333   #333333
+client.focused          #59b4fa #59b4fa #202020 #59b4fa   #59b4fa
 client.focused_inactive #202020 #202020 #E6E6E6 #202020   #202020
 client.unfocused        #333333 #292A2B #888888 #292A2B   #292A2B
 client.urgent           #FF2C6D #FF2C6D #000000 #FF2C6D   #FF2C6D

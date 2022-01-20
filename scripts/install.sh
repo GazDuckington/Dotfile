@@ -49,6 +49,7 @@ main(){
     setupdesktop
     setupterm
     installtheme
+    echo "Desktop is Installed (i think) would recommend reboot"
 }
 
 main

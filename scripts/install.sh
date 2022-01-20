@@ -50,3 +50,5 @@ main(){
     setupterm
     installtheme
 }
+
+main

@@ -1,0 +1,229 @@
+# variables
+set $mod Mod4
+set $TERMINAL kitty
+set $left h
+set $down j
+set $up k
+set $right l
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5:⚙ "
+# Font
+font pango:Fira Code Retina 8
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# brightnessctl keybind
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%- 
+bindsym Ctrl+F9 exec --no-startup-id brightnessctl s 5%+
+bindsym Ctrl+F8 exec --no-startup-id brightnessctl s 5%- 
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# keybind
+# start a terminal
+bindsym $mod+Return exec --no-startup-id $TERMINAL
+# kill focused window
+bindsym $mod+q kill
+# power menu
+bindsym Mod1+F4 exec --no-startup-id ~/scripts/powermenu.sh
+# scrots
+bindsym $mod+p exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots
+bindsym $mod+shift+p exec --no-startup-id flameshot full -p ~/Pictures/Screenshots
+
+# menus
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show drun -i
+bindsym $mod+x exec --no-startup-id rofi -show run
+bindsym $mod+Tab exec --no-startup-id rofi -show window
+# codium menu for ~/dev
+bindsym $mod+c exec --no-startup-id ~/scripts/dev.sh
+# web search
+bindsym $mod+s exec --no-startup-id ~/scripts/web-search.sh
+
+# quick launch
+# file manager
+bindsym $mod+F1 exec --no-startup-id nemo;exec --no-startup-id notify-send "nemo launched" -t 1000
+# web browser
+bindsym $mod+F2 exec --no-startup-id firefox;exec --no-startup-id notify-send "firefox launched" -t 1000
+# code editor
+bindsym $mod+F3 exec --no-startup-id codium;exec --no-startup-id notify-send "vscodium launched" -t
+
+# flip through tabs
+bindsym Mod1+Tab exec --no-startup-id i3flip next
+# bindsym Ctrl+1 exec --no-startup-id i3flip prev
+# change focus
+bindsym $mod+$left  exec --no-startup-id i3viswiz left
+bindsym $mod+$down  exec --no-startup-id i3viswiz down
+bindsym $mod+$up    exec --no-startup-id i3viswiz up
+bindsym $mod+$right exec --no-startup-id i3viswiz focus right
+
+# move focused window
+bindsym $mod+Shift+$left  exec --no-startup-id i3Kornhe move --speed 10 left
+bindsym $mod+Shift+$down  exec --no-startup-id i3Kornhe move --speed 10 down
+bindsym $mod+Shift+$up 	  exec --no-startup-id i3Kornhe move --speed 10 up
+bindsym $mod+Shift+$right exec --no-startup-id i3Kornhe move --speed 10 right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+shift+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+t floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left  resize shrink width 10 px or 10 ppt
+        bindsym $down  resize grow height 10 px or 10 ppt
+        bindsym $up    resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bindsym Mod1+F1 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
+
+# COLOR
+# class                 border  backgr. text    indicator child_border
+client.focused          #59b4fa #59b4fa #202020 #59b4fa   #59b4fa
+client.focused_inactive #202020 #202020 #E6E6E6 #202020   #202020
+client.unfocused        #808080 #292A2B #888888 #292A2B   #292A2B
+client.urgent           #FF2C6D #FF2C6D #000000 #FF2C6D   #FF2C6D
+client.placeholder      #000000 #0c0c0c #E6E6E6 #000000   #0c0c0c
+
+client.background       #E6E6E6
+
+bar {
+        font pango:FiraCode Nerd Font 8
+        position top
+        status_command i3status-rs
+        colors {
+                background #222222
+                
+                focused_workspace  #2F343A #45A9F9 #000000
+                active_workspace   #222222 #222222 #FFFFFF
+                inactive_workspace #222222 #222222 #888888
+                urgent_workspace   #2F343A #FF2C6D #FFFFFF
+                binding_mode       #2F343A #FF2C6D #FFFFFF
+        }
+}
+
+# AUTOSTART
+exec --no-startup-id touchpad-indicator
+exec --no-startup-id picom -b
+exec --no-startup-id ~/scripts/setcursor
+exec --no-startup-id xsetroot -solid "#292929"
+exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
+exec --no-startup-id dunst
+exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
+exec --no-startup-id flameshot
+exec --no-startup-id dunst
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id ~/scripts/mount-gdrive.sh
+exec_always --no-startup-id ~/scripts/idle.sh -s
+exec_always --no-startup-id autotiling
+exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
+exec_always --no-startup-id xset s noblank
+
+# RULES
+default_border pixel 1
+floating_minimum_size 350 x 350
+floating_maximum_size 800 x 600
+focus_follows_mouse no
+new_float normal
+
+for_window[class="pulsemixer"] floating enable, border normal, resize set 600 300 
+for_window[class="btop"] floating enable, border normal, resize set 800 600
+for_window[class="hint"] floating enable
+for_window[class="Rum"] floating enable
+for_window[class="nmtui"] floating enable, border normal, resize set 800 600
+for_window[class="UpdateInTerminal"] floating enable, border normal
+for_window[class="Gcolor3"] floating enable
+
+assign [class="kitty"] $ws1
+assign [class="Codium"] $ws2
+assign [class="code-oss"] $ws2
+assign [class="DesktopEditors"] $ws2
+assign [class="Rum"] $ws3
+assign [class="qBittorrent"] $ws3
+assign [class="GitHub Desktop"] $ws3
+assign [class="File-roller"] $ws3
+assign [class="Nemo"] $ws3
+assign [class="Bulky.py"] $ws3
+assign [class="Stremio"] $ws4
+assign [class="Quodlibet"] $ws4
+assign [class="Rhythmbox"] $ws4
+assign [class="mpv"] $ws4
+assign [class="Arandr"] $ws5
+assign [class="Lxappearance"] $ws5
+assign [class="Kvantum Manager"] $ws5
+
+# SCRATCHPAD
+
+# dropdown
+exec --no-startup-id $TERMINAL --class 'dropdown'
+for_window [class="dropdown"] floating enable
+for_window [class="dropdown"] move scratchpad, [class="dropdown"] scratchpad show, move position 400px 22px, resize shrink height 2020px, resize grow width 800px, move scratchpad
+bindsym Mod1+F2 [class="dropdown"] scratchpad show
+# quodlibet
+#exec --no-startup-id quodlibet
+#assign [class="^Quodlibet$"] $ws3
+#for_window [class="Quodlibet"] move scratchpad, resize grow width 800px, move position 300px 22px
+#bindsym F3 [class="Quodlibet"] scratchpad show
+# musikcube
+bindsym $mod+shift+F3 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
+exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
+for_window [instance="musikcube"] move scratchpad, resize grow width 800px, move position 400px 22px, border normal
+bindsym Mod1+F3 [instance="musikcube"] scratchpad show

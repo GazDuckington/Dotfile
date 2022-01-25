@@ -171,8 +171,8 @@ exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
 exec --no-startup-id flameshot
 exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id ~/scripts/idle.sh -s
 exec_always --no-startup-id ~/scripts/mount-gdrive.sh
-exec_always --no-startup-id ~/scripts/idle.sh -s
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
 exec_always --no-startup-id xset s noblank

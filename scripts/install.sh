@@ -8,7 +8,7 @@ function installyay(){
 }
 
 function setupterm(){
-    yay -S --needed --noconfirm fish kitty starship
+    yay -S --needed fish kitty starship
     echo "Copying config files"
     cp -r ~/Dotfile/config/fish/ ~/.config
     cp -r ~/Dotfile/config/kitty/ ~/.config
@@ -19,7 +19,7 @@ function setupterm(){
 }
 
 function setupdesktop(){
-    yay -S --needed --noconfirm polkit-gnome gnome-keyring i3-wm i3lock-color i3ass xidlehook btop rofi i3status-rust dunst picom pipewire pipewire-pulse pulsemixer networkmanager
+    yay -S --needed polkit-gnome gnome-keyring i3-wm i3lock-color i3ass xidlehook btop rofi i3status-rust dunst picom pipewire pipewire-pulse pulsemixer networkmanager
     echo "Copying config files"
     cp -r ~/Dotfile/scripts/ ~/
     cp -r ~/Dotfile/config/dunst/ ~/.config

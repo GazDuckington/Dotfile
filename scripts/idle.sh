@@ -1,32 +1,31 @@
 #!/usr/bin/env bash
 
-result=`ps aux | grep -i "scripts/idle.sh -s" | grep -v "grep" | wc -l`
+result=$(ps aux | grep -i "scripts/idle.sh -s" | grep -v "grep" | wc -l)
 
-function startidle(){
-  
+function startidle() {
   xidlehook \
     --not-when-fullscreen \
     --not-when-audio \
     --timer 600 \
-      '~/scripts/i3lock.sh' \
-      ''\
+    '~/scripts/i3lock.sh' \
+    '' \
     --timer 1200 \
-      'systemctl suspend' \
-      ''
+    'systemctl suspend' \
+    ''
 
 }
 
-function checkidle(){
-  
+function checkidle() {
+
   if [ $result -ge 1 ]; then
-   echo ""
+    echo ""
   else
-   echo ""
+    echo ""
   fi
 
 }
 
-function toggleidle(){
+function toggleidle() {
 
   if [ $result -ge 1 ]; then
     pkill xidlehook &
@@ -38,7 +37,7 @@ function toggleidle(){
 
 }
 
-main(){
+main() {
 
   if [ "$1" == "-s" ]; then
     startidle

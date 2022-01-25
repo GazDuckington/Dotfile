@@ -164,8 +164,8 @@ bar {
 exec --no-startup-id touchpad-indicator
 exec --no-startup-id picom -b
 exec --no-startup-id ~/scripts/setcursor
-exec --no-startup-id xsetroot -solid "#292929"
-exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
+exec --no-startup-id xsetroot -solid "#202020"
+#exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 exec --no-startup-id dunst
 exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
 exec --no-startup-id flameshot

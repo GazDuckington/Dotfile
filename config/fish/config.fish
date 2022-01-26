@@ -10,11 +10,10 @@ alias 'll'='lsd -l'
 alias 'lt'='lsd --tree'
 alias 'lv'='lvim'
 alias 'nv'='nvim'
-alias 'code'='codium'
-alias 'c'='codium'
 alias 'ga'='git add'
 alias 'gc'='git commit -am'
 alias 'gp'='git push'
+alias 'br'='$HOME/scripts/br.sh'
 
 if status --is-interactive
   if test -z "$DISPLAY" -a $XDG_VTNR = 1

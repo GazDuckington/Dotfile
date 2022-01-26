@@ -27,7 +27,7 @@ case $chosen in
     	mpc -q pause
 	    playerctl pause
 	    amixer set Master mute
-      ~/scripts/i3lock
+      ~/scripts/i3lock.sh
 	    systemctl suspend
     ;;
     $logout)

@@ -164,7 +164,6 @@ bar {
 exec --no-startup-id touchpad-indicator
 exec --no-startup-id picom -b
 exec --no-startup-id ~/scripts/setcursor
-exec --no-startup-id xsetroot -solid "#202020"
 #exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 exec --no-startup-id dunst
 exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
@@ -176,6 +175,7 @@ exec_always --no-startup-id ~/scripts/mount-gdrive.sh
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
 exec_always --no-startup-id xset s noblank
+exec_always --no-startup-id xsetroot -solid "#202020"
 
 # RULES
 default_border pixel 1
@@ -222,5 +222,5 @@ bindsym Mod1+F2 [class="dropdown"] scratchpad show
 # musikcube
 bindsym $mod+shift+F3 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
-for_window [instance="musikcube"] move scratchpad, resize grow width 800px, move position 400px 22px, border normal
+for_window [instance="musikcube"] move scratchpad, resize grow width 800px, resize grow height 600px, move position 400px 22px, border normal
 bindsym Mod1+F3 [instance="musikcube"] scratchpad show

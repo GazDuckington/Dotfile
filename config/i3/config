@@ -191,6 +191,7 @@ for_window[class="Rum"] floating enable
 for_window[class="nmtui"] floating enable, border normal, resize set 800 600
 for_window[class="UpdateInTerminal"] floating enable, border normal
 for_window[class="Gcolor3"] floating enable
+for_window[class="stellaris"] border pixel 1
 
 assign [class="kitty"] $ws1
 assign [class="Codium"] $ws2
@@ -202,6 +203,9 @@ assign [class="GitHub Desktop"] $ws3
 assign [class="File-roller"] $ws3
 assign [class="Nemo"] $ws3
 assign [class="Bulky.py"] $ws3
+assign [class="stellaris"] $ws3
+assign [class="stellaris"] tiling
+assign [class="Paradox Launcher"] $ws3
 assign [class="Stremio"] $ws4
 assign [class="Quodlibet"] $ws4
 assign [class="Rhythmbox"] $ws4

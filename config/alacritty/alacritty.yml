@@ -23,7 +23,7 @@ font:
 # Colors (Panda)
 colors:
   primary:
-    background: '#292A2B'
+    background: '#202020'
     foreground: '#E6E6E6'
 
   normal:
@@ -34,7 +34,7 @@ colors:
     blue:    '#45A9F9'
     magenta: '#FF75B5'
     cyan:    '#67d3c2'
-    orange:  '#B084EB'
+    orange:  '#FFB86C'
     white:   '#E6E6E6'
   bright:
     black:   '#292A2B'

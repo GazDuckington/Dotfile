@@ -153,10 +153,10 @@ bar {
                 background #202020
                 
                 focused_workspace  #222222 #45A9F9 #222222
-                active_workspace   #222222 #222222 #FFFFFF
-                inactive_workspace #222222 #222222 #808080
+                active_workspace   #222222 #202020 #FFFFFF
+                inactive_workspace #222222 #202020 #808080
                 urgent_workspace   #303030 #FF2C6D #FFFFFF
-                binding_mode       #59b4fa #222222 #59b4fa
+                binding_mode       #59b4fa #202020 #59b4fa
         }
 }
 

@@ -155,7 +155,7 @@ bar {
                 focused_workspace  #222222 #45A9F9 #222222
                 active_workspace   #222222 #222222 #FFFFFF
                 inactive_workspace #222222 #222222 #808080
-                urgent_workspace   #2F343A #FF2C6D #FFFFFF
+                urgent_workspace   #303030 #FF2C6D #FFFFFF
                 binding_mode       #59b4fa #222222 #59b4fa
         }
 }
@@ -175,7 +175,12 @@ exec_always --no-startup-id ~/scripts/mount-gdrive.sh
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
 exec_always --no-startup-id xset s noblank
-exec_always --no-startup-id hsetroot -add "#202020" -add "#2F343A" -gradient 0
+exec_always --no-startup-id hsetroot \
+                                -add "#202020" \
+                                -add "#252525" \
+                                -add "#303030" \
+                                -add "#353535" \
+                                -gradient 0
 
 # RULES
 default_border pixel 1

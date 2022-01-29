@@ -150,7 +150,7 @@ bar {
         position top
         status_command i3status-rs
         colors {
-                background #222222
+                background #202020
                 
                 focused_workspace  #222222 #45A9F9 #222222
                 active_workspace   #222222 #222222 #FFFFFF
@@ -175,7 +175,7 @@ exec_always --no-startup-id ~/scripts/mount-gdrive.sh
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
 exec_always --no-startup-id xset s noblank
-exec --no-startup-id hsetroot -add "#292A2B" -add "#202020" -gradient 0
+exec_always --no-startup-id hsetroot -add "#202020" -add "#2F343A" -gradient 0
 
 # RULES
 default_border pixel 1

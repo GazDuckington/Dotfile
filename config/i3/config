@@ -175,7 +175,7 @@ exec_always --no-startup-id ~/scripts/mount-gdrive.sh
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
 exec_always --no-startup-id xset s noblank
-exec_always --no-startup-id hsetroot \
+exec --no-startup-id hsetroot \
                                 -add "#202020" \
                                 -add "#252525" \
                                 -add "#303030" \

@@ -19,7 +19,9 @@ function setupterm(){
 }
 
 function setupdesktop(){
-    yay -S --needed polkit-gnome gnome-keyring i3-wm i3lock-color i3ass xidlehook btop rofi i3status-rust dunst picom pipewire pipewire-pulse pulsemixer networkmanager
+    yay -S --needed polkit-gnome gnome-keyring i3-wm i3lock-color i3ass xidlehook btop rofi \
+    i3status-rust dunst picom pipewire pipewire-pulse pulsemixer networkmanager \
+    otf-ipafont ttf-baekmuk ttf-hannom macchina hsetroot qview
     echo "Copying config files"
     cp -r ~/Dotfile/scripts/ ~/
     cp -r ~/Dotfile/config/dunst/ ~/.config

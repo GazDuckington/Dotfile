@@ -96,12 +96,12 @@ device_format = "{icon} {ap}"
 block = "custom"
 interval = 0.5
 command = "~/scripts/idle.sh -c"
+on_click = "~/scripts/idle.sh -t"
 
 [[block]]
 block = "custom"
 interval = 0.5
 command = "~/scripts/cns.sh -c"
-on_click = "~/scripts/idle.sh -t"
 
 [[block]]
 block = "custom"

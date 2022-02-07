@@ -50,14 +50,6 @@ bindsym $mod+c exec --no-startup-id ~/scripts/dev.sh
 # web search
 bindsym $mod+s exec --no-startup-id ~/scripts/web-search.sh
 
-# quick launch
-# file manager
-bindsym $mod+F1 exec --no-startup-id nemo;exec --no-startup-id notify-send "nemo launched" -t 1000
-# web browser
-bindsym $mod+F2 exec --no-startup-id firefox;exec --no-startup-id notify-send "firefox launched" -t 1000
-# code editor
-bindsym $mod+F3 exec --no-startup-id codium;exec --no-startup-id notify-send "vscodium launched" -t
-
 # flip through tabs
 bindsym Mod1+Tab exec --no-startup-id i3flip next
 # bindsym Ctrl+1 exec --no-startup-id i3flip prev
@@ -200,6 +192,7 @@ for_window[class="stellaris"] border pixel 1
 
 assign [class="kitty"] $ws1
 assign [class="Codium"] $ws2
+assign [class="Code - Insiders"] $ws2
 assign [class="code-oss"] $ws2
 assign [class="DesktopEditors"] $ws2
 assign [class="Rum"] $ws3

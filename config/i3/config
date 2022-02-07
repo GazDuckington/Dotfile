@@ -1,6 +1,6 @@
 # variables
 set $mod Mod4
-set $TERMINAL kitty
+set $TERMINAL alacritty
 set $left h
 set $down j
 set $up k
@@ -155,6 +155,7 @@ bar {
 # AUTOSTART
 exec --no-startup-id touchpad-indicator
 exec --no-startup-id picom -b
+exec --no-startup-id dbus-launch
 exec --no-startup-id ~/scripts/setcursor
 #exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 exec --no-startup-id dunst
@@ -167,6 +168,7 @@ exec_always --no-startup-id ~/scripts/mount-gdrive.sh
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
 exec_always --no-startup-id xset s noblank
+exec_always --no-startup-id ~/scripts/conky.sh
 exec --no-startup-id hsetroot \
                                 -add "#202020" \
                                 -add "#252525" \
@@ -191,6 +193,7 @@ for_window[class="Gcolor3"] floating enable
 for_window[class="stellaris"] border pixel 1
 
 assign [class="kitty"] $ws1
+assign [class="Alacritty"] $ws1
 assign [class="Codium"] $ws2
 assign [class="Code - Insiders"] $ws2
 assign [class="code-oss"] $ws2
@@ -217,12 +220,12 @@ assign [class="Gnome-disks"] $ws5
 
 # dropdown
 exec --no-startup-id $TERMINAL --class 'dropdown'
-bindsym $mod+Shift+F2 exec --no-startup-id $TERMINAL --class 'dropdown'
+bindsym $mod+Shift+F2 exec --no-startup-id "alacritty --class dropdown,dropdown"
 for_window [class="dropdown"] floating enable
 for_window [class="dropdown"] move scratchpad, [class="dropdown"] scratchpad show, move position 400px 22px, resize shrink height 2020px, resize grow width 800px, move scratchpad
 bindsym Mod1+F2 [class="dropdown"] scratchpad show
 # musikcube
-bindsym $mod+shift+F3 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
+bindsym $mod+shift+F3 exec --no-startup-id ~/scripts/alacritty-launch.sh musikcube
 exec --no-startup-id $TERMINAL --class 'musikcube' musikcube
 for_window [instance="musikcube"] move scratchpad, resize grow width 800px, resize grow height 600px, move position 400px 22px, border normal
 bindsym Mod1+F3 [instance="musikcube"] scratchpad show

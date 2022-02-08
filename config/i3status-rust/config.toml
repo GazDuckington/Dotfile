@@ -17,7 +17,7 @@ format_singular = "{both}"
 format_up_to_date = "0"
 critical_updates_regex = "(linux|linux-lts|linux-zen)"
 aur_command = "yay -Qua"
-on_click = "~/scripts/kitty-launch.sh yay -Qu"
+on_click = "~/scripts/alacritty-launch.sh yay -Qu"
 [block.theme_overrides]
 info_fg = "#45A9F9"
 good_fg = "#45A9F9"
@@ -44,7 +44,7 @@ warning_mem = 80
 warning_swap = 80
 critical_mem = 95
 critical_swap = 95
-on_click = "~/scripts/kitty-launch.sh btop"
+on_click = "~/scripts/alacritty-launch.sh btop"
 [block.theme_overrides]
 idle_fg = "#19f9d8"
 good_fg = "#19f9d8"
@@ -54,7 +54,7 @@ critical_fg = "#FF2C6D"
 [[block]]
 block = "cpu"
 interval = 1
-on_click = "~/scripts/kitty-launch.sh btop"
+on_click = "~/scripts/alacritty-launch.sh btop"
 [block.theme_overrides]
 idle_fg = "#19f9d8"
 good_fg = "#19f9d8"
@@ -68,7 +68,7 @@ device = "intel_backlight"
 [[block]]
 block = "sound"
 driver = "pulseaudio"
-on_click = "~/scripts/kitty-launch.sh pulsemixer"
+on_click = "~/scripts/alacritty-launch.sh pulsemixer"
 
 [[block]]
 block = "time"
@@ -86,7 +86,7 @@ critical_fg = "#FF2C6D"
 
 [[block]]
 block = "networkmanager"
-on_click = "~/scripts/kitty-launch.sh nmtui"
+on_click = "~/scripts/alacritty-launch.sh nmtui"
 interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
 interface_name_include = []
 ap_format = "{ssid} {strength}"

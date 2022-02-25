@@ -21,10 +21,6 @@ if status --is-interactive
   end
 end
 
-function lolban
-  figlet -f ansi-shadow $argv | lolcat
-end
-
 set ANDROID $HOME/Android $ANDROID
 set PATH $ANDROID/cmdline-tools/tools $PATH
 set PATH $ANDROID/cmdline-tools/tools/bin $PATH
@@ -40,3 +36,5 @@ set JAVA_HOME /usr/lib/jvm/java-8-openjdk/jre $JAVA_HOME
 set PATH $JAVA_HOME/bin $PATH
 
 set CHROME_EXECUTABLE /usr/bin/brave $CHROME_EXECUTABLE
+
+starship init fish | source

@@ -222,10 +222,10 @@ assign [class="Gnome-disks"] $ws5
 exec --no-startup-id $TERMINAL --class 'dropdown'
 bindsym $mod+Shift+F2 exec --no-startup-id "kitty --class dropdown"
 for_window [class="dropdown"] floating enable
-for_window [class="dropdown"] move scratchpad, [class="dropdown"] scratchpad show, move position 400px 22px, resize shrink height 2020px, resize grow width 800px, move scratchpad
+for_window [class="dropdown"] move scratchpad, move position 400px 22px, resize shrink height 2020px, resize grow width 800px
 bindsym Mod1+F2 [class="dropdown"] scratchpad show
 # musikcube
+exec --no-startup-id ~/scripts/kitty-launch.sh musikcube
 bindsym $mod+shift+F3 exec --no-startup-id ~/scripts/kitty-launch.sh musikcube
-exec --no-startup-id $TERMINAL --class musikcube
-for_window [instance="musikcube"] move scratchpad, resize grow width 800px, resize grow height 600px, move position 400px 22px, border normal
+for_window [instance="musikcube"] move scratchpad, move position 400px 22px, resize grow width 800px, resize grow height 600px, border normal
 bindsym Mod1+F3 [instance="musikcube"] scratchpad show

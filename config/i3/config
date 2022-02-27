@@ -120,12 +120,27 @@ mode "resize" {
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
-        bindsym Escape mode "default"
+	bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
-bindsym Mod1+F1 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
+# gaps
+smart_gaps on
+gaps inner 4
+gaps outer 2
+
+mode "gaps" {
+	bindsym i gaps inner all plus 5
+	bindsym o gaps inner all minus 5, gaps outer all minus 5
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+g mode "default
+}
+bindsym $mod+g mode "gaps"
+
+# wallpaper
+bindsym Mod1+F1 exec --no-startup-id ~/scripts/hsetrand.sh
 
 # COLOR
 # class                 border  backgr. text    indicator child_border
@@ -169,12 +184,7 @@ exec_always --no-startup-id autotiling
 exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
 exec_always --no-startup-id xset s noblank
 exec_always --no-startup-id ~/scripts/conky.sh
-exec --no-startup-id hsetroot \
-                                -add "#202020" \
-                                -add "#252525" \
-                                -add "#303030" \
-                                -add "#353535" \
-                                -gradient 0
+exec --no-startup-id ~/scripts/hsetrand.sh
 
 # RULES
 default_border pixel 1

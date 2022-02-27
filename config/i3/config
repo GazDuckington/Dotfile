@@ -135,7 +135,7 @@ mode "gaps" {
 	bindsym o gaps inner all minus 5, gaps outer all minus 5
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
-	bindsym $mod+g mode "default
+	bindsym $mod+g mode "default"
 }
 bindsym $mod+g mode "gaps"
 

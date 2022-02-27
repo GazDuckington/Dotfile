@@ -126,7 +126,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # gaps
-smart_gaps on
+#smart_gaps off
 gaps inner 4
 gaps outer 2
 
@@ -144,7 +144,7 @@ bindsym Mod1+F1 exec --no-startup-id ~/scripts/hsetrand.sh
 
 # COLOR
 # class                 border  backgr. text    indicator child_border
-client.focused          #59b4fa #59b4fa #202020 #59b4fa   #59b4fa
+client.focused          #202020 #59b4fa #202020 #59b4fa   #59b4fa
 client.focused_inactive #202020 #202020 #E6E6E6 #202020   #202020
 client.unfocused        #292A2B #292A2B #888888 #808080   #808080
 client.urgent           #FF2C6D #FF2C6D #000000 #FF2C6D   #FF2C6D

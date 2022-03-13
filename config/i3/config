@@ -127,17 +127,17 @@ bindsym $mod+r mode "resize"
 
 # gaps
 #smart_gaps off
-gaps inner 4
-gaps outer 2
+# gaps inner 4
+# gaps outer 2
 
-mode "gaps" {
-	bindsym i gaps inner all plus 5
-	bindsym o gaps inner all minus 5, gaps outer all minus 5
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+g mode "default"
-}
-bindsym $mod+g mode "gaps"
+# mode "gaps" {
+	# bindsym i gaps inner all plus 5
+	# bindsym o gaps inner all minus 5, gaps outer all minus 5
+	# bindsym Return mode "default"
+	# bindsym Escape mode "default"
+	# bindsym $mod+g mode "default"
+# }
+# bindsym $mod+g mode "gaps"
 
 # wallpaper
 bindsym Mod1+F1 exec --no-startup-id ~/scripts/hsetrand.sh

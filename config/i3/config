@@ -42,7 +42,7 @@ bindsym $mod+shift+p exec --no-startup-id flameshot full -p ~/Pictures/Screensho
 
 # menus
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -i -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show drun -i 
 bindsym $mod+x exec --no-startup-id rofi -show run
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 # codium menu for ~/dev
@@ -170,7 +170,7 @@ bar {
 # AUTOSTART
 exec --no-startup-id picom -b
 exec --no-startup-id dbus-launch
-exec --no-startup-id rofi -show drun -i -show-icons
+exec --no-startup-id rofi -show drun -i 
 # exec --no-startup-id ~/scripts/setcursor
 #exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh

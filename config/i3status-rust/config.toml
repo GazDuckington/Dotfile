@@ -3,11 +3,16 @@ name = "native"
 [icons]
 name = "material-nf"
 
+# [[block]]
+# block = "music"
+# buttons = ["prev", "play", "next"]
+# [block.theme_overrides]
+# info_fg = "#16a085"
 [[block]]
-block = "music"
-buttons = ["prev", "play", "next"]
-[block.theme_overrides]
-info_fg = "#16a085"
+block = "focused_window"
+max_width = 30
+show_marks = "all"
+format = "{combo}"
 
 [[block]]
 block = "pacman"
@@ -61,13 +66,14 @@ good_fg = "#19f9d8"
 warning_fg = "#FFB86C"
 critical_fg = "#FF2C6D"
 
-[[block]]
-block = "backlight"
-device = "intel_backlight"
+# [[block]]
+# block = "backlight"
+# device = "intel_backlight"
 
 [[block]]
 block = "sound"
 driver = "pulseaudio"
+headphones_indicator = true
 on_click = "~/scripts/kitty-launch.sh pulsemixer"
 
 [[block]]

@@ -22,24 +22,24 @@ bspc rule -a Quodlibet desktop=3 follow=off
 bspc rule -a Stremio desktop=4 follow=off
 bspc rule -a Lxappearance desktop=5 follow=off
 bspc rule -a "Kvantum Manager" desktop=5 follow=off
-bspc rule -a pulsemixer state=floating rectangle=800x300+400+50
-bspc rule -a nmtui state=floating rectangle=800x800+400+50
-bspc rule -a hint state=floating rectangle=800x800+400+50
+bspc rule -a pulsemixer state=floating rectangle=600x300+500+50
+bspc rule -a nmtui state=floating rectangle=600x500+500+50
+bspc rule -a hint state=floating rectangle=800x800+500+50
+bspc rule -a "Android Emulator*" state=floating rectangle=800x800+400+50
 bspc rule -a "RAIL*" desktop=3
 bspc rule -a "Microsoft Windows" desktop=3
 
 # autostart
 ~/scripts/launch-polybar.sh &
 xsetroot -cursor_name left_ptr &
-~/scripts/mount-gdrive.sh &
 pkill xidlehook &
 ~/scripts/idle.sh -s &
-feh --bg-scale --randomize ~/Pictures/Wallpapers/* &
+~/scripts/hsetrand.sh &
 xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0 &
+xinput set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 0 &
 xinput set-prop "AT Translated Set 2 keyboard" "Device Enabled" 0 &
-flameshot &
 dunst &
-lxqt-policykit-agent &
 picom -b &
+lxpolkit &
 setterm -powersave off -blank 0 &
 watch -n 30 ~/scripts/battery-check.sh &

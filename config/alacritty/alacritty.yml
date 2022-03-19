@@ -3,19 +3,19 @@ env:
 
 font:
   normal:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font Mono
     style: Retina
 
   bold:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font Mono
     style: Bold
 
   italic:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font Mono
     style: Bold Italic
 
   size: 7.5

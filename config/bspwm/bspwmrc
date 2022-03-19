@@ -16,8 +16,10 @@ bspc config active_border_color  "#0FBDBD"
 
 # rules
 bspc rule -a kitty desktop=1 follow=off
+bspc rule -a Alacritty desktop=1 follow=off
 bspc rule -a VSCodium desktop=2 follow=off
 bspc rule -a musikcube desktop=3 follow=off
+bspc rule -a Nemo desktop=3 follow=off
 bspc rule -a Quodlibet desktop=3 follow=off
 bspc rule -a Stremio desktop=4 follow=off
 bspc rule -a Lxappearance desktop=5 follow=off
@@ -26,7 +28,7 @@ bspc rule -a pulsemixer state=floating rectangle=600x300+500+50
 bspc rule -a nmtui state=floating rectangle=600x500+500+50
 bspc rule -a hint state=floating rectangle=800x800+500+50
 bspc rule -a btop state=floating rectangle=700x700+500+50
-bspc rule -a "Android Emulator*" state=floating rectangle=800x800+400+50
+bspc rule -a "Android Emulator*" desktop=2 state=floating rectangle=800x800+400+50
 bspc rule -a "RAIL*" desktop=3
 bspc rule -a "Microsoft Windows" desktop=3
 

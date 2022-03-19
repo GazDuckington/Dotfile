@@ -2,15 +2,22 @@
 
 # terminal
 super + Return
-	kitty
+	alacritty
 
 # rofi menu
-super + space
+super + d
 	rofi -show drun
 super + x
 	rofi -show run
 super + Tab
 	rofi -show window
+
+# dropdowns
+alt + F1
+	tdrop -mat -n 1 -w 50% -h 40% -y 25 -x 25% alacritty --class dropdown
+
+alt + F2
+	tdrop -mat -n 2 -w 50% -h 60% -y 25 -x 25% alacritty --command musikcube 
 
 # flameshot
 super + p 
@@ -54,16 +61,9 @@ XF86AudioMute
 XF86AudioMicMute
 	pamixer --default-source -t
 
-# screenshot
-super + p 
-	flameshot full -p ~/Pictures/Screenshots
-
-super + shift + p
-	flameshot gui -p ~/Pictures/Screenshots
-
 # random wallpaper
-super + F4
-	feh --bg-scale --randomize ~/Pictures/Wallpapers/*
+super + F1
+	~/scripts/hsetrand.sh
 
 # sxhkd
 

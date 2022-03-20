@@ -29,10 +29,10 @@ function toggleidle() {
 
   if [ $result -ge 1 ]; then
     pkill xidlehook &
-    notify-send "idle is off" -t 5000
+    dunstify "idle is off" -t 5000
   else
     $HOME/scripts/idle.sh -s &
-    notify-send "idle is on" -t 5000
+    dunstify "idle is on" -t 5000
   fi
 
 }

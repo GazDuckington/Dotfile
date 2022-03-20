@@ -7,7 +7,7 @@ if [[ $status == "Discharging" ]]
 then
 if [ $batt -lt 15 ]
 then
-  notify-send -u critical "WARNING!
+  dunstify -u critical "WARNING!
 battery is at $batt%!" -t 10000
 fi
 fi

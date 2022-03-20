@@ -2,7 +2,7 @@
 
 # terminal
 super + Return
-	alacritty
+	kitty
 
 # rofi menu
 super + d
@@ -13,11 +13,11 @@ super + Tab
 	rofi -show window
 
 # dropdowns
-alt + F1
-	tdrop -mat -n 1 -w 50% -h 40% -y 25 -x 25% alacritty --class dropdown
-
 alt + F2
-	tdrop -mat -n 2 -w 50% -h 60% -y 25 -x 25% alacritty --command musikcube 
+	tdrop -mat -n 1 -w 50% -h 40% -y 25 -x 25% kitty --class dropdown
+
+alt + F3
+	tdrop -mat -n 2 -w 50% -h 60% -y 25 -x 25% kitty musikcube 
 
 # flameshot
 super + p 

@@ -35,6 +35,7 @@ set PATH $FLUTTER/bin $PATH
 set JAVA_HOME /usr/lib/jvm/java-8-openjdk/jre $JAVA_HOME
 set PATH $JAVA_HOME/bin $PATH
 
-set CHROME_EXECUTABLE /usr/bin/brave $CHROME_EXECUTABLE
+export CHROME_EXECUTABLE=/usr/bin/brave
+export TERM=alacritty
 
 starship init fish | source

@@ -5,7 +5,7 @@ if [[ "$up" -le 3 ]]
 then
 	count=0
 else
-	count=$up
+	count=$(( $up-3 ))
 fi
 
 echo "$count"

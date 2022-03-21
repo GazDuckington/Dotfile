@@ -30,7 +30,7 @@ declare -a media=(musikcube Quodlibet Stremio)
 for i in ${media[@]}; do
 	bspc rule -a $i desktop=3 follow=off focus=off; done
 
-declare -a utility=(Nemo)
+declare -a utility=(Nemo Font-manager)
 for i in ${utility[@]}; do
 	bspc rule -a $i desktop=4; done
 

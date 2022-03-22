@@ -9,9 +9,9 @@ set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4: "
-set $ws5 "5:⚙ "
+set $ws5 "5: "
 # Font
-font pango:Fira Code Retina 8
+font pango:JetBrainsMono Nerd Font 8
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -152,31 +152,30 @@ client.placeholder      #808080 #0c0c0c #E6E6E6 #000000   #0c0c0c
 
 client.background       #E6E6E6
 
-bar {
-        font pango:FiraCode Nerd Font 8
-        position top
-        status_command i3status-rs
-        colors {
-                background #202020
-                
-                focused_workspace  #45A9F9 #45A9F9 #222222
-                active_workspace   #222222 #202020 #FFFFFF
-                inactive_workspace #222222 #202020 #808080
-                urgent_workspace   #303030 #FF2C6D #FFFFFF
-                binding_mode       #59b4fa #202020 #59b4fa
-        }
-}
+#bar {
+#        font pango:FiraCode Nerd Font 8
+#        position top
+#        status_command i3status-rs
+#        colors {
+#                background #202020
+#                
+#                focused_workspace  #45A9F9 #45A9F9 #222222
+#                active_workspace   #222222 #202020 #FFFFFF
+#                inactive_workspace #222222 #202020 #808080
+#                urgent_workspace   #303030 #FF2C6D #FFFFFF
+#                binding_mode       #59b4fa #202020 #59b4fa
+#        }
+#}
 
 # AUTOSTART
 exec --no-startup-id picom -b
 exec --no-startup-id dbus-launch
-exec --no-startup-id rofi -show drun -i 
+exec --no-startup-id ~/scripts/launch-polybar.sh 
 # exec --no-startup-id ~/scripts/setcursor
-#exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/*
 exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
 # exec --no-startup-id flameshot
 exec --no-startup-id dunst
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id lxpolkit
 exec --no-startup-id ~/scripts/idle.sh -s
 # exec_always --no-startup-id ~/scripts/mount-gdrive.sh
 exec_always --no-startup-id autotiling
@@ -226,6 +225,7 @@ assign [class="Arandr"] $ws5
 assign [class="Lxappearance"] $ws5
 assign [class="Kvantum Manager"] $ws5
 assign [class="Gnome-disks"] $ws5
+assign [class="Font-manager"] $ws5
 
 # SCRATCHPADS
 

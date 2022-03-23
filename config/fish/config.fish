@@ -1,6 +1,6 @@
 set fish_greeting
 
-set PATH ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
+set PATH ~/.local/bin ~/.cargo/bin /usr/sbin ~/.pyenv/bin $PATH
 set EDITOR lvim $EDITOR
 
 alias 'cpr'='cp -r'
@@ -35,7 +35,12 @@ set PATH $FLUTTER/bin $PATH
 set JAVA_HOME /usr/lib/jvm/java-8-openjdk/jre $JAVA_HOME
 set PATH $JAVA_HOME/bin $PATH
 
-export CHROME_EXECUTABLE=firefox
+export CHROME_EXECUTABLE=/usr/bin/chromium
 export TERM=kitty
+
+pyenv init - | source
+pyenv rehash >/dev/null ^&1
+#status is-login; and pyenv init --path | source
+#status is-interactive; and pyenv init - | source
 
 starship init fish | source

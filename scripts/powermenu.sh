@@ -15,10 +15,10 @@ options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 chosen="$(echo -e "$options" | $rofi_command -p 'Quit?' -dmenu)"
 case $chosen in
     $shutdown)
-       systemctl poweroff 
+       loginctl poweroff 
 	  ;;
     $reboot)
-	    systemctl reboot
+	    loginctl reboot
     ;;
     $lock)
       ~/scripts/i3lock.sh
@@ -27,8 +27,8 @@ case $chosen in
     	mpc -q pause
 	    playerctl pause
 	    amixer set Master mute
-      #~/scripts/i3lock.sh
-	    systemctl suspend
+#      ~/scripts/i3lock.sh
+	    loginctl suspend
     ;;
     $logout)
 	    killall i3

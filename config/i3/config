@@ -170,7 +170,7 @@ client.background       #E6E6E6
 # AUTOSTART
 exec --no-startup-id picom -b
 exec --no-startup-id dbus-launch
-exec --no-startup-id ~/scripts/launch-polybar.sh 
+exec_always --no-startup-id ~/scripts/launch-polybar.sh 
 # exec --no-startup-id ~/scripts/setcursor
 exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
 # exec --no-startup-id flameshot

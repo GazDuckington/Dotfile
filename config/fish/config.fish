@@ -38,9 +38,7 @@ set PATH $JAVA_HOME/bin $PATH
 export CHROME_EXECUTABLE=/usr/bin/chromium
 export TERM=kitty
 
-pyenv init - | source
-pyenv rehash >/dev/null ^&1
-#status is-login; and pyenv init --path | source
-#status is-interactive; and pyenv init - | source
+status is-login; and pyenv init --path | source
+status is-interactive; and pyenv init - | source
 
 starship init fish | source

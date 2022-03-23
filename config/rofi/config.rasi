@@ -1,4 +1,4 @@
 configuration {
-	font:	"FiraCode Nerd Font 12";
+	font:	"JetBrainsMono Nerd Font 12";
 }
 @theme "android_notification.rasi"

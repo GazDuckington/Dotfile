@@ -1,7 +1,7 @@
 set fish_greeting
 
 set PATH ~/.local/bin ~/.cargo/bin /usr/sbin ~/.pyenv/bin $PATH
-set EDITOR lvim $EDITOR
+set EDITOR nvim $EDITOR
 
 alias 'cpr'='cp -r'
 alias 'ls'='lsd'
@@ -14,6 +14,10 @@ alias 'ga'='git add'
 alias 'gc'='git commit -am'
 alias 'gp'='git push'
 alias 'br'='$HOME/scripts/br.sh'
+
+function lolban
+  figlet -f ANSI\ Shadow $argv  | lolcat
+end
 
 if status --is-interactive
   if test -z "$DISPLAY" -a $XDG_VTNR = 1
@@ -37,6 +41,7 @@ set PATH $JAVA_HOME/bin $PATH
 
 export CHROME_EXECUTABLE=/usr/bin/chromium
 export TERM=kitty
+export VISUAL=nvim
 
 status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source

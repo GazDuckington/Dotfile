@@ -10,7 +10,7 @@ function startidle() {
     '~/scripts/i3lock.sh' \
     '' \
     --timer 1200 \
-    'loginctl suspend' \
+    'systemctl suspend' \
     ''
 
 }

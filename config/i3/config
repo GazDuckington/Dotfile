@@ -49,7 +49,8 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window
 bindsym $mod+c exec --no-startup-id ~/scripts/dev.sh
 # web search
 bindsym $mod+s exec --no-startup-id ~/scripts/web-search.sh
-
+# file finder
+bindsym $mod+a exec --no-startup-id rofi -show find -modi find:~/scripts/finder.sh
 # flip through tabs
 bindsym Mod1+Tab exec --no-startup-id i3flip next
 # bindsym Ctrl+1 exec --no-startup-id i3flip prev

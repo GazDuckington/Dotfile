@@ -42,9 +42,9 @@ bindsym $mod+shift+p exec --no-startup-id flameshot full -p ~/Pictures/Screensho
 
 # menus
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -i 
+bindsym $mod+d exec --no-startup-id rofi -show drun -i -show-icons 
 bindsym $mod+x exec --no-startup-id rofi -show run
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+Tab exec --no-startup-id rofi -show window -show-icons
 # codium menu for ~/dev
 bindsym $mod+c exec --no-startup-id ~/scripts/dev.sh
 # web search

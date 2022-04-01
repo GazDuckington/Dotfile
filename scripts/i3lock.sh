@@ -4,7 +4,9 @@ B='#00000000'  # blank
 T='#35ffdc'  # text
 W='#ec2864'  # wrong
 V='#7dc1ff'  # verifying
+O='#194D44'
 BK='#202020'
+
 i3lock \
 --color=$BK \
 --insidever-color=$B   \
@@ -14,7 +16,7 @@ i3lock \
 --ringwrong-color=$W   \
 \
 --inside-color=$B      \
---ring-color=$T        \
+--ring-color=$O        \
 --line-color=$B        \
 --separator-color=$T   \
 \
@@ -23,8 +25,8 @@ i3lock \
 --time-color=$T        \
 --date-color=$T        \
 --layout-color=$T      \
---keyhl-color=$BK       \
---bshl-color=$BK        \
+--keyhl-color=$T       \
+--bshl-color=$T        \
 \
 --screen 1            \
 --clock               \
@@ -32,3 +34,8 @@ i3lock \
 --time-str="%H:%M:%S"  \
 --date-str="%A, %m %Y" \
 # --keylayout 1         \
+
+dunstctl set-paused false
+
+sleep 1
+exit

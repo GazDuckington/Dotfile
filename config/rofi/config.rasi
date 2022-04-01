@@ -1,4 +1,5 @@
 configuration {
 	font:	"JetBrainsMono Nerd Font 12";
+	icon-theme: "Papirus";
 }
 @theme "android_notification.rasi"

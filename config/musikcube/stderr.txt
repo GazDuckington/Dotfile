@@ -1,0 +1,28 @@
+AlsaOut::AlsaOut() called
+PulseOut::PulseOut() called
+AlsaOut: destructor
+AlsaOut: joining...
+AlsaOut: thread finished
+AlsaOut: closing device...
+AlsaOut: destroyed.
+[2022-04-02 19:12:31] [info] asio listen error: system:98 (Address already in use)
+Underlying Transport Error
+[mp3float @ 0x7f437402b700] Could not update timestamps for skipped samples.
+AlsaOut::AlsaOut() called
+PulseOut::PulseOut() called
+AlsaOut: destructor
+AlsaOut: joining...
+AlsaOut: thread finished
+AlsaOut: closing device...
+AlsaOut: destroyed.
+AlsaOut::AlsaOut() called
+PulseOut::PulseOut() called
+AlsaOut: destructor
+AlsaOut: joining...
+AlsaOut: thread finished
+AlsaOut: closing device...
+AlsaOut: destroyed.
+PulseOut: destroy
+PulseOut: destructor
+PulseOut: destroy
+PulseOut: destructor

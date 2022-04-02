@@ -1,0 +1,31 @@
+19:12:31 [info] [LOG SESSION] ---------- START ----------
+19:12:31 [info] [PluginFactory] loading plugins
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libalsaout.so
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libffmpegdecoder.so
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libgmedecoder.so
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libhttpdatastream.so
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libmpris.so
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libnullout.so
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libpulseout.so
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libserver.so
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libstockencoders.so
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libsupereqdsp.so
+19:12:31 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libtaglibreader.so
+19:12:31 [info] [Indexer] indexer source -1303229654 running...
+19:12:31 [info] [Indexer] indexer source -1303229654 finished
+19:12:31 [info] [Indexer] scanning /home/gaz/Music/
+19:12:31 [info] [Indexer] scan completed successfully
+19:12:31 [info] [Indexer] cleanup 1/2
+19:12:31 [info] [Indexer] cleanup 2/2
+19:12:31 [info] [Indexer] optimizing
+19:12:31 [info] [Indexer] done!
+19:12:31 [info] [GaplessTransport] starting track at /home/gaz/Music/Outer Wilds Soundtrack/[28] - A Terrible Fate [6524F4FD].mp3
+19:12:31 [info] [Player] new instance created
+19:12:31 [info] [GaplessTransport] stop
+19:12:31 [info] [Stream] opening /home/gaz/Music/Outer Wilds Soundtrack/[28] - A Terrible Fate [6524F4FD].mp3
+19:12:31 [info] [LocalFileStream] opening file: /home/gaz/Music/Outer Wilds Soundtrack/[28] - A Terrible Fate [6524F4FD].mp3
+19:12:31 [info] [ffmpegdecoder] parsing data stream...
+19:12:31 [info] [ffmpegdecoder] found audio stream!
+19:12:31 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+19:12:31 [info] [Streams] found a decoder for /home/gaz/Music/Outer Wilds Soundtrack/[28] - A Terrible Fate [6524F4FD].mp3
+19:12:31 [warning] [ffmpegdecoder] invalid packet detected, discarding.

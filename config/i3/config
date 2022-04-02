@@ -5,7 +5,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $ws1 "1: "
+set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4: "
@@ -243,7 +243,7 @@ for_window [class="dropdown"] move scratchpad, move position 400px 20px, resize 
 bindsym Mod1+F2 [class="dropdown"] scratchpad show
 # musikcube
 #exec --no-startup-id ~/scripts/kitty-launch.sh musikcube
-bindsym $mod+shift+F3 exec --no-startup-id ~/scripts/kitty-launch.sh musikcube
+bindsym $mod+shift+F3 exec --no-startup-id kitty --class musikcube musikcube
 for_window [instance="musikcube"] floating enable
 for_window [instance="musikcube"] move scratchpad, move position 400px 20px, resize grow width 800px, resize grow height 700px
 bindsym Mod1+F3 [instance="musikcube"] scratchpad show

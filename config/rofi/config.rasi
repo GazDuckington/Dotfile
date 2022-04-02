@@ -1,4 +1,7 @@
 /*Dracula theme based on the Purple official rofi theme*/
+configuration {
+    icon-theme: "Dracula";
+}
 
 * {
     font: "JetbrainsMono Nerd Font 12";

@@ -1,3 +1,5 @@
+### i3-wm Dracula
+
 <h3 style="text-align: center;">
 
   Screenshot
@@ -6,6 +8,6 @@
 
 <div style="text-align: center;">
 
-![screenshot](2022-01-30_00-32.png)
+![screenshot](Screenshots.png)
 
 </div>

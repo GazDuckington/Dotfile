@@ -1,11 +1,11 @@
 #!/bin/sh
 
 B='#00000000'  # blank
-T='#35ffdc'  # text
-W='#ec2864'  # wrong
+T='#bd93f9'  # text
+W='#ff5555'  # wrong
 V='#7dc1ff'  # verifying
-O='#194D44'
-BK='#202020'
+O='#6272A4'
+BK='#282a36'
 
 i3lock \
 --color=$BK \

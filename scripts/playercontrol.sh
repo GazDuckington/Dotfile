@@ -9,5 +9,4 @@ zscroll -l 20 \
         -m "Paused" "-b ' '" \
         -m "Stopped" "-b ' '" \
         -u true "$metadata" &
-
 wait

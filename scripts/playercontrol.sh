@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-cube='musikcube'
+player="musikcube"
+metadata="playerctl metadata --player=$player --format '{{artist}}-{{title}}'"
 
 zscroll -l 20 \
-	-M "playerctl status --player=$cube" \
+        -M "$metadata" \
         -m "Playing" "-b ' '" \
         -m "Paused" "-b ' '" \
         -m "Stopped" "-b ' '" \
-	-m "No\ players\ found" "-b '𥉉 '" \
-        -u true "playerctl --player=$cube metadata --format '{{artist}}-{{title}}'" &
+        -u true "$metadata" &
 
 wait
-

@@ -145,7 +145,7 @@ bindsym $mod+r mode "resize"
 # bindsym $mod+g mode "gaps"
 
 # wallpaper
-bindsym Mod1+F1 exec --no-startup-id ~/scripts/hsetrand.sh
+# bindsym Mod1+F1 exec --no-startup-id ~/scripts/hsetrand.sh
 
 # COLOR
 # class                 border  bground text    indicator child_border
@@ -187,7 +187,8 @@ exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device
 exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 0
 exec_always --no-startup-id xinput set-prop "AT Translated Set 2 keyboard" "Device Enabled" 0
 # exec_always --no-startup-id ~/scripts/conky.sh
-exec --no-startup-id ~/scripts/hsetrand.sh
+# exec --no-startup-id ~/scripts/hsetrand.sh
+exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/first-flame.png
 
 # RULES
 default_border pixel 1

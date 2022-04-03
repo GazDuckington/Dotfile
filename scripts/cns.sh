@@ -7,8 +7,8 @@ function capslock() {
   if [ $caps == 'off' ]; then
     echo ""
   else
-    # echo "%{F#21ff21}בּ%{F-}"
-    echo "בּ"
+    echo "%{F#50FA7B}בּ%{F-}"
+    #echo "בּ"
   fi
 
 }

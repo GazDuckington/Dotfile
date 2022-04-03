@@ -18,7 +18,7 @@ function startidle() {
 function checkidle() {
 
   if [ $result -ge 1 ]; then
-    echo ""
+    echo "%{F#6272a4}%{F-}"
   else
     echo "%{F#50fa7b} %{F-}"
   fi

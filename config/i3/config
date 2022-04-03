@@ -183,9 +183,10 @@ exec --no-startup-id lxpolkit
 exec --no-startup-id ~/scripts/idle.sh -s
 # exec_always --no-startup-id ~/scripts/mount-gdrive.sh
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
-exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 0
-exec_always --no-startup-id xinput set-prop "AT Translated Set 2 keyboard" "Device Enabled" 0
+#exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
+#exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 0
+#exec_always --no-startup-id xinput set-prop "AT Translated Set 2 keyboard" "Device Enabled" 0
+exec --no-startup-id ~/scripts/disableETPS.sh 0
 # exec_always --no-startup-id ~/scripts/conky.sh
 # exec --no-startup-id ~/scripts/hsetrand.sh
 exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/first-flame.png

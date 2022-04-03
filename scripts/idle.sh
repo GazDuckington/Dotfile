@@ -20,7 +20,7 @@ function checkidle() {
   if [ $result -ge 1 ]; then
     echo ""
   else
-    echo ""
+    echo "%{F#50fa7b} %{F-}"
   fi
 
 }

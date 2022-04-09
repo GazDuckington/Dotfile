@@ -181,15 +181,17 @@ exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
 exec --no-startup-id dunst
 exec --no-startup-id lxpolkit
 exec --no-startup-id ~/scripts/idle.sh -s
-# exec_always --no-startup-id ~/scripts/mount-gdrive.sh
-exec_always --no-startup-id autotiling
-#exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
-#exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 0
-#exec_always --no-startup-id xinput set-prop "AT Translated Set 2 keyboard" "Device Enabled" 0
 exec --no-startup-id ~/scripts/disableETPS.sh 0
-# exec_always --no-startup-id ~/scripts/conky.sh
 # exec --no-startup-id ~/scripts/hsetrand.sh
 exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/first-flame.png
+exec_always --no-startup-id  $HOME/.config/i3/i3-master-stack/i3_master
+# swap to master node
+bindsym $mod+m nop go master 
+# go to master node
+bindsym $mod+shift+m nop swap master 
+# enable/disable master layout in current workspace
+bindsym $mod+alt+m nop master toggle 
+
 
 # RULES
 default_border pixel 1

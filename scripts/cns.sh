@@ -5,9 +5,9 @@ function capslock() {
   caps=$(xset -q | grep Caps | awk '{ print $4 }')
 
   if [ $caps == 'off' ]; then
-    echo ""
+    echo "%{F#6272a4}cap%{F-}"
   else
-    echo "%{F#50FA7B}בּ%{F-}"
+    echo "%{F#50FA7B}cap%{F-}"
     #echo "בּ"
   fi
 

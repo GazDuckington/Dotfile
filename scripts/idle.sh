@@ -18,9 +18,9 @@ function startidle() {
 function checkidle() {
 
   if [ $result -ge 1 ]; then
-    echo "%{F#6272a4}%{F-}"
+    echo "%{F#6272a4}wake%{F-}"
   else
-    echo "%{F#50fa7b} %{F-}"
+    echo "%{F#50fa7b}wake%{F-}"
   fi
 
 }
@@ -29,7 +29,7 @@ function toggleidle() {
 
   if [ $result -ge 1 ]; then
     pkill xidlehook &
-    dunstify "idle is off" -t 5000
+    dunstify "Staying up" -t 5000
   else
     $HOME/scripts/idle.sh -s &
     dunstify "idle is on" -t 5000

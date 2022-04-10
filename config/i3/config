@@ -10,6 +10,7 @@ set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4: "
 set $ws5 "5: "
+
 # Font
 font pango:JetBrainsMono Nerd Font 8
 
@@ -183,7 +184,7 @@ exec --no-startup-id lxpolkit
 exec --no-startup-id ~/scripts/idle.sh -s
 exec --no-startup-id ~/scripts/disableETPS.sh 0
 # exec --no-startup-id ~/scripts/hsetrand.sh
-exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/first-flame.png
+exec_always --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/dracula-leaves.png
 exec_always --no-startup-id  $HOME/.config/i3/i3-master-stack/i3_master
 # swap to master node
 bindsym $mod+m nop go master 

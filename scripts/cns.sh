@@ -18,10 +18,9 @@ function numlock() {
   num=$(xset -q | grep Num | awk '{ print $8 }')
 
   if [ $num == 'off' ]; then
-    echo ""
+    echo "%{F#6272a4}num%{F-}"
   else
-    # echo "%{F#21ff21}%{F-}"
-    echo ""
+    echo "%{F#50FA7B}num%{F-}"
   fi
 
 }

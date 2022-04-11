@@ -1,6 +1,6 @@
 configuration {
-    font: "JetBrainsMono Nerd Font Medium 12";
-    icon-theme: "Dracula";
+    font: 							"JetBrainsMono Nerd Font 12";
+    show-icons: 					true;
 }
 
-@theme "dracula"
+@theme "dtc"

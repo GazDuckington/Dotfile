@@ -20,11 +20,7 @@ configuration {
   window {
     display-name: "";
   }
-
-  timeout {
-    delay: 10;
-    action: "kb-cancel";
-  }
+  
 }
 
 * {
@@ -46,7 +42,6 @@ window {
   transparency: "real";
 
   border: 2px;
-  border-radius: 15px;
   border-color: @bg-alt;
 }
 

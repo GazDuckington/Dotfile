@@ -2,6 +2,8 @@
 set fish_greeting
 
 # aliases
+alias 'code'='code-insiders'
+alias 'c'='code-insiders'
 alias 'cpr'='cp -r'
 alias 'ls'='lsd'
 alias 'la'='lsd -a'

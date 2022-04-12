@@ -5,7 +5,7 @@ T='#7aa2f7'  # text
 W='#f7768e'  # wrong
 V='#9ece6a'  # verifying
 O='#7aa2f7'
-BK='#16161e'
+BK='#202020'
 # Set the paused status of dunst
 dunstctl set-paused true
 

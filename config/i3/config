@@ -111,34 +111,17 @@ bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-bindsym $left resize shrink width 10 px or 10 ppt
-bindsym $down resize grow height 10 px or 10 ppt
-bindsym $up resize shrink height 10 px or 10 ppt
-bindsym $right resize grow width 10 px or 10 ppt
+	bindsym $left resize shrink width 10 px or 10 ppt
+	bindsym $down resize grow height 10 px or 10 ppt
+	bindsym $up resize shrink height 10 px or 10 ppt
+	bindsym $right resize grow width 10 px or 10 ppt
 
-# back to normal: Enter or Escape or $mod+r
-bindsym Return mode "default"
+	# back to normal: Enter or Escape or $mod+r
+	bindsym Return mode "default"
 	bindsym Escape mode "default"
-bindsym $mod+r mode "default"
+	bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
-
-# gaps
-#smart_gaps off
-# gaps inner 4
-# gaps outer 2
-
-# mode "gaps" {
-	 # bindsym i gaps inner all plus 5
-	 # bindsym o gaps inner all minus 5, gaps outer all minus 5
-	 # bindsym Return mode "default"
-	 # bindsym Escape mode "default"
-	 # bindsym $mod+g mode "default"
-# }
-# bindsym $mod+g mode "gaps"
-
-# wallpaper
-# bindsym Mod1+F1 exec --no-startup-id ~/scripts/hsetrand.sh
 
 # COLOR
 # class                  border    backgr.   text      indicator
@@ -151,18 +134,16 @@ client.urgent           "#ac4142" "#ac4142" "#151515" "#ac4142"
 client.background #202020
 
 # AUTOSTART
-exec --no-startup-id picom -b --experimental-backend
+exec --no-startup-id picom -b
 exec --no-startup-id dbus-launch
 exec_always --no-startup-id $polyscript/launch-polybar.sh
-# exec --no-startup-id ~/scripts/setcursor
 exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
-# exec --no-startup-id flameshot
 exec --no-startup-id dunst
 exec --no-startup-id lxpolkit
-exec_always --no-startup-id $HOME/scripts/idle.sh -s
+exec --no-startup-id dbus-launch
 exec --no-startup-id ~/scripts/disableETPS.sh 0
-# exec --no-startup-id ~/scripts/hsetrand.sh
-exec_always --no-startup-id ~/.fehbg
+exec --no-startup-id ~/scripts/idle.sh -s
+exec --no-startup-id ~/.fehbg
 exec_always --no-startup-id $HOME/.config/i3/i3-master-stack/i3_master
 
 # swap to master node

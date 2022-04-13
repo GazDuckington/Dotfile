@@ -24,7 +24,7 @@ if status --is-interactive
 end
 
 # paths
-set PATH ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
+set PATH ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
 
 # starship prompt
 starship init fish | source

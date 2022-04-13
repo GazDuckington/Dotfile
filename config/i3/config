@@ -129,7 +129,7 @@ client.focused          "#6c99ba" "#6c99ba" "#151515" "#6c99ba"
 client.unfocused        "#505050" "#505050" "#d0d0d0" "#505050"
 client.focused_inactive "#202020" "#202020" "#d0d0d0" "#202020"
 client.placeholder      "#202020" "#202020" "#d0d0d0" "#202020"
-client.urgent           "#ac4142" "#ac4142" "#151515" "#ac4142"
+client.urgent           "#ff5455" "#ff5455" "#151515" "#ff5455"
 
 client.background #202020
 
@@ -139,11 +139,11 @@ exec --no-startup-id dbus-launch
 exec_always --no-startup-id $polyscript/launch-polybar.sh
 exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
 exec --no-startup-id dunst
-exec --no-startup-id lxpolkit
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id dbus-launch
 exec --no-startup-id ~/scripts/disableETPS.sh 0
-exec --no-startup-id ~/scripts/idle.sh -s
-exec --no-startup-id ~/.fehbg
+exec_always --no-startup-id ~/scripts/idle.sh -s
+exec --no-startup-id hsetroot -center ~/Pictures/Wallpapers/dracula-leaves.png
 exec_always --no-startup-id $HOME/.config/i3/i3-master-stack/i3_master
 
 # swap to master node

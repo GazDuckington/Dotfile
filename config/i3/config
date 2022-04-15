@@ -56,9 +56,14 @@ bindsym $mod+c exec --no-startup-id $rofiscript/dev.sh
 bindsym $mod+s exec --no-startup-id $rofiscript/web-search.sh
 # file finder
 bindsym $mod+a exec --no-startup-id rofi -show find -modi find:$rofiscript/finder.sh
+
+# polybar toggle
+bindsym $mod+Shift+t exec --no-startup-id polybar-msg cmd toggle
+
 # flip through tabs
 bindsym Mod1+Tab exec --no-startup-id i3flip next
 # bindsym Ctrl+1 exec --no-startup-id i3flip prev
+
 # change focus
 bindsym $mod+$left exec --no-startup-id i3viswiz left
 bindsym $mod+$down exec --no-startup-id i3viswiz down
@@ -140,8 +145,9 @@ exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
 exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id dbus-launch
-exec --no-startup-id hsetroot -center ~/Pictures/Wallpapers/dracula-leaves.png
+exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/dracula-leaves.png
 exec --no-startup-id ~/scripts/idle.sh -s
+exec_always --no-startup-id "watch -n 60 ~/scripts/battery-watch.sh"
 exec_always --no-startup-id ~/scripts/disableETPS.sh 0
 exec_always --no-startup-id $polyscript/launch-polybar.sh
 exec_always --no-startup-id $HOME/.config/i3/i3-master-stack/i3_master

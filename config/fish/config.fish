@@ -1,6 +1,9 @@
 # set greeting text
 set fish_greeting
 
+set fish_plugins vi-mode
+set vi_mode_default vi_mode_normal
+
 # aliases
 alias 'code'='code-insiders'
 alias 'c'='code-insiders'
@@ -20,7 +23,7 @@ alias 'gp'='git push'
 
 alias 'cu'='checkupdates+aur'
 alias 'ys'='yay -Ss'
-alias 'yi'='Yay -S'
+alias 'yi'='yay -S'
 alias 'yr'='yay -R'
 alias 'yrs'='yay -Rs'
 alias 'yd'='yay -Si'

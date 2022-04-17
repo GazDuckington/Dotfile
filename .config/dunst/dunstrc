@@ -30,7 +30,7 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = top-center
+    origin = top-right
 
     # Offset from the origin
     offset = 0x20
@@ -144,11 +144,11 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "%s %p\n%b"
+    format = "%a:\n%s %p\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = center
+    alignment = left
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -302,7 +302,7 @@
 
 [urgency_critical]
     background = "#202020"
-    foreground = "#f5f5f5"
+    foreground = "#ac4142"
     frame_color = "#ac4142"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable

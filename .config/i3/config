@@ -140,7 +140,7 @@ client.urgent           "#ff5455" "#ff5455" "#151515" "#ff5455"
 client.background #202020
 
 # AUTOSTART
-exec --no-startup-id picom -b
+exec --no-startup-id picom --experimental-backend -b
 exec --no-startup-id dbus-launch
 exec --no-startup-id watch -n 30 ~/scripts/battery-check.sh
 exec --no-startup-id dunst

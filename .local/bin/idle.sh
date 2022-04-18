@@ -18,7 +18,7 @@ function startidle() {
 
 function checkidle() {
 
-  if [[ $result == 0 ]]; then
+  if [[ $result == 1 ]]; then
     echo "%{F#6272a4}wake%{F-}"
   else
     echo "%{F#50fa7b}wake%{F-}"

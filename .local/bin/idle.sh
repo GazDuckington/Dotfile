@@ -11,9 +11,7 @@ function startidle() {
     '' \
     --timer 1200 \
     'systemctl suspend' \
-    '' \
-    --socket "/tmp/xidlehook.sock"
-
+    ''
 }
 
 function checkidle() {

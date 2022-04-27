@@ -9,6 +9,7 @@ alias 'code'='code-insiders'
 alias 'c'='code-insiders'
 alias 'lv'='lvim'
 alias 'nv'='nvim'
+alias 'hx'='helix'
 
 # alias 'onefetch'='onefetch --show-logo never -c 4'
 alias 'cpr'='cp -r'
@@ -17,6 +18,7 @@ alias 'la'='lsd -a'
 alias 'll'='lsd -l'
 alias 'lt'='lsd --tree'
 
+alias 'lg'='lazygit'
 alias 'ga'='git add'
 alias 'gc'='git commit -am'
 alias 'gp'='git push'
@@ -39,6 +41,10 @@ function ofetch
   end
 end
 
+function lolban
+  figlet -f ANSI\ Shadow  $argv | lolcat
+end
+
 # startx on tty1
 if status --is-interactive
   if test -z "$DISPLAY" -a $XDG_VTNR = 1
@@ -47,7 +53,7 @@ if status --is-interactive
 end
 
 # paths
-set PATH ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
+set PATH ~/Odin ~ ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
 
 # starship prompt
 starship init fish | source

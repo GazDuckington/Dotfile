@@ -24,14 +24,14 @@ case $chosen in
       ~/.config/i3/scripts/i3lock.sh
     ;;
     $suspend)
-    	mpc -q pause
-	    playerctl pause
+#    	mpc -q pause
+#	    playerctl pause
 	    amixer set Master mute
 #      ~/scripts/i3lock.sh
 	    systemctl suspend
     ;;
     $logout)
-	    killall i3
+        i3-msg exit
         killall bspwm
     ;;
 esac

@@ -13,6 +13,7 @@ URLS=(
   ["youtube"]="https://www.youtube.com/results?search_query="
   ["pubdev"]="https://pub.dev/packages?q="
   ["npmjs"]="https://www.npmjs.com/search?q="
+  ["docker"]="https://hub.docker.com/search?q="
 )
 
 # List for rofi

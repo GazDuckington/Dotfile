@@ -142,7 +142,6 @@ client.urgent           "#ff5455" "#ff5455" "#151515" "#ff5455"
 client.background #202020
 
 # AUTOSTART
-exec --no-startup-id picom --experimental-backend -b
 exec --no-startup-id dbus-launch
 exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -150,6 +149,7 @@ exec --no-startup-id dbus-launch
 exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/dracula-leaves.png
 exec --no-startup-id ~/scripts/idle.sh -s
 exec --no-startup-id watch -n 30 ~/scripts/battery-watch.sh
+exec --no-startup-id picom --experimental-backend -b
 exec_always --no-startup-id ~/scripts/disableETPS.sh 0
 exec_always --no-startup-id $polyscript/launch-polybar.sh
 exec_always --no-startup-id autotiling
@@ -157,7 +157,7 @@ exec_always --no-startup-id autotiling
 # RULES
 default_border pixel 1
 floating_minimum_size 350 x 350
-floating_maximum_size 800 x 700
+floating_maximum_size 850 x 850
 focus_follows_mouse no
 new_float normal
 

@@ -4,6 +4,7 @@ declare -A URLS
 URLS=(
   ["URL"]="https://"
   ["duckduckgo"]="https://www.duckduckgo.com/?q="
+  ["brave"]="https://search.brave.com/search?q="
   ["github"]="https://github.com/search?q="
   ["pip"]="https://pypi.org/search?q="
   ["godev"]="https://pkg.go.dev/search?q="

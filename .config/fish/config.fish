@@ -11,7 +11,6 @@ alias 'lv'='lvim'
 alias 'nv'='nvim'
 alias 'hx'='helix'
 
-# alias 'onefetch'='onefetch --show-logo never -c 4'
 alias 'cpr'='cp -r'
 alias 'ls'='lsd'
 alias 'la'='lsd -a'
@@ -23,14 +22,18 @@ alias 'ga'='git add'
 alias 'gc'='git commit -am'
 alias 'gp'='git push'
 
-alias 'cu'='checkupdates+aur'
-alias 'ys'='yay -Ss'
-alias 'yi'='yay -S'
-alias 'yr'='yay -R'
-alias 'yrs'='yay -Rs'
-alias 'yd'='yay -Si'
+alias 'lu'='zypper lu'
+alias 'se'='zypper se'
+alias 'in'='sudo zypper in'
+alias 're'='sudo zypper rm'
+alias 'io'='zypper if'
+alias 'orphan'='zypper packages --orphaned'
+alias 'uneeded'='zypper packages --unneeded'
+alias 'refresh'='sudo zypper refresh'
 
-alias 'br'='$HOME/scripts/br.sh'
+alias 'br'='$HOME/bin/br.sh'
+
+alias 'td'='tdfiglet -jc -f nuclear'
 
 # functions
 function ofetch
@@ -41,9 +44,9 @@ function ofetch
   end
 end
 
-function lolban
-  figlet -f ANSI\ Shadow  $argv | lolcat
-end
+#function lolban
+#  figlet -f ANSI\ Shadow  $argv | lolcat
+#end
 
 # startx on tty1
 if status --is-interactive
@@ -53,7 +56,7 @@ if status --is-interactive
 end
 
 # paths
-set PATH ~/Odin ~ ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
+set PATH ~/bin ~ ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
 
 # starship prompt
 starship init fish | source

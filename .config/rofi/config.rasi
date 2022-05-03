@@ -1,8 +1,8 @@
 configuration {
     font: 		"JetBrainsMono Nerd Font 12";
-    show-icons: false;
-    icon-theme: "Adwaita";
+    show-icons: true;
+    icon-theme: "Papirus";
      combi-modi: "window,drun,ssh,emoji";
 }
 
-@theme "dtc"
+@theme "material"

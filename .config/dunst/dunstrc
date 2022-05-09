@@ -144,7 +144,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "%a:\n%s %p\n%b"
+    format = "<i><b>notification</b></i>\n%s %p\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".

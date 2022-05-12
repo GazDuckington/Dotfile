@@ -38,7 +38,7 @@ i3lock \
 --indicator           \
 --time-str="%H:%M:%S"  \
 --date-str="%A, %m %Y" \
---radius=100         \
+--radius=140         \
 \
 --date-font="$FONT" \
 --time-font="$FONT" \

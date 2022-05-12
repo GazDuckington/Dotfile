@@ -18,10 +18,14 @@ set $ws5 "5: "
 font pango:JetBrainsMono Nerd Font 8
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ 
+# pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- 
+# pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+# pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id amixer set Mic toggle 
+# pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # brightnessctl keybind
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5%+
@@ -142,15 +146,15 @@ client.urgent           "#ff5455" "#ff5455" "#151515" "#ff5455"
 client.background #202020
 
 # AUTOSTART
-exec --no-startup-id dbus-launch
+exec --no-startup-id flameshot
 exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id dbus-launch
 exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/dracula-leaves.png
-exec --no-startup-id ~/scripts/idle.sh -s
-exec --no-startup-id watch -n 30 ~/scripts/battery-watch.sh
+exec --no-startup-id ~/bin/idle.sh -s
+exec --no-startup-id watch -n 30 ~/bin/battery-watch.sh
 exec --no-startup-id picom --experimental-backend -b
-exec_always --no-startup-id ~/scripts/disableETPS.sh 0
+exec_always --no-startup-id ~/bin/disableETPS.sh 0
 exec_always --no-startup-id $polyscript/launch-polybar.sh
 exec_always --no-startup-id autotiling
 
@@ -206,7 +210,7 @@ for_window [class="dropdown"] floating enable
 for_window [class="dropdown"] move scratchpad, move position 400px 20px, resize shrink height 2020px, resize grow width 800px
 bindsym Mod1+F2 [class="dropdown"] scratchpad show
 # musikcube
-#exec --no-startup-id ~/scripts/kitty-launch.sh musikcube
+#exec --no-startup-id ~/bin/kitty-launch.sh musikcube
 bindsym $mod+shift+F3 exec --no-startup-id kitty --class musikcube musikcube
 for_window [instance="musikcube"] floating enable
 for_window [instance="musikcube"] move scratchpad, move position 400px 20px, resize grow width 800px, resize grow height 700px

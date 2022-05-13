@@ -153,7 +153,7 @@ exec --no-startup-id dbus-launch
 exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/dracula-leaves.png
 exec --no-startup-id ~/bin/idle.sh -s
 exec --no-startup-id watch -n 30 ~/bin/battery-watch.sh
-exec --no-startup-id picom --experimental-backend -b
+exec_always --no-startup-id killall picom && picom --experimental-backend -b
 exec_always --no-startup-id ~/bin/disableETPS.sh 0
 exec_always --no-startup-id $polyscript/launch-polybar.sh
 exec_always --no-startup-id autotiling

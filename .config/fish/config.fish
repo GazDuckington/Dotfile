@@ -22,11 +22,13 @@ alias 'ga'='git add'
 alias 'gc'='git commit -am'
 alias 'gp'='git push'
 
-alias 'lu'='zypper lu'
-alias 'se'='zypper se'
+alias 'up'='sudo zypper up'
+alias 'dup'='sudo zypper dup'
+alias 'lu'='zypper --no-refresh lu'
+alias 'se'='zypper --no-refresh se'
 alias 'in'='sudo zypper in'
 alias 're'='sudo zypper rm'
-alias 'io'='zypper if'
+alias 'io'='zypper --no-refresh if'
 alias 'orphan'='zypper packages --orphaned'
 alias 'uneeded'='zypper packages --unneeded'
 alias 'refresh'='sudo zypper refresh'
@@ -56,7 +58,7 @@ if status --is-interactive
 end
 
 # paths
-set PATH ~/bin ~ ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
+set PATH ~/bin ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
 
 # starship prompt
 starship init fish | source

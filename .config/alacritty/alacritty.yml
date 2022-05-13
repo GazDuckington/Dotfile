@@ -1,0 +1,59 @@
+window:
+  padding:
+    x: 1
+    y: 1
+font:
+  size: 7.0
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: regular
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+style: Bold Italic
+cursor:
+  style:
+    blinking: on
+colors:
+  primary:
+    background: '#1e1e1e'
+    foreground: '#d4d4d4'
+  cursor:
+    text: '#1e1e1e'
+    cursor: '#569cd6'
+    # Normal colors
+  normal:
+    black:   '#1e1e1e'
+    red:     '#cd3131'
+    green:   '#6a9955'
+    yellow:  '#e5b566'
+    blue:    '#569cd6'
+    magenta: '#c586c0'
+    cyan:    '#11a8cd'
+    white:   '#d4d4d4'
+
+  # Bright colors
+  bright:
+    black:   '#666666'
+    red:     '#cd3131'
+    green:   '#6a9955'
+    yellow:  '#e5b566'
+    blue:    '#569cd6'
+    magenta: '#c586c0'
+    cyan:    '#11a8cd'
+    white:   '#d4d4d4'
+
+  indexed_colors:
+    - { index: 16, color: '#F8BD96' }
+    - { index: 17, color: '#F5E0DC' }
+selection:
+  save_to_clipboard: true
+shell:
+  program: /usr/bin/fish
+mouse:
+  hide_when_typing: true

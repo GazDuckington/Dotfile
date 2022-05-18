@@ -3,7 +3,7 @@
 result=$(ps -ef | grep "xidlehook" | grep -v "grep" | wc -l)
 
 function startidle() {
-  $HOME/.cargo/bin/xidlehook \
+  xidlehook \
     --not-when-fullscreen \
     --not-when-audio \
     --timer 600 \
@@ -18,7 +18,7 @@ function startidle() {
 
 function checkidle() {
 
-  if [[ $result == 0 ]]; then
+  if [[ $result == 1 ]]; then
     echo "%{F#6272a4}wake%{F-}"
   else
     echo "%{F#50fa7b}wake%{F-}"
@@ -29,11 +29,11 @@ function checkidle() {
 function toggleidle() {
 
   if [[ $result == 0 ]]; then
-    $HOME/scripts/idle.sh -s &
-    dunstify "Staying up" -t 5000
+    $HOME/bin/idle.sh -s &
+    dunstify "idle is on" -t 5000
   else
     killall xidlehook &
-    dunstify "idle is on" -t 5000
+    dunstify "Staying up" -t 5000
   fi
 
 }

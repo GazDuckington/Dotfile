@@ -22,17 +22,6 @@ alias 'ga'='git add'
 alias 'gc'='git commit -am'
 alias 'gp'='git push'
 
-alias 'up'='sudo zypper up'
-alias 'dup'='sudo zypper dup'
-alias 'lu'='zypper --no-refresh lu'
-alias 'se'='zypper --no-refresh se'
-alias 'in'='sudo zypper in'
-alias 're'='sudo zypper rm'
-alias 'io'='zypper --no-refresh if'
-alias 'orphan'='zypper packages --orphaned'
-alias 'uneeded'='zypper packages --unneeded'
-alias 'refresh'='sudo zypper refresh'
-
 alias 'br'='$HOME/bin/br.sh'
 
 alias 'td'='tdfiglet -jc -f nuclear'

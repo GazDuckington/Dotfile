@@ -7,7 +7,7 @@ shutdown=" poweroff "
 reboot=" reboot "
 lock=" lock "
 suspend="鈴 sleep "
-logout=" logout "
+logout=" logout "
 
 # Variable passed to rofi
 options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
@@ -26,7 +26,7 @@ case $chosen in
     $suspend)
 #    	mpc -q pause
 #	    playerctl pause
-	    amixer set Master mute
+	    amixer set Master mute &
 #      ~/scripts/i3lock.sh
 	    systemctl suspend
     ;;

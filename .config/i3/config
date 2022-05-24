@@ -138,7 +138,7 @@ bindsym $mod+r mode "resize"
 # COLOR
 # class                  border    backgr.   text      indicator	child indicator
 client.focused          "#6c99ba" "#151515" "#6c99ba" "#6c99ba"		"#6c99ba"
-client.unfocused        "#505050" "#151515" "#d0d0d0" "#505050"		"#505050"
+client.unfocused        "#505050" "#151515" "#505050" "#505050"		"#505050"
 client.focused_inactive "#202020" "#202020" "#d0d0d0" "#202020"		"#202020"
 client.placeholder      "#202020" "#202020" "#d0d0d0" "#202020"		"#202020"
 client.urgent           "#ff5455" "#ff5455" "#151515" "#ff5455"		"#ff5455"

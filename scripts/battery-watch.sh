@@ -6,5 +6,5 @@ bf=$(cat $BAT_FULL)
 bn=$(cat $BAT_NOW)
 if [ $(( 100 * $bn / $bf )) -lt 60 ]
 then
-    dunstify -u critical -t 8000 "low battery!"
+    dunstify -u critical -t 8000 " low battery!"
 fi

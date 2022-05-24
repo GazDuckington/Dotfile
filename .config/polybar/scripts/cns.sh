@@ -5,9 +5,9 @@ function capslock() {
   caps=$(xset -q | grep Caps | awk '{ print $4 }')
 
   if [ $caps == 'off' ]; then
-    echo "%{F#6272a4}cap%{F-}"
+    echo "%{F#6272a4}ﰶ%{F-}"
   else
-    echo "%{F#50FA7B}cap%{F-}"
+    echo "%{F#50FA7B}ﰶ%{F-}"
     #echo "בּ"
   fi
 
@@ -18,9 +18,9 @@ function numlock() {
   num=$(xset -q | grep Num | awk '{ print $8 }')
 
   if [ $num == 'off' ]; then
-    echo "%{F#6272a4}num%{F-}"
+    echo "%{F#6272a4}%{F-}"
   else
-    echo "%{F#50FA7B}num%{F-}"
+    echo "%{F#50FA7B}%{F-}"
   fi
 
 }

@@ -49,5 +49,8 @@ end
 # paths
 set PATH ~/bin ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
 
+# pyenv init
+pyenv init - | source
+
 # starship prompt
 starship init fish | source

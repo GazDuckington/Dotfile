@@ -3,7 +3,7 @@ declare -A URLS
 
 URLS=(
   ["URL"]="https://"
-  ["duckduckgo"]="https://www.duckduckgo.com/?q="
+  ["aur"]="https://aur.archlinux.org/packages?O=0&K="
   ["brave"]="https://search.brave.com/search?q="
   ["startpage"]="https://www.startpage.com/do/dsearch?query="
   ["github"]="https://github.com/search?q="

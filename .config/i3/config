@@ -161,6 +161,7 @@ floating_minimum_size 350 x 350
 floating_maximum_size 850 x 850
 focus_follows_mouse no
 new_float normal
+hide_edge_borders smart
 
 for_window[class="pulsemixer"] floating enable, border normal, resize set 600 300
 for_window[class="btop"] floating enable, border normal, resize set 800 600

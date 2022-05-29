@@ -21,6 +21,7 @@ case $chosen in
 	    systemctl reboot
     ;;
     $lock)
+      amixer set Master mute &
       ~/.config/i3/scripts/i3lock.sh
     ;;
     $suspend)

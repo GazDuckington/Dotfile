@@ -19,9 +19,9 @@ function startidle() {
 function checkidle() {
 
   if [[ $result == 1 ]]; then
-    echo "%{F#6272a4}%{F-}"
+    echo "%{F#45475a}%{F-}"
   else
-    echo "%{F#50fa7b}%{F-}"
+    echo "%{F#a6e3a1}%{F-}"
   fi
 
 }

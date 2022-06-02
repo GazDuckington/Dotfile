@@ -137,8 +137,8 @@ bindsym $mod+r mode "resize"
 
 # COLOR
 # class                  border    backgr.   text      indicator	child indicator
-client.focused          "#89b4fa" "#1e1e2e" "#89b4fa" "#89b4fa"		"#89b4fa"
-client.unfocused        "#43475a" "#1e1e2e" "#43475a" "#43475a"		"#1e1e2e"
+client.focused          "#89b4fa" "#89b4fa" "#1e1e2e" "#89b4fa"		"#89b4fa"
+client.unfocused        "#1e1e2e" "#1e1e2e" "#43475a" "#1e1e2e"		"#1e1e2e"
 client.focused_inactive "#202020" "#202020" "#d0d0d0" "#202020"		"#202020"
 client.placeholder      "#202020" "#202020" "#d0d0d0" "#202020"		"#202020"
 client.urgent           "#f38ba8" "#f38ba8" "#151515" "#f38ba8"		"#f38ba8"
@@ -157,7 +157,7 @@ exec_always --no-startup-id autotiling
 
 # RULES
 default_border pixel 1
-# floating_minimum_size 350 x 350
+floating_minimum_size 350 x 350
 floating_maximum_size 850 x 850
 focus_follows_mouse no
 new_float normal

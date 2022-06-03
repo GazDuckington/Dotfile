@@ -147,7 +147,7 @@ client.background #202020
 
 # AUTOSTART
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/dracula-leaves.png
+exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/tetris.png
 exec --no-startup-id watch -n 30 ~/bin/battery-watch.sh
 exec --no-startup-id ~/bin/idle.sh -s
 exec_always --no-startup-id ~/bin/autostart.sh

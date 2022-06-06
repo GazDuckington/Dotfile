@@ -347,8 +347,9 @@ client.urgent		    $red	    $red	    $white		$red		$red
 #####################################
 # Application menu handled by rofi: #
 #####################################
-bindsym $mod+d exec "rofi -show drun -modi drun,run,window"
+bindsym $mod+d exec "rofi -show drun
 bindsym $mod+t exec rofi -show window
+bindsym $mod+x exec rofi -show run
 bindsym $mod+c exec ~/.config/rofi/scripts/dev.sh
 bindsym $mod+s exec ~/.config/rofi/scripts/web-search.sh
 bindsym $mod+e exec rofi -show emoji -modi emoji -no-show-icons

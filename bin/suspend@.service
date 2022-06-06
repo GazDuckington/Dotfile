@@ -6,7 +6,7 @@ Before=suspend.target
 User=%I
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/home/gaz/.config/i3/scripts/i3lock.sh
+ExecStart=/home/gaz/.config/i3/scripts/i3lock-color
 ExecStartPost=/usr/bin/sleep 1
 
 [Install]

@@ -22,7 +22,7 @@ case $chosen in
     ;;
     $lock)
       amixer set Master mute &
-      ~/.config/i3/scripts/i3lock.sh
+      ~/.config/i3/scripts/i3lock-color
     ;;
     $suspend)
 #    	mpc -q pause

@@ -264,10 +264,11 @@ set $ws5 "5:conf"
 assign [class="kitty"] $ws1
 assign [class="Codium"] $ws2
 # assign [class="(?i)firefox"] $ws2
-assign [class="Thunar"] $ws3
-assign [class="Thunderbird"] $ws4
+assign [class="Nemo"] $ws3
+assign [class="Stremio"] $ws4
 assign [class="TelegramDesktop"] $ws5
 assign [class="Arandr"] $ws5
+assign [class="Font-manager"] $ws5
 assign [class="Lxappearance"] $ws5
 assign [class="Kvantum Manager"] $ws5
 assign [class="Gnome-disks"] $ws5
@@ -276,7 +277,7 @@ assign [class="Font-manager"] $ws5
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=kitty] focus
 # for_window [class=(?i)firefox] focus?niche=72
-for_window [class=Thunar] focus
+for_window [class=Nemo] focus
 for_window [class=Thunderbird] focus
 for_window [class=TelegramDesktop] focus
 
@@ -289,10 +290,10 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id sleep 2 && nitrogen --restore
 exec --no-startup-id xset s 480 dpms 600 600 600
+exec --no-startup-id flameshot
 exec_always --no-startup-id ~/bin/autostart
 exec_always --no-startup-id ~/bin/disableETPS 0
 exec_always --no-startup-id ~/.config/polybar/scripts/launch-polybar.sh
-exec_always --no-startup-id ~/bin/idle -s
 exec_always --no-startup-id autotiling
 
 ###############
@@ -304,6 +305,7 @@ exec_always --no-startup-id autotiling
 
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
+for_window [class="nm-connection-editor"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 

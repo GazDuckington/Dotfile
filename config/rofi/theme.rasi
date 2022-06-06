@@ -10,6 +10,11 @@
 }
 
 configuration{
+    font: 		"JetBrainsMono Nerd Font 12";
+    show-icons: true;
+    icon-theme: "Oranchelo";
+    combi-modi: "window,drun,ssh,emoji";
+    termninal: "kitty";
     modi: "run,drun,window";
     drun-display-format: "{icon} {name}";
     location: 0;

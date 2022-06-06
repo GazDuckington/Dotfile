@@ -23,7 +23,7 @@ configuration{
     display-drun: "   Apps ";
     display-run: "   Run ";
     display-window: " 﩯  window";
-    display-Network: " 󰤨  Network";
+    display-ssh: " 🖧  Network";
     sidebar-mode: true;
 }
 

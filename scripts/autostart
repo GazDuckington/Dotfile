@@ -6,4 +6,9 @@ picom --experimental-backend -b &
 
 killall -q dunst
 while pgrep -u $UID -x dunst >/dev/null; do sleep 1; done
-dunst &
+dunst  --config ~/.config/dunst/dunstrc &
+
+killall -q xidlehook
+while pgrep -u $UID -x xidlehook >/dev/null; do sleep 1; done
+~/bin/idle -s &
+

@@ -28,10 +28,10 @@ gen_list() {
 
 main() {
   # Pass the list to rofi
-  platform=$( (gen_list) | $rofi_command -p "engine ")
+  platform=$( (gen_list) | $rofi_command -p "   Engine ")
 
   if [[ -n "$platform" ]]; then
-    query=$( (echo ) | $rofi_command -p "query ")
+    query=$( (echo ) | $rofi_command -p "  Keyword ")
 
     if [[ -n "$query" ]]; then
       url=${URLS[$platform]}$query

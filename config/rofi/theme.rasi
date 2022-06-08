@@ -22,8 +22,9 @@ configuration{
     hide-scrollbar: true;
     display-drun: "   Apps ";
     display-run: "   Run ";
-    display-window: " 﩯  window";
-    display-ssh: " 🖧  Network";
+    display-window: " 﩯  Window ";
+    display-ssh: " 🖧  Network ";
+    display-emoji: "   Emoji ";
     sidebar-mode: true;
 }
 

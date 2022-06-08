@@ -5,10 +5,11 @@ set fish_plugins vi-mode
 set vi_mode_default vi_mode_normal
 
 # aliases
-alias 'code'='code-insiders'
-alias 'c'='code-insiders'
+alias 'code'='codium'
+alias 'c'='codium'
 alias 'lv'='lvim'
 alias 'nv'='nvim'
+alias 'gv'='goneovim'
 alias 'hx'='helix'
 
 alias 'cpr'='cp -r'
@@ -21,10 +22,6 @@ alias 'lg'='lazygit'
 alias 'ga'='git add'
 alias 'gc'='git commit -am'
 alias 'gp'='git push'
-
-alias 'br'='$HOME/bin/br.sh'
-
-alias 'td'='tdfiglet -jc -f nuclear'
 
 # functions
 function ofetch

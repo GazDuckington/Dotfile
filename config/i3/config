@@ -199,7 +199,7 @@ bindsym Mod1+w layout tabbed
 bindsym Mod1+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+t floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -260,11 +260,16 @@ set $ws5 "5:conf"
 #workspace $ws4 output HDMI-0
 #workspace $ws5 output HDMI-0
 
+# Rules
 # bind program to workspace and focus to them on startup:
 assign [class="kitty"] $ws1
 assign [class="Codium"] $ws2
+assign [class="goneovim"] $ws2
+assign [class="DesktopEditors"] $ws2
 # assign [class="(?i)firefox"] $ws2
 assign [class="Nemo"] $ws3
+assign [class="qView"] $ws3
+assign [class="qBittorrent"] $ws3
 assign [class="Stremio"] $ws4
 assign [class="TelegramDesktop"] $ws5
 assign [class="Arandr"] $ws5
@@ -278,8 +283,8 @@ assign [class="Font-manager"] $ws5
 for_window [class=kitty] focus
 # for_window [class=(?i)firefox] focus?niche=72
 for_window [class=Nemo] focus
-for_window [class=Thunderbird] focus
-for_window [class=TelegramDesktop] focus
+for_window [class=Codium] focus
+for_window [class=goneovim] focus
 
 #############################################
 # autostart applications/services on login: #
@@ -290,7 +295,6 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id sleep 2 && nitrogen --restore
 exec --no-startup-id xset s 480 dpms 600 600 600
-exec --no-startup-id flameshot
 exec_always --no-startup-id ~/bin/autostart
 exec_always --no-startup-id ~/bin/disableETPS 0
 exec_always --no-startup-id ~/.config/polybar/scripts/launch-polybar.sh
@@ -316,6 +320,7 @@ for_window [class="qt5ct" instance="qt5ct"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="Pamac-manager"] floating enable
+for_window [class="qView"] floating enable
 for_window [class="pulsemixer"] floating enable, border normal, resize set 600 300
 for_window [class="nmtui"] floating enable, border normal, resize set 800 600
 for_window [window_role="About"] floating enable
@@ -350,7 +355,7 @@ client.urgent		    $red	    $red	    $white		$red		$red
 # Application menu handled by rofi: #
 #####################################
 bindsym $mod+d exec "rofi -show drun
-bindsym $mod+t exec rofi -show window
+bindsym $mod+w exec rofi -show window
 bindsym $mod+x exec rofi -show run
 bindsym $mod+c exec ~/.config/rofi/scripts/dev.sh
 bindsym $mod+s exec ~/.config/rofi/scripts/web-search.sh
@@ -368,6 +373,12 @@ new_float normal
 ###############
 # Scratchpads: #
 ###############
+
+# Make the currently focused window a scratchpad
+bindsym Mod1+Shift+F1 move scratchpad
+
+# Show the first scratchpad window
+bindsym Mod1+F1  scratchpad show
 
 # dropdown
 exec --no-startup-id "kitty --class dropdown"

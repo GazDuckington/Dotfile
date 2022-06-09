@@ -44,7 +44,7 @@ if status --is-interactive
 end
 
 # paths
-set PATH ~/bin ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
+set PATH ~/bin ~/.nimble/bin ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
 
 # pyenv init
 pyenv init - | source

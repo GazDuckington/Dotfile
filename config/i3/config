@@ -11,6 +11,11 @@ font pango:JetBrainsMono Nerd Font 9
 # set the mod key to the winkey:
 set $mod Mod4
 
+set $left h
+set $right l
+set $up k
+set $down j
+
 #####################
 # workspace layout: #
 #####################
@@ -44,7 +49,7 @@ new_window pixel 1
 #default_border normal
 
 # window title alignment
-#title_align center
+title_align center
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -97,11 +102,10 @@ bindcode $mod+Shift+84 	 move container to workspace  $ws5
 
 # resize window (you can also use the mouse for that):
 mode "resize" {
-	bindsym $left resize shrink width 10 px or 10 ppt
-	bindsym $down resize grow height 10 px or 10 ppt
-	bindsym $up resize shrink height 10 px or 10 ppt
-	bindsym $right resize grow width 10 px or 10 ppt
-
+	bindsym $left exec --no-startup-id i3Kornhe size -p 10 left #resize shrink width 10 px or 10 ppt
+	bindsym $down exec --no-startup-id i3Kornhe size -p 10 down #resize grow height 10 px or 10 ppt
+	bindsym $up exec --no-startup-id i3Kornhe size -p 10 up #resize shrink height 10 px or 10 ppt
+	bindsym $right exec --no-startup-id i3Kornhe size -p 10 right #resize grow width 10 px or 10 ppt
 	# back to normal: Enter or Escape or $mod+r
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
@@ -109,17 +113,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-mode "resize_gaps" {
-	bindsym Shift+plus  gaps inner all plus 5
-    bindsym Shift+minus gaps inner all minus 5
-    bindsym Shift+0     gaps inner all set 0
-
-	# back to normal: Enter or Escape or $mod+r
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+r mode "default"
-}
-bindsym $mod+g mode "resize_gaps"
 
 ######################################
 # keybindings for different actions: #
@@ -161,10 +154,10 @@ bindsym Mod1+Tab         exec --no-startup-id i3flip next
 bindsym Mod1+Shift+Tab   exec --no-startup-id i3flip prev
 
 # change focus
-bindsym $mod+h exec --no-startup-id i3viswiz left
-bindsym $mod+j exec --no-startup-id i3viswiz down
-bindsym $mod+k exec --no-startup-id i3viswiz up
-bindsym $mod+l exec --no-startup-id i3viswiz right
+bindsym $mod+$left exec --no-startup-id i3viswiz left
+bindsym $mod+$down exec --no-startup-id i3viswiz down
+bindsym $mod+$up exec --no-startup-id i3viswiz up
+bindsym $mod+$right exec --no-startup-id i3viswiz right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left 	exec --no-startup-id left
@@ -173,16 +166,16 @@ bindsym $mod+Up 	exec --no-startup-id up
 bindsym $mod+Right 	exec --no-startip-id right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+$left exec --no-startup-id i3Kornhe move -p 20 left
+bindsym $mod+Shift+$down exec --no-startup-id i3Kornhe move -p 20 down
+bindsym $mod+Shift+$up exec --no-startup-id i3Kornhe move -p 20 up
+bindsym $mod+Shift+$right exec --no-startup-id i3Kornhe move -p 20 right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left exec --no-startup-id i3Kornhe move -p 20 left
+bindsym $mod+Shift+Down exec --no-startup-id i3Kornhe move -p 20 down
+bindsym $mod+Shift+Up exec --no-startup-id i3Kornhe move -p 20 up
+bindsym $mod+Shift+Right exec --no-startup-id i3Kornhe move -p 20 right
 
 # split in horizontal orientation
 bindsym $mod+b split h
@@ -271,7 +264,7 @@ assign [class="Nemo"] $ws3
 assign [class="qView"] $ws3
 assign [class="qBittorrent"] $ws3
 assign [class="Stremio"] $ws4
-assign [class="TelegramDesktop"] $ws5
+assign [class="puddletag"] $ws5
 assign [class="Arandr"] $ws5
 assign [class="Font-manager"] $ws5
 assign [class="Lxappearance"] $ws5
@@ -293,6 +286,7 @@ for_window [class=goneovim] focus
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.screenlayout/monitor.sh
+exec --no-startup-id nextcloud
 exec --no-startup-id sleep 2 && nitrogen --restore
 exec --no-startup-id xset s 480 dpms 600 600 600
 exec_always --no-startup-id ~/bin/autostart
@@ -344,7 +338,7 @@ set $yellow	    #f1fa8c
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
 client.focused		    $blue	    $blue	    $black		$blue		$blue
-client.unfocused	    $grey	    $grey	    $white		$grey		$grey
+client.unfocused		$black	    $black	    $white		$black		$black
 client.focused_inactive	$grey	    $grey	    $white		$grey		$grey
 client.urgent		    $red	    $red	    $white		$red		$red
 

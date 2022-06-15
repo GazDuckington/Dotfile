@@ -5,8 +5,8 @@ set fish_plugins vi-mode
 set vi_mode_default vi_mode_normal
 
 # aliases
-alias 'code'='codium'
-alias 'c'='codium'
+alias 'code'='code'
+alias 'c'='code'
 alias 'lv'='lvim'
 alias 'nv'='nvim'
 alias 'gv'='goneovim'
@@ -44,7 +44,7 @@ if status --is-interactive
 end
 
 # paths
-set PATH ~/bin ~/.nimble/bin ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
+set PATH ~/go/bin ~/bin ~/.nimble/bin ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
 
 # pyenv init
 pyenv init - | source

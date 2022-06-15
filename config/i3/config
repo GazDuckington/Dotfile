@@ -257,6 +257,7 @@ set $ws5 "5:conf"
 # bind program to workspace and focus to them on startup:
 assign [class="kitty"] $ws1
 assign [class="Codium"] $ws2
+assign [class="Code"] $ws2
 assign [class="goneovim"] $ws2
 assign [class="DesktopEditors"] $ws2
 # assign [class="(?i)firefox"] $ws2
@@ -277,16 +278,17 @@ for_window [class=kitty] focus
 # for_window [class=(?i)firefox] focus?niche=72
 for_window [class=Nemo] focus
 for_window [class=Codium] focus
+for_window [class=Code] focus
 for_window [class=goneovim] focus
 
 #############################################
 # autostart applications/services on login: #
 #############################################
 
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.screenlayout/monitor.sh
-exec --no-startup-id nextcloud
+exec --no-startup-id nm-applet
 exec --no-startup-id sleep 2 && nitrogen --restore
 exec --no-startup-id xset s 480 dpms 600 600 600
 exec_always --no-startup-id ~/bin/autostart

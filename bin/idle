@@ -3,7 +3,7 @@
 result=$(ps -ef | grep "xidlehook" | grep -v "grep" | wc -l)
 
 function startidle() {
-  xidlehook \
+  $HOME/.cargo/bin/xidlehook \
     --not-when-fullscreen \
     --not-when-audio \
     --timer 600 \

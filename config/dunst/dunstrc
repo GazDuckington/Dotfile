@@ -46,6 +46,7 @@
     # Turn on the progess bar. It appears when a progress hint is passed with
     # for example dunstify -h int:value:12
     progress_bar = true
+    highlight = "#7aa2f7"
 
     # Set the progress bar height. This includes the frame, so make sure
     # it's at least twice as big as the frame width.
@@ -151,7 +152,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<i><b>notification:</b></i>\n%s\n%b"
+    format = "<i><b>%a:</b></i>\n%s\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".

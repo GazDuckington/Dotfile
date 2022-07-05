@@ -1,0 +1,74 @@
+font:
+  size: 9.0
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Retina
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+cursor:
+  style:
+    blinking: Always
+    blink_interval: 500
+window:
+  padding:
+    x: 5
+    y: 3
+  dynamic_title: true
+shell:
+  program: /usr/bin/fish
+
+colors:
+  # Default colors
+  primary:
+    background: '#0d1117'
+    foreground: '#c9d1d9'
+
+    dim_foreground:    '#adbac7'
+    bright_foreground: '#d9d9d9'
+    dim_background:    '#22272e' # not sure
+    bright_background: '#3a3a3a' # not sure
+
+  # Cursor colors
+  cursor:
+    text:   '#010409'
+    cursor: '#EC2864'
+
+  # Normal colors
+  normal:
+    black:   '#161b22'
+    red:     '#da3633'
+    green:   '#238636'
+    yellow:  '#d29922'
+    blue:    '#1f6feb'
+    magenta: '#bf4b8a'
+    cyan:    '#58a6ff'
+    white:   '#c9d1d9'
+
+  # Bright colors
+  bright:
+    black:   '#24292f'
+    red:     '#C4432B'
+    green:   '#347d39'
+    yellow:  '#ebc17a'
+    blue:    '#0969da'
+    magenta: '#bf3989'
+    cyan:    '#54aeff'
+    white:   '#ffffff'
+
+  # Dim colors
+  dim:
+    black:   '#22272e'
+    red:     '#c93c37'
+    green:   '#347d39'
+    yellow:  '#966600'
+    blue:    '#316dca'
+    magenta: '#8256d0'
+    cyan:    '#96d0ff'
+    white:   '#adbac7'

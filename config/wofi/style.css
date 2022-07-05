@@ -1,0 +1,34 @@
+@define-color black #0d1117;
+@define-color white #ffffff;
+@define-color bg #161b22;
+@define-color border #30363d;
+@define-color gray #6e7681;
+@define-color blue #1f6feb;
+@define-color green #238636;
+@define-color yellow #d29922;
+@define-color red #da3633;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 20px;
+}
+
+window {
+    background: @bg;
+    border: 2px solid @border;
+    border-radius: 10px;
+}
+
+#input {
+    border: none;
+    border-radius: 10px 10px 0px 0px;
+    font-size: 30px;
+}
+
+#entry {
+    border-radius: 10px;
+    margin: 10px;
+}
+#entry:selected {
+    background: @blue;
+}

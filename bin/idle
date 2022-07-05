@@ -3,7 +3,7 @@
 result=$(ps -ef | grep "xidlehook" | grep -v "grep" | wc -l)
 
 function startidle() {
-  $HOME/.cargo/bin/xidlehook \
+  xidlehook \
     --not-when-fullscreen \
     --not-when-audio \
     --timer 600 \
@@ -19,9 +19,9 @@ function startidle() {
 function checkidle() {
 
   if [[ $result == 1 ]]; then
-    echo "%{F#45475a}%{F-}"
+    echo "%{F#636c7e}%{F-}"
   else
-    echo "%{F#a6e3a1}%{F-}"
+    echo "%{F#53db7f}%{F-}"
   fi
 
 }

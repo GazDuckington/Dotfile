@@ -10,6 +10,7 @@ font pango:JetBrainsMono Nerd Font 9
 
 # set the mod key to the winkey:
 set $mod Mod4
+set $alt Mod1
 
 set $left h
 set $right l
@@ -55,8 +56,8 @@ title_align center
 floating_modifier $mod
 
 # switch/iterate between workspaces
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+# bindsym $mod+Tab workspace next
+# bindsym $mod+Shift+Tab workspace prev
 
 # switch to workspace
 bindsym $mod+1    workspace  $ws1
@@ -150,8 +151,8 @@ bindsym XF86MonBrightnessUp exec xbacklight +5 && notify-send "Brightness - $(xb
 bindsym XF86MonBrightnessDown exec xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
 
 # change focus on tabbed container
-bindsym Mod1+Tab         exec --no-startup-id i3flip next
-bindsym Mod1+Shift+Tab   exec --no-startup-id i3flip prev
+bindsym $alt+Tab         exec --no-startup-id i3flip next
+bindsym $alt+Shift+Tab   exec --no-startup-id i3flip prev
 
 # change focus
 bindsym $mod+$left exec --no-startup-id i3viswiz left
@@ -159,23 +160,11 @@ bindsym $mod+$down exec --no-startup-id i3viswiz down
 bindsym $mod+$up exec --no-startup-id i3viswiz up
 bindsym $mod+$right exec --no-startup-id i3viswiz right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left 	exec --no-startup-id left
-bindsym $mod+Down 	exec --no-startup-id down
-bindsym $mod+Up 	exec --no-startup-id up
-bindsym $mod+Right 	exec --no-startip-id right
-
 # move focused window
 bindsym $mod+Shift+$left exec --no-startup-id i3Kornhe move -p 20 left
 bindsym $mod+Shift+$down exec --no-startup-id i3Kornhe move -p 20 down
 bindsym $mod+Shift+$up exec --no-startup-id i3Kornhe move -p 20 up
 bindsym $mod+Shift+$right exec --no-startup-id i3Kornhe move -p 20 right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left exec --no-startup-id i3Kornhe move -p 20 left
-bindsym $mod+Shift+Down exec --no-startup-id i3Kornhe move -p 20 down
-bindsym $mod+Shift+Up exec --no-startup-id i3Kornhe move -p 20 up
-bindsym $mod+Shift+Right exec --no-startup-id i3Kornhe move -p 20 right
 
 # split in horizontal orientation
 bindsym $mod+b split h
@@ -187,9 +176,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+s layout stacking
-bindsym Mod1+w layout tabbed
-bindsym Mod1+e layout toggle split
+bindsym $alt+s layout stacking
+bindsym $alt+w layout tabbed
+bindsym $alt+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+t floating toggle
@@ -226,8 +215,9 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym F10 exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+p exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots
-bindsym $mod+shift+p exec --no-startup-id flameshot full -p ~/Pictures/Screenshots
+bindsym $mod+p exec --no-startup-id flameshot gui
+bindsym $mod+shift+p exec --no-startup-id flameshot full
+bindsym $alt+c --release exec ~/bin/color-picker
 
 # Power Profiles menu switcher (rofi)
 bindsym F11 exec ~/.config/i3/scripts/power-profiles
@@ -238,11 +228,11 @@ bindsym F11 exec ~/.config/i3/scripts/power-profiles
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:term"
-set $ws2 "2:edit"
-set $ws3 "3:file"
-set $ws4 "4:play"
-set $ws5 "5:conf"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
@@ -254,7 +244,33 @@ set $ws5 "5:conf"
 #workspace $ws5 output HDMI-0
 
 # Rules
-# bind program to workspace and focus to them on startup:
+
+##################
+# floating rules #
+##################
+
+# set floating (nontiling) for apps needing it
+for_window [class="Yad" instance="yad"] floating enable
+for_window [class="nm-connection-editor"] floating enable
+for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+
+# set floating (nontiling) for special apps
+for_window [class="Nitrogen"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="UpdateInTerminal"] floating enable, resize shrink height 900px, resize grow width 800px
+for_window [class="Kvantum Manager"] floating enable
+for_window [class="qView"] floating enable
+for_window [class="pulsemixer"] floating enable, border normal, resize set 600 300
+for_window [class="nmtui"] floating enable, border normal, resize set 800 600
+for_window [window_role="About"] floating enable
+
+####################
+# workspaces rules #
+####################
+
 assign [class="kitty"] $ws1
 assign [class="Codium"] $ws2
 assign [class="Code"] $ws2
@@ -264,6 +280,7 @@ assign [class="DesktopEditors"] $ws2
 assign [class="Nemo"] $ws3
 assign [class="qView"] $ws3
 assign [class="qBittorrent"] $ws3
+assign [class="Motrix"] $ws3
 assign [class="Stremio"] $ws4
 assign [class="puddletag"] $ws5
 assign [class="Arandr"] $ws5
@@ -285,41 +302,18 @@ for_window [class=goneovim] focus
 # autostart applications/services on login: #
 #############################################
 
-exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.screenlayout/monitor.sh
-exec --no-startup-id nm-applet
-exec --no-startup-id sleep 2 && nitrogen --restore
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id xset s 480 dpms 600 600 600
+exec --no-startup-id parcellite
+exec --no-startup-id picom -b
+exec_always --no-startup-id "watch -n 60; ~/bin/battery-watch"
+exec_always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec_always --no-startup-id ~/bin/autostart
 exec_always --no-startup-id ~/bin/disableETPS 0
 exec_always --no-startup-id ~/.config/polybar/scripts/launch-polybar.sh
 exec_always --no-startup-id autotiling
-
-###############
-# system tray #
-###############
-##################
-# floating rules #
-##################
-
-# set floating (nontiling) for apps needing it
-for_window [class="Yad" instance="yad"] floating enable
-for_window [class="nm-connection-editor"] floating enable
-for_window [class="Galculator" instance="galculator"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-
-# set floating (nontiling) for special apps
-for_window [class="Xsane" instance="xsane"] floating enable
-for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-for_window [class="qt5ct" instance="qt5ct"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [class="qView"] floating enable
-for_window [class="pulsemixer"] floating enable, border normal, resize set 600 300
-for_window [class="nmtui"] floating enable, border normal, resize set 800 600
-for_window [window_role="About"] floating enable
 
 # set border of floating window
 for_window [class="urxvt"] border pixel 1
@@ -329,13 +323,13 @@ for_window [class="urxvt"] border pixel 1
 ######################################
 
 # Define colors variables:
-set $blue		#89b4fa
-set $red		#f38ba8
-set $white		#f5f5f5
-set $black		#1e1e2e
-set $purple		#cba6f7
-set $grey		#43475a
-set $yellow	    #f1fa8c
+set $blue		#3580c1
+set $red		#c44949
+set $white		#d2daf4
+set $black		#0b0d10
+set $purple		#b057cb
+set $grey		#202020
+set $yellow	        #daa640
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
@@ -344,14 +338,11 @@ client.unfocused		$black	    $black	    $white		$black		$black
 client.focused_inactive	$grey	    $grey	    $white		$grey		$grey
 client.urgent		    $red	    $red	    $white		$red		$red
 
-############################################
-# bar settings (input comes from i3blocks) #
-############################################
 #####################################
 # Application menu handled by rofi: #
 #####################################
-bindsym $mod+d exec "rofi -show drun
-bindsym $mod+w exec rofi -show window
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+Tab exec rofi -show window
 bindsym $mod+x exec rofi -show run
 bindsym $mod+c exec ~/.config/rofi/scripts/dev.sh
 bindsym $mod+s exec ~/.config/rofi/scripts/web-search.sh
@@ -371,20 +362,20 @@ new_float normal
 ###############
 
 # Make the currently focused window a scratchpad
-bindsym Mod1+Shift+F1 move scratchpad
+bindsym $alt+Shift+F1 move scratchpad
 
 # Show the first scratchpad window
-bindsym Mod1+F1  scratchpad show
+bindsym $alt+F1  scratchpad show
 
 # dropdown
 exec --no-startup-id "kitty --class dropdown"
-bindsym $mod+Shift+F2 exec --no-startup-id "kitty --class dropdown"
+bindsym $alt+Shift+F2 exec --no-startup-id "kitty --class dropdown"
 for_window [class="dropdown"] floating enable
 for_window [class="dropdown"] move scratchpad, move position 400px 25px, resize shrink height 2020px, resize grow width 800px
-bindsym Mod1+F2 [class="dropdown"] scratchpad show
+bindsym $alt+F2 [class="dropdown"] scratchpad show
 # musikcube
 #exec --no-startup-id ~/bin/kitty-launch.sh musikcube
-bindsym $mod+shift+F3 exec --no-startup-id kitty --class musikcube musikcube
+bindsym $alt+shift+F3 exec --no-startup-id kitty --class musikcube musikcube
 for_window [instance="musikcube"] floating enable
 for_window [instance="musikcube"] move scratchpad, move position 400px 25px, resize grow width 800px, resize grow height 700px
-bindsym Mod1+F3 [instance="musikcube"] scratchpad show
+bindsym $alt+F3 [instance="musikcube"] scratchpad show

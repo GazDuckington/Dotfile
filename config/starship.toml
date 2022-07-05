@@ -1,27 +1,31 @@
 add_newline = false
 command_timeout = 1000
 
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
 [time]
 disabled = true
 
 [username]
-disabled = false
+disabled = true
 show_always = true
 format = "[$user](bold blue)"
 
 [hostname]
 ssh_only = false
 format =  "@[$hostname](bold purple) "
-disabled = false
+disabled = true
 
 [shell]
-disabled = false
+disabled = true
 
 [directory]
 fish_style_pwd_dir_length = 1
 truncation_length = 3
-read_only = " "
-format = "at [$path](cyan) "
+read_only = "⍉"
+format = "[$path](cyan) "
 
 [aws]
 symbol = "  "

@@ -1,0 +1,132 @@
+{
+    "bar_id": "bar1",
+    "ipc": true,
+    "height": 30,
+    "spacing": 2,
+    "modules-left": [
+        "sway/workspaces", 
+        "sway/mode", 
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+    	"custom/arch",
+        // "keyboard-state",
+        "idle_inhibitor", 
+        "pulseaudio", 
+        "network", 
+        "tray", 
+        "battery"],
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{name}",
+        "format-icons": {            
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "sway/window": {
+        "format": "  {}",
+        "max-length": 30,
+        "rewrite": {
+            "": "Desktop"
+        }
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "sway/mode": {
+        "format": " <span style=\"italic\">{}</span> "
+    },
+    "idle_inhibitor": {
+	"format": "{icon}",
+        "format-icons": {
+		"activated": " ",
+		"deactivated": " "
+		}
+    },
+    "tray": {
+        "icon-size": 12,
+        "spacing": 9
+    },
+    "clock": {
+        "format": " {:%a, %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%d-%b-%Y}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": "{icon} {temperatureC}°C",
+        "format": " {icon} {temperatureC}°C ",
+        "format-icons": [""]
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 65,
+            "critical": 35
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+    "network": {
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "tooltip-format": "{essid} {ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "⚠ Disconnected",
+        "on-click": "~/bin/kitty-launch nmtui"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": " muted",
+        "format-source": " {volume}%",
+        "format-source-muted": "  ",
+        "format-icons": {
+            "headphone": "",
+            "default": [
+                "", 
+                "", 
+                ""
+            ]
+        },
+        "on-click": "amixer set Master toggle",
+        "on-click-right": "~/bin/kitty-launch pulsemixer"
+    },
+    "custom/arch": {
+        "exec": "~/bin/arch-up",
+        "restart-interval": 600,
+        "format": "{}",
+        "format-icons": [""],
+        "on-click": "~/bin/kitty-launch UpdateInTerminal"
+    }
+}
+

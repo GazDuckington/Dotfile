@@ -5,8 +5,8 @@ set fish_plugins vi-mode
 set vi_mode_default vi_mode_normal
 
 # aliases
-alias 'code'='code'
-alias 'c'='code'
+alias 'code'='codium'
+alias 'c'='codium'
 alias 'lv'='lvim'
 alias 'nv'='nvim'
 alias 'gv'='goneovim'

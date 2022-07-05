@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-if ! updates=$(checkupdates 2> /dev/null | wc -l); then
+if ! updates=$(checkupdates+aur 2> /dev/null | wc -l); then
    updates=0
 fi
 
 if (( $updates == 0 )); then
-   echo "%{F#45475a} $updates%{F-}"
+    echo "%{F#53db7f}﫟%{F-}"
+   # echo "%{F#d2daf4} %{F-}$updates"
 elif (( $updates > 10 )); then
-   echo "%{F#f38ba8} $updates%{F-}"
+   echo "%{F#daa640} %{F-}$updates"
 else
-   echo "%{F#a6e3a1} $updates%{F-}"
+   echo "%{F#53db7f} %{F-}$updates"
 fi

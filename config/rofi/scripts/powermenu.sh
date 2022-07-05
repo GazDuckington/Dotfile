@@ -33,6 +33,7 @@ case $chosen in
     ;;
     $logout)
         i3-msg exit
-        killall bspwm
+        bspc quit
+        killall spectrwm
     ;;
 esac

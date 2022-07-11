@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+wid=$1
+class=$2
+instance=$3
+consequences=$4
+title=$(xdotool getwindowname $wid)
+
+case "$class" in
+	dropdown)
+		echo "state=floating"
+		;;
+	nmtui|pulsemixer)
+		echo "state=floating"
+		echo "rectangle=600x300+500+25"
+		;;
+	qView|UpdateInTerminal|Arandr|Nitrogen)
+		echo "state=floating"
+		echo "follow=on"
+		;;
+	firefox*|kitty|Zathura)
+		echo "desktop=^1"
+		echo "follow=on"
+		;;
+	VSCodium|DesktopEditors)
+		echo "desktop=^2"
+		echo "follow=on"
+		;;
+	Nemo|Motrix|qBittorrent)
+		echo "desktop=^3"
+		echo "follow=on"
+		;;
+	ru-turikhay-tlauncher-bootstrap-Bootstrap|Minecraft*|Stremio)
+		echo "desktop=^4" 
+		echo "state=pseudo_tiled"
+		echo "layer=above"
+		echo "follow=on"
+		;;
+	Lxappearance|Kvantum\ Manager|Firewall-config)
+		echo "desktop=^5"
+		echo "state=pseudo_tiled"
+		echo "follow=on"
+		;;
+	btop|musikcube)
+		echo "desktop=^6"
+		echo "state=pseudo_tiled"
+		echo "follow=on"
+		;;
+esac
+
+case "$title" in
+	Library)
+		echo "state=floating"
+	;;
+esac

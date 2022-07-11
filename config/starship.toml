@@ -12,9 +12,11 @@ error_symbol = "[→](bold red)"
 disabled = true
 
 [username]
-disabled = true
+disabled = false
 show_always = true
-format = "[$user](bold blue)"
+style_user = "bold blue"
+style_root = "bold red"
+format = "[$user]($style)@"
 
 [hostname]
 ssh_only = false
@@ -27,8 +29,9 @@ disabled = true
 [directory]
 fish_style_pwd_dir_length = 1
 truncation_length = 3
+home_symbol = "home"
 read_only = "⍉"
-format = "[$path](cyan) "
+format = "[$path](bold cyan) "
 
 [aws]
 symbol = "  "

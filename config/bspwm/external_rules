@@ -6,19 +6,17 @@ consequences=$4
 title=$(xdotool getwindowname $wid)
 
 case "$class" in
-	dropdown)
-		echo "state=floating"
-		;;
 	nmtui|pulsemixer)
 		echo "state=floating"
-		echo "rectangle=600x300+500+25"
+		echo "rectangle=600x500+500+50"
 		;;
-	qView|UpdateInTerminal|Arandr|Nitrogen)
+	dropdown|qView|UpdateInTerminal|Arandr|Nitrogen)
 		echo "state=floating"
-		echo "follow=on"
+		# echo "follow=on"
 		;;
 	firefox*|kitty|Zathura)
 		echo "desktop=^1"
+		echo "state=tiled"
 		echo "follow=on"
 		;;
 	VSCodium|DesktopEditors)

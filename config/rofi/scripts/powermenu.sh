@@ -22,7 +22,7 @@ case $chosen in
     ;;
     $lock)
       amixer set Master mute &
-      ~/.config/i3/scripts/i3lock-color
+      ~/bin/i3lock-color
     ;;
     $suspend)
 #    	mpc -q pause
@@ -34,6 +34,7 @@ case $chosen in
     $logout)
         i3-msg exit
         bspc quit
+	dkcmd exit
         killall spectrwm
     ;;
 esac

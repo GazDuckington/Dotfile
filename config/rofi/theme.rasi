@@ -1,9 +1,9 @@
 * {
-    bg-col:  #0d1117;
-    bg-col-light: #0b0d10;
-    border-col: #0d1117;
-    selected-col: #0d1117;
-    blue: #4796d9;
+    bg-col: #1d1c1a;
+    bg-col-light: #171615;
+    border-col: #171615;
+    selected-col: #171615;
+    blue: #54aeff;
     fg-col: #c9d1d9;
     fg-col2: #e15858;
     grey: #636c7e;
@@ -12,10 +12,10 @@
 configuration{
     font: 		"JetBrainsMono Nerd Font 12";
     show-icons: true;
-    icon-theme: "Tela-circle-dark";
-    combi-modi: "window,drun,ssh,emoji";
+    icon-theme: "Qogir-dark";
+    combi-modi: "window,drun,emoji";
     termninal: "kitty";
-    /* modi: "run,drun,window"; */
+    modi: "run,drun,window";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
@@ -37,6 +37,7 @@ element-text, element-icon , mode-switcher {
 window {
     width: 20em;
     border: 1px;
+    border-radius: 10px;
     border-color: @blue;
     background-color: @bg-col;
 }

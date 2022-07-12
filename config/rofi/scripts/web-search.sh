@@ -16,6 +16,7 @@ URLS=(
   ["pubdev"]="https://pub.dev/packages?q="
   ["npmjs"]="https://www.npmjs.com/search?q="
   ["docker"]="https://hub.docker.com/search?q="
+  ["flathub"]="https://flathub.org/apps/search/"
 )
 rofi_command="rofi -dmenu -matching fuzzy -i -no-show-icons"
 # List for rofi

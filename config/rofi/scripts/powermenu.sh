@@ -14,27 +14,28 @@ options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 
 chosen="$(echo -e "$options" | $rofi_command -p ' ⏼ Power Menu ' -dmenu)"
 case $chosen in
-    $shutdown)
-       systemctl poweroff 
-	  ;;
-    $reboot)
-	    systemctl reboot
+$shutdown)
+    killall5 -9
+    systemctl poweroff
     ;;
-    $lock)
-      amixer set Master mute &
-      ~/bin/i3lock-color
+$reboot)
+    systemctl reboot
     ;;
-    $suspend)
-#    	mpc -q pause
-#	    playerctl pause
-	    amixer set Master mute &
-#      ~/scripts/i3lock.sh
-	    systemctl suspend
+$lock)
+    amixer set Master mute &
+    ~/bin/i3lock-color
     ;;
-    $logout)
-        i3-msg exit
-        bspc quit
-	dkcmd exit
-        killall spectrwm
+$suspend)
+    #    	mpc -q pause
+    #	    playerctl pause
+    amixer set Master mute &
+    #      ~/scripts/i3lock.sh
+    systemctl suspend
+    ;;
+$logout)
+    i3-msg exit
+    bspc quit
+    dkcmd exit
+    killall spectrwm
     ;;
 esac

@@ -31,5 +31,6 @@ xsetroot -cursor_name left_ptr &
 ~/bin/autostart &
 ~/bin/disableETPS 0 &
 nitrogen --restore &
+pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x clipit >/dev/null || clipit &
 pgrep -x udiskie >/dev/null || udiskie -t &

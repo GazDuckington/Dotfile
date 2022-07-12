@@ -6,14 +6,13 @@ consequences=$4
 title=$(xdotool getwindowname $wid)
 
 case "$class" in
-	nmtui|pulsemixer)
+	nmtui|pulsemixer|[Nn]m-connection-editor)
 		echo "state=floating"
 		echo "rectangle=600x500+500+50"
 		;;
 	dropdown|qView|UpdateInTerminal|Arandr|Nitrogen)
 		echo "state=floating"
-		# echo "follow=on"
-		;;
+                ;;
 	firefox*|kitty|Zathura)
 		echo "desktop=^1"
 		echo "state=tiled"
@@ -27,12 +26,16 @@ case "$class" in
 		echo "desktop=^3"
 		echo "follow=on"
 		;;
-	ru-turikhay-tlauncher-bootstrap-Bootstrap|Minecraft*|Stremio)
+	ru-turikhay-tlauncher-bootstrap-Bootstrap|Stremio)
 		echo "desktop=^4" 
 		echo "state=pseudo_tiled"
-		echo "layer=above"
-		echo "follow=on"
+                echo "follow=on"
 		;;
+        Minecraft*)
+                echo "desktop=^4"
+                echo "state=tiled"
+                echo "follow=on"
+                ;;
 	Lxappearance|Kvantum\ Manager|Firewall-config)
 		echo "desktop=^5"
 		echo "state=pseudo_tiled"

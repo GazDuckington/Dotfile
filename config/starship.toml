@@ -16,7 +16,7 @@ disabled = false
 show_always = true
 style_user = "bold blue"
 style_root = "bold red"
-format = "[$user]($style)@"
+format = "[$user]($style) in "
 
 [hostname]
 ssh_only = false

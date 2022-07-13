@@ -331,7 +331,7 @@ client.urgent		    $red	    $red	    $white		$red		$red
 # Application menu handled by rofi: #
 #####################################
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+w exec rofi -show window
 bindsym $mod+x exec rofi -show run
 bindsym $mod+c exec ~/.config/rofi/scripts/dev.sh
 bindsym $mod+s exec ~/.config/rofi/scripts/web-search.sh
@@ -340,7 +340,7 @@ bindsym $mod+e exec rofi -show emoji -modi emoji -no-show-icons
 ##########
 # Rules: #
 ##########
-default_border pixel 1
+default_border pixel 2
 floating_minimum_size 350 x 350
 floating_maximum_size 850 x 850
 focus_follows_mouse no

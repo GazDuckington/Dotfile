@@ -251,44 +251,26 @@ set $ws5 "5"
 
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
-for_window [class="nm-connection-editor"] floating enable
-for_window [class="Galculator" instance="galculator"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="nm-connection-editor|Galculator|copyq"] floating enable
 
 # set floating (nontiling) for special apps
-for_window [class="Nitrogen"] floating enable
-for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-for_window [class="Lxappearance"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="Nitrogen|Pavucontrol|Lxappearance"] floating enable
 for_window [class="UpdateInTerminal"] floating enable, resize shrink height 900px, resize grow width 800px
-for_window [class="Kvantum Manager"] floating enable
-for_window [class="qView"] floating enable
+for_window [class="Kvantum Manager|qView"] floating enable
 for_window [class="pulsemixer"] floating enable, border normal, resize set 600 300
 for_window [class="nmtui"] floating enable, border normal, resize set 800 600
-for_window [window_role="About"] floating enable
+for_window [title="Library|Pick"] floating enable
 
 ####################
 # workspaces rules #
 ####################
 
-assign [class="kitty"] $ws1
-assign [class="Codium"] $ws2
-assign [class="Code"] $ws2
-assign [class="goneovim"] $ws2
-assign [class="DesktopEditors"] $ws2
-# assign [class="(?i)firefox"] $ws2
-assign [class="Nemo"] $ws3
-assign [class="qView"] $ws3
-assign [class="qBittorrent"] $ws3
-assign [class="Motrix"] $ws3
-assign [class="Stremio"] $ws4
-assign [class="puddletag"] $ws5
-assign [class="Arandr"] $ws5
-assign [class="Font-manager"] $ws5
-assign [class="Lxappearance"] $ws5
-assign [class="Kvantum Manager"] $ws5
-assign [class="Gnome-disks"] $ws5
-assign [class="Font-manager"] $ws5
+assign [class="kitty|firefox*"] $ws1
+assign [class="Codium|Code|DesktopEditors"] $ws2
+assign [class="Motrix|qBittorrent|qView|Nemo"] $ws3
+assign [class="Stremio|\btlauncher\b|Minecraft*"] $ws4
+assign [class="puddletag|Font-manager|Lxappearance|Kvantum Manager|Gnome-disks"] $ws5
+assign [class="Font-manager|Arandr|Firewall-config|\w*Flatseal\b"] $ws5
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=kitty] focus
@@ -306,8 +288,10 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xset s 480 dpms 600 600 600
-exec --no-startup-id parcellite
-exec --no-startup-id picom -b
+exec --no-startup-id copyq
+exec --no-startup-id nm-applet
+exec --no-startup-id udiskie -t
+exec --no-startup-id picom --experimental-backends -b
 exec_always --no-startup-id "watch -n 60; ~/bin/battery-watch"
 exec_always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec_always --no-startup-id ~/bin/autostart
@@ -315,8 +299,13 @@ exec_always --no-startup-id ~/bin/disableETPS 0
 exec_always --no-startup-id ~/.config/polybar/scripts/launch-polybar.sh i3bar
 exec_always --no-startup-id autotiling
 
-# set border of floating window
-for_window [class="urxvt"] border pixel 1
+# layouting
+exec_always --no-startup-id i3-layouts
+set $i3l vstack 0.6 to workspace $ws1
+set $i3l vstack 0.6 to workspace $ws2
+set $i3l vstack 0.6 to workspace $ws3
+set $i3l vstack 0.6 to workspace $ws4
+set $i3l vstack 0.6 to workspace $ws5
 
 ######################################
 # color settings for bar and windows #

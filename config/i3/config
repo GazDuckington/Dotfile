@@ -301,11 +301,11 @@ exec_always --no-startup-id autotiling
 
 # layouting
 exec_always --no-startup-id i3-layouts
-set $i3l vstack 0.6 to workspace $ws1
-set $i3l vstack 0.6 to workspace $ws2
-set $i3l vstack 0.6 to workspace $ws3
-set $i3l vstack 0.6 to workspace $ws4
-set $i3l vstack 0.6 to workspace $ws5
+set $i3l vstack 0.55 to workspace $ws1
+set $i3l vstack 0.55 to workspace $ws2
+set $i3l vstack 0.55 to workspace $ws3
+set $i3l vstack 0.55 to workspace $ws4
+set $i3l vstack 0.55 to workspace $ws5
 
 ######################################
 # color settings for bar and windows #

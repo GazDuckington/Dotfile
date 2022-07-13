@@ -8,20 +8,22 @@ title=$(xdotool getwindowname $wid)
 case "$class" in
 	nmtui|pulsemixer|[Nn]m-connection-editor)
 		echo "state=floating"
+                echo "layer=above"
 		echo "rectangle=600x500+500+50"
 		;;
-	qView|UpdateInTerminal|Arandr|Nitrogen)
+	qView|UpdateInTerminal|Arandr|Nitrogen|copyq)
 		echo "state=floating"
+                echo "layer=above"
                 ;;
         dropdown|musikcube)
                 echo "state=floating"
+                echo "layer=above"
                 echo "sticky=on"
                 echo "hidden=on"
                 echo "rectangle=500x500+50%+50%"
                 ;;
 	firefox*|kitty|Zathura)
 		echo "desktop=^1"
-		echo "state=tiled"
 		echo "follow=on"
 		;;
 	VSCodium|DesktopEditors)
@@ -39,7 +41,6 @@ case "$class" in
 		;;
         Minecraft*)
                 echo "desktop=^4"
-                echo "state=tiled"
                 echo "follow=on"
                 ;;
 	Lxappearance|Kvantum\ Manager|Firewall-config)
@@ -55,7 +56,8 @@ case "$class" in
 esac
 
 case "$title" in
-	Library)
+	Library|Pick)
 		echo "state=floating"
+                echo "layer=above"
 	;;
 esac

@@ -250,23 +250,17 @@ set $ws5 "5"
 ##################
 
 # set floating (nontiling) for apps needing it
-for_window [class="Yad" instance="yad"] floating enable
-for_window [class="nm-connection-editor|Galculator|copyq"] floating enable
-for_window [class="Nitrogen|Pavucontrol|Lxappearance"] floating enable
-for_window [class="UpdateInTerminal"] floating enable, resize shrink height 900px, resize grow width 800px
-for_window [class="Kvantum Manager|qView"] floating enable
-for_window [class="pulsemixer"] floating enable, border normal, resize set 600 300
-for_window [class="nmtui"] floating enable, border normal, resize set 800 600
 for_window [title="Library|Pick"] floating enable
+for_window [class="Yad|nm-connection-editor|Galculator|copyq"] floating enable
+for_window [class="Nitrogen|Pavucontrol|Lxappearance|Kvantum Manager|qView"] floating enable
+for_window [class="UpdateInTerminal|pulsemixer|nmtui"] floating enable, border normal, resize set 15% 15%
 
 ####################
 # workspaces rules #
 ####################
 
-assign [class="kitty"] $ws1
-assign [class="firefox*"] $ws1
-assign [class="Codium"] $ws2 
-assign [class="DesktopEditors"] $ws2
+assign [class="kitty|firefox*"] $ws1
+assign [class="Codium|DesktopEditors"] $ws2
 assign [class="Motrix|qBittorrent|qView|Nemo"] $ws3
 assign [class="Stremio|\btlauncher\b|Minecraft*"] $ws4
 assign [class="puddletag|Font-manager|Lxappearance|Kvantum Manager|Gnome-disks"] $ws5

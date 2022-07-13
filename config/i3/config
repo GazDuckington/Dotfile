@@ -250,7 +250,8 @@ set $ws5 "5"
 ##################
 
 # set floating (nontiling) for apps needing it
-for_window [title="Library|Pick"] floating enable
+for_window [class="firefox*" title="Library"] floating enable
+for_window [class="__main__.py" title="Pick"] floating enable
 for_window [class="Yad|nm-connection-editor|Galculator|copyq"] floating enable
 for_window [class="Nitrogen|Pavucontrol|Lxappearance|Kvantum Manager|qView"] floating enable
 for_window [class="UpdateInTerminal|pulsemixer|nmtui"] floating enable, border normal, resize set 15% 15%

@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"path": "../.config/polybar"
+		},
+		{
+			"path": "../.config/dunst"
+		},
+		{
+			"path": "../.config/fish"
+		},
+		{
+			"path": "../.config/i3"
+		},
+		{
+			"path": "../.config/kitty"
+		},
+		{
+			"path": "../.config/macchina"
+		},
+		{
+			"path": "../.config/nvim"
+		},
+		{
+			"path": "../.config/picom"
+		},
+		{
+			"path": "../.config/rofi"
+		},
+		{
+			"path": "../bin"
+		},
+		{
+			"path": "../.config/spectrwm"
+		},
+		{
+			"path": "../.config/sway"
+		},
+		{
+			"path": "../.config/bspwm"
+		},
+		{
+			"path": "../.config/sxhkd"
+		}
+	],
+	"settings": {}
+}

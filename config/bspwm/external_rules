@@ -34,7 +34,7 @@ case "$class" in
 		echo "desktop=^3"
 		echo "follow=on"
 		;;
-	ru-turikhay-tlauncher-bootstrap-Bootstrap)
+	ru-turikhay-tlauncher-bootstrap-Bootstrap|ATLauncher)
 		echo "desktop=^4" 
 		echo "state=pseudo_tiled"
                 echo "follow=on"
@@ -43,7 +43,7 @@ case "$class" in
                 echo "desktop=^4"
                 echo "follow=on"
                 ;;
-	Lxappearance|Kvantum\ Manager|Firewall-config)
+	Com.github.tchx84.Flatseal|Lxappearance|Kvantum\ Manager|Firewall-config)
 		echo "desktop=^5"
 		echo "state=pseudo_tiled"
 		echo "follow=on"

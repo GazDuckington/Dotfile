@@ -1,7 +1,7 @@
 #! /bin/sh
 bspc monitor -d 1 2 3 4 5 6
 
-bspc config automatic_scheme=alternate
+bspc config automatic_scheme=longest_side
 
 bspc config border_width 2
 bspc config window_gap 10
@@ -16,8 +16,7 @@ bspc config normal_border_color \#636c7e
 bspc config external_rules_command $HOME/.config/bspwm/external_rules
 
 # bsp-layout
-bsp-layout set tall & 
-#-- --master-size 0.6 &
+bsp-layout set tall -- --master-size 0.6 --desktop 1,3,4,5,6 &
 
 # polybar
 ~/.config/polybar/scripts/launch-polybar.sh bspbar &
@@ -26,7 +25,8 @@ bsp-layout set tall &
 picom --experimental-backends -b & 
 
 # dropdown terminal
-kitty --class dropdown &
+# kitty --class dropdown &
+
 # autostart
 pgrep -x sxhkd >/dev/null || sxhkd &
 /usr/lib/polkit-kde-authentication-agent-1 &

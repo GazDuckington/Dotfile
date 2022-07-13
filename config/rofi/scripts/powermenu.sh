@@ -15,7 +15,6 @@ options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 chosen="$(echo -e "$options" | $rofi_command -p ' ⏼ Power Menu ' -dmenu)"
 case $chosen in
 $shutdown)
-    killall5 -9
     systemctl poweroff
     ;;
 $reboot)

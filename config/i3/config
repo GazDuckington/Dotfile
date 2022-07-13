@@ -161,10 +161,10 @@ bindsym $mod+$up exec --no-startup-id i3viswiz up
 bindsym $mod+$right exec --no-startup-id i3viswiz right
 
 # move focused window
-bindsym $mod+Shift+$left exec --no-startup-id i3Kornhe move -p 20 left
-bindsym $mod+Shift+$down exec --no-startup-id i3Kornhe move -p 20 down
-bindsym $mod+Shift+$up exec --no-startup-id i3Kornhe move -p 20 up
-bindsym $mod+Shift+$right exec --no-startup-id i3Kornhe move -p 20 right
+bindsym $mod+Shift+$left exec --no-startup-id  i3l move left 
+bindsym $mod+Shift+$down exec --no-startup-id  i3l move down 
+bindsym $mod+Shift+$up exec --no-startup-id    i3l move up   
+bindsym $mod+Shift+$right exec --no-startup-id i3l move right
 
 # split in horizontal orientation
 bindsym $mod+b split h
@@ -252,8 +252,6 @@ set $ws5 "5"
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="nm-connection-editor|Galculator|copyq"] floating enable
-
-# set floating (nontiling) for special apps
 for_window [class="Nitrogen|Pavucontrol|Lxappearance"] floating enable
 for_window [class="UpdateInTerminal"] floating enable, resize shrink height 900px, resize grow width 800px
 for_window [class="Kvantum Manager|qView"] floating enable
@@ -265,8 +263,10 @@ for_window [title="Library|Pick"] floating enable
 # workspaces rules #
 ####################
 
-assign [class="kitty|firefox*"] $ws1
-assign [class="Codium|Code|DesktopEditors"] $ws2
+assign [class="kitty"] $ws1
+assign [class="firefox*"] $ws1
+assign [class="Codium"] $ws2 
+assign [class="DesktopEditors"] $ws2
 assign [class="Motrix|qBittorrent|qView|Nemo"] $ws3
 assign [class="Stremio|\btlauncher\b|Minecraft*"] $ws4
 assign [class="puddletag|Font-manager|Lxappearance|Kvantum Manager|Gnome-disks"] $ws5

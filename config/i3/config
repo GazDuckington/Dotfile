@@ -356,15 +356,14 @@ bindsym $alt+Shift+F1 move scratchpad
 # Show the first scratchpad window
 bindsym $alt+F1  scratchpad show
 
+
+for_window [class="musikcube|dropdown"] move scratchpad, move position 50% 50%, resize shrink height 50%, resize grow width 50%
+
 # dropdown
 exec --no-startup-id "kitty --class dropdown"
 bindsym $alt+Shift+F2 exec --no-startup-id "kitty --class dropdown"
-for_window [class="dropdown"] floating enable
-for_window [class="dropdown"] move scratchpad, move position 400px 25px, resize shrink height 2020px, resize grow width 800px
 bindsym $alt+F2 [class="dropdown"] scratchpad show
+
 # musikcube
-#exec --no-startup-id ~/bin/kitty-launch.sh musikcube
-bindsym $alt+shift+F3 exec --no-startup-id kitty --class musikcube musikcube
-for_window [instance="musikcube"] floating enable
-for_window [instance="musikcube"] move scratchpad, move position 400px 25px, resize grow width 800px, resize grow height 700px
+bindsym $alt+shift+F3 exec --no-startup-id ~/bin/kitty-launch musikcube
 bindsym $alt+F3 [instance="musikcube"] scratchpad show

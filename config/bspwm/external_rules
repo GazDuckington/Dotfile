@@ -10,8 +10,14 @@ case "$class" in
 		echo "state=floating"
 		echo "rectangle=600x500+500+50"
 		;;
-	dropdown|qView|UpdateInTerminal|Arandr|Nitrogen)
+	qView|UpdateInTerminal|Arandr|Nitrogen)
 		echo "state=floating"
+                ;;
+        dropdown|musikcube)
+                echo "state=floating"
+                echo "sticky=on"
+                echo "hidden=on"
+                echo "rectangle=500x500+50%+50%"
                 ;;
 	firefox*|kitty|Zathura)
 		echo "desktop=^1"
@@ -26,7 +32,7 @@ case "$class" in
 		echo "desktop=^3"
 		echo "follow=on"
 		;;
-	ru-turikhay-tlauncher-bootstrap-Bootstrap|Stremio)
+	ru-turikhay-tlauncher-bootstrap-Bootstrap)
 		echo "desktop=^4" 
 		echo "state=pseudo_tiled"
                 echo "follow=on"
@@ -41,7 +47,7 @@ case "$class" in
 		echo "state=pseudo_tiled"
 		echo "follow=on"
 		;;
-	btop|musikcube)
+	btop|Stremio)
 		echo "desktop=^6"
 		echo "state=pseudo_tiled"
 		echo "follow=on"

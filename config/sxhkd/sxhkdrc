@@ -30,9 +30,15 @@ super + e
 
 # dropdown terminal
 alt + F2
-	tdrop -ma -w 50% -h 40% -x 400 -y 30 kitty --class dropdown
+        ~/bin/toggleterm dropdown
+
+alt + shift + F2
+        kitty --class dropdown
 
 # music player
+alt + F3
+        ~/bin/toggleterm musikcube
+
 alt + shift + F3
         ~/bin/kitty-launch musikcube
 

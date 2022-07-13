@@ -24,6 +24,8 @@ bsp-layout set tall &
 # picom
 picom --experimental-backends -b & 
 
+# dropdown terminal
+kitty --class dropdown &
 # autostart
 pgrep -x sxhkd >/dev/null || sxhkd &
 /usr/lib/polkit-kde-authentication-agent-1 &
@@ -32,5 +34,5 @@ xsetroot -cursor_name left_ptr &
 ~/bin/disableETPS 0 &
 nitrogen --restore &
 pgrep -x nm-applet >/dev/null || nm-applet &
-pgrep -x clipit >/dev/null || clipit &
+pgrep -x copyq >/dev/null || copyq &
 pgrep -x udiskie >/dev/null || udiskie -t &

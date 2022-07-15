@@ -264,7 +264,7 @@ assign [class="kitty|firefox*"] $ws1
 assign [class="Codium|DesktopEditors"] $ws2
 assign [class="Motrix|qBittorrent|qView|Nemo"] $ws3
 assign [class="Stremio|\btlauncher\b|Minecraft*"] $ws4
-assign [class="puddletag|Font-manager|Lxappearance|Kvantum Manager|Gnome-disks"] $ws5
+assign [class="puddletag|Font-manager|Lxappearance|Kvantum Manager|[Gg]nome-disks"] $ws5
 assign [class="Font-manager|Arandr|Firewall-config|\w*Flatseal\b"] $ws5
 
 # automatic set focus new window if it opens on another workspace then the current:

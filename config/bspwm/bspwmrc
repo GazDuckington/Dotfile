@@ -7,7 +7,7 @@ bspc config removal_adjustment false
 
 bspc config border_width 2
 bspc config window_gap 10
-bspc config split_ratio 0.6
+# bspc config split_ratio 0.58
 bspc config top_padding 20
 bspc config borderless_monocle true
 bspc config gapless_monocle true
@@ -16,6 +16,14 @@ bspc config focused_border_color \#4796d9
 bspc config normal_border_color \#636c7e
 
 bspc config external_rules_command $HOME/.config/bspwm/external_rules
+
+# layouting
+bsp-layout set tall 1 -- --master-size 0.55 &
+bsp-layout set tall 2 -- --master-size 0.55 &
+bsp-layout set tall 3 -- --master-size 0.55 &
+bsp-layout set tall 4 -- --master-size 0.55 &
+bsp-layout set tall 5 -- --master-size 0.55 &
+bsp-layout set tall 6 -- --master-size 0.55 &
 
 # polybar
 ~/.config/polybar/scripts/launch-polybar.sh bspbar &

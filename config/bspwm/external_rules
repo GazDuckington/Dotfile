@@ -50,13 +50,13 @@ case "$class" in
 		;;
 	btop|Stremio)
 		echo "desktop=^6"
-		echo "state=pseudo_tiled"
+		# echo "state=pseudo_tiled"
 		echo "follow=on"
 		;;
 esac
 
 case "$title" in
-	Library|Pick)
+	^Library$|^Pick&)
 		echo "state=floating"
                 echo "layer=above"
 	;;

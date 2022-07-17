@@ -36,7 +36,7 @@ element-text, element-icon , mode-switcher {
 
 window {
     width: 20em;
-    border: 1px;
+    border: 2px;
     border-radius: 10px;
     border-color: @blue;
     background-color: @bg-col;
@@ -93,7 +93,9 @@ element-text {
 
 element selected {
     background-color:  @bg-col-light;
-    border-radius: 5px;
+    border-radius: 0px;
+    border-color: @blue;
+    border: 0px 0px 2px 0px;
     text-color: @blue;
 }
 

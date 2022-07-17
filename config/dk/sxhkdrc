@@ -24,8 +24,8 @@ super + e
 	rofi -show emoji -modi emoji -no-show-icons
 
 # dropdown terminal
-alt + F2
-	tdrop -ma -w 800 -h 350 -x 400 -y 25 kitty --class dropdown
+# alt + F2
+# 	tdrop -ma -w 800 -h 350 -x 25% -y 25  kitty --class dropdown
 
 # music player
 alt + shift + F3
@@ -55,12 +55,12 @@ super + Return
 	kitty
 
 # dropdown terminal
-alt + F2
-    tdrop -ma -w 800 -h 350 -x 400 -y 25 kitty --class dropdown
+# alt  F2
+#     tdrop -ma -wh 50% -x 25% -y 25 kitty --class dropdown
 
 # screenshot and selection capture
 {_,alt + }@Print
-	scrot {_,-s}
+	flameshot {gui, screen}
 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
@@ -75,7 +75,7 @@ alt + {Insert,Delete}
 	amixer set Master {5%+, 5%-}
 
 # reload sxhkd
-alt + shift + x
+super + Escape
 	pkill -USR1 -x sxhkd
 
 # quit dk
@@ -91,7 +91,7 @@ super + shift + r
 	dkcmd restart
 
 # focus next or previous window
-super + {j,k}
+super + {k,j} 
 	dkcmd win focus {next,prev}
 
 # close window, swap tiled window in/out of master, cycle tiled windows in place
@@ -115,7 +115,7 @@ alt + ctrl + {h,j,k,l}
 	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
 
 # move the active window up/down the stack
-alt + {Up,Down}
+super + shift + {k,j}
 	dkcmd win mvstack {up,down}
 
 # view, send, or follow to a workspace (by number)

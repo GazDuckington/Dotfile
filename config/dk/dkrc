@@ -15,21 +15,16 @@ if hash sxhkd >/dev/null 2>&1; then
 fi
 
 
-killall -q polybar
-# polybar-msg cmd quit
-
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
-polybar -r specbar --config=~/.config/polybar/config.ini &
-
-echo "polybar launched"
-
 # autostart
-# ~/.config/polybar/scripts/launch-polybar.sh specbar &
+~/.config/polybar/scripts/launch-polybar.sh specbar &
 ~/bin/autostart &
 ~/bin/disableETPS 0 &
 /usr/lib/polkit-kde-authentication-agent-1 &
-picom -b &
+picom --experimental-backends -b &
+nitrogen --restore &
+pgrep -x nm-applet >/dev/null || nm-applet &
+pgrep -x copyq >/dev/null || copyq &
+pgrep -x udiskie >/dev/null || udiskie -t &
 
 { # compound command to redirect all output
 
@@ -38,11 +33,11 @@ picom -b &
 
 	# initialize 10 workspaces (1-10) (default: 1/monitor)
 	dkcmd set numws=6
-        dkcmd set ws=_ pad t=20
+        # dkcmd set ws=_ pad t=20
 
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
-	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=5 msplit=0.55 ssplit=0.5
+	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=5 msplit=0.58 ssplit=0.5
 
 	# use grid layout, padding, and gaps on workspace 10
 	# dkcmd set ws=10 layout=grid pad left=200 right=200 top=100 bottom=100 gap width=50
@@ -91,13 +86,13 @@ picom -b &
 	dkcmd set tile_tohead=0 tile_hints=false
 
 	# minimum width/height for resizing, and minimum allowed on-screen when moving
-	dkcmd set win_minwh=50 win_minxy=10
+	dkcmd set win_minwh=50 win_minxy=30
 
 	# disable gaps and borders in single window layouts
-	dkcmd set smart_gap=true smart_border=true
+	dkcmd set smart_gap=false smart_border=false
 
 	# define mouse mod and move/resize buttons
-	dkcmd set mouse mod=alt move=button1 resize=button3
+	dkcmd set mouse mod=super move=button1 resize=button3
 
 
 	# borders
@@ -126,33 +121,26 @@ picom -b &
 	# rule class, instance, and title regexes (*ALWAYS* CASE INSENSITIVE)
 
 	# open window(s) on a specific workspace (assigned monitor)
-	dkcmd rule class="^kitty$" ws=1
+        dkcmd rule class="(kitty|Zathura|firefox*)" ws=1 focus=true
+        dkcmd rule class="(\b[Cc]odium\b|DesktopEditors)" ws=2 focus=true
+        dkcmd rule class="(Nemo|Motrix|qBittorrent)" ws=3 focus=true
+        dkcmd rule class="(\btlauncher\b|Minecraft*)" ws=4 focus=true
+        dkcmd rule\
+          class="(\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config)"\
+          ws=5 focus=true float=true
+        dkcmd rule class="(\bcelluloid\b|Stremio|nuclear|moosync|musikcube)"\
+	  ws=6 focus=true
 
 
-	# open window(s) on a monitor by number or name (active workspace on monitor)
-	dkcmd rule class="^chromium$" mon="HDMI-A-0"
+        dkcmd rule \
+          class="(xdg-desktop-portal-gnome|copyq|pulsemixer|nmtui|[Nn]m-connection-editor)" \
+          float=true focus=true stick=true w=500 h=300 y=25 x=center
+        dkcmd rule title="(^Library$|^Pick$)" float=true focus=true
 
 	# open window(s) and use a callback function (user defined in config.h)
 	# we also ignore=true to stop the window from being resized on it's own from events
 	# eg. mpv --x11-name=albumart /path/to/media
 	dkcmd rule class="^mpv$" instance="^albumart$" float=true ignore=true callback=albumart bw=0
-
-	# open window(s) in a floating state
-	dkcmd rule class="^(pulsemixer|nmtui|pavucontrol|transmission-gtk|steam|lxappearance)$" float=true
-
-	# open window(s) with a specific geometry and coordinates (floating only!)
-	dkcmd rule class="^google-chrome$" title="^open files$" float=true w=1280 h=720
-
-	# open window(s) with sticky and floating enabled to view on all workspaces.
-	dkcmd rule class="^dropdown$" stick=true float=true w=1280 h=720
-        # dkcmd rule class="^dropdown$" float=true ignore=false focus=true
-
-	# focus window and workspace on opening
-	dkcmd rule class="^firefox$" ws=1 focus=true
-
-	# update or remove an existing rule with the same match patterns
-	dkcmd rule class="^firefox$" mon="HDMI-A-0"
-	dkcmd rule remove class="^firefox$"
 
 	# apply current rule set to all existing windows
 	dkcmd rule apply '*'

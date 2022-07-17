@@ -9,7 +9,7 @@ alias 'code'='codium'
 alias 'c'='codium'
 alias 'lv'='lvim'
 alias 'nv'='nvim'
-alias 'gv'='goneovim'
+alias 'v'='neovide --multigrid'
 alias 'hx'='helix'
 
 alias 'cpr'='cp -r'
@@ -25,26 +25,32 @@ alias 'gp'='git push'
 
 # functions
 function ofetch
-  if not set -q argv[1]
-    onefetch --show-logo never -c 4
-  else
-    onefetch $argv --show-logo never -c 4
-  end
+    if not set -q argv[1]
+        onefetch --show-logo never -c 4
+    else
+        onefetch $argv --show-logo never -c 4
+    end
 end
 
-#function lolban
-#  figlet -f ANSI\ Shadow  $argv | lolcat
-#end
+function lolban
+    figlet -f ANSI\ Shadow $argv | lolcat
+end
 
 # startx on tty1
 if status --is-interactive
-  if test -z "$DISPLAY" -a $XDG_VTNR = 1
-    exec startx -- -keeptty
-  end
+    if test -z "$DISPLAY" -a $XDG_VTNR = 1
+        exec startx -- -keeptty
+    end
 end
 
 # paths
 set PATH ~/go/bin ~/bin ~/.nimble/bin ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
+export PATH="$PATH:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/gaz/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
 
 # pyenv init
 pyenv init - | source

@@ -2,8 +2,18 @@
 
 updates=$(echo 'n' | flatpak update 2>/dev/null | tail -n +5 | head -2 | wc -l)
 
-if [ "$updates" -gt 0 ]; then
-    echo "%{F#daa640}%{F-} $updates"
+echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 >/dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+
+    if (($updates == 0)); then
+        echo "%{F#53db7f}%{F-}"
+    elif (($updates > 10)); then
+        echo "%{F#daa640} %{F-}$updates"
+    else
+        echo "%{F#53db7f} %{F-}$updates"
+    fi
+
 else
-    echo "%{F#53db7f}%{F-}"
+    echo "%{F#6272a4}%{F-}"
 fi

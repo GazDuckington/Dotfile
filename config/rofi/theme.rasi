@@ -37,7 +37,7 @@ element-text, element-icon , mode-switcher {
 window {
     width: 20em;
     border: 1px;
-    /* border-radius: 10px; */
+    border-radius: 10px;
     border-color: @blue;
     background-color: @bg-col;
 }
@@ -52,7 +52,7 @@ inputbar {
     background-color: @bg-col-light;
     margin: 20px 20px 20px 20px;
     border: 0px 0px 2px 0px;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
     border-color: @blue;
 }
 

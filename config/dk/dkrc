@@ -120,7 +120,8 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 	dkcmd rule class="([Vv][Ss][Cc]odium\b|[Cc]ode|DesktopEditors)" ws=2 focus=true
 	dkcmd rule class="(Nemo|Motrix|qBittorrent)" ws=3 focus=true
 	dkcmd rule class="(\btlauncher\b|Minecraft*)" ws=4 focus=true
-	dkcmd rule class="(\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config)" \
+	dkcmd rule \
+          class="([Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config)" \
 		ws=5 focus=true float=true
 	dkcmd rule class="(\bcelluloid\b|Stremio|nuclear|moosync)" \
 		ws=6 focus=true

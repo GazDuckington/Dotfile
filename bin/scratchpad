@@ -1,0 +1,15 @@
+#!/bin/bash
+
+wid=`xdotool search --classname dropdown | head -n 1`
+if [ -z "$wid" ]; then
+   kitty --class dropdown 
+   wid=$(xdotool search --classname dropdown | head -n 1)
+   xdotool windowfocus $wid
+else
+    if [ -z "$(xdotool search --onlyvisible --classname dropdown 2>/dev/null | head -n 1)" ];     then
+        xdotool windowmap $wid
+        # xdotool windowfocus $wid
+    else
+        xdotool windowunmap $wid
+    fi
+fi

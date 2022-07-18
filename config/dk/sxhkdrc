@@ -47,7 +47,7 @@ ctrl + alt + Delete
 	~/bin/kitty-launch btop
 
 # toggle polybar
-ctrl + shift + p
+super + shift + p
 	polybar-msg cmd toggle && bspc config set top_padding 0
 
 # terminal

@@ -24,8 +24,8 @@ super + e
 	rofi -show emoji -modi emoji -no-show-icons
 
 # dropdown terminal
-# alt + F2
-# 	tdrop -ma -w 800 -h 350 -x 25% -y 25  kitty --class dropdown
+alt + F2
+        ~/bin/scratchpad
 
 # music player
 alt + shift + F3
@@ -107,7 +107,7 @@ super + {f,s}
 	dkcmd win {float,stick}
 
 # move window, signed (+/-) for relative changes
-alt + shift + {h,j,k,l}
+super + shift + {h,j,k,l}
 	dkcmd win resize {x=-20,y=+20,y=-20,x=+20}
 
 # resize window, signed (+/-) for relative changes

@@ -103,7 +103,7 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 	# outer width must be less than width, outer width of 0 will be single borders
 	dkcmd set border width=2 outer_width=0 \
 		colour \
-		focus='#6699cc' \
+		focus='#4796d9' \
 		unfocus='#444444' \
 		urgent='#ee5555' \
 		outer_focus='#222222' \

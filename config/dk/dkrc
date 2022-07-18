@@ -5,15 +5,13 @@
 # determine where to place the log file
 logfile="$HOME/.dkrc.log"
 [ -d "$HOME/.local/share/xorg" ] && logfile="$HOME/.local/share/xorg/dkrc.log"
-: > "$logfile"
-
+: >"$logfile"
 
 # (re)load sxhkd for keybinds
 if hash sxhkd >/dev/null 2>&1; then
 	pkill sxhkd
 	sxhkd -c "$HOME/.config/dk/sxhkdrc" &
 fi
-
 
 # autostart
 ~/.config/polybar/scripts/launch-polybar.sh specbar &
@@ -33,7 +31,7 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 
 	# initialize 10 workspaces (1-10) (default: 1/monitor)
 	dkcmd set numws=6
-        # dkcmd set ws=_ pad t=20
+	# dkcmd set ws=_ pad t=20
 
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
@@ -75,7 +73,6 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 	# 	ws=9  mon=$mon2 \
 	# 	ws=10 mon=$mon2
 
-
 	# global settings
 	# ---------------------
 
@@ -93,7 +90,6 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 
 	# define mouse mod and move/resize buttons
 	dkcmd set mouse mod=super move=button1 resize=button3
-
 
 	# borders
 	# ---------
@@ -114,28 +110,25 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 		outer_unfocus='#222222' \
 		outer_urgent='#222222'
 
-
 	# window rules
 	# --------------
 
 	# rule class, instance, and title regexes (*ALWAYS* CASE INSENSITIVE)
 
 	# open window(s) on a specific workspace (assigned monitor)
-        dkcmd rule class="(kitty|Zathura|firefox*)" ws=1 focus=true
-        dkcmd rule class="(\b[Cc]odium\b|DesktopEditors)" ws=2 focus=true
-        dkcmd rule class="(Nemo|Motrix|qBittorrent)" ws=3 focus=true
-        dkcmd rule class="(\btlauncher\b|Minecraft*)" ws=4 focus=true
-        dkcmd rule\
-          class="(\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config)"\
-          ws=5 focus=true float=true
-        dkcmd rule class="(\bcelluloid\b|Stremio|nuclear|moosync|musikcube)"\
-	  ws=6 focus=true
+	dkcmd rule class="(kitty|Zathura|firefox*)" ws=1 focus=true
+	dkcmd rule class="([Vv][Ss][Cc]odium\b|DesktopEditors)" ws=2 focus=true
+	dkcmd rule class="(Nemo|Motrix|qBittorrent)" ws=3 focus=true
+	dkcmd rule class="(\btlauncher\b|Minecraft*)" ws=4 focus=true
+	dkcmd rule class="(\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config)" \
+		ws=5 focus=true float=true
+	dkcmd rule class="(\bcelluloid\b|Stremio|nuclear|moosync|musikcube)" \
+		ws=6 focus=true
 
-
-        dkcmd rule \
-          class="(dropdown|xdg-desktop-portal-gnome|copyq|pulsemixer|nmtui|[Nn]m-connection-editor)" \
-          float=true focus=true stick=true y=25 x=center
-        dkcmd rule title="(^Library$|^Pick$)" float=true focus=true
+	dkcmd rule \
+		class="(dropdown|xdg-desktop-portal-gnome|copyq|pulsemixer|nmtui|[Nn]m-connection-editor)" \
+		float=true focus=true stick=true y=25 x=center
+	dkcmd rule title="(^Library$|^Pick$)" float=true focus=true
 
 	# open window(s) and use a callback function (user defined in config.h)
 	# we also ignore=true to stop the window from being resized on it's own from events
@@ -148,7 +141,7 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 	# delete all rules
 	# dkcmd rule remove '*'
 
-} >> "$logfile" 2>&1 # append responses
+} >>"$logfile" 2>&1 # append responses
 
 # inform of any errors in a notification
 if grep -q 'error:' "$logfile"; then

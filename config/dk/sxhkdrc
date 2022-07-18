@@ -34,13 +34,6 @@ alt + F3
 alt + shift + F3
         ~/bin/kitty-launch musikcube
 
-# screen shot
-super + p
-        flameshot gui
-
-super + shift + p
-        flameshot full
-
 # color picker
 alt + c
         ~/bin/color-picker

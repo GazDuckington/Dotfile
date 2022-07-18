@@ -25,9 +25,12 @@ super + e
 
 # dropdown terminal
 alt + F2
-        ~/bin/scratchpad
+        ~/bin/scratchpad dropdown
 
 # music player
+alt + F3
+		~/bin/scratchpad musikcube
+
 alt + shift + F3
         ~/bin/kitty-launch musikcube
 
@@ -53,10 +56,6 @@ super + shift + p
 # terminal
 super + Return
 	kitty
-
-# dropdown terminal
-# alt  F2
-#     tdrop -ma -wh 50% -x 25% -y 25 kitty --class dropdown
 
 # screenshot and selection capture
 {_,alt + }@Print

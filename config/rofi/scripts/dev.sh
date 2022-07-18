@@ -10,5 +10,5 @@ chosen="$(echo -e "$options" | $rofi_command -p '  Code ' -dmenu -no-show-ico
 if ["$chosen" = ""]; then
 $chosen
 else
-codium ~/Dev/$chosen
+$1 ~/Dev/$chosen
 fi

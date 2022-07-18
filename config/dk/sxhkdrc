@@ -15,7 +15,7 @@ alt + F4
         ~/.config/rofi/scripts/powermenu.sh
 
 super + c
-        ~/.config/rofi/scripts/dev.sh
+        ~/.config/rofi/scripts/dev.sh code
 
 super + s
         ~/.config/rofi/scripts/web-search.sh

@@ -15,13 +15,12 @@ case "$class" in
 		echo "state=floating"
                 echo "layer=above"
                 ;;
-        dropdown|musikcube)
-                echo "state=floating"
-                echo "layer=above"
-                echo "sticky=on"
+       	dropdown|musikcube)
+		echo "state=floating"
+		echo "layer=above"
+		echo "sticky=on"
                 echo "hidden=on"
-                echo "rectangle=500x500+50%+50%"
-                ;;
+		;;
 	firefox*|kitty|Zathura)
 		echo "desktop=^1"
 		echo "follow=on"

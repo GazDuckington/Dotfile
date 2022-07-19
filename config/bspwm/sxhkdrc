@@ -33,14 +33,14 @@ alt + F2
         ~/bin/toggleterm dropdown
 
 alt + shift + F2
-        kitty --class dropdown
+        kitty --class dropdown &
 
 # music player
 alt + F3
         ~/bin/toggleterm musikcube
 
 alt + shift + F3
-        ~/bin/kitty-launch musikcube
+        ~/bin/kitty-launch musikcube &
 
 # screen shot
 Print

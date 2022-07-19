@@ -2,9 +2,9 @@
 PROFILE=$(powerprofilesctl get)
 
 if [ $PROFILE == "balanced" ]; then
-    echo "%{F#d2daf4}%{F-}"
+    echo "%{F#67b0e8}%{F-}"
 elif [ $PROFILE == "performance" ]; then
-    echo "%{F#daa640}ﴞ%{F-}"
+    echo "%{F#e5c76b}ﴞ%{F-}"
 elif [ $PROFILE == "power-saver" ]; then
-    echo "%{F#53db7f}%{F-}"
+    echo "%{F#8ccf7e}%{F-}"
 fi

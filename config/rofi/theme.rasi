@@ -37,7 +37,7 @@ element-text, element-icon , mode-switcher {
 window {
     width: 20em;
     border: 2px;
-    border-radius: 10px;
+    border-radius: 5px;
     border-color: @blue;
     background-color: @bg-col;
 }

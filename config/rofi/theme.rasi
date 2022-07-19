@@ -39,7 +39,6 @@ window {
     border: 2px;
     border-radius: 5px;
     border-color: @blue;
-    background-color: @bg-col;
 }
 
 mainbox {
@@ -74,12 +73,12 @@ listview {
     margin: 0px 20px 20px 20px;
     columns: 1;
     lines: 10;
-    background-color: @bg-col;
+    background-color: inherit;
 }
 
 element {
     padding: 5px;
-    background-color: @bg-col;
+    background-color: inherit;
     text-color: @grey;
 }
 

@@ -36,6 +36,7 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
 	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=5 msplit=0.58 ssplit=0.5
+        dkcmd set ws=5 layout=grid
 
 	# use grid layout, padding, and gaps on workspace 10
 	# dkcmd set ws=10 layout=grid pad left=200 right=200 top=100 bottom=100 gap width=50
@@ -122,7 +123,7 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 	dkcmd rule class="(\btlauncher\b|Minecraft*)" ws=4 focus=true
 	dkcmd rule \
           class="(\bDejaDup\b|[Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config)" \
-		ws=5 focus=true float=true
+		ws=5 focus=true
 	dkcmd rule class="(\bcelluloid\b|Stremio|nuclear|moosync)" \
 		ws=6 focus=true
 

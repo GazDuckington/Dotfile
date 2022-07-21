@@ -23,13 +23,16 @@ super + s
 super + e
 	rofi -show emoji -modi emoji -no-show-icons
 
+super + t
+        ~/dktheme/theme-switcher
+
 # dropdown terminal
 alt + F2
         ~/bin/scratchpad dropdown
 
 # music player
 alt + F3
-		~/bin/scratchpad musikcube
+        ~/bin/scratchpad musikcube
 
 alt + shift + F3
         ~/bin/kitty-launch musikcube

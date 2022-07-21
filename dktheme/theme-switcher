@@ -10,6 +10,6 @@ else
   cp ~/dktheme/themes/$chosen/*.ini ~/.config/polybar/color.ini
   cp ~/dktheme/themes/$chosen/*.sh ~/.config/dk/color.sh
   cp ~/dktheme/themes/$chosen/*.rasi ~/.config/rofi/theme.rasi
-  nitrogen --set-auto --save ~/Pictures/Wallpapers/$chosen*
+  nitrogen --set-scaled --save ~/Pictures/Wallpapers/$chosen*
   dkcmd reload
 fi

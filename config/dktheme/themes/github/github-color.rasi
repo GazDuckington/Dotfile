@@ -1,0 +1,8 @@
+* {
+    bg: #010409;
+    black: #0b0e14;
+    blue: #559df0;
+    fg: #c9d1d9;
+    red: #f85149;
+    grey: #b3b9b8;
+}

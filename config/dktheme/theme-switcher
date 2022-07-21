@@ -7,9 +7,12 @@ theme_dir=~/dktheme/themes/$chosen
 if [ -z "${chosen}" ]; then
   echo cancelled
 else
-  cp $theme_dir/color.ini ~/.config/polybar/color.ini
-  cp $theme_dir/color.sh ~/.config/dk/color.sh
-  cp $theme_dir/color.rasi ~/.config/rofi/color.rasi
+  cp $theme_dir/$chosen-color.ini ~/.config/polybar/color.ini
+  cp $theme_dir/$chosen-color.sh ~/.config/dk/color.sh
+  cp $theme_dir/$chosen-color.rasi ~/.config/rofi/color.rasi
+  cp $theme_dir/$chosen-color.conf ~/.config/kitty/theme.conf
+  cp $theme_dir/$chosen-kvantum.kvconfig ~/.config/Kvantum/kvantum.kvconfig
+  cp $theme_dir/$chosen-settings.ini ~/.config/gtk-3.0/settings.ini
   nitrogen --set-scaled --save ~/Pictures/Wallpapers/$chosen*
   dkcmd reload
 fi

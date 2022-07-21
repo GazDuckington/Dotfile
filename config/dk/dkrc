@@ -15,6 +15,7 @@ fi
 
 # autostart
 ~/.config/polybar/scripts/launch-polybar.sh specbar &
+# ~/.config/dk/theme.sh &
 ~/bin/autostart &
 ~/bin/disableETPS 0 &
 /usr/lib/polkit-kde-authentication-agent-1 &
@@ -40,42 +41,6 @@ pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=5 msplit=0.58 ssplit=0.5
         dkcmd set ws=5 layout=grid
 
-	# use grid layout, padding, and gaps on workspace 10
-	# dkcmd set ws=10 layout=grid pad left=200 right=200 top=100 bottom=100 gap width=50
-
-	# change workspace names (default: number == name)
-	# dkcmd set \
-	# 	ws=1  name="edit" \
-	# 	ws=2  name="web" \
-	# 	ws=3  name="😀" \
-	# 	ws=4  name="😠" \
-	# 	ws=5  name="5" \
-	# 	ws=6  name="6" \
-	# 	ws=7  name="7" \
-	# 	ws=8  name="8" \
-	# 	ws=9  name="9" \
-	# 	ws=10 name="10"
-
-	# enable static workspaces and assign them to monitors (only relevant for multiple monitors)
-	# aside -
-	#		many that come from other workspace models tried dk and requested this feature
-	#		try embracing the default behaviour and allow access to any workspace from any monitor
-	#       you might end up liking it :)
-	#
-	# mon1='DisplayPort-0'
-	# mon2='HDMI-A-0'
-	# dkcmd set static_ws=true \
-	# 	ws=1  mon=$mon1 \
-	# 	ws=2  mon=$mon1 \
-	# 	ws=3  mon=$mon1 \
-	# 	ws=4  mon=$mon1 \
-	# 	ws=5  mon=$mon1 \
-	# 	ws=6  mon=$mon2 \
-	# 	ws=7  mon=$mon2 \
-	# 	ws=8  mon=$mon2 \
-	# 	ws=9  mon=$mon2 \
-	# 	ws=10 mon=$mon2
-
 	# global settings
 	# ---------------------
 
@@ -93,27 +58,18 @@ pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 
 	# define mouse mod and move/resize buttons
 	dkcmd set mouse mod=super move=button1 resize=button3
-
-	# borders
-	# ---------
-
-	# traditional
-	# set border width and colour for each window state
-	# dkcmd set border width=1 colour focus='#6699cc' unfocus='#000000' urgent='#ee5555'
-
-	# alternative
-	# enable split borders and colours, width is overall width, outer width consumes some of width.
-	# outer width must be less than width, outer width of 0 will be single borders
-        . ./color.sh
-	dkcmd set border width=2 outer_width=0 \
-		colour \
-		focus=$blue \
-		unfocus=$grey \
-		urgent=$red \
-		outer_focus=$bg \
-		outer_unfocus=$bg \
-		outer_urgent=$bg
-
+	
+        # border
+        . ~/.config/dk/color.sh
+        dkcmd set border width=1 outer_width=0 \
+          colour \
+          focus=$blue \
+          unfocus=$grey \
+          urgent=$red \
+          outer_focus=$bg \
+          outer_unfocus=$bg \
+          outer_urgent=$bg
+	#
 	# window rules
 	# --------------
 

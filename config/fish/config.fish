@@ -5,8 +5,9 @@ set fish_plugins vi-mode
 set vi_mode_default vi_mode_normal
 
 # aliases
-alias 'code'='codium'
-alias 'c'='codium'
+alias 'g'='git'
+alias 'code'='code'
+alias 'c'='code'
 alias 'lv'='lvim'
 alias 'nv'='nvim'
 alias 'v'='neovide --multigrid'

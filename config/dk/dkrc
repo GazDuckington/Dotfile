@@ -18,11 +18,13 @@ fi
 ~/bin/autostart &
 ~/bin/disableETPS 0 &
 /usr/lib/polkit-kde-authentication-agent-1 &
+/usr/lib/kdeconnectd &
 picom --experimental-backends -b &
 nitrogen --restore &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x copyq >/dev/null || copyq &
 pgrep -x udiskie >/dev/null || udiskie -t &
+pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 
 { # compound command to redirect all output
 
@@ -102,14 +104,15 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 	# alternative
 	# enable split borders and colours, width is overall width, outer width consumes some of width.
 	# outer width must be less than width, outer width of 0 will be single borders
+        . ./color.sh
 	dkcmd set border width=2 outer_width=0 \
 		colour \
-		focus='#4796d9' \
-		unfocus='#444444' \
-		urgent='#ee5555' \
-		outer_focus='#222222' \
-		outer_unfocus='#222222' \
-		outer_urgent='#222222'
+		focus=$blue \
+		unfocus=$grey \
+		urgent=$red \
+		outer_focus=$bg \
+		outer_unfocus=$bg \
+		outer_urgent=$bg
 
 	# window rules
 	# --------------
@@ -128,7 +131,7 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 		ws=6 focus=true
 
 	dkcmd rule \
-		class="(xdg-desktop-portal-gnome|copyq|pulsemixer|nmtui|[Nn]m-connection-editor)" \
+		class="(Nitrogen|xdg-desktop-portal-gnome|copyq|pulsemixer|nmtui|[Nn]m-connection-editor)" \
 		float=true focus=true stick=true y=25 x=center
 	dkcmd rule title="(^Library$|^Pick$)" float=true focus=true
 

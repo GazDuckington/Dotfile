@@ -1,1 +1,109 @@
 @theme "theme"
+
+configuration{
+    font: 		"JetBrainsMono Nerd Font 12";
+    show-icons: true;
+    icon-theme: "Qogir-dark";
+    combi-modi: "window,drun,emoji";
+    termninal: "kitty";
+    modi: "run,drun,window";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 﩯  Window ";
+    display-ssh: " 🖧  Network ";
+    display-emoji: "   Emoji ";
+    sidebar-mode: true;
+}
+
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    width: 20em;
+    border: 2px;
+    border-radius: 5px;
+    border-color: @blue;
+    background-color: @bg;
+}
+
+mainbox {
+    background-color: @bg;
+    children: [inputbar, listview];
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @black;
+    margin: 20px 20px 20px 20px;
+    border: 0px 0px 2px 0px;
+    border-radius: 10px 10px 0px 0px;
+    border-color: @blue;
+}
+
+prompt {
+    text-color: @blue;
+    padding: 6px;
+    background-color: @black;
+}
+
+entry {
+    placeholder: "Type to search";
+    placeholder-color: @grey;
+    padding: 6px;
+    text-color: @fg;
+    background-color: @black;
+}
+
+listview {
+    margin: 0px 20px 20px 20px;
+    columns: 1;
+    lines: 10;
+    background-color: @bg;
+}
+
+element {
+    padding: 5px;
+    background-color: @bg;
+    text-color: @grey;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+element selected {
+    background-color:  @black;
+    border-radius: 0px;
+    border-color: @blue;
+    border: 0px 0px 2px 0px;
+    text-color: @blue;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    padding: 10px;
+    background-color: @black;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+    padding: 6px;
+    background-color:  @bg;
+    text-color: @blue;
+}

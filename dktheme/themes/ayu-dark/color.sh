@@ -1,0 +1,13 @@
+#!/bin/sh
+bg='#0b0e14'
+fg='#636a72'
+indigo='#6272a4'
+grey='#1e222a'
+green='#aad94c'
+cyan='#95e6cb'
+purple='#d2a6ff'
+red='#f26d78'
+yellow='#e6b450'
+blue='#39bae6'
+teal='#59c2ff'
+bluegray='#d2a6ff'

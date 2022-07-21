@@ -1,7 +1,7 @@
 #!/bin/sh
 
 rofi_command="rofi -i -matching fuzzy"
-chosen="$(ls ~/dktheme/themes | $rofi_command -p ' Themes' -dmenu -no-show-icons
+chosen="$(ls ~/dktheme/themes | $rofi_command -p '  Themes' -dmenu -no-show-icons
 )"
 
 if [ -z "${chosen}" ]; then

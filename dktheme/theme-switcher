@@ -1,14 +1,14 @@
 #!/bin/sh
 
 rofi_command="rofi -i -matching fuzzy"
-chosen="$(ls ./themes | $rofi_command -p ' Themes ' -dmenu -no-show-icons
+chosen="$(ls ~/dktheme/themes | $rofi_command -p ' Themes ' -dmenu -no-show-icons
 )"
 
 if [ -z "${chosen}" ]; then
   echo cancelled
 else
-  cp ./themes/$chosen/*.ini ~/.config/polybar/color.ini
-  cp ./themes/$chosen/*.sh ~/.config/dk/color.sh
+  cp ~/dktheme/themes/$chosen/*.ini ~/.config/polybar/color.ini
+  cp ~/dktheme/themes/$chosen/*.sh ~/.config/dk/color.sh
   nitrogen --set-auto --save ~/Pictures/Wallpapers/$chosen*
   dkcmd reload
 fi

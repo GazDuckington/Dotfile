@@ -1,13 +1,14 @@
 #!/bin/bash
+. ~/.config/dk/color.sh
 
 function capslock() {
 
   caps=$(xset -q | grep Caps | awk '{ print $4 }')
 
   if [ $caps == 'off' ]; then
-    echo "%{F#b3b9b8}ﰶ%{F-}"
+    echo "%{F$grey}ﰶ%{F-}"
   else
-    echo "%{F#8ccf7e}ﰶ%{F-}"
+    echo "%{F }ﰶ%{F-}"
     #echo "בּ"
   fi
 
@@ -18,9 +19,9 @@ function numlock() {
   num=$(xset -q | grep Num | awk '{ print $8 }')
 
   if [ $num == 'off' ]; then
-    echo "%{F#b3b9b8}%{F-}"
+    echo "%{F$grey}%{F-}"
   else
-    echo "%{F#8ccf7e}%{F-}"
+    echo "%{F$green}%{F-}"
   fi
 
 }

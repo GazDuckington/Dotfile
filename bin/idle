@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+. ~/.config/dk/color.sh
 
 result=$(ps -ef | grep "xidlehook" | grep -v "grep" | wc -l)
 
@@ -19,9 +20,9 @@ function startidle() {
 function checkidle() {
 
   if [[ $result == 1 ]]; then
-    echo "%{F#b3b9b8}%{F-}"
+    echo "%{F$grey}%{F-}"
   else
-    echo "%{F#8ccf7e}%{F-}"
+    echo "%{F$green}%{F-}"
   fi
 
 }

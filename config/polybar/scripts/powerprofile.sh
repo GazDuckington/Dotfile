@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 PROFILE=$(powerprofilesctl get)
+. ~/.config/dk/color.sh
 
 if [ $PROFILE == "balanced" ]; then
-    echo "%{F#67b0e8}%{F-}"
+    echo "%{F$blue}%{F-}"
 elif [ $PROFILE == "performance" ]; then
-    echo "%{F#e5c76b}ﴞ%{F-}"
+    echo "%{F$yellow}ﴞ%{F-}"
 elif [ $PROFILE == "power-saver" ]; then
-    echo "%{F#8ccf7e}%{F-}"
+    echo "%{F$green}%{F-}"
 fi

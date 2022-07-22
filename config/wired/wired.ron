@@ -91,8 +91,8 @@
                 border_width: 1.0,
                 border_rounding: 3.0,
                 fill_rounding: 3.0,
-                border_color: Color(hex: "#ebdbb2"),
-                background_color: Color(hex: "#30363d"),
+                border_color: Color(hex: "#0d1117"),
+                background_color: Color(hex: "#0d1117"),
                 fill_color: Color(hex: "#58a6ff"),
                 width: -1.0,
                 height: 10.0,
@@ -102,8 +102,8 @@
 
     // https://github.com/Toqozz/wired-notify/wiki/Shortcuts
     shortcuts: ShortcutsConfig (
-        notification_interact: 1,
-        notification_close: 2,
+        notification_interact: 2,
+        notification_close: 1,
         // notification_closeall: 99,
         // notification_pause: 99,
 

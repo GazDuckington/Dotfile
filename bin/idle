@@ -31,10 +31,10 @@ function toggleidle() {
 
   if [[ $result == 0 ]]; then
     $HOME/bin/idle -s &
-    dunstify "idle is on" -t 5000
+    notify-send "idle is on" -t 5000
   else
     killall xidlehook &
-    dunstify "Staying up" -t 5000
+    notify-send "Staying up" -t 5000
   fi
 
 }

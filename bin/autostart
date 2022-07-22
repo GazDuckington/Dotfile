@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 
-killall -q dunst
-while pgrep -u $UID -x dunst >/dev/null; do sleep 1; done
-dunst  --config ~/.config/dunst/dunstrc &
+killall -q wired
+while pgrep -u $UID -x wired >/dev/null; do sleep 1; done
+wired &
 
 killall -q xidlehook
 while pgrep -u $UID -x xidlehook >/dev/null; do sleep 1; done

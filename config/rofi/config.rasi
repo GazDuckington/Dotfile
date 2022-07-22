@@ -1,4 +1,4 @@
-@theme "theme"
+@theme "color"
 
 configuration{
     font: 		"JetBrainsMono Nerd Font 12";

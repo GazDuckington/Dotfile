@@ -98,7 +98,7 @@ super + {q,space,Tab}
 	dkcmd win {full,fakefull}
 
 # toggle floating or sticky
-super + {f,s}
+alt + {f,s}
 	dkcmd win {float,stick}
 
 # move window, signed (+/-) for relative changes

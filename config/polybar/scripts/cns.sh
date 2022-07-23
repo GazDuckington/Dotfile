@@ -8,7 +8,7 @@ function capslock() {
   if [ $caps == 'off' ]; then
     echo "%{F$grey}ﰶ%{F-}"
   else
-    echo "%{F }ﰶ%{F-}"
+    echo "%{F$green}ﰶ%{F-}"
     #echo "בּ"
   fi
 

@@ -65,12 +65,12 @@ listview {
     margin: 0px 20px 20px 20px;
     columns: 1;
     lines: 10;
-    background-color: @bg;
+    background-color: transparent;
 }
 
 element {
     padding: 5px;
-    background-color: @bg;
+    background-color: inherit;
     text-color: @grey;
 }
 

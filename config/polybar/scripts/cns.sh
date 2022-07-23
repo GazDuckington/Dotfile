@@ -9,7 +9,6 @@ function capslock() {
     echo "%{F$grey}ﰶ%{F-}"
   else
     echo "%{F$green}ﰶ%{F-}"
-    #echo "בּ"
   fi
 
 }
@@ -31,10 +30,9 @@ function scroll() {
   scroll=$(xset -q | grep Scroll | awk '{ print $12 }')
 
   if [ $scroll == 'off' ]; then
-    echo ""
+    echo "%{F$grey}%{F-}"
   else
-    # echo "%{F#21ff21}%{F-}"
-    echo ""
+    echo "%{F$green}%{F-}"
   fi
 
 }

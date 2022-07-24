@@ -12,7 +12,7 @@ error_symbol = "[→](bold red)"
 disabled = true
 
 [username]
-disabled = false
+disabled = true
 show_always = true
 style_user = "bold blue"
 style_root = "bold red"
@@ -29,7 +29,7 @@ disabled = true
 [directory]
 fish_style_pwd_dir_length = 1
 truncation_length = 3
-home_symbol = "home"
+# home_symbol = "home"
 read_only = "⍉"
 format = "[$path](cyan) "
 

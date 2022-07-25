@@ -25,10 +25,7 @@ $lock)
     ~/bin/i3lock-color
     ;;
 $suspend)
-    #    	mpc -q pause
-    #	    playerctl pause
     amixer set Master mute &
-    #      ~/scripts/i3lock.sh
     systemctl suspend
     ;;
 $logout)

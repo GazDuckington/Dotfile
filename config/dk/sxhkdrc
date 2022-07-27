@@ -54,8 +54,8 @@ super + Return
 	kitty
 
 # screenshot and selection capture
-{_,alt + }@Print
-	flameshot {gui, screen}
+{_,alt +, ctrl +, shift + }@Print
+	~/bin/scrotting {_, screen, area, window}
 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}

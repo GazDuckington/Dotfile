@@ -59,7 +59,7 @@ super + Return
 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
-	amixer set Master {5%+, 5%-}
+	~/bin/changevol {5%+, 5%-}
 
 # dedicated backlight keys
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
@@ -67,7 +67,7 @@ super + Return
 
 # alt volume keys
 alt + {Insert,Delete}
-	amixer set Master {5%+, 5%-}
+	~/bin/changevol {5%+, 5%-}
 
 # reload sxhkd
 super + Escape

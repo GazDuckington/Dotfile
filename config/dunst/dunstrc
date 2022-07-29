@@ -198,7 +198,7 @@
 
     # Paths to default icons.
     #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-    icon_path = /usr/share/icons/Qogir/16/status:/usr/share/icons/Qogir/16/devices/:/usr/share/icons/Qogir/16/apps/:/usr/share/pixmaps/
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/
 
     ### History ###
 
@@ -298,14 +298,12 @@
     foreground = "#dadada"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
-    icon = /usr/share/icons/Arc-X-D/status/16/dialog-information.png
 
 [urgency_normal]
     background = "#141b1e"
     foreground = "#dadada"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
-    icon = /usr/share/icons/Arc-X-D/status/16/dialog-question.png
 
 [urgency_critical]
     background = "#141b1e"
@@ -313,7 +311,6 @@
     frame_color = "#e57474"
     timeout = 120
     # Icon for notifications with critical urgency, uncomment to enable
-    icon = /usr/share/icons/Arc-X-D/status/16/dialog-warning.png
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

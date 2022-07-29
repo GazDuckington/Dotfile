@@ -46,9 +46,8 @@ i3lock \
 --verif-font="$FONT" \
 --wrong-font="$FONT" \
 --greeter-font="$FONT" \
--n; amixer set Master unmute \
-
+-n; \
+amixer set Master unmute \
 dunstctl set-paused false
-
 sleep 1
 exit

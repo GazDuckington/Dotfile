@@ -16,6 +16,7 @@ fi
 # autostart
 ~/.config/polybar/scripts/launch-polybar.sh specbar &
 # ~/.config/dk/theme.sh &
+dbus-launch &
 ~/bin/autostart &
 ~/bin/disableETPS 0 &
 /usr/lib/polkit-kde-authentication-agent-1 &
@@ -38,7 +39,7 @@ pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
-	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=5 msplit=0.58 ssplit=0.5
+	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=5 msplit=0.55 ssplit=0.5
         dkcmd set ws=5 layout=grid
 
 	# global settings
@@ -76,7 +77,7 @@ pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 	# rule class, instance, and title regexes (*ALWAYS* CASE INSENSITIVE)
 
 	# open window(s) on a specific workspace (assigned monitor)
-	dkcmd rule class="(kitty|Zathura|firefox*)" ws=1 focus=true
+	dkcmd rule class="(kitty|Zathura|firefox*|\b[Ee]dge\b|\b[Cc]hromium\b)" ws=1 focus=true
 	dkcmd rule class="([Vv][Ss][Cc]odium\b|[Cc]ode|DesktopEditors)" ws=2 focus=true
 	dkcmd rule class="(Nemo|Motrix|qBittorrent)" ws=3 focus=true
         dkcmd rule class="(bottles)" ws=3 float=true focus=true

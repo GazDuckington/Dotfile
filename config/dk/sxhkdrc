@@ -37,6 +37,8 @@ alt + F3
 alt + shift + F3
         ~/bin/kitty-launch musikcube
 
+alt + n
+       ~/bin/scratchpad note 
 # color picker
 alt + c
         ~/bin/color-picker

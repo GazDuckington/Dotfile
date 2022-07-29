@@ -95,7 +95,7 @@ pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 
 	# sizes
 	dkcmd rule class="(musikcube)" w=800 h=800 float=true focus=true x=center y=center
-	dkcmd rule class="(dropdown)" w=800 h=500 float=true focus=true x=center y=center
+	dkcmd rule class="(dropdown|note)" w=800 h=500 float=true focus=true x=center y=center
 
 	# open window(s) and use a callback function (user defined in config.h)
 	# we also ignore=true to stop the window from being resized on it's own from events

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+xwinwrap -ni -fs -s -st -sp -b -nf -- mpv -wid 0 --profile=wallpaper ~/Pictures/Wallpapers/2k2.mp4

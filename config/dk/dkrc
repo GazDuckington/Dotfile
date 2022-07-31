@@ -16,7 +16,7 @@ fi
 # autostart
 ~/.config/polybar/scripts/launch-polybar.sh specbar &
 # ~/.config/dk/theme.sh &
-env NO_NOTIFY_COLOR='#67b0e8' i3-volume listen "%i %v %p\n" -n &
+env NO_NOTIFY_COLOR='' i3-volume listen "%i %v %p\n" -n &
 dbus-launch &
 ~/bin/autostart &
 ~/bin/disableETPS 0 &

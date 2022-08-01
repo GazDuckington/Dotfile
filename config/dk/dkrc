@@ -16,7 +16,7 @@ fi
 # autostart
 ~/.config/polybar/scripts/launch-polybar.sh specbar &
 # ~/.config/dk/theme.sh &
-env NO_NOTIFY_COLOR='' i3-volume listen "%i %v %p\n" -n &
+# env NO_NOTIFY_COLOR='' i3-volume listen "%i %v %p\n" -n &
 dbus-launch &
 ~/bin/autostart &
 ~/bin/disableETPS 0 &
@@ -40,7 +40,7 @@ pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
-	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=5 msplit=0.55 ssplit=0.5
+	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=7 msplit=0.55 ssplit=0.5
         dkcmd set ws=5 layout=grid
 
 	# global settings

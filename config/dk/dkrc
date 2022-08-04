@@ -13,6 +13,7 @@ if hash sxhkd >/dev/null 2>&1; then
 	sxhkd -c "$HOME/.config/dk/sxhkdrc" &
 fi
 
+. ~/.config/dk/color.sh
 # autostart
 ~/.config/polybar/scripts/launch-polybar.sh specbar &
 # ~/.config/dk/theme.sh &
@@ -23,7 +24,8 @@ dbus-launch &
 /usr/lib/polkit-kde-authentication-agent-1 &
 /usr/lib/kdeconnectd &
 picom --experimental-backends -b &
-nitrogen --restore &
+# nitrogen --restore &
+hsetroot -solid $grey &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x copyq >/dev/null || copyq &
 pgrep -x udiskie >/dev/null || udiskie -t &
@@ -62,7 +64,6 @@ pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 	dkcmd set mouse mod=super move=button1 resize=button3
 	
         # border
-        . ~/.config/dk/color.sh
         dkcmd set border width=1 outer_width=0 \
           colour \
           focus=$blue \

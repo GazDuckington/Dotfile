@@ -3,13 +3,13 @@
 
 # launcher
 super + d 
-	rofi -show drun
+	rofi -show drun -matching fuzzy
 
 super + w
-        rofi -show window
+        rofi -show window -matching fuzzy
 
 super + x
-        rofi -show run
+        rofi -show run -matching fuzzy
 
 alt + F4
         ~/.config/rofi/scripts/powermenu.sh

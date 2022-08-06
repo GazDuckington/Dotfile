@@ -1,11 +1,6 @@
 #!/bin/sh
-
+. ~/.config/dk/color.sh
 B='#00000000'  # blank
-T='#7aa2f7'  # text
-W='#f7768e'  # wrong
-V='#9ece6a'  # verifying
-O='#7aa2f7'
-BK='#202020'
 # Set the paused status of dunst
 dunstctl set-paused true
 
@@ -13,25 +8,25 @@ dunstctl set-paused true
 FONT="JetBrainsMono Nerd Font"
 
 i3lock \
---color=$BK \
+--color=$bg \
 --insidever-color=$B   \
---ringver-color=$V     \
+--ringver-color=$green     \
 \
 --insidewrong-color=$B \
---ringwrong-color=$W   \
+--ringwrong-color=$red   \
 \
 --inside-color=$B      \
---ring-color=$O        \
+--ring-color=$blue        \
 --line-color=$B        \
---separator-color=$T   \
+--separator-color=$blue   \
 \
---verif-color=$V        \
---wrong-color=$W        \
---time-color=$T        \
---date-color=$T        \
---layout-color=$T      \
---keyhl-color=$BK       \
---bshl-color=$BK        \
+--verif-color=$green        \
+--wrong-color=$red        \
+--time-color=$blue        \
+--date-color=$blue        \
+--layout-color=$blue      \
+--keyhl-color=$bg       \
+--bshl-color=$bg        \
 \
 --screen 1            \
 --clock               \
@@ -46,6 +41,8 @@ i3lock \
 --verif-font="$FONT" \
 --wrong-font="$FONT" \
 --greeter-font="$FONT" \
+\
+--no-modkey-text \
 -n; \
 amixer set Master unmute \
 dunstctl set-paused false

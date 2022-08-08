@@ -1,6 +1,6 @@
 #!/bin/sh
 
-noteFileName="$HOME/Nextcloud/journals/$(date +%Y-%m-%d-%H:%M:%S).md"
+noteFileName="$HOME/Nextcloud/journals/$(date +%Y-%m-%d).md"
 
 if [ ! -f $noteFileName ]; then
   echo "# Notes of $(date +%d/%B/%Y)" > $noteFileName

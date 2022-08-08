@@ -13,7 +13,7 @@
   "ifAutoSave": false,
   "autoSaveInterval": 15,
   "autoSaveLimit": 10,
-  "ifAutoSaveWhenClose": true,
+  "ifAutoSaveWhenClose": false,
   "autoSaveWhenCloseLimit": 10,
   "ifAutoSaveWhenExitBrowser": false,
   "autoSaveWhenExitBrowserLimit": 10,

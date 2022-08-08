@@ -69,7 +69,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 16
+    transparency = 15
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -294,19 +294,19 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#141b1e"
+    background = "#141b1e80"
     foreground = "#dadada"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
 
 [urgency_normal]
-    background = "#141b1e"
+    background = "#141b1e80"
     foreground = "#dadada"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
 
 [urgency_critical]
-    background = "#141b1e"
+    background = "#141b1e80"
     foreground = "#dadada"
     frame_color = "#e57474"
     timeout = 120

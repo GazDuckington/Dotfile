@@ -58,7 +58,7 @@ pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 	dkcmd set win_minwh=50 win_minxy=30
 
 	# disable gaps and borders in single window layouts
-	dkcmd set smart_gap=false smart_border=false
+	dkcmd set smart_gap=true smart_border=true
 
 	# define mouse mod and move/resize buttons
 	dkcmd set mouse mod=super move=button1 resize=button3

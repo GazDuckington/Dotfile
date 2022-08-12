@@ -3,7 +3,7 @@
 
 # launcher
 super + d 
-	rofi -show drun -matching fuzzy
+	rofi -show drun
 
 super + w
         rofi -show window -matching fuzzy

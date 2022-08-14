@@ -24,7 +24,7 @@ format =  "@[$hostname](bold purple) "
 disabled = true
 
 [shell]
-disabled = true
+disabled = false
 
 [directory]
 fish_style_pwd_dir_length = 1

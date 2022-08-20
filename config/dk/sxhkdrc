@@ -23,9 +23,6 @@ super + s
 super + e
 	rofi -show emoji -modi emoji -no-show-icons
 
-super + t
-        ~/dktheme/theme-switcher
-
 # dropdown terminal
 alt + F2
         ~/bin/scratchpad dropdown

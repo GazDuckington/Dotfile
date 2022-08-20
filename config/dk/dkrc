@@ -26,7 +26,7 @@ dbus-launch &
 picom --experimental-backends -b &
 # nitrogen --restore &
 # hsetroot -add $grey -add $bg -gradient 0 &
-hsetroot -cover ~/Pictures/Wallpapers/flatppuccin_4k_macchiato.png &
+hsetroot -cover ~/Pictures/Wallpapers/black5_unicat.png &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x copyq >/dev/null || flatpak run com.github.hluk.copyq &
 pgrep -x udiskie >/dev/null || udiskie -t &

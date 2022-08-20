@@ -25,7 +25,8 @@ dbus-launch &
 /usr/lib/kdeconnectd &
 picom --experimental-backends -b &
 # nitrogen --restore &
-hsetroot -add $grey -add $bg -gradient 0 &
+# hsetroot -add $grey -add $bg -gradient 0 &
+hsetroot -cover ~/Pictures/Wallpapers/flatppuccin_4k_macchiato.png &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x copyq >/dev/null || copyq &
 pgrep -x udiskie >/dev/null || udiskie -t &
@@ -84,7 +85,7 @@ pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 	dkcmd rule class="(Nemo|Motrix|qBittorrent|[Kk]rita|[Ff]erdium|\b[Gg]ithub\b)" ws=3 focus=true
 	dkcmd rule class="(\btlauncher\b|Minecraft*|bottles)" ws=4 focus=true
 	dkcmd rule \
-          class="(\bOBS\b|\bDejaDup\b|[Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config)" \
+          class="(\bOBS\b|\bDejaDup\b|[Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config|[Aa]randr)" \
 		ws=5 focus=true
 	dkcmd rule class="(\bcelluloid\b|Stremio|nuclear|moosync)" \
 		ws=6 focus=true

@@ -27,7 +27,7 @@ hsetroot -cover ~/Pictures/Wallpapers/black5_unicat.png &
 flatpak run com.github.hluk.copyq &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x udiskie >/dev/null || udiskie -t &
-pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
+# pgrep -x firewall-applet >/dev/null || firewall-applet &
 
 { # compound command to redirect all output
 

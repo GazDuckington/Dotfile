@@ -21,7 +21,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       20em;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -107,8 +107,7 @@ listview {
 element {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     6px;
-    border-radius:               5px;
+    padding:                     5px;
     background-color:            transparent;
     text-color:                  @fg;
     cursor:                      pointer;

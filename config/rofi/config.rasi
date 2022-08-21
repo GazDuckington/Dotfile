@@ -125,16 +125,19 @@ element normal.active {
     text-color:                  @green;
 }
 element selected.normal {
-    background-color:            @blue;
-    text-color:                  @bg;
+    border:                      0px 0px 2px 0px;
+    border-color:                @blue;
+    text-color:                  @blue;
 }
 element selected.yellow {
-    background-color:            @yellow;
-    text-color:                  @fg;
+    border:                      0px 0px 2px 0px;
+    border-color:                @yellow;
+    text-color:                  @yellow;
 }
 element selected.active {
-    background-color:            @green;
-    text-color:                  @bg;
+    border:                      0px 0px 2px 0px;
+    border-color:                @green;
+    text-color:                  @green;
 }
 element-icon {
     background-color:            transparent;

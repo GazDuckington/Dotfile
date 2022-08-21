@@ -23,6 +23,9 @@ super + s
 super + e
 	rofi -show emoji -modi emoji -no-show-icons
 
+super + f
+        rofi -show filebrowser
+
 # dropdown terminal
 alt + F2
         ~/bin/scratchpad dropdown

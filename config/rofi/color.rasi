@@ -1,8 +1,14 @@
 * {
-    bg: #232a2d88;
-    black: #141b1e;
-    blue: #67b0e8;
-    fg: #dadada;
-    red: #e57474;
-    grey: #b3b9b8;
+    bg          : #0d1117;
+    fg          : #c9d1d9;
+    indigo      : #6272a4;
+    grey        : #30363d;
+    green       : #3fb950;
+    cyan        : #51d5c3;
+    purple      : #a371f7;
+    red         : #f85149;
+    yellow      : #d29922;
+    blue        : #58a6ff;
+    teal        : #79c0ff;
+    blue-gray   : #b3b9b8;
 }

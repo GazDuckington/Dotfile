@@ -13,22 +13,19 @@ if hash sxhkd >/dev/null 2>&1; then
 	sxhkd -c "$HOME/.config/dk/sxhkdrc" &
 fi
 
-. ~/.config/dk/color.sh
 # autostart
 ~/.config/polybar/scripts/launch-polybar.sh specbar &
-# ~/.config/dk/theme.sh &
-# env NO_NOTIFY_COLOR='' i3-volume listen "%i %v %p\n" -n &
+. ~/.config/dk/color.sh
 dbus-launch &
 ~/bin/autostart &
 ~/bin/disableETPS 0 &
 /usr/lib/polkit-kde-authentication-agent-1 &
 /usr/lib/kdeconnectd &
 picom --experimental-backends -b &
-# nitrogen --restore &
 # hsetroot -add $grey -add $bg -gradient 0 &
 hsetroot -cover ~/Pictures/Wallpapers/black5_unicat.png &
+flatpak run com.github.hluk.copyq &
 pgrep -x nm-applet >/dev/null || nm-applet &
-pgrep -x copyq >/dev/null || flatpak run com.github.hluk.copyq &
 pgrep -x udiskie >/dev/null || udiskie -t &
 pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 

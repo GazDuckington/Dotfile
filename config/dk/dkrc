@@ -78,7 +78,7 @@ pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator -t &
 
 	# open window(s) on a specific workspace (assigned monitor)
 	dkcmd rule class="(kitty|Zathura|firefox*|\b[Ee]dge\b|\b[Cc]hromium\b)" ws=1 focus=true
-	dkcmd rule class="([Vv][Ss][Cc]odium\b|[Cc]ode|DesktopEditors)" ws=2 focus=true
+	dkcmd rule class="([Vv][Ss][Cc]odium\b|[Cc]ode|DesktopEditors|[Mm]ousepad)" ws=2 focus=true
 	dkcmd rule class="(\b[Nn]autilusDevel\b|Nemo|Motrix|qBittorrent|[Kk]rita|[Ff]erdium|\b[Gg]ithub\b)" ws=3 focus=true
 	dkcmd rule class="(\btlauncher\b|Minecraft*|bottles)" ws=4 focus=true
 	dkcmd rule \

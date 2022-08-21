@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 . ~/.config/dk/color.sh
 
 result=$(ps -ef | grep "xidlehook" | grep -v "grep" | wc -l)

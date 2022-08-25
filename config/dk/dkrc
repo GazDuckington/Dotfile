@@ -24,7 +24,7 @@ dbus-launch &
 picom --experimental-backends -b &
 # hsetroot -add $grey -add $bg -gradient 0 &
 hsetroot -cover ~/Pictures/Wallpapers/black5_unicat.png &
-flatpak run com.github.hluk.copyq &
+pgrep -x copyq >/dev/null || copyq &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x udiskie >/dev/null || udiskie -t &
 # pgrep -x firewall-applet >/dev/null || firewall-applet &
@@ -79,7 +79,7 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 	# open window(s) on a specific workspace (assigned monitor)
 	dkcmd rule class="(kitty|Zathura|firefox*|\b[Ee]dge\b|\b[Cc]hromium\b)" ws=1 focus=true
 	dkcmd rule class="([Vv][Ss][Cc]odium\b|[Cc]ode|DesktopEditors|[Mm]ousepad)" ws=2 focus=true
-	dkcmd rule class="(\b[Nn]autilusDevel\b|Nemo|Motrix|qBittorrent|[Kk]rita|[Ff]erdium|\b[Gg]ithub\b)" ws=3 focus=true
+	dkcmd rule class="(\b[Nn]autilus\b|Nemo|Motrix|qBittorrent|[Kk]rita|[Ff]erdium|\b[Gg]ithub\b)" ws=3 focus=true
 	dkcmd rule class="(\btlauncher\b|Minecraft*|bottles)" ws=4 focus=true
 	dkcmd rule \
           class="(\bOBS\b|\bDejaDup\b|[Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config|[Aa]randr)" \

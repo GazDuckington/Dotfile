@@ -21,18 +21,17 @@ URLS=(
 rofi_command="rofi -dmenu -matching fuzzy -i -no-show-icons"
 # List for rofi
 gen_list() {
-    for i in "${!URLS[@]}"
-    do
-      echo "$i"
-    done
+  for i in "${!URLS[@]}"; do
+    echo "$i"
+  done
 }
 
 main() {
   # Pass the list to rofi
-  platform=$( (gen_list) | $rofi_command -p "   Engine ")
+  platform=$( (gen_list) | $rofi_command -p "")
 
   if [[ -n "$platform" ]]; then
-    query=$( (echo ) | $rofi_command -p "  Keyword ")
+    query=$( (echo) | $rofi_command -p "")
 
     if [[ -n "$query" ]]; then
       url=${URLS[$platform]}$query

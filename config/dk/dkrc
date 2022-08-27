@@ -80,7 +80,8 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 	dkcmd rule class="(kitty|Zathura|firefox*|\b[Ee]dge\b|\b[Cc]hromium\b)" ws=1 focus=true
 	dkcmd rule class="([Vv][Ss][Cc]odium\b|[Cc]ode|DesktopEditors|[Mm]ousepad)" ws=2 focus=true
 	dkcmd rule class="(\b[Nn]autilus\b|Nemo|Motrix|qBittorrent|[Kk]rita|[Ff]erdium|\b[Gg]ithub\b)" ws=3 focus=true
-	dkcmd rule class="(\btlauncher\b|Minecraft*|bottles)" ws=4 focus=true
+	dkcmd rule class="(Minecraft*|bottles)" ws=4 focus=true
+        dkcmd rule class="(\btlauncher\b)" ws=4 float=true
 	dkcmd rule \
           class="(\bOBS\b|\bDejaDup\b|[Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config|[Aa]randr)" \
 		ws=5 focus=true

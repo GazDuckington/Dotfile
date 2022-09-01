@@ -23,7 +23,7 @@ dbus-launch &
 /usr/lib/kdeconnectd &
 picom --experimental-backends -b &
 # hsetroot -add $grey -add $bg -gradient 0 &
-hsetroot -cover ~/Pictures/Wallpapers/black5_unicat.png &
+hsetroot -center ~/Pictures/Wallpapers/black5_unicat.png &
 pgrep -x copyq >/dev/null || copyq &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x udiskie >/dev/null || udiskie -t &
@@ -40,7 +40,7 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
-	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=7 msplit=0.55 ssplit=0.5
+	dkcmd set ws=_ apply layout=tile master=1 stack=5 gap=7 msplit=0.55 ssplit=0.5
         dkcmd set ws=5 layout=grid
 
 	# global settings
@@ -56,7 +56,7 @@ pgrep -x udiskie >/dev/null || udiskie -t &
 	dkcmd set win_minwh=50 win_minxy=30
 
 	# disable gaps and borders in single window layouts
-	dkcmd set smart_gap=true smart_border=true
+	dkcmd set smart_gap=false smart_border=true
 
 	# define mouse mod and move/resize buttons
 	dkcmd set mouse mod=super move=button1 resize=button3

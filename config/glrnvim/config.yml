@@ -2,7 +2,7 @@
 
 # Choose the backend terminal to run neovim in.
 # Current supported terminals: alacritty, urxvt, kitty, wezterm.
-#backend: urxvt
+backend: kitty
 
 # path to backend executable file
 # NOTE: requires a backend key
@@ -18,8 +18,8 @@
 # The first one will be set as the major font. Others will be set as
 # fallback fonts according to the given orders if possible.
 # NOTE: Not all backends support fallback font.
-#fonts:
-#  - Source Code Pro
+fonts:
+  - FiraCode Nerd Font
 #  - monofur
 
 # The font size to be used.

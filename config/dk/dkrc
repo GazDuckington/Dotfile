@@ -13,21 +13,11 @@ if hash sxhkd >/dev/null 2>&1; then
 	sxhkd -c "$HOME/.config/dk/sxhkdrc" &
 fi
 
-# autostart
-~/.config/polybar/scripts/launch-polybar.sh specbar &
 . ~/.config/dk/color.sh
-dbus-launch &
+
+# autostart
 ~/bin/autostart &
-~/bin/disableETPS 0 &
-/usr/lib/polkit-kde-authentication-agent-1 &
-/usr/lib/kdeconnectd &
-picom --experimental-backends -b &
-# hsetroot -add $grey -add $bg -gradient 0 &
-hsetroot -center ~/Pictures/Wallpapers/black5_unicat.png &
-pgrep -x copyq >/dev/null || copyq &
-pgrep -x nm-applet >/dev/null || nm-applet &
-pgrep -x udiskie >/dev/null || udiskie -t &
-# pgrep -x firewall-applet >/dev/null || firewall-applet &
+dbus-launch &
 
 { # compound command to redirect all output
 

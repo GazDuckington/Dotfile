@@ -73,7 +73,8 @@ dbus-launch &
 		class="(
 			kitty|
 			Zathura|
-			firefox*|
+			firefox|
+			[Nn]avigator|
 			\b[Cc]hromium\b
 		)" \
 		ws=1 focus=true
@@ -97,14 +98,14 @@ dbus-launch &
 			Motrix|
 			qBittorrent|
 			[Kk]rita|
-			[Gg]imp*|
+			\b[Gg]imp\b|
 			\b[Gg]ithub\b
 		)" \
 		ws=3 focus=true
 
 	# WS 4
 	dkcmd rule class="(Minecraft*|bottles)" ws=4 focus=true
-        dkcmd rule class="(\btlauncher\b)" ws=4 float=true
+  dkcmd rule class="(\btlauncher\b)" ws=4 float=true
 	
 	# WS 5
 	dkcmd rule \

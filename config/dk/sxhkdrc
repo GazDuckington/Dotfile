@@ -6,42 +6,42 @@ super + d
 	rofi -show drun
 
 super + w
-        rofi -show window -matching fuzzy
+  rofi -show window -matching fuzzy
 
 super + x
-        rofi -show run -matching fuzzy
+	rofi -show run -matching fuzzy
 
 alt + F4
-        ~/.config/rofi/scripts/powermenu.sh
+  ~/.config/rofi/scripts/powermenu.sh
 
 super + c
-        ~/.config/rofi/scripts/dev.sh code
+  ~/.config/rofi/scripts/dev.sh code
 
 super + s
-        ~/.config/rofi/scripts/web-search.sh
+  ~/.config/rofi/scripts/web-search.sh
 
 super + e
 	rofi -show emoji -modi emoji -no-show-icons
 
 super + f
-        rofi -show filebrowser
+  rofi -show filebrowser
 
 # dropdown terminal
 alt + F2
-        ~/bin/scratchpad dropdown
+  ~/bin/scratchpad dropdown
 
 # music player
 alt + F3
-        ~/bin/scratchpad musikcube
+  ~/bin/scratchpad musikcube
 
 alt + shift + F3
-        ~/bin/kitty-launch musikcube
+  ~/bin/kitty-launch musikcube
 
 alt + n
-       ~/bin/scratchpad note 
+  ~/bin/scratchpad note 
 # color picker
 alt + c
-        ~/bin/color-picker
+  ~/bin/color-picker
 
 # system monitor
 ctrl + alt + Delete
@@ -62,6 +62,10 @@ super + Return
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
 	amixer set Master {5%+, 5%-}
+
+# toggle mute for output input devices
+{XF86AudioMute, XF86AudioMicMute}
+	amixer set {Master, Capture} toggle
 
 # dedicated backlight keys
 {XF86MonBrightnessUp,XF86MonBrightnessDown}

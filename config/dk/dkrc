@@ -70,37 +70,17 @@ dbus-launch &
 
 	# WS 1
 	dkcmd rule \
-		class="(
-			kitty|
-			Zathura|
-			firefox|
-			[Nn]avigator|
-			\b[Cc]hromium\b
-		)" \
+		class="(kitty|Zathura|firefox*|[Nn]avigator|\b[Cc]hromium\b)" \
 		ws=1 focus=true
 	
 	# WS 2
 	dkcmd rule \
-		class="(
-			[Vv][Ss][Cc]odium\b|
-			[Cc]ode|
-			DesktopEditors|
-			[Mm]ousepad|
-			glrnvim
-		)" \
+		class="([Cc]ode|DesktopEditors|glrnvim)" \
 		ws=2 focus=true
 
 	# WS 3
 	dkcmd rule \
-		class="(
-			\b[Nn]autilus\b|
-			[Nn]emo|
-			Motrix|
-			qBittorrent|
-			[Kk]rita|
-			\b[Gg]imp\b|
-			\b[Gg]ithub\b
-		)" \
+		class="(\b[Nn]autilus\b|[Nn]emo|Motrix|qBittorrent|[Kk]rita|[Gg]imp*|\b[Gg]ithub\b)" \
 		ws=3 focus=true
 
 	# WS 4
@@ -109,17 +89,7 @@ dbus-launch &
 	
 	# WS 5
 	dkcmd rule \
-		class="(
-			\bOBS\b|
-			\bDejaDup\b|
-			[Ff]ont-manager|
-			\bFlatseal\b|
-			btop|
-			Lxappearance|
-			Kvantum\ Manager|
-			Firewall-config|
-			[Aa]randr
-			)" \
+		class="(\bOBS\b|\bDejaDup\b|[Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config|[Aa]randr)" \
 		ws=5 focus=true
 	
 	# WS 6
@@ -128,14 +98,7 @@ dbus-launch &
 
 	# Floaters
 	dkcmd rule \
-		class="(
-			Nitrogen|
-			xdg-desktop-portal-gnome|
-			copyq|
-			pulsemixer|
-			nmtui|
-			[Nn]m-connection-editor
-			)" \
+		class="(Nitrogen|xdg-desktop-portal-gnome|copyq|pulsemixer|nmtui|[Nn]m-connection-editor)" \
 		float=true focus=true stick=true y=25 x=center
 	dkcmd rule title="(^Library$|^Pick$)" float=true focus=true
 

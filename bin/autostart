@@ -16,4 +16,4 @@ nitrogen --restore &
 pgrep -x copyq >/dev/null || copyq &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x udiskie >/dev/null || udiskie -t &
-# ~/bin/disableETPS 0 &
+~/bin/disableETPS 0 &

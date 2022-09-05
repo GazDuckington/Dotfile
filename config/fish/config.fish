@@ -44,15 +44,8 @@ if status --is-interactive
     end
 end
 
-# paths
-set PATH ~/go/bin ~/bin ~/.nimble/bin ~/.npm-global/bin ~/.pyenv/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
-export PATH="$PATH:$PATH"
-bass source ~/.bashrc
-
-# pnpm
-export PNPM_HOME="/home/gaz/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+# set variables
+bass source ~/.profile
 
 # pyenv init
 pyenv init - | source

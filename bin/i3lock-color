@@ -1,11 +1,9 @@
 #!/bin/sh
-. ~/.config/dk/color.sh
-B='#00000000'  # blank
+. ~/.config/dk/color.sh \
 # Set the paused status of dunst
-dunstctl set-paused true
+dunstctl set-paused true \
 
-# Font
-FONT="JetBrainsMono Nerd Font"
+B='#00000000' # blank
 
 i3lock \
 --color=$bg \
@@ -41,10 +39,10 @@ i3lock \
 --verif-font="$FONT" \
 --wrong-font="$FONT" \
 --greeter-font="$FONT" \
-\
 --no-modkey-text \
--n; \
+\
+-n; 
 amixer set Master unmute \
-dunstctl set-paused false
-sleep 1
+dunstctl set-paused false \
+sleep 1 \
 exit

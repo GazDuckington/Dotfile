@@ -20,11 +20,14 @@ super + c
 super + s
   ~/.config/rofi/scripts/web-search.sh
 
-super + e
+ctrl + e
 	rofi -show emoji -modi emoji -no-show-icons
 
 super + f
   rofi -show filebrowser
+
+super + e
+	nemo
 
 # dropdown terminal
 alt + F2

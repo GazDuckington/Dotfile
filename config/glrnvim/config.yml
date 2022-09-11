@@ -24,7 +24,7 @@ fonts:
 
 # The font size to be used.
 #
-font_size: 9
+# font_size: 9
 
 # Set to true if the terminal's default configuration should be loaded
 # first. Other glrnvim configurations will overwrite the terminal settings

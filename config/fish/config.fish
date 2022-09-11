@@ -10,7 +10,7 @@ alias 'code'='code'
 alias 'c'='code'
 alias 'lv'='lvim'
 alias 'nv'='nvim'
-alias 'v'='glrnvim +"cd %:p:h"'
+alias 'v'='glrnvim'
 alias 'hx'='helix'
 
 alias 'cpr'='cp -r'

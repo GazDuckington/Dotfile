@@ -57,9 +57,9 @@ dbus-launch &
     focus=$blue \
     unfocus=$grey \
     urgent=$red \
-    outer_focus=$bg \
-    outer_unfocus=$bg \
-    outer_urgent=$bg
+    outer_focus=$base \
+    outer_unfocus=$base \
+    outer_urgent=$base
 
 	#
 	# window rules

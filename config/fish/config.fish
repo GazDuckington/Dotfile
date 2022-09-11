@@ -10,7 +10,7 @@ alias 'code'='code'
 alias 'c'='code'
 alias 'lv'='lvim'
 alias 'nv'='nvim'
-alias 'v'='neovide --multigrid'
+alias 'v'='glrnvim +"cd %:p:h"'
 alias 'hx'='helix'
 
 alias 'cpr'='cp -r'

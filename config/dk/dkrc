@@ -46,7 +46,7 @@ dbus-launch &
 	dkcmd set win_minwh=50 win_minxy=30
 
 	# disable gaps and borders in single window layouts
-	dkcmd set smart_gap=false smart_border=true
+	dkcmd set smart_gap=false smart_border=false
 
 	# define mouse mod and move/resize buttons
 	dkcmd set mouse mod=super move=button1 resize=button3
@@ -76,7 +76,7 @@ dbus-launch &
 	
 	# WS 2
 	dkcmd rule \
-		class="([Cc]ode|DesktopEditors|glrnvim)" \
+		class="(Oni2_editor|[Cc]ode|DesktopEditors|glrnvim)" \
 		ws=2 focus=true
 
 	# WS 3
@@ -85,8 +85,7 @@ dbus-launch &
 		ws=3 focus=true
 
 	# WS 4
-	dkcmd rule class="(Minecraft*|bottles|[Gg]ame*)" ws=4 focus=true
-  dkcmd rule class="(\btlauncher\b)" ws=4 float=true
+	dkcmd rule class="(Minecraft*|bottles|[Gg]ame*|\btlauncher\b)" ws=4 float=true
 	
 	# WS 5
 	dkcmd rule \

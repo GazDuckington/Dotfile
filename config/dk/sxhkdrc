@@ -20,7 +20,7 @@ super + c
 super + s
   ~/.config/rofi/scripts/web-search.sh
 
-ctrl + e
+alt + e
 	rofi -show emoji -modi emoji -no-show-icons
 
 super + f

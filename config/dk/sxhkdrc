@@ -5,13 +5,13 @@
 super + {d, x, w, f}
 	rofi -show {drun,run,window,filebrowser}
 
-alt + {p, c, s}
+super + {p, c, s}
 	~/.config/rofi/scripts/{powermenu.sh,dev.sh code,web-search.sh}
 
-alt + e
-	rofi -show emoji -modi emoji -no-show-icons
-
 super + e
+	rofi -show emoji -no-show-icons
+
+alt + e
 	nemo
 
 # dropdown terminal

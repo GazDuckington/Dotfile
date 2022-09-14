@@ -65,3 +65,7 @@
 16:10:34 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
 16:10:34 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
 16:10:34 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+17:04:53 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' enqueued
+17:04:53 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' running
+17:04:53 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' finished with status=4
+17:04:53 [info] [GaplessTransport] stop

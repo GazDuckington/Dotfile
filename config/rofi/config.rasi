@@ -3,7 +3,7 @@
 /*****----- Configuration -----*****/
 configuration {
     font:                       "JetBrains Mono Nerd Font 10";
-	modi:                       "drun,run,filebrowser,window";
+	modi:                       "drun,run,filebrowser,window,emoji";
     show-icons:                 true;
     display-drun:               "";
     display-run:                "";
@@ -64,7 +64,7 @@ prompt {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    padding:                     12px 15px;
+    padding:                     10px 10px 10px 10px;
     border-radius:               5px 0 0 5px;
     background-color:            inherit;
     text-color:                  @bg;
@@ -80,7 +80,7 @@ entry {
     background-color:            inherit;
     text-color:                  @bg;
     cursor:                      text;
-    placeholder:                 " Search";
+    placeholder:                 " Type to Search";
     placeholder-color:           @bg;
 }
 

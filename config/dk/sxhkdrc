@@ -2,49 +2,28 @@
 #########################################################
 
 # launcher
-super + d 
-	rofi -show drun
+super + {d, x, w, f}
+	rofi -show {drun,run,window,filebrowser}
 
-super + w
-  rofi -show window -matching fuzzy
-
-super + x
-	rofi -show run -matching fuzzy
-
-alt + F4
-  ~/.config/rofi/scripts/powermenu.sh
-
-super + c
-  ~/.config/rofi/scripts/dev.sh code
-
-super + s
-  ~/.config/rofi/scripts/web-search.sh
+alt + {p, c, s}
+	~/.config/rofi/scripts/{powermenu.sh,dev.sh code,web-search.sh}
 
 alt + e
 	rofi -show emoji -modi emoji -no-show-icons
-
-super + f
-  rofi -show filebrowser
 
 super + e
 	nemo
 
 # dropdown terminal
-alt + F2
-  ~/bin/scratchpad dropdown
-
-# music player
-alt + F3
-  ~/bin/scratchpad musikcube
+alt + {F1, F2, F3}
+	~/bin/scratchpad {note, dropdown, musikcube}
 
 alt + shift + F3
-  ~/bin/kitty-launch musikcube
+	~/bin/kitty-launch musikcube
 
-alt + n
-  ~/bin/scratchpad note 
 # color picker
 alt + c
-  ~/bin/color-picker
+	~/bin/color-picker
 
 # system monitor
 ctrl + alt + Delete
@@ -52,7 +31,7 @@ ctrl + alt + Delete
 
 # toggle polybar
 super + shift + p
-	polybar-msg cmd toggle && bspc config set top_padding 0
+	polybar-msg cmd toggle && dkcmd set ws=_ pad t=0
 
 # terminal
 super + Return
@@ -82,20 +61,12 @@ alt + {Insert,Delete}
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# quit dk
-alt + shift + q
-	dkcmd exit
-
-# reload dkrc
-alt + shift + r
-	dkcmd reload
-
-# restart dk
-super + shift + r
-	dkcmd restart
+# restart/reload dk
+{super, alt} + shift + r
+	dkcmd {restart, reload}
 
 # focus next or previous window
-super + {k,j} 
+super + {k,j}
 	dkcmd win focus {next,prev}
 
 # close window, swap tiled window in/out of master, cycle tiled windows in place

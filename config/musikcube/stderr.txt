@@ -4,15 +4,12 @@ SndioOut Info: ---------- sndout.ctor ----------
 AlsaOut: destructor
 AlsaOut: joining...
 AlsaOut: thread finished
+[2022-09-14 17:14:13] [info] asio async_connect error: system:111 (Connection refused)
 AlsaOut: closing device...
 AlsaOut: destroyed.
+[2022-09-14 17:14:13] [info] Error getting remote endpoint: system:107 (Transport endpoint is not connected)
 SndioOut Info: joining thread
-[2022-09-14 16:10:31] [info] asio async_connect error: system:111 (Connection refused)
-[2022-09-14 16:10:31] [info] Error getting remote endpoint: system:107 (Transport endpoint is not connected)
-[2022-09-14 16:10:31] [error] handle_connect error: Underlying Transport Error
+[2022-09-14 17:14:13] [error] handle_connect error: Underlying Transport Error
 SndioOut Info: device handle initialized
 SndioOut Info: closing
 SndioOut Info: thread finished
-[PulseOut: destroy
-PulseOut: destructor
-2022-09-14 17:04:54] [error] handle_read_frame error: websocketpp.transport:7 (End of File)

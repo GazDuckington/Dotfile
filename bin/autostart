@@ -3,6 +3,13 @@
 nitrogen --restore &
 ~/usr/lib/polkit-kde-authentication-agent-1 &
 ~/.config/polybar/scripts/launch-polybar.sh specbar &
+~/bin/idle -s &
+picom --experimental-backends -b &
+pgrep -x copyq >/dev/null || copyq &
+pgrep -x nm-applet >/dev/null || nm-applet &
+pgrep -x udiskie >/dev/null || udiskie -t &
+# /usr/lib/kdeconnectd &
+# ~/bin/disableETPS 0 &
 
 killall -q dunst
 while pgrep -u $UID -x dunst >/dev/null; do sleep 1; done
@@ -10,11 +17,3 @@ dunst &
 
 killall -q xidlehook
 while pgrep -u $UID -x xidlehook >/dev/null; do sleep 1; done
-~/bin/idle -s & 
-
-picom --experimental-backends -b &
-pgrep -x copyq >/dev/null || copyq &
-pgrep -x nm-applet >/dev/null || nm-applet &
-pgrep -x udiskie >/dev/null || udiskie -t &
-# /usr/lib/kdeconnectd &
-# ~/bin/disableETPS 0 &

@@ -31,7 +31,7 @@ dbus-launch &
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
 	dkcmd set ws=_ apply layout=tile master=1 stack=5 gap=7 msplit=0.55 ssplit=0.5
-  dkcmd set ws=5 layout=grid
+	dkcmd set ws=5 layout=grid
 
 	# global settings
 	# ---------------------
@@ -50,16 +50,16 @@ dbus-launch &
 
 	# define mouse mod and move/resize buttons
 	dkcmd set mouse mod=super move=button1 resize=button3
-	
-  # border
-  dkcmd set border width=1 outer_width=0 \
+
+	# border
+	dkcmd set border width=1 outer_width=0 \
 		colour \
-    focus=$blue \
-    unfocus=$grey \
-    urgent=$red \
-    outer_focus=$base \
-    outer_unfocus=$base \
-    outer_urgent=$base
+		focus=$blue \
+		unfocus=$grey \
+		urgent=$red \
+		outer_focus=$base \
+		outer_unfocus=$base \
+		outer_urgent=$base
 
 	#
 	# window rules
@@ -73,7 +73,7 @@ dbus-launch &
 	dkcmd rule \
 		class="(kitty|Zathura|firefox*|[Nn]avigator|\b[Cc]hromium\b)" \
 		ws=1 focus=true
-	
+
 	# WS 2
 	dkcmd rule \
 		class="(Oni2_editor|[Cc]ode|DesktopEditors|glrnvim)" \
@@ -86,12 +86,12 @@ dbus-launch &
 
 	# WS 4
 	dkcmd rule class="(Minecraft*|bottles|[Gg]ame*|\btlauncher\b)" ws=4 float=true
-	
+
 	# WS 5
 	dkcmd rule \
 		class="(\bOBS\b|\bDejaDup\b|[Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config|[Aa]randr)" \
 		ws=5 focus=true
-	
+
 	# WS 6
 	dkcmd rule class="(\bcelluloid\b|Stremio|nuclear|moosync)" \
 		ws=6 focus=true

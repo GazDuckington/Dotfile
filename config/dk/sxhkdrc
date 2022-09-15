@@ -11,27 +11,21 @@ super + {p, c, s}
 super + e
 	rofi -show emoji -no-show-icons
 
-alt + e
-	nemo
-
 # dropdown terminal
 alt + {F1, F2, F3}
 	~/bin/scratchpad {note, dropdown, musikcube}
-
-alt + shift + F3
-	~/bin/kitty-launch musikcube
-
-# color picker
-alt + c
-	~/bin/color-picker
 
 # system monitor
 ctrl + alt + Delete
 	~/bin/kitty-launch btop
 
+# color picker
+alt + c
+	~/bin/color-picker
+
 # toggle polybar
 super + shift + p
-	polybar-msg cmd toggle && dkcmd set ws=_ pad t=0
+	polybar-msg cmd toggle
 
 # terminal
 super + Return

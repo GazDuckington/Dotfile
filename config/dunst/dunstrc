@@ -5,6 +5,7 @@ separator_color= frame
 font = Monospace 10
 frame_width = 1
 gap_size = 2
+corner_radius = 10
 
 [urgency_low]
 background = "#1E1E2E"

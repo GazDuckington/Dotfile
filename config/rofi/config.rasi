@@ -40,6 +40,7 @@ mainbox {
     children:                    [ "inputbar", "listbox" ];
     border:                      1px;
     border-color:                @blue;
+		border-radius:							 10px;
 }
 
 listbox {
@@ -125,19 +126,25 @@ element normal.active {
     text-color:                  @green;
 }
 element selected.normal {
-    border:                      0px 0px 2px 0px;
+    border:                      0px 0px 0px 3px;
     border-color:                @blue;
     text-color:                  @blue;
+		background-color:						 @grey;
+		border-radius:							 2px;
 }
 element selected.yellow {
-    border:                      0px 0px 2px 0px;
+    border:                      0px 0px 0px 3px;
     border-color:                @yellow;
     text-color:                  @yellow;
+		background-color:						 @grey;
+		border-radius:							 2px;
 }
 element selected.active {
-    border:                      0px 0px 2px 0px;
+    border:                      0px 0px 0px 3px;
     border-color:                @green;
     text-color:                  @green;
+		background-color:						 @grey;
+		border-radius:							 2px;
 }
 element-icon {
     background-color:            transparent;

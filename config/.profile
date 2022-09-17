@@ -32,5 +32,6 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.surrealdb:$PATH"
 
 eval "$(starship init bash)"

@@ -30,7 +30,7 @@ dbus-launch &
 
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
-	dkcmd set ws=_ apply layout=tile master=1 stack=5 gap=7 msplit=0.55 ssplit=0.5
+	dkcmd set ws=_ apply layout=dwindle master=1 stack=5 gap=7 msplit=0.55 ssplit=0.5
 	dkcmd set ws=5 layout=grid
 
 	# global settings

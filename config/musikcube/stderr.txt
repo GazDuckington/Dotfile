@@ -1,4 +1,31 @@
 AlsaOut::AlsaOut() called
+[2022-09-18 12:35:19] [info] asio async_connect error: system:111 (Connection refused)
+PulseOut::PulseOut() called
+SndioOut Info: ---------- sndout.ctor ----------
+[2022-09-18 12:35:19] [info] Error getting remote endpoint: system:107 (Transport endpoint is not connected)
+AlsaOut: destructor
+AlsaOut: joining...
+AlsaOut: thread finished
+[2022-09-18 12:35:19] [error] handle_connect error: Underlying Transport Error
+AlsaOut: closing device...
+AlsaOut: destroyed.
+SndioOut Info: joining thread
+SndioOut Info: device handle initialized
+SndioOut Info: closing
+SndioOut Info: thread finished
+AlsaOut::AlsaOut() called
+PulseOut::PulseOut() called
+SndioOut Info: ---------- sndout.ctor ----------
+AlsaOut: destructor
+AlsaOut: joining...
+AlsaOut: thread finished
+AlsaOut: closing device...
+AlsaOut: destroyed.
+SndioOut Info: device handle initialized
+SndioOut Info: joining thread
+SndioOut Info: closing
+SndioOut Info: thread finished
+AlsaOut::AlsaOut() called
 PulseOut::PulseOut() called
 SndioOut Info: ---------- sndout.ctor ----------
 AlsaOut: destructor
@@ -7,9 +34,10 @@ AlsaOut: thread finished
 AlsaOut: closing device...
 AlsaOut: destroyed.
 SndioOut Info: joining thread
-[2022-09-15 08:46:12] [info] asio async_connect error: system:111 (Connection refused)
-[2022-09-15 08:46:12] [info] Error getting remote endpoint: system:107 (Transport endpoint is not connected)
-[2022-09-15 08:46:12] [error] handle_connect error: Underlying Transport Error
 SndioOut Info: device handle initialized
 SndioOut Info: closing
 SndioOut Info: thread finished
+PulseOut: destroy
+PulseOut: destructor
+PulseOut: destroy
+PulseOut: destructor

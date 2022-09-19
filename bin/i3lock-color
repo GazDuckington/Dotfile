@@ -6,7 +6,7 @@ dunstctl set-paused true \
 B='#00000000' # blank
 
 i3lock \
---color=$bg \
+--color=$base \
 --insidever-color=$B   \
 --ringver-color=$green     \
 \
@@ -19,12 +19,13 @@ i3lock \
 --separator-color=$blue   \
 \
 --verif-color=$green        \
+--modif-color=$red        \
 --wrong-color=$red        \
 --time-color=$blue        \
 --date-color=$blue        \
 --layout-color=$blue      \
---keyhl-color=$bg       \
---bshl-color=$bg        \
+--keyhl-color=$base       \
+--bshl-color=$base        \
 \
 --screen 1            \
 --clock               \
@@ -39,9 +40,9 @@ i3lock \
 --verif-font="$FONT" \
 --wrong-font="$FONT" \
 --greeter-font="$FONT" \
---no-modkey-text \
-\
 -n; 
+# --no-modkey-text \
+
 amixer set Master unmute \
 dunstctl set-paused false \
 sleep 1 \

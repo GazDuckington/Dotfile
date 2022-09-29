@@ -41,8 +41,7 @@ i3lock \
 --wrong-font="$FONT" \
 --greeter-font="$FONT" \
 -n; 
-# --no-modkey-text \
-
+\
 amixer set Master unmute \
 dunstctl set-paused false \
 sleep 1 \

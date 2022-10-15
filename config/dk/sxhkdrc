@@ -12,8 +12,10 @@ super + e
 	rofi -show emoji -no-show-icons
 
 # dropdown terminal
-alt + {F1, F2, F3}
+alt + {n, F2, F3}
 	~/bin/scratchpad {note, dropdown, musikcube}
+alt + F1
+	~/bin/kitty-launch pulsemixer
 
 # system monitor
 ctrl + alt + Delete

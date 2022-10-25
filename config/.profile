@@ -63,5 +63,6 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.surrealdb:$PATH"
+export PATH="$HOME/.nix-profile/bin:$PATH"
 
 eval "$(starship init bash)"

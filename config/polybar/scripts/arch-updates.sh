@@ -11,11 +11,12 @@ echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 >/dev/null 2>&1
 if [ $? -eq 0 ]; then
 
    if (($updates == 0)); then
-      echo "%{F$green}﫟%{F-}"
-   elif (($updates > 10)); then
+      # echo "%{F$green}﫟%{F-}"
+			echo ""
+   elif (($updates > 50)); then
       echo "%{F$red} %{F-}$updates"
    else
-      echo "%{F$green} %{F-}$updates"
+      echo "%{F$yellow} %{F-}$updates"
    fi
 
 else

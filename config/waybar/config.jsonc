@@ -1,0 +1,87 @@
+{
+  "position": "top",
+  "layer": "top",
+  
+  "modules-left":   [
+    "custom/launcher",
+    "wlr/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+	],
+  "modules-right":  [
+    "tray",
+    "network",
+    "pulseaudio",
+    "battery",
+    "custom/powermenu"
+  ],
+
+
+  "wlr/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+  },
+  
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10
+  },
+  
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 50,
+      "critical": 30
+    },
+    "format": " {icon}",
+    "format-charging": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
+    "tooltip-format": "{capacity}%"
+  },
+  
+  "clock": {
+   "format": "{:%b %d %R}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  
+  "network": {
+    "format-wifi": " ",
+    "format-ethernet": " {essid}",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "睊 Disconnected",
+    "tooltip-format-wifi": "{essid} | Signal: {signalStrength}% | Download: {bandwidthDownBits}, Upload: {bandwidthUpBits}",
+    "on-click": "~/bin/kitty-launch nmtui"
+  },
+  
+  "pulseaudio": {
+    "tooltip-format": "{volume}%",
+    "format": "{icon}",
+    "format-muted": "ﱝ",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-bluetooth": "{volume}% {format_source}",
+    "format-bluetooth-muted": "{format_source}",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "scroll-step": 1,
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": ["", "", "墳", ""]
+    }
+  },
+
+  "custom/powermenu": {
+    "format": "{icon}  ",
+    "interval": "once",
+    "on-click": "bash ~/.config/rofi/scripts/powermenu.sh",
+  },
+
+  "custom/launcher": {
+    "format": "{icon} ",
+    "interval": "once",
+    "on-click": "rofi -show drun",
+  }
+}

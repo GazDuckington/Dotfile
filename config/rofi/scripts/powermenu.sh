@@ -32,6 +32,7 @@ $logout)
     i3-msg exit
     bspc quit
     dkcmd exit
+		hyprctl exit
     killall spectrwm
     ;;
 esac

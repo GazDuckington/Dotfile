@@ -42,7 +42,7 @@ i3lock \
 --greeter-font="$FONT" \
 -n; 
 \
-amixer set Master unmute \
+amixer set Master toggle \
 dunstctl set-paused false \
 sleep 1 \
 exit

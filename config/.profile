@@ -65,4 +65,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.surrealdb:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
 
+if [[ "$(tty)" == "/dev/tty1" ]];then
+	exec Hyprland
+fi
 eval "$(starship init bash)"

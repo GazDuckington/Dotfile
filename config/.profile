@@ -50,8 +50,6 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc 
-export PYENV_ROOT="$XDG_DATA_HOME"/pyenv 
-export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 export GO111MODULE=on
 
@@ -61,6 +59,7 @@ export PATH="$HOME/cargo/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.local/share/pyenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.surrealdb:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
@@ -69,5 +68,8 @@ if [[ "$(tty)" == "/dev/tty1" ]];then
 	exec Hyprland
 fi
 
-eval "$(pyenv int -)"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 eval "$(starship init bash)"

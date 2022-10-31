@@ -68,4 +68,6 @@ export PATH="$HOME/.nix-profile/bin:$PATH"
 if [[ "$(tty)" == "/dev/tty1" ]];then
 	exec Hyprland
 fi
+
+eval "$(pyenv int -)"
 eval "$(starship init bash)"

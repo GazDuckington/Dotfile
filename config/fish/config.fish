@@ -37,13 +37,6 @@ function lolban
     figlet -f ANSI\ Shadow $argv | lolcat
 end
 
-# startx on tty1
-if status --is-interactive
-    if test -z "$DISPLAY" -a $XDG_VTNR = 1
-        exec startx -- -keeptty
-    end
-end
-
 # set variables
 bass source ~/.profile
 

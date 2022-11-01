@@ -29,8 +29,7 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 # env variables
-export QT_STYLE_OVERRIDE=kvantum
-export sourcery_token=''
+export QT_STYLE_OVERRIDE=gtk
 
 # pnpm
 export PNPM_HOME="/home/gaz/.local/share/pnpm"

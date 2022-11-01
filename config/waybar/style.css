@@ -1,86 +1,88 @@
+@import "mocha.css";
+
 * {
-  border: none;
-  border-radius: 0;
-  font-family: FiraCode Nerd Font;
-  font-size: 18px;
-  font-weight: bold;
-  min-height: 0;
+    border: none;
+    border-radius: 0;
+    font-family: 'FiraCode Nerd Font Mon', monospace;
+    font-size: 15px;
+    min-height: 0;
 }
 
-window#waybar {
-  background: #000000;
-  color: #dedede;
-}
-
-tooltip {
-  background: #121212;
-  border-radius: 6px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #4f6580;
-}
-
-#workspaces button {
-  padding: 3px;
-  color: #434343;
-  margin-right: 5px;
-}
-
-#workspaces button.active {
-  color: #dedede;
-}
-
-#workspaces button.focused {
-  color: #dedede;
-  border-radius: 6px;
-}
-
-#workspaces button.urgent {
-  color: #0f0f0f;
-  border-radius: 6px;
-}
-
-#workspaces button:hover {
-  color: #000000;
-  border-radius: 6px;
-}
-
-#clock, #battery, #pulseaudio, #network, #workspaces, #tray, #backlight {
-  padding: 4px 8px;
-  /*background-color: #202020;*/
-}
-
-#tray {
-  border-radius: 6px;
-  margin-right: 4px;
+#waybar {
+    background: @base;
+    color: @text;
+    margin: 5px 0;
 }
 
 #workspaces {
-  margin-left: 4px;
+	border-radius: 1rem;
+  margin: 5px;
+	background-color: @surface0;
+	margin-left: 1rem;
+}
+
+#workspaces button {
+    color: @lavender;
+    border-radius: 1rem;
+
+}
+
+#workspaces button.active {
+    color: @sky;
+    border-radius: 1rem;
+}
+
+#custom-class, #tray, #backlight, #clock, #battery, #pulseaudio, #network {
+  background-color: @surface0;
+	padding: 0.5rem 1rem;
+	margin: 5px 0;
 }
 
 #clock {
-  border-radius: 6px;
+    color: @lavender;
+    border-radius: 1rem;
+}
+
+#clock:hover,
+#workspaces button:hover,
+#pulseaudio:hover, 
+#network:hover, 
+#backlight:hover, 
+#battery:hover {
+	color: @mantle;
+	font-weight: bold;
+}
+
+#battery {
+  color: @green;
+	margin-right: 1rem;
+  border-radius: 0rem 1rem 1rem 0rem;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @red;
+}
+
+#backlight {
+    color: @yellow;
 }
 
 #network {
-  border-radius: 6px 0px 0px 6px;
+	color: @peach;
 }
 
 #pulseaudio {
+	color: @red;
+        border-radius: 1rem 0px 0px 1rem;
+        margin-left: 1rem;
 }
 
-#battery{
-  border-radius: 0 6px 6px 0;
-  margin-right: 4px;
+#custom-class {
+    color: @mauve;
+    border-radius: 1rem;
 }
 
-#backlight{}
-
-#custom-powermenu {
-  padding-right: 8px
-}
-
-#custom-launcher {
-  padding: 0px 8px
-}

@@ -64,7 +64,7 @@ export PATH="$HOME/.surrealdb:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
 
 if [[ "$(tty)" == "/dev/tty1" ]];then
-	exec Hyprland
+	exec dk
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"

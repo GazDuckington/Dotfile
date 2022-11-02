@@ -26,7 +26,7 @@ alt + c
 	~/bin/color-picker
 
 # toggle polybar
-super + shift + p
+ctrl + p
 	polybar-msg cmd toggle
 
 # terminal

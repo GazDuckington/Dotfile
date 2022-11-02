@@ -6,9 +6,9 @@ function capslock() {
   caps=$(xset -q | grep Caps | awk '{ print $4 }')
 
   if [ $caps == 'off' ]; then
-    echo "%{F$grey}ﰶ%{F-}"
+    echo "%{F$grey} ﰶ %{F-}"
   else
-    echo "%{F$green}ﰶ%{F-}"
+    echo "%{F$green} ﰶ %{F-}"
   fi
 
 }

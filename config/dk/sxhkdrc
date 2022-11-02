@@ -2,8 +2,8 @@
 #########################################################
 
 # launcher
-super + {d, x, w, f}
-	rofi -show {drun,run,window,filebrowser}
+super + {d, x, w}
+	rofi -show {drun,run,window}
 
 super + {F4, c, s}
 	~/.config/rofi/scripts/{powermenu.sh,dev.sh code,web-search.sh}
@@ -13,7 +13,7 @@ super + e
 
 # dropdown terminal
 alt + {n, F2, F3}
-	~/bin/scratchpad {note, dropdown, musikcube}
+	~/bin/scratchpad {nvim-note, dropdown, musikcube}
 alt + F1
 	~/bin/kitty-launch pulsemixer
 

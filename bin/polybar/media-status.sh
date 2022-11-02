@@ -7,8 +7,8 @@ fi
 
 while read -r LINE; do
   if [[ $LINE == "No players found" ]]; then
-    ICON=""
-    OUTPUT=""
+    ICON=""
+    OUTPUT="Nothing's on"
   else 
     STATE=$(echo "$LINE" | cut -d " " -f1)
     OUTPUT=$(echo "$LINE" | cut -d " " -f2-)
@@ -19,5 +19,5 @@ while read -r LINE; do
     fi
   fi
 
-  echo "$ICON" " ${OUTPUT}"
-done < <(playerctl metadata -f '{{status}} {{artist}} - {{trunc(title, 8)}}' -F)
+  echo "$ICON" "${OUTPUT}"
+done < <(playerctl metadata -f '{{status}} {{trunc(artist, 8)}} - {{trunc(title, 8)}}' -F)

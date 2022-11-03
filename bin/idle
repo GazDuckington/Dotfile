@@ -21,9 +21,9 @@ function startidle() {
 function checkidle() {
 
   if [[ $result == 1 ]]; then
-    echo "%{F$grey}%{F-}"
+    echo "%{F$grey}  %{F-}"
   else
-    echo "%{F$green}%{F-}"
+    echo "%{F$green}  %{F-}"
   fi
 
 }

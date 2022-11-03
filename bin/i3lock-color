@@ -1,7 +1,8 @@
 #!/bin/sh
 . ~/.config/dk/color.sh \
 # Set the paused status of dunst
-dunstctl set-paused true \
+dunstctl set-paused true;
+amixer set Master toggle;
 
 B='#00000000' # blank
 

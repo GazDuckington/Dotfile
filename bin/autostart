@@ -7,8 +7,8 @@ nitrogen --restore &
 /usr/lib/polkit-kde-authentication-agent-1 &
 ~/bin/polybar/launch-polybar.sh main &
 ~/bin/idle -s &
-~/bin/battery-watch &
-# picom --experimental-backends -b &
+watch -n 10 ~/bin/battery-watch &
+picom --experimental-backends -b &
 pgrep -x clipit >/dev/null || clipit &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x udiskie >/dev/null || udiskie -t &

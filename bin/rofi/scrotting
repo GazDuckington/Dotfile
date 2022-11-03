@@ -23,8 +23,7 @@ function menu() {
   screen="🖵 Screen"
   window=" Window"
 
-  rofi_cmd="rofi -dmenu -no-show-icons"
-  chs=$(printf '%s\n%s\n%s\n' "$screen" "$area" "$window" | $rofi_cmd)
+  chs=$(echo -e "$screen\n$area\n$window" | rofi -dmenu -no-show-icons -p "  Scrot ")
   case "$chs" in
   "$screen") scrot_screen ;;
   "$area") scrot_select ;;

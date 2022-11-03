@@ -2,20 +2,19 @@
 #########################################################
 
 # launcher
-super + {d, x, w}
-	rofi -show {drun,run,window}
+super + {d, x, w, e}
+	rofi -show {drun,run,window, emoji -no-show-icons}
 
-super + {F4, c, s}
-	~/.config/rofi/scripts/{powermenu.sh,dev.sh code,web-search.sh}
-
-super + e
-	rofi -show emoji -no-show-icons
 
 # dropdown terminal
 alt + {n, F2, F3}
 	~/bin/scratchpad {nvim-note, dropdown, musikcube}
+
 alt + F1
 	~/bin/kitty-launch pulsemixer
+
+alt + F4
+  ~/bin/rofi/powermenu
 
 # system monitor
 ctrl + alt + Delete
@@ -35,7 +34,7 @@ super + Return
 
 # screenshot and selection capture
 {_,alt +, ctrl +, shift + }@Print
-	~/bin/scrotting {_, screen, area, window}
+	~/bin/rofi/scrotting {_, screen, area, window}
 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}

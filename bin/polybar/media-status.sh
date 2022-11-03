@@ -5,19 +5,14 @@ if ! [[ -x "$(command -v playerctl)" ]]; then
   exit 1
 fi
 
-while read -r LINE; do
-  if [[ $LINE == "No players found" ]]; then
-    ICON=""
-    OUTPUT="Nothing's on"
-  else 
-    STATE=$(echo "$LINE" | cut -d " " -f1)
-    OUTPUT=$(echo "$LINE" | cut -d " " -f2-)
-    if [[ $STATE == "Paused" ]]; then
-      ICON=""
-    else
-      ICON=""
-    fi
-  fi
+MSTATUS=$(playerctl metadata -f '{{status}} {{trunc(artist, 8)}} - {{trunc(title, 8)}}')
+NP="No players found"
 
-  echo "$ICON" "${OUTPUT}"
-done < <(playerctl metadata -f '{{status}} {{trunc(artist, 8)}} - {{trunc(title, 8)}}' -F)
+STATE=$(echo "$MSTATUS" | cut -d " " -f1)
+OUTPUT=$(echo "$MSTATUS" | cut -d " " -f2-)
+
+if [[ $STATE == "Paused" ]]; then
+	echo "" "${OUTPUT}"
+elif [[ $STATE == "Playing" ]]; then
+	echo "" "${OUTPUT}"
+fi

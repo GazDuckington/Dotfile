@@ -48,10 +48,6 @@ super + Return
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
 	xbacklight {+10,-10}
 
-# alt volume keys
-alt + {F9,F8}
-	amixer set Master {5%+, 5%-}
-
 # reload sxhkd
 super + Escape
 	pkill -USR1 -x sxhkd

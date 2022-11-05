@@ -3,10 +3,11 @@
 # Set the paused status of dunst
 dunstctl set-paused true;
 amixer set Master toggle;
+killall i3lock &
 
 B='#00000000' # blank
 
-i3lock \
+pgrep -x i3lock >/dev/null || i3lock \
 --color=$base \
 --insidever-color=$B   \
 --ringver-color=$green     \

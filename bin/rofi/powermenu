@@ -17,7 +17,7 @@ case $chosen in
     $option0)
       ~/bin/i3lock-color;;
     $option1)
-      dkcmd quit;;
+      dkcmd exit;;
     $option2)
       systemctl suspend;;
 		$option3)

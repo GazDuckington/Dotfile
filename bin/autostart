@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 
+# watch -n 10 ~/bin/battery-watch & 
 killall -q dunst &
 killall -q xidlehook &
 pgrep -x dunst >/dev/null || dunst &
@@ -7,7 +8,6 @@ nitrogen --restore &
 /usr/lib/polkit-kde-authentication-agent-1 &
 ~/bin/polybar/launch-polybar.sh main &
 ~/bin/idle -s &
-watch -n 10 ~/bin/battery-watch &
 picom --experimental-backends -b &
 pgrep -x clipit >/dev/null || clipit &
 pgrep -x nm-applet >/dev/null || nm-applet &

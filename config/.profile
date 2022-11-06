@@ -30,6 +30,7 @@ fi
 
 # env variables
 export QT_STYLE_OVERRIDE=kvantum
+export QT_QPA_PLATFORMTHEME="kvantum"
 
 # pnpm
 export PNPM_HOME="/home/gaz/.local/share/pnpm"

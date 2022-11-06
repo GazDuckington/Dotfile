@@ -1,6 +1,8 @@
 #!/bin/sh
 
-# example dkrc to show some basic command usage and error reporting
+# autostart
+~/bin/autostart &
+dbus-launch &
 
 # determine where to place the log file
 logfile="$HOME/.dkrc.log"
@@ -14,10 +16,6 @@ if hash sxhkd >/dev/null 2>&1; then
 fi
 
 . ~/.config/dk/color.sh
-
-# autostart
-~/bin/autostart &
-dbus-launch &
 
 { # compound command to redirect all output
 

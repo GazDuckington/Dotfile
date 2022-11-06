@@ -2,8 +2,8 @@
 #########################################################
 
 # launcher
-super + {d, x, w, e}
-	rofi -show {drun,run,window, emoji -no-show-icons}
+super + {d, x, w, e, c}
+	rofi -show {drun,run,window, emoji -no-show-icons, calc -no-show-match -no-sort -no-show-icons}
 
 
 # dropdown terminal
@@ -25,7 +25,7 @@ alt + c
 	~/bin/color-picker
 
 # toggle polybar
-ctrl + p
+ctrl + F1
 	polybar-msg cmd toggle
 
 # terminal

@@ -12,4 +12,5 @@ picom --experimental-backends -b &
 pgrep -x clipit >/dev/null || clipit &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x udiskie >/dev/null || udiskie -t &
+# pgrep -x ulauncher >/dev/null || ulauncher --no-window-shadow &
 # ~/bin/disableETPS 0 &

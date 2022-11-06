@@ -12,6 +12,7 @@ configuration{
     display-window: " 﩯  Window";
     display-Network: "   Network";
 		display-emoji: "  Emoji ";
+		display-calc: "  Calc ";
     sidebar-mode: true;
 }
 

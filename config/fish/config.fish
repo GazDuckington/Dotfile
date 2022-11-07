@@ -44,8 +44,8 @@ bass source ~/.profile
 pyenv init - | source
 
 # tide prompt settings
-set tide_right_prompt_items git
-set tide_left_prompt_items pwd status virtual_env newline character
+set --universal tide_right_prompt_items git newline jobs
+set --universal tide_left_prompt_items pwd node go virtual_env newline character
 
 # starship prompt
 # starship init fish | source

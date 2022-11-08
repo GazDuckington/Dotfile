@@ -63,9 +63,9 @@ SETUVAR pure_color_command_duration:pure_color_warning
 SETUVAR pure_color_current_directory:pure_color_primary
 SETUVAR pure_color_danger:red
 SETUVAR pure_color_dark:black
-SETUVAR pure_color_git_branch:green
-SETUVAR pure_color_git_dirty:red
-SETUVAR pure_color_git_stash:yellow
+SETUVAR pure_color_git_branch:pure_color_mute
+SETUVAR pure_color_git_dirty:pure_color_mute
+SETUVAR pure_color_git_stash:pure_color_info
 SETUVAR pure_color_git_unpulled_commits:pure_color_info
 SETUVAR pure_color_git_unpushed_commits:pure_color_info
 SETUVAR pure_color_hostname:pure_color_mute
@@ -82,7 +82,7 @@ SETUVAR pure_color_success:magenta
 SETUVAR pure_color_system_time:pure_color_mute
 SETUVAR pure_color_username_normal:pure_color_mute
 SETUVAR pure_color_username_root:pure_color_light
-SETUVAR pure_color_virtualenv:pure_color_mute
+SETUVAR pure_color_virtualenv:magenta
 SETUVAR pure_color_warning:yellow
 SETUVAR pure_enable_container_detection:true
 SETUVAR pure_enable_git:true

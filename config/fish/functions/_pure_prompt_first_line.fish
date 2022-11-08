@@ -7,6 +7,7 @@ function _pure_prompt_first_line \
         return $FAILURE
     end
 
+    set --local virtualenv (_pure_prompt_virtualenv) # Python virtualenv name
     set --local prompt_ssh (_pure_prompt_ssh)
     set --local prompt_container (_pure_prompt_container)
     set --local prompt_git (_pure_prompt_git)
@@ -27,6 +28,7 @@ function _pure_prompt_first_line \
                 $prompt_git \
                 $prompt_ssh \
                 $prompt_container \
+								$virtualenv \
                 $prompt_command_duration
     else
         set prompt_components \
@@ -34,6 +36,7 @@ function _pure_prompt_first_line \
                 $prompt_container \
                 $current_folder \
                 $prompt_git \
+								$virtualenv \
                 $prompt_command_duration
     end
 

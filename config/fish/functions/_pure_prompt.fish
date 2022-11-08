@@ -20,7 +20,7 @@ function _pure_prompt \
         $system_time \
         $root_prefix \
         $jobs \
-        $virtualenv \
+				# $virtualenv \
         $vimode_indicator \
         $pure_symbol \
     )

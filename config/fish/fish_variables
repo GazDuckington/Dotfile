@@ -65,7 +65,7 @@ SETUVAR pure_color_danger:red
 SETUVAR pure_color_dark:black
 SETUVAR pure_color_git_branch:green
 SETUVAR pure_color_git_dirty:red
-SETUVAR pure_color_git_stash:pure_color_info
+SETUVAR pure_color_git_stash:yellow
 SETUVAR pure_color_git_unpulled_commits:pure_color_info
 SETUVAR pure_color_git_unpushed_commits:pure_color_info
 SETUVAR pure_color_hostname:pure_color_mute

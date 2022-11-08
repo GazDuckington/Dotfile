@@ -49,4 +49,4 @@ pyenv init - | source
 # set --universal tide_left_prompt_items pwd node go virtual_env newline character
 
 # starship prompt
-starship init fish | source
+# starship init fish | source

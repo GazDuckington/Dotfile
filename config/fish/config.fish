@@ -12,6 +12,7 @@ alias 'lv'='lvim'
 alias 'nv'='nvim'
 alias 'v'='glrnvim'
 alias 'hx'='helix'
+alias 'fzf'='fzf --layout reverse --border rounded --ansi'
 
 alias 'cpr'='cp -r'
 alias 'ls'='lsd'
@@ -44,8 +45,8 @@ bass source ~/.profile
 pyenv init - | source
 
 # tide prompt settings
-set --universal tide_right_prompt_items git newline jobs
-set --universal tide_left_prompt_items pwd node go virtual_env newline character
+# set --universal tide_right_prompt_items git newline jobs
+# set --universal tide_left_prompt_items pwd node go virtual_env newline character
 
 # starship prompt
-# starship init fish | source
+starship init fish | source

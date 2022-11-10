@@ -9,7 +9,8 @@ nitrogen --restore &
 ~/bin/polybar/launch-polybar.sh main &
 ~/bin/idle -s &
 picom --experimental-backends -b &
-pgrep -x clipit >/dev/null || clipit &
+# pgrep -x clipit >/dev/null || clipit &
+flatpak run com.github.hluk.copyq &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x udiskie >/dev/null || udiskie -t &
 # pgrep -x ulauncher >/dev/null || ulauncher --no-window-shadow &

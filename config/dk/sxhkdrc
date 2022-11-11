@@ -3,7 +3,7 @@
 
 # launcher
 super + {d, x, w, e, c}
-	rofi -show {drun,run,window, emoji -no-show-icons, calc -no-show-match -no-sort}
+	rofi -show {drun,run -no-show-icons,window, emoji -no-show-icons, calc -no-show-match -no-sort}
 
 # dropdown terminal
 alt + {n, F2, F3}

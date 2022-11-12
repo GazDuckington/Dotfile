@@ -74,7 +74,7 @@ fi
 
 	# WS 2
 	dkcmd rule \
-		class="(Oni2_editor|[Cc]ode|DesktopEditors|glrnvim)" \
+		class="([Ll]apce|[Cc]ode|DesktopEditors|glrnvim)" \
 		ws=2 focus=true
 
 	# WS 3

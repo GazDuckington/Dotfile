@@ -42,14 +42,16 @@ export PATH="$PNPM_HOME:$PATH"
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
 export PATH=$JAVA_HOME/bin:$PATH
 ## android
-export ANDROID_HOME=$HOME/Android
+export ANDROID=$HOME/Android
+export PATH=$ANDROID/cmdline-tools/latest:$PATH
+export PATH=$ANDROID/cmdline-tools/latest/bin:$PATH
+export PATH=$ANDROID/platform-tools:$PATH
+## android SDK
 export ANDROID_SDK=$HOME/ANDROID
 export PATH=$ANDROID_SDK:$PATH
-export PATH=$ANDROID_HOME/cmdline-tools/tools:$PATH
-export PATH=$ANDROID_HOME/cmdline-tools/tools/bin:$PATH
-export PATH=$ANDROID_HOME/platform-tools:$PATH
 ## flutter
-export PATH="$PATH:$HOME/Android/flutter/bin"
+export FLUTTER=$ANDROID/flutter
+export PATH=$FLUTTER/bin:$PATH
 export CHROME_EXECUTABLE=$(which com.github.Eloston.UngoogledChromium)
 # flutter-dev end
 

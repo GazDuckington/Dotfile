@@ -50,6 +50,7 @@ export PATH=$ANDROID_HOME/cmdline-tools/tools/bin:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 ## flutter
 export PATH="$PATH:$HOME/Android/flutter/bin"
+export CHROME_EXECUTABLE=$(which com.github.Eloston.UngoogledChromium)
 # flutter-dev end
 
 export XDG_DATA_HOME=$HOME/.local/share

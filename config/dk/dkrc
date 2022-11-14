@@ -79,7 +79,7 @@ fi
 
 	# WS 3
 	dkcmd rule \
-		class="(\b[Nn]autilus\b|[Nn]emo|Motrix|[Kk]rita|[Gg]imp*|\b[Gg]ithub\b)" \
+		class="(\b[Nn]autilus\b|[Nn]emo|Motrix|[Qq][Bb]ittorrent|[Kk]rita|[Gg]imp*|\b[Gg]ithub\b)" \
 		ws=3 focus=true
 
 	# WS 4

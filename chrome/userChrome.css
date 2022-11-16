@@ -258,6 +258,10 @@
     display: none;
 }
 
+#TabsToolbar {
+  visibility: collapse !important;
+}
+
 [sidebarcommand*="tabcenter"] #sidebar,
 #sidebar-box[sidebarcommand*="tabcenter"] {
     min-width: 48px !important;

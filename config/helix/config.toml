@@ -24,3 +24,6 @@ C-k = "jump_view_up"
 C-l = "jump_view_right"
 C-w = {x=":bc"}
 space = {i=":cd %:p:h"}
+
+[keys.insert]
+C-s = ":w"

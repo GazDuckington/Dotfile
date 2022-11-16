@@ -26,4 +26,4 @@ C-w = {x=":bc"}
 space = {i=":cd %:p:h"}
 
 [keys.insert]
-C-s = ":w"
+"C-s" = ":w"

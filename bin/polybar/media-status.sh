@@ -8,7 +8,8 @@ fi
 MSTATUS=$(playerctl metadata -f '{{status}} {{trunc(artist, 8)}} - {{trunc(title, 8)}}')
 NP="No players found"
 
-STATE=$(echo "$MSTATUS" | cut -d " " -f1)
+# STATE=$(echo "$MSTATUS" | cut -d " " -f1)
+STATE=$(playerctl status)
 OUTPUT=$(echo "$MSTATUS" | cut -d " " -f2-)
 
 if [[ $STATE == "Paused" ]]; then

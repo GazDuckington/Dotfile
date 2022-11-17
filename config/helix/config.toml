@@ -6,6 +6,16 @@ cursorline = true
 color-modes = true
 # bufferline = "always"
 
+[editor.whitespace]
+render = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·"
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -22,8 +32,7 @@ C-h = "jump_view_left"
 C-j = "jump_view_down"
 C-k = "jump_view_up"
 C-l = "jump_view_right"
-C-w = {x=":bc"}
 space = {i=":cd %:p:h"}
 
 [keys.insert]
-"C-s" = ":w"
+"C-s" = ["normal_mode", ":w"]

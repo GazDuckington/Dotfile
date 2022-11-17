@@ -8,11 +8,12 @@ set vi_mode_default vi_mode_normal
 alias 'g'='git'
 alias 'code'='code'
 alias 'c'='code'
-alias 'lv'='lvim'
 alias 'nv'='nvim'
 alias 'v'='glrnvim'
 alias 'hx'='helix'
 alias 'fzf'='fzf --layout reverse --border rounded --ansi'
+alias 'pm'='pulsemixer'
+alias 'cl'='clear'
 
 alias 'cpr'='cp -r'
 alias 'ls'='lsd'

@@ -6,7 +6,7 @@ font = Monospace 10
 frame_width = 1
 offset = 5x45
 gap_size = 10
-corner_radius = 5
+corner_radius = 0
 
 [urgency_low]
 background = "#1E1E2E"

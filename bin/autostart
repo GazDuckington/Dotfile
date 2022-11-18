@@ -4,7 +4,6 @@
 killall -q dunst &
 killall -q xidlehook &
 pgrep -x dunst >/dev/null || dunst &
-nitrogen --restore &
 /usr/lib/polkit-kde-authentication-agent-1 &
 ~/bin/polybar/launch-polybar.sh main &
 ~/bin/idle -s &

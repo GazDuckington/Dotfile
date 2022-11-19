@@ -49,7 +49,7 @@ super + Return
 
 # reload sxhkd
 super + Escape
-	pkill -USR1 -x sxhkd -c "$HOME/.config/dk/sxhkdrc"
+	pkill -USR1 -x sxhkd
 
 
 # restart/reload dk

@@ -1,9 +1,9 @@
 env:
   TERM: xterm-256color
 import:
-  - ./catppuccin-mocha.yml
+  - ~/.config/alacritty/catppuccin-mocha.yml
 font:
-  size: 9.0
+  size: 8.0
   normal:
     family: FiraCode Nerd Font
     style: Retina
@@ -26,7 +26,7 @@ window:
     y: 3
   dynamic_title: true
 shell:
-  program: /usr/sbin/fish
+  program: fish
   args:
    - -l
    - -c

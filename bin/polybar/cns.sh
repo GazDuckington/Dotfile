@@ -6,7 +6,7 @@ function capslock() {
   caps=$(xset -q | grep Caps | awk '{ print $4 }')
 
   if [ $caps == 'off' ]; then
-    echo "%{F$grey}ﰶ %{F-}"
+    echo "%{F$overlay0}ﰶ %{F-}"
   else
     echo "%{F$green}ﰶ %{F-}"
   fi
@@ -18,7 +18,7 @@ function numlock() {
   num=$(xset -q | grep Num | awk '{ print $8 }')
 
   if [ $num == 'off' ]; then
-    echo "%{F$grey}%{F-}"
+    echo "%{F$overlay0}%{F-}"
   else
     echo "%{F$green}%{F-}"
   fi
@@ -30,7 +30,7 @@ function scroll() {
   scroll=$(xset -q | grep Scroll | awk '{ print $12 }')
 
   if [ $scroll == 'off' ]; then
-    echo "%{F$grey}%{F-}"
+    echo "%{F$overlay0}%{F-}"
   else
     echo "%{F$green}%{F-}"
   fi

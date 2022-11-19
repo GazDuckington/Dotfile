@@ -1,9 +1,10 @@
 #!/bin/sh
+. ~/.config/dk/color.sh
 
 # autostart
 ~/bin/autostart &
-nitrogen --restore &
 dbus-launch &
+nitrogen --restore &
 
 # determine where to place the log file
 logfile="$HOME/.dkrc.log"
@@ -16,7 +17,6 @@ if hash sxhkd >/dev/null 2>&1; then
 	sxhkd -c "$HOME/.config/dk/sxhkdrc" &
 fi
 
-. ~/.config/dk/color.sh
 
 { # compound command to redirect all output
 
@@ -45,7 +45,7 @@ fi
 	dkcmd set win_minwh=50 win_minxy=30
 
 	# disable gaps and borders in single window layouts
-	dkcmd set smart_gap=true smart_border=false
+	dkcmd set smart_gap=true smart_border=true
 
 	# define mouse mod and move/resize buttons
 	dkcmd set mouse mod=super move=button1 resize=button3
@@ -84,7 +84,8 @@ fi
 		ws=3 focus=true
 
 	# WS 4
-	dkcmd rule class="(Minecraft*|bottles|[Gg]ame*|\btlauncher\b)" ws=4 float=true
+	dkcmd rule class="([Vv]lc|\bcelluloid\b|Minecraft*|bottles|[Gg]ame*|\btlauncher\b)" ws=4 focus=true
+	dkcmd rule class="(Minecraft*|bottles|[Gg]ame*|\btlauncher\b)" float=true
 
 	# WS 5
 	dkcmd rule \
@@ -92,7 +93,7 @@ fi
 		ws=5 focus=true
 
 	# WS 6
-	dkcmd rule class="(\bcelluloid\b|Stremio)" \
+	dkcmd rule class="(Stremio)" \
 		ws=6 focus=true
 
 	# Floaters

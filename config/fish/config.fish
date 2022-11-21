@@ -15,6 +15,7 @@ alias 'fzf'='fzf --layout reverse --border rounded --ansi'
 alias 'pm'='pulsemixer'
 alias 'cl'='clear'
 
+alias 'rm'='trash'
 alias 'cpr'='cp -r'
 alias 'ls'='lsd'
 alias 'la'='lsd -a'

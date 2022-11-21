@@ -11,10 +11,8 @@ render = "all"
 
 [editor.whitespace.characters]
 space = "·"
-nbsp = "⍽"
 tab = "→"
-newline = "⏎"
-tabpad = "·"
+newline = "↴"
 
 [editor.cursor-shape]
 insert = "bar"

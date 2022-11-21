@@ -75,7 +75,7 @@ fi
 
 	# WS 2
 	dkcmd rule \
-		class="([Ll]apce|[Cc]ode|DesktopEditors|glrnvim)" \
+		class="([Oo]ni2_editor|[Ll]apce|[Cc]ode|DesktopEditors|glrnvim)" \
 		ws=2 focus=true
 
 	# WS 3

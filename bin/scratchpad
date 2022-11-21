@@ -3,10 +3,10 @@
 wid=$(xdotool search --classname $1 | head -n 1)
 if [ -z "$wid" ]; then
   if [ $1 == "dropdown" ]; then
-		kitty --class dropdown
-		# alacritty --class dropdown,dropdown
+		kitty -1 --class dropdown
+		# alacritty -class dropdown,dropdown
   elif [ $1 == "note" ]; then
-		kitty --class notes -e ~/bin/nvim-note
+		kitty -1 --class notes -e ~/bin/nvim-note
 		# alacritty --class notes,notes -e ~/bin/nvim-note
   else
     ~/bin/kitty-launch $1

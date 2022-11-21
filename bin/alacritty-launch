@@ -5,5 +5,5 @@ if pgrep "$x" > /dev/null
 then
   killall -q $x
 else
-  alacritty --class $x,$x -e tmux new-session "${x}"
+  alacritty --class $x,$x --command $x
 fi

@@ -1,4 +1,4 @@
-# example sxhkdrc for use with dk
+# Example sxhkdrc for use with dk
 #########################################################
 
 # launcher
@@ -29,7 +29,7 @@ ctrl + F1
 
 # terminal
 super + Return
-	kitty
+	kitty -1
 
 # screenshot and selection capture
 {_,alt +, ctrl +, shift + }@Print
@@ -49,8 +49,7 @@ super + Return
 
 # reload sxhkd
 super + Escape
-	pkill -USR1 -x sxhkd
-
+	pkill -USR1 -x sxhkd -c "$HOME/.config/dk/sxhkdrc"
 
 # restart/reload dk
 {super, alt} + shift + r

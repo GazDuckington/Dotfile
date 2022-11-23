@@ -7,7 +7,7 @@ pgrep -x dunst >/dev/null || dunst &
 ~/bin/polybar/launch-polybar.sh main &
 ~/bin/idle -s &
 ~/bin/disableETPS 0 &
-~/bin/scratchpad dropown &
+~/bin/scratchpad dropdown &
 picom --experimental-backends -b &
 pgrep -x com.github.hluk.copyq >/dev/null || com.github.hluk.copyq &
 pgrep -x nm-applet >/dev/null || nm-applet &

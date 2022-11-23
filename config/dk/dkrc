@@ -2,7 +2,7 @@
 . ~/.config/dk/color.sh
 
 # autostart
-~/bin/autostart &
+~/bin/autostart.sh &
 dbus-launch &
 nitrogen --restore &
 

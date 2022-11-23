@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-killall -q dunst &
+watch -n 60 ~/bin/battery-watch.sh >/dev/null &
 killall -q xidlehook &
 pgrep -x dunst >/dev/null || dunst &
 /usr/lib/polkit-kde-authentication-agent-1 &

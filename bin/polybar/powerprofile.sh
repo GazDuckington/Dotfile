@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 PROFILE=$(powerprofilesctl get)
 . ~/.config/dk/color.sh
 

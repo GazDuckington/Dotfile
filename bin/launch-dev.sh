@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 DIR=$(fd -p ~/dev/ -t d -d 2 | fzf --layout reverse --border rounded --ansi)
 

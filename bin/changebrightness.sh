@@ -1,6 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
-brightness="$(printf "%.0f\n" $(xbacklight -get)
+brightness="$(
+    printf "%.0f\n" $(xbacklight -get)
 )"
 
 xbacklight $1 &

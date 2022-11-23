@@ -1,5 +1,0 @@
-[Unit]
-Description=check-battery
-
-[Service]
-ExecStart=/home/gaz/bin/battery-watch

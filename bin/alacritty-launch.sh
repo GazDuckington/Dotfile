@@ -1,8 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 x=$1
 
-if pgrep "$x" > /dev/null
-then
+if pgrep "$x" >/dev/null; then
   killall -q $x
 else
   alacritty --class $x,$x --command $x

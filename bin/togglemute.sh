@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 MUTE="$(amixer get $1 | tail -2 | grep -c '\[on\]')"
 
-if [[ $MUTE > 0 ]];then
+if [[ $MUTE > 0 ]]; then
 	amixer set $1 toggle &
 	notify-send "$1 is Muted" -t 1000
 else

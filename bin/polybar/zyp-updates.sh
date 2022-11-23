@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 updates=$(zypper lu | wc -l)
-zupdates=$((updates-3))
+zupdates=$((updates - 3))
 
 if [ "$zupdates" -gt 0 ]; then
     echo "%{F#50fa7b} $zupdates%{F-}"

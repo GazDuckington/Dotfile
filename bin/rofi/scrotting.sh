@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 SCROT_DIR=~/Pictures/Screenshots
 CURRENT_DATE=$(date +"%R_%d_%b_%y")
 FILE_NAME=$SCROT_DIR/$CURRENT_DATE.png
@@ -41,7 +41,7 @@ function instant() {
   fi
 }
 
-function main(){
+function main() {
   if [[ -z "$1" ]]; then
     menu
   else

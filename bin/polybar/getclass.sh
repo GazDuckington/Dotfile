@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 CLASS=$(xprop -id $(xdotool getwindowfocus) WM_CLASS | awk '{gsub(/"/,"", $4); print $4}')
 

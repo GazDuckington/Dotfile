@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 . ~/.config/dk/color.sh
 
@@ -32,11 +32,11 @@ function toggleidle() {
 
   if [[ $result == 0 ]]; then
     $HOME/bin/idle -s &
-		xset dpms &
+    xset dpms &
     # notify-send "idle is on" -t 5000
   else
-		xset s off -dpms &
-		xset s noblank &
+    xset s off -dpms &
+    xset s noblank &
     killall xidlehook &
     # notify-send "Staying up" -t 5000
   fi

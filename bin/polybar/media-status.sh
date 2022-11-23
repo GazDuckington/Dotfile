@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 if ! [[ -x "$(command -v playerctl)" ]]; then
   echo "install playerctl"
@@ -13,7 +13,7 @@ STATE=$(playerctl status)
 OUTPUT=$(echo "$MSTATUS" | cut -d " " -f2-)
 
 if [[ $STATE == "Paused" ]]; then
-	echo "" "${OUTPUT}"
+  echo "" "${OUTPUT}"
 elif [[ $STATE == "Playing" ]]; then
-	echo "" "${OUTPUT}"
+  echo "" "${OUTPUT}"
 fi

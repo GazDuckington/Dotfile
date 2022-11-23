@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 APP=$(compgen -c | fzf --layout reverse --border rounded --ansi)
 

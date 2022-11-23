@@ -7,21 +7,21 @@ super + {d, x, w, e, c}
 
 # dropdown terminal
 alt + {n, F2, F3}
-	~/bin/scratchpad {nvim-note, dropdown, musikcube}
+	~/bin/scratchpad.sh {nvim-note, dropdown, musikcube}
 
 alt + F1
 	~/bin/kitty-launch pulsemixer
 
 alt + F4
-  ~/bin/rofi/powermenu
+  ~/bin/rofi/powermenu.sh
 
 # system monitor
 ctrl + alt + Delete
-	~/bin/kitty-launch btop
+	~/bin/kitty-launch.sh btop
 
 # color picker
 alt + c
-	~/bin/color-picker
+	~/bin/color-picker.sh
 
 # toggle polybar
 ctrl + F1
@@ -33,7 +33,7 @@ super + Return
 
 # screenshot and selection capture
 {_,alt +, ctrl +, shift + }@Print
-	~/bin/rofi/scrotting {_, screen, area, window}
+	~/bin/rofi/scrotting.sh {_, screen, area, window}
 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}

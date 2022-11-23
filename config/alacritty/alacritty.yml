@@ -27,7 +27,7 @@ window:
   dynamic_title: true
 shell:
   program: fish
-  # args:
-  #  - -l
-  #  - -c
-  #  - "tmux attach || tmux"
+  args:
+   - -l
+   - -c
+   - "tmux attach || tmux"

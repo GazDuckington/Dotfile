@@ -84,7 +84,7 @@ fi
 		ws=3 focus=true
 
 	# WS 4
-	dkcmd rule class="([Vv]lc|\bcelluloid\b|Minecraft*|bottles|[Gg]ame*|\btlauncher\b)" ws=4 focus=true
+	dkcmd rule class="([Vv]lc|[Cc]lapper$|Minecraft*|bottles|[Gg]ame*|\btlauncher\b)" ws=4 focus=true
 	dkcmd rule class="(Minecraft*|bottles|[Gg]ame*|\btlauncher\b)" float=true
 
 	# WS 5

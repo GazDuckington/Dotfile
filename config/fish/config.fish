@@ -6,8 +6,8 @@ set vi_mode_default vi_mode_normal
 
 # aliases
 alias 'g'='git'
-alias 'code'='com.visualstudio.code'
-alias 'c'='com.visualstudio.code'
+alias 'code'='code'
+alias 'c'='code'
 alias 'nv'='nvim'
 alias 'v'='nvim'
 alias 'hx'='helix'

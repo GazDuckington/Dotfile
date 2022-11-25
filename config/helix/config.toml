@@ -33,4 +33,5 @@ C-l = "jump_view_right"
 space = {i=":cd %:p:h"}
 
 [keys.insert]
-"C-s" = ["normal_mode", ":w"]
+"C-s" = ["normal_mode", ":w", "insert_mode"]
+"C-o" = ["open_below"]

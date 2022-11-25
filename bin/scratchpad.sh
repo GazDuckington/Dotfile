@@ -9,8 +9,8 @@ if [ -z "$wid" ]; then
 		kitty -1 --class notes -e ~/bin/nvim-note
 		# alacritty --class notes,notes -e ~/bin/nvim-note
   else
-    ~/bin/kitty-launch $1
-		#~/bin/alacritty-launch $1
+    ~/bin/kitty-launch.sh $1
+		#~/bin/alacritty-launch.sh $1
     wid=$(xdotool search --classname $1 | head -n 1)
     xdotool windowfocus $wid
   fi

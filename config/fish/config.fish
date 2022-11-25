@@ -6,10 +6,10 @@ set vi_mode_default vi_mode_normal
 
 # aliases
 alias 'g'='git'
-alias 'code'='code'
-alias 'c'='code'
+alias 'code'='com.visualstudio.code'
+alias 'c'='com.visualstudio.code'
 alias 'nv'='nvim'
-alias 'v'='glrnvim'
+alias 'v'='nvim'
 alias 'hx'='helix'
 alias 'fzf'='fzf --layout reverse --border rounded --ansi'
 alias 'pm'='pulsemixer'

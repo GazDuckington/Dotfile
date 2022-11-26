@@ -29,5 +29,5 @@ shell:
   program: fish
   args:
    - -l
-   - -c
-   - "tmux attach || tmux"
+   # - -c
+   # - "tmux attach || tmux"

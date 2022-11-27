@@ -5,9 +5,8 @@ set fish_plugins vi-mode
 set vi_mode_default vi_mode_normal
 
 # aliases
-alias 'g'='git'
-alias 'code'='code'
 alias 'c'='code'
+alias 'code'='code'
 alias 'nv'='nvim'
 alias 'v'='nvim'
 alias 'hx'='helix'
@@ -15,7 +14,6 @@ alias 'fzf'='fzf --layout reverse --border rounded --ansi'
 alias 'pm'='pulsemixer'
 alias 'cl'='clear'
 
-alias 'server'='python -m http.server'
 alias 'br'='br.sh'
 alias 'rm'='trash'
 alias 'cpr'='cp -r'
@@ -23,11 +21,14 @@ alias 'ls'='lsd'
 alias 'la'='lsd -a'
 alias 'll'='lsd -l'
 alias 'lt'='lsd --tree'
+alias 'server'='python -m http.server'
 
-alias 'lg'='lazygit'
+alias 'g'='git'
+alias 'gg'='lazygit'
 alias 'ga'='git add'
 alias 'gc'='git commit -am'
 alias 'gp'='git push'
+alias 'gs'='git status'
 
 # functions
 function ofetch
@@ -51,7 +52,6 @@ bass source ~/.profile
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-pyenv init
 pyenv init - | source
 
 starship init fish | source

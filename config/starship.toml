@@ -1,17 +1,37 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = true
-command_timeout = 5000
+command_timeout = 500
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$nodejs\
+$golang\
+$lua\
+$python\
+$cmd_duration\
+$line_break\
+$shell$jobs$character"""
+
+[fill]
+symbol = " "
 
 [line_break]
 disabled = false
 
 [character]
-success_symbol = "[→](bold green)"
-error_symbol = "[→](bold red)"
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
 
 [time]
-disabled = true
+disabled = false
 
 [username]
 disabled = true
@@ -22,7 +42,7 @@ format = "[$user]($style) in "
 
 [hostname]
 ssh_only = false
-format =  "@[$hostname](bold purple) "
+format = "@[$hostname](bold purple) "
 disabled = true
 
 [shell]
@@ -31,7 +51,6 @@ disabled = false
 [directory]
 fish_style_pwd_dir_length = 1
 truncation_length = 3
-# home_symbol = "home"
 read_only = "⍉"
 format = "[$path](cyan) "
 
@@ -103,3 +122,6 @@ symbol = " "
 
 [swift]
 symbol = "ﯣ "
+
+[lua]
+symbol = " "

@@ -30,15 +30,20 @@ alias 'gp'='git push'
 
 # functions
 function ofetch
-    if not set -q argv[1]
-        onefetch --show-logo never -c 4
-    else
-        onefetch $argv --show-logo never -c 4
-    end
+  if not set -q argv[1]
+    onefetch --show-logo never -c 4
+  else
+    onefetch $argv --show-logo never -c 4
+  end
 end
 
 function lolban
-    figlet -f ANSI\ Shadow $argv | lolcat
+  figlet -f ANSI\ Shadow $argv | lolcat
+end
+
+function take
+	make -p $argv
+	cd $argv
 end
 
 # set variables

@@ -43,12 +43,15 @@ function lolban
 end
 
 function take
-	make -p $argv
-	cd $argv
+	mkdir -p $argv && cd $argv
 end
 
 # set variables
 bass source ~/.profile
 
-# pyenv init
-# pyenv init - | source
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+pyenv init
+pyenv init - | source
+
+starship init fish | source

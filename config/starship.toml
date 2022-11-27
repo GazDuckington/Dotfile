@@ -1,6 +1,6 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = true
+add_newline = false
 command_timeout = 500
 
 format = """
@@ -38,12 +38,12 @@ disabled = true
 show_always = true
 style_user = "bold blue"
 style_root = "bold red"
-format = "[$user]($style) in "
+format = "[$user]($style)"
 
 [hostname]
-ssh_only = false
-format = "@[$hostname](bold purple) "
 disabled = true
+ssh_only = false
+format = "@[$hostname](bold purple)"
 
 [shell]
 disabled = false

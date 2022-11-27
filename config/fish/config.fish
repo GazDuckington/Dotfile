@@ -15,6 +15,7 @@ alias 'fzf'='fzf --layout reverse --border rounded --ansi'
 alias 'pm'='pulsemixer'
 alias 'cl'='clear'
 
+alias 'server'='python -m http.server'
 alias 'br'='br.sh'
 alias 'rm'='trash'
 alias 'cpr'='cp -r'

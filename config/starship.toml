@@ -18,7 +18,7 @@ $lua\
 $python\
 $cmd_duration\
 $line_break\
-$shell$jobs$character"""
+$jobs$character"""
 
 [fill]
 symbol = " "
@@ -29,9 +29,6 @@ disabled = false
 [character]
 success_symbol = "[](bold green)"
 error_symbol = "[](bold red)"
-
-[time]
-disabled = false
 
 [username]
 disabled = true
@@ -54,74 +51,111 @@ truncation_length = 3
 read_only = "⍉"
 format = "[$path](cyan) "
 
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bright-black"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+
+[time]
+disabled = false
+style = "bold white"
+format = "[$time]($style) "
+time_format = ' %H:%M'
+
 [aws]
 symbol = "  "
 
 [conda]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [dart]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [docker_context]
 symbol = " "
 
 [elixir]
+format = '[$symbol$context]($style)'
 symbol = " "
 
 [elm]
+format = '[$symbol$context]($style)'
 symbol = " "
-
-[git_branch]
-symbol = " "
-
-[golang]
-symbol = " "
 
 [hg_branch]
 symbol = " "
 
+[golang]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
 [java]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [julia]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [memory_usage]
 symbol = " "
 
 [nim]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [nix_shell]
 symbol = " "
 
 [package]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [perl]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [php]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 symbol = " "
 
 [ruby]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [rust]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [scala]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [shlvl]
+format = '[$symbol$shlvl]($style)'
 symbol = " "
 
 [swift]
+format = '[$symbol($version )]($style)'
 symbol = "ﯣ "
 
 [lua]
+format = '[$symbol($version )]($style)'
 symbol = " "

@@ -90,6 +90,10 @@ if [[ "$(tty)" == "/dev/tty1" ]];then
 	exec dk
 fi
 
+hello(){
+	echo 'Hello ${1}'
+}
+
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 

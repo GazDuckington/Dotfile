@@ -13,6 +13,7 @@ alias 'hx'='helix'
 alias 'fzf'='fzf --layout reverse --border rounded --ansi'
 alias 'pm'='pulsemixer'
 alias 'cl'='clear'
+alias 'icat'='kitty +kitten icat'
 
 alias 'br'='br.sh'
 alias 'rm'='trash'

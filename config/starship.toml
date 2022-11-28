@@ -16,6 +16,7 @@ $nodejs\
 $golang\
 $lua\
 $python\
+$package\
 $cmd_duration\
 $line_break\
 $jobs$character"""
@@ -159,3 +160,7 @@ symbol = "ﯣ "
 [lua]
 format = '[$symbol($version )]($style)'
 symbol = " "
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+symbol = " "

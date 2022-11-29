@@ -67,6 +67,8 @@ style = "bright-black"
 
 [git_metrics]
 disabled = false
+added_style = "green"
+deleted_style = "red"
 
 [time]
 disabled = false

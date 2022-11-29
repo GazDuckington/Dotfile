@@ -48,7 +48,6 @@ function take
 	mkdir -p $argv && cd $argv
 end
 
-# set variables
 bass source ~/.profile
 
 set -Ux PYENV_ROOT $HOME/.pyenv

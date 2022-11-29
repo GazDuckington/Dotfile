@@ -91,7 +91,7 @@ if [[ "$(tty)" == "/dev/tty1" ]];then
 fi
 
 hello(){
-	echo 'Hello ${1}'
+	echo 'Hello ' $1
 }
 
 export PYENV_ROOT="$HOME/.pyenv"

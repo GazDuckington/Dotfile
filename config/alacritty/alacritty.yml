@@ -31,4 +31,4 @@ shell:
   args:
    - -l
    - -c
-   - "tmux attach || tmux"
+   - "tmux new -A -s terminal"

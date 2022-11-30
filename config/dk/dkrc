@@ -70,7 +70,7 @@ fi
 
 	# WS 1
 	dkcmd rule \
-		class="(kitty|Zathura|firefox*|[Nn]avigator|\b[Cc]hromium\b)" \
+		class="(alacritty|kitty|Zathura|firefox*|[Nn]avigator|\b[Cc]hromium\b)" \
 		ws=1 focus=true
 
 	# WS 2

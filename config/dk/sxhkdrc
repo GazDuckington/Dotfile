@@ -10,14 +10,14 @@ alt + {n, F2, F3}
 	~/bin/scratchpad.sh {nvim-note, dropdown, musikcube}
 
 alt + F1
-	~/bin/kitty-launch pulsemixer
+	~/bin/alacritty-launch pulsemixer
 
 alt + F4
   ~/bin/rofi/powermenu.sh
 
 # system monitor
 ctrl + alt + Delete
-	~/bin/kitty-launch.sh btop
+	~/bin/alacritty-launch.sh btop
 
 # color picker
 alt + c
@@ -29,7 +29,7 @@ ctrl + F1
 
 # terminal
 super + Return
-	kitty -1
+	alacritty
 
 # screenshot and selection capture
 {_,alt +, ctrl +, shift + }@Print

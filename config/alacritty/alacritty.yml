@@ -23,12 +23,12 @@ cursor:
     blink_interval: 500
 window:
   padding:
-    x: 5
-    y: 3
+    x: 1
+    y: 1
   dynamic_title: true
 shell:
-  program: fish
+  program: /usr/bin/fish
   args:
    - -l
-   # - -c
-   # - "tmux attach || tmux"
+   - -c
+   - "tmux attach || tmux"

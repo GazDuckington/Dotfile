@@ -2,9 +2,9 @@
 . ~/.config/dk/color.sh
 
 # autostart
-~/bin/autostart.sh &
-dbus-launch &
 nitrogen --restore &
+dbus-launch &
+~/bin/autostart.sh &
 
 # determine where to place the log file
 logfile="$HOME/.dkrc.log"

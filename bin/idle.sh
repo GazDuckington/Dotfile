@@ -5,7 +5,7 @@
 result=$(ps -ef | grep "xidlehook" | grep -v "grep" | wc -l)
 
 function startidle() {
-  xidlehook \
+  pgrep -x xidlehook >/dev/null || xidlehook \
     --not-when-fullscreen \
     --not-when-audio \
     --timer 600 \
@@ -14,7 +14,7 @@ function startidle() {
     --timer 1200 \
     'systemctl suspend' \
     '' \
-    --socket "/tmp/xidlehook.sock"
+    --socket "/tmp/xidlehook.sock" &
 
 }
 

@@ -94,7 +94,7 @@ fi
 		ws=5 focus=true
 
 	# WS 6
-	dkcmd rule class="(Stremio[Vv]lc|[Cc]lapper$)" \
+	dkcmd rule class="(Stremio|[Vv]lc|[Cc]lapper$)" \
 		ws=6 focus=true
 
 	# Floaters

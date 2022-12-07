@@ -53,16 +53,13 @@ export PATH=$ANDROID_SDK:$PATH
 ## flutter
 export FLUTTER=$ANDROID/flutter
 export PATH=$FLUTTER/bin:$PATH
-export CHROME_EXECUTABLE=$(which com.github.Eloston.UngoogledChromium)
+export CHROME_EXECUTABLE="/var/lib/flatpak/exports/bin/com.github.Eloston.UngoogledChromium"
 # flutter-dev end
 
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
-export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
-export XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export CARGO_HOME="$HOME"/cargo
@@ -89,10 +86,6 @@ export PATH="$HOME/.nix-profile/bin:$PATH"
 if [[ "$(tty)" == "/dev/tty1" ]];then
 	exec dk
 fi
-
-hello(){
-	echo 'Hello ' $1
-}
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"

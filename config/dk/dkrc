@@ -2,7 +2,7 @@
 . ~/.config/dk/color.sh
 
 # autostart
-nitrogen --restore &
+hsetroot -solid $mantle &
 dbus-launch &
 ~/bin/autostart.sh &
 
@@ -90,7 +90,7 @@ fi
 
 	# WS 5
 	dkcmd rule \
-		class="(\bOBS\b|\bDejaDup\b|[Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|Kvantum\ Manager|Firewall-config|[Aa]randr)" \
+		class="(\bOBS\b|\bDejaDup\b|[Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|qt5ct|Kvantum\ Manager|Firewall-config|[Aa]randr)" \
 		ws=5 focus=true
 
 	# WS 6

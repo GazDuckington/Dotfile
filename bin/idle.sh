@@ -5,7 +5,7 @@
 result=$(ps -ef | grep "xidlehook" | grep -v "grep" | wc -l)
 
 function startidle() {
-  pgrep -x xidlehook >/dev/null || xidlehook \
+  pgrep -x xidlehook >/dev/null || $HOME/cargo/bin/xidlehook \
     --not-when-fullscreen \
     --not-when-audio \
     --timer 600 \
@@ -31,7 +31,7 @@ function checkidle() {
 function toggleidle() {
 
   if [[ $result == 0 ]]; then
-    $HOME/bin/idle -s &
+    $HOME/bin/idle.sh -s &
     xset dpms &
     # notify-send "idle is on" -t 5000
   else

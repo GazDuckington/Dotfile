@@ -1,12 +1,12 @@
 #!/usr/bin/sh
-SCROT_DIR=~/Pictures/Screenshots
+SCROT_DIR=$HOME/Pictures/Screenshots
 CURRENT_DATE=$(date +"%R_%d_%b_%y")
 FILE_NAME=$SCROT_DIR/$CURRENT_DATE.png
 
 notif=$()
 function scrot_screen() {
   scrot -z $FILE_NAME
-  notify-send -i $FILE_NAME -a "Scrot-screen" "$FILE_NAME"
+  notify-send -i "$FILE_NAME" -a "Scrot-screen" "$FILE_NAME"
 }
 function scrot_select() {
   scrot -z -s $FILE_NAME
@@ -20,7 +20,7 @@ function scrot_window() {
 
 function menu() {
   area=" Area"
-  screen="🖵 Screen"
+  screen=" Screen"
   window=" Window"
 
   chs=$(echo -e "$screen\n$area\n$window" | rofi -dmenu -no-show-icons -p "  Scrot ")

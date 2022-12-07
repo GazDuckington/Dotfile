@@ -6,8 +6,8 @@ super + {d, x, w, e, c}
 	rofi -show {drun,run -no-show-icons,window, emoji -no-show-icons, calc -no-show-icons -no-sort}
 
 # dropdown terminal
-alt + {n, F2, F3}
-	~/bin/scratchpad.sh {nvim-note, dropdown, musikcube}
+alt + {n, F2}
+	~/bin/scratchpad.sh {nvim-note, dropdown}
 
 alt + F1
 	~/bin/kitty-launch pulsemixer

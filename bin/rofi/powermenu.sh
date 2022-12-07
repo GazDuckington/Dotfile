@@ -14,7 +14,7 @@ options="$option0\n$option1\n$option2\n$option5\n$option6\n$option7"
 chosen="$(echo -e "$options" | rofi -no-show-icons -dmenu -p " ⏼ power ")"
 case $chosen in
     $option0)
-      ~/bin/i3lock-color;;
+      ~/bin/i3lock-color.sh;;
     $option1)
       dkcmd exit;;
     $option2)

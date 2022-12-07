@@ -9,7 +9,7 @@ function startidle() {
     --not-when-fullscreen \
     --not-when-audio \
     --timer 600 \
-    '~/bin/i3lock-color' \
+    '~/bin/i3lock-color.sh' \
     '' \
     --timer 1200 \
     'systemctl suspend' \

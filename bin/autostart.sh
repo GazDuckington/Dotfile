@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-lxpolkit &
+pgrep -x xfce-polkit>/dev/null || /usr/libexec/xfce-polkit &
 
 ~/bin/idle.sh -s &
 ~/bin/polybar/launch-polybar.sh main &

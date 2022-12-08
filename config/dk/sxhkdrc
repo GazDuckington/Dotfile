@@ -6,11 +6,11 @@ super + {d, x, w, e, c}
 	rofi -show {drun,run -no-show-icons,window, emoji -no-show-icons, calc -no-show-icons -no-sort}
 
 # dropdown terminal
-alt + {n, F2}
-	~/bin/scratchpad.sh {nvim-note, dropdown}
+alt + F2
+	~/bin/scratchpad.sh dropdown
 
 alt + F1
-	~/bin/kitty-launch pulsemixer
+	~/bin/kitty-launch.sh pulsemixer
 
 alt + F4
   ~/bin/rofi/powermenu.sh

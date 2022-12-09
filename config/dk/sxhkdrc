@@ -5,6 +5,9 @@
 super + {d, x, w}
 	rofi -show {drun,run -no-show-icons,window}
 
+ctrl + e
+	rofi -modi "emoji:~/bin/rofi/rofiemoji.sh" -show emoji -no-show-icons
+
 # dropdown terminal
 alt + F2
 	~/bin/scratchpad.sh dropdown

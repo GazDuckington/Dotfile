@@ -1,13 +1,13 @@
 {
-  "LastBrowseCategoryId": 32.0,
+  "LastBrowseCategoryId": 1.0,
   "LastBrowseCategoryType": "album_artist",
   "LastBrowseFilter": "",
   "LastBrowseFilterVisible": false,
   "LastCategoryFilter": "",
   "LastCategoryFilterMatchType": 1,
   "LastLibraryView": "Browse",
-  "LastPlayQueueIndex": 2,
-  "LastPlayQueueTime": 2.0,
+  "LastPlayQueueIndex": -1,
+  "LastPlayQueueTime": 0.0,
   "LastTrackFilter": "",
   "LastTrackFilterMatchType": 1
 }

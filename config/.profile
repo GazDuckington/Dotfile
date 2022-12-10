@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 if [ "$TERM" = "linux" ]; then
 	printf %b '\e]P01E1E2E' # set background color to "Base"

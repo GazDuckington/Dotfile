@@ -5,12 +5,12 @@
 super + {d, x, w}
 	rofi -show {drun,run -no-show-icons,window}
 
-ctrl + e
+super + e
 	rofi -modi "emoji:~/bin/rofi/rofiemoji.sh" -show emoji -no-show-icons
 
 # dropdown terminal
-alt + F2
-	~/bin/scratchpad.sh dropdown
+alt + { F2, F3 }
+	~/bin/scratchpad.sh { dropdown, musikcube }
 
 alt + F1
 	~/bin/kitty-launch.sh pulsemixer
@@ -91,9 +91,12 @@ super + {_,shift + ,ctrl + }{1-9,0}
 	dkcmd ws {view,send,follow} {1-9,10}
 
 # view, send, or follow to the next, previous, last active,
+alt + {_,shift + ,ctrl + }{bracketleft,bracketright,BackSpace}
+	dkcmd ws {view,send,follow} {prev,next,last}
+
 # next non-empty, or prev non-empty workspace
-alt + {_,shift + ,ctrl + }{bracketleft,bracketright,BackSpace,Left,Right}
-	dkcmd ws {view,send,follow} {prev,next,last,prevne,nextne}
+super + {h,l}
+	dkcmd ws {prevne,nextne}
 
 # view, send, or follow to the next, previous, or last active monitor
 alt + {_,shift + ,ctrl + }{comma,period,backslash}

@@ -17,7 +17,7 @@ $golang\
 $lua\
 $python\
 $package\
-$cmd_duration$time\
+$cmd_duration\
 $line_break\
 $jobs$character"""
 

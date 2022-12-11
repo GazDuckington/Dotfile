@@ -1,40 +1,40 @@
 #!/bin/bash
 . ~/.config/dk/color.sh
+caps=$(xset -q | grep Caps | awk '{ print $4 }')
+num=$(xset -q | grep Num | awk '{ print $8 }')
+scroll=$(xset -q | grep Scroll | awk '{ print $12 }')
 
 function capslock() {
-
-  caps=$(xset -q | grep Caps | awk '{ print $4 }')
-
   if [ $caps == 'off' ]; then
-    echo "%{F$overlay0}ﰶ %{F-}"
+    echo "%{F$overlay0}cap%{F-}" &
   else
-    echo "%{F$green}ﰶ %{F-}"
+    echo "%{F$green}CAP%{F-}"
   fi
+}
 
+function capslock_toggle () {
+	xdotool key Caps_Lock &
+	if [ $caps == 'off' ]; then
+		notify-send "Caps Lock is on." -t 5000
+	else
+		notify-send "Caps Lock is off." -t 5000
+	fi
 }
 
 function numlock() {
-
-  num=$(xset -q | grep Num | awk '{ print $8 }')
-
   if [ $num == 'off' ]; then
-    echo "%{F$overlay0}%{F-}"
+    echo "%{F$overlay0}num%{F-}"
   else
-    echo "%{F$green}%{F-}"
+    echo "%{F$green}num%{F-}"
   fi
-
 }
 
 function scroll() {
-
-  scroll=$(xset -q | grep Scroll | awk '{ print $12 }')
-
   if [ $scroll == 'off' ]; then
-    echo "%{F$overlay0}%{F-}"
+    echo "%{F$overlay0}srl%{F-}"
   else
-    echo "%{F$green}%{F-}"
+    echo "%{F$green}srl%{F-}"
   fi
-
 }
 
 main () {
@@ -50,6 +50,10 @@ main () {
   if [ "$1" == "-s"  ]; then
     scroll
   fi
+
+	if [ "$1" == "-ct" ]; then
+		capslock_toggle
+	fi
 
 }
 

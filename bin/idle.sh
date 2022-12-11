@@ -21,9 +21,9 @@ function startidle() {
 function checkidle() {
 
   if [[ $result == 1 ]]; then
-    echo "%{F$overlay0}  %{F-}"
+    echo "%{F$overlay0}up%{F-}"
   else
-    echo "%{F$green}  %{F-}"
+    echo "%{F$green}UP%{F-}"
   fi
 
 }
@@ -33,10 +33,12 @@ function toggleidle() {
   if [[ $result == 0 ]]; then
     $HOME/bin/idle.sh -s &
     xset dpms &
+		notify-send "Idle is on" -t 5000 &
   else
     xset s off -dpms &
     xset s noblank &
     killall xidlehook &
+		notify-send "Staying up!" -t 5000 &
   fi
 
 }

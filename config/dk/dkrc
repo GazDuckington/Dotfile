@@ -2,7 +2,7 @@
 . ~/.config/dk/color.sh
 
 # autostart
-hsetroot -solid $mantle &
+hsetroot -cover /usr/share/backgrounds/f37/default/f37-01-night.png
 dbus-launch &
 ~/bin/autostart.sh &
 
@@ -76,7 +76,7 @@ fi
 
 	# WS 2
 	dkcmd rule \
-		class="([Ii]nsomnia|[Ll]apce|[Cc]ode|DesktopEditors|glrnvim)" \
+		class="([Mm]arktext|[Ii]nsomnia|[Ll]apce|[Cc]ode|DesktopEditors|glrnvim)" \
 		ws=2 focus=true
 
 	# WS 3
@@ -94,7 +94,7 @@ fi
 		ws=5 focus=true
 
 	# WS 6
-	dkcmd rule class="(Stremio|[Vv]lc|[Cc]lapper$|[Rr]hythmbox)" \
+	dkcmd rule class="(Stremio|[Vv]lc|[Cc]elluloid$|[Tt]otem|[Rr]hythmbox)" \
 		ws=6 focus=true
 
 	# Floaters

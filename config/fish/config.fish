@@ -16,6 +16,8 @@ alias 'cl'='clear'
 alias 'icat'='kitty +kitten icat'
 alias 'npm'='pnpm'
 alias 'docker'='podman'
+alias 'j'='jupyter'
+alias 'jl'='jupyter-lab'
 
 alias 'br'='br.sh'
 alias 'rm'='trash'

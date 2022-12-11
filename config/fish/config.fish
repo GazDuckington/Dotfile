@@ -48,8 +48,17 @@ function lolban
   figlet -f ANSI\ Shadow $argv | lolcat
 end
 
+function lol
+	$argv | lolcat
+end
+
 function take
 	mkdir -p $argv && cd $argv
+end
+
+set mgh 'github.com/GazDuckington'
+function ginit
+	go mod init $mgh/$argv
 end
 
 bass source ~/.profile

@@ -23,7 +23,7 @@ function checkidle() {
   if [[ $result == 1 ]]; then
     echo "%{F$overlay0}up%{F-}"
   else
-    echo "%{F$green}UP%{F-}"
+    echo "%{F$teal}UP%{F-}"
   fi
 
 }

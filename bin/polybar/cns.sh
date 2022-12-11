@@ -8,7 +8,7 @@ function capslock() {
   if [ $caps == 'off' ]; then
     echo "%{F$overlay0}cap%{F-}" &
   else
-    echo "%{F$green}CAP%{F-}"
+    echo "%{F$teal}CAP%{F-}"
   fi
 }
 
@@ -25,7 +25,7 @@ function numlock() {
   if [ $num == 'off' ]; then
     echo "%{F$overlay0}num%{F-}"
   else
-    echo "%{F$green}num%{F-}"
+    echo "%{F$teal}num%{F-}"
   fi
 }
 
@@ -33,7 +33,7 @@ function scroll() {
   if [ $scroll == 'off' ]; then
     echo "%{F$overlay0}srl%{F-}"
   else
-    echo "%{F$green}srl%{F-}"
+    echo "%{F$teal}srl%{F-}"
   fi
 }
 

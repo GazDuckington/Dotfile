@@ -4,6 +4,8 @@ set fish_greeting
 set fish_plugins vi-mode
 set vi_mode_default vi_mode_normal
 
+bass source ~/.profile
+
 # aliases
 alias 'c'='code'
 alias 'code'='code'
@@ -58,10 +60,8 @@ end
 
 set mgh 'github.com/GazDuckington'
 function ginit
-	go mod init $mgh/$argv
+	go mod init $MY_GITHUB/$argv
 end
-
-bass source ~/.profile
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths

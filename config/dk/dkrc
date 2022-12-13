@@ -99,7 +99,7 @@ fi
 
 	# Floaters
 	dkcmd rule \
-		class="(Nitrogen|xdg-desktop-portal-gnome|copyq|nmtui|[Nn]m-connection-editor)" \
+		class="(Nitrogen|xdg-desktop-portal-gnome|copyq|nmtui|[Nn]m-connection-editor|[Gg]pick)" \
 		float=true focus=true stick=true y=center x=center
 	dkcmd rule title="(^Library$|^Pick$)" float=true focus=true
 

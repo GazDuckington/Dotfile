@@ -24,7 +24,7 @@ ctrl + alt + Delete
 
 # color picker
 alt + c
-	gpick -po
+	gpick -ps
 
 # toggle polybar
 ctrl + F1

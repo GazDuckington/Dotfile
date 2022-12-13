@@ -24,7 +24,7 @@ ctrl + alt + Delete
 
 # color picker
 alt + c
-	~/bin/color-picker.sh
+	gpick -p
 
 # toggle polybar
 ctrl + F1

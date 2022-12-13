@@ -65,6 +65,10 @@ function ginit
 	go mod init $MY_GITHUB/$argv
 end
 
+function fedora_up
+	sudo dnf system-upgrade download --releasever=$argv
+end
+
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 pyenv init - | source

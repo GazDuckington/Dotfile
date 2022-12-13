@@ -1,3 +1,3 @@
 #!/usr/bin/sh
-xcolor -s | xsel -b
-notify-send $(xsel -bo) -t 1000 -a "Color Picker"
+gpick -pso -c color_web_hex | xsel -b
+notify-send $(xsel -b) -t 1000 -a "Color Picker"

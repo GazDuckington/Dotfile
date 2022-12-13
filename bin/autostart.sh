@@ -7,7 +7,7 @@ $HOME/bin/polybar/launch-polybar.sh main &
 $HOME/bin/scratchpad.sh dropdown &
 $HOME/bin/disableETPS.sh 0 &
 xsetroot -cursor_name left_ptr &
-watch -n 60 ~/bin/battery-watch.sh >/dev/null &
+#watch -n 60 ~/bin/battery-watch.sh >/dev/null &
 
 # pgrep -x dunst >/dev/null || dunst &
 pgrep -x com.github.hluk.copyq >/dev/null || flatpak run com.github.hluk.copyq &

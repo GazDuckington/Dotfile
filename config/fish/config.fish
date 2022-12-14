@@ -60,7 +60,6 @@ function take
 	mkdir -p $argv && cd $argv
 end
 
-set mgh 'github.com/GazDuckington'
 function ginit
 	go mod init $MY_GITHUB/$argv
 end

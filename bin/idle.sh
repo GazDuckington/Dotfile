@@ -21,9 +21,9 @@ function startidle() {
 function checkidle() {
 
   if [[ $result == 1 ]]; then
-    echo "%{F$overlay0}up%{F-}"
+    echo "%{F$overlay0}[up]%{F-}"
   else
-    echo "%{F$teal}UP%{F-}"
+    echo "%{F$teal}[UP]%{F-}"
   fi
 
 }

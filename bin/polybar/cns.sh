@@ -6,9 +6,9 @@ scroll=$(xset -q | grep Scroll | awk '{ print $12 }')
 
 function capslock() {
   if [ $caps == 'off' ]; then
-    echo "%{F$overlay0}cap%{F-}" &
+    echo "%{F$overlay0}[cap]%{F-}" &
   else
-    echo "%{F$teal}CAP%{F-}"
+    echo "%{F$teal}[CAP]%{F-}"
   fi
 }
 
@@ -23,17 +23,17 @@ function capslock_toggle () {
 
 function numlock() {
   if [ $num == 'off' ]; then
-    echo "%{F$overlay0}num%{F-}"
+    echo "%{F$overlay0}[num]%{F-}"
   else
-    echo "%{F$teal}num%{F-}"
+    echo "%{F$teal}[num]%{F-}"
   fi
 }
 
 function scroll() {
   if [ $scroll == 'off' ]; then
-    echo "%{F$overlay0}srl%{F-}"
+    echo "%{F$overlay0}[srl]%{F-}"
   else
-    echo "%{F$teal}srl%{F-}"
+    echo "%{F$teal}[srl]%{F-}"
   fi
 }
 

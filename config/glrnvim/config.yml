@@ -18,8 +18,8 @@ backend: kitty
 # The first one will be set as the major font. Others will be set as
 # fallback fonts according to the given orders if possible.
 # NOTE: Not all backends support fallback font.
-fonts:
-  - FiraCode Nerd Font
+# fonts:
+  # - FiraCode Nerd Font Mono
 #  - monofur
 
 # The font size to be used.

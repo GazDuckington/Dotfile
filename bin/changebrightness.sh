@@ -5,4 +5,4 @@ brightness="$(
 )"
 
 xbacklight $1 &
-notify-send -a "Change Brightness" -u low -r 666 -h int:value:"$brightness" "brightness: ${brightness}%"
+dunstify -a "Change Brightness" -u low -r 666 -h int:value:"$brightness" "brightness: ${brightness}%"

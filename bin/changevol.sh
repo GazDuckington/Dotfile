@@ -1,5 +1,6 @@
 #!/bin/bash
 # changeVolume
+# changevol.sh 5+
 
 # Arbitrary but unique message tag
 msgTag="myvolume"
@@ -12,7 +13,7 @@ volume="$(amixer get Master | tail -1 | awk '{print $5}' | sed 's/[^0-9]*//g')"
 mute="$(amixer get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
 
 if [[ $mute == "on" ]]; then
-	notify-send -a "Change Volume" -u low -r 555 -h int:value:"$volume" "Volume: ${volume}%"
+	dunstify -a "Change Volume" -u low -r 555 -h int:value:"$volume" "Volume: ${volume}%"
 fi
 
 # Play the volume changed sound

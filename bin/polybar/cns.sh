@@ -15,9 +15,9 @@ function capslock() {
 function capslock_toggle () {
 	xdotool key Caps_Lock &
 	if [ $caps == 'off' ]; then
-		notify-send "Caps Lock is on." -t 5000
+		dunstify "Caps Lock is on." -t 5000
 	else
-		notify-send "Caps Lock is off." -t 5000
+		dunstify "Caps Lock is off." -t 5000
 	fi
 }
 

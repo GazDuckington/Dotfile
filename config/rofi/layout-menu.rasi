@@ -1,28 +1,20 @@
+@import "mocha"
 * {
-    bg-col:  #1e1e2e;
-    bg-col-light: #1e1e2e;
-    border-col: #1e1e2e;
-    selected-col: #1e1e2e;
-    blue: #89b4fa;
-    fg-col: #cdd6f4;
-    fg-col2: #f38ba8;
-    grey: #6c7086;
-
-    width: 600;
-    font: "FiraCode Nerd Font Mono 14";
+	width: 500;
+	font: "FiraCode Nerd Font 14";
 }
 
 element-text, element-icon , mode-switcher {
-    background-color: inherit;
-    text-color:       inherit;
+  background-color: inherit;
+  text-color:       inherit;
 }
 
 window {
-    height: 360px;
-    border: 2px;
-		border-radius: 0px;
-    border-color: @grey;
-    background-color: @bg-col;
+  height: 360px;
+  border: 2px;
+	border-radius: 0px;
+  border-color: @grey;
+  background-color: @bg-col;
 }
 
 mainbox {
@@ -62,8 +54,8 @@ entry {
 listview {
     border: 0px 0px 0px;
     margin: 1em 1em 0 1em;
-    columns: 2;
-    lines: 5;
+    /* columns: 2; */
+    lines: 8;
     background-color: @bg-col;
 }
 

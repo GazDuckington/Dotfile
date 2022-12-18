@@ -9,7 +9,7 @@ configuration{
     hide-scrollbar: true;
     display-drun: "   Apps ";
     display-run: "   Run ";
-    display-window: " 﩯  Window";
+    display-window: " 﩯  Window ";
     display-Network: "   Network";
 		display-emoji: "  Emoji ";
 		display-calc: "  Calc ";
@@ -26,4 +26,4 @@ configuration{
 		kb-remove-char-back:            "BackSpace";
 }
 
-@theme "catppuccin-mocha"
+@theme "layout-menu"

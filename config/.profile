@@ -85,6 +85,7 @@ export PATH="$HOME/.surrealdb:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
 export PATH="/usr/share/*/bin:$PATH"
 # export PATH="$HOME/.local/share/nvm/*/bin:$PATH"
+. "/home/gaz/cargo/env"
 
 if [[ "$(tty)" == "/dev/tty1" ]];then
 	exec dk
@@ -96,4 +97,3 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 eval "$(starship init bash)"
-. "/home/gaz/cargo/env"

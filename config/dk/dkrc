@@ -2,7 +2,8 @@
 . ~/.config/dk/color.sh
 
 # autostart
-hsetroot -cover /usr/share/backgrounds/f37/default/f37-01-night.png
+WALL=$(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
+hsetroot -cover $WALL
 dbus-launch &
 ~/bin/autostart.sh &
 

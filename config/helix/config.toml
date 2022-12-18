@@ -4,15 +4,15 @@ theme = "catppuccin_mocha"
 line-number = "relative"
 cursorline = true
 color-modes = true
-# bufferline = "always"
+bufferline = "multiple"
 
 [editor.whitespace]
 render = "all"
 
 [editor.whitespace.characters]
 space = "·"
-tab = "→"
-newline = "↴"
+tab = " "
+newline = ""
 
 [editor.cursor-shape]
 insert = "bar"
@@ -25,7 +25,9 @@ render = true
 [keys.normal]
 C-s = ":w"
 C-q = ":q"
-C-x = ":bc"
+W = ":bc"
+J = ":bp"
+K = ":bn"
 C-h = "jump_view_left"
 C-j = "jump_view_down"
 C-k = "jump_view_up"

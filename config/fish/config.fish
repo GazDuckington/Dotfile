@@ -9,9 +9,9 @@ bass source ~/.profile
 # aliases
 alias 'c'='code'
 alias 'code'='code'
+alias 'vim'='nvim'
 alias 'nv'='nvim'
 alias 'v'='nvim'
-alias 'hx'='helix'
 alias 'fzf'='fzf --layout reverse --border rounded --ansi'
 alias 'pm'='pulsemixer'
 alias 'cl'='clear'

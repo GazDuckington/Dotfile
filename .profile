@@ -1,1 +1,0 @@
-/home/gaz/.config/alacritty

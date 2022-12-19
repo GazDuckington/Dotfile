@@ -5,7 +5,8 @@
 Run of the mill tiling window manager setup with status bar at the top.
 
 <div styel="display:flex;flex-direction:row;flex:auto;">
-  <img title="" src="./fetch.png" alt="fetch" data-align="inline">
+
+<img title="" src="./fetch.png" alt="fetch" data-align="inline">
 
 - color scheme: [catppuccin](https://github.com/catppuccin/catppuccin) mocha flavor
 

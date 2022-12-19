@@ -6,7 +6,7 @@ Run of the mill tiling window manager setup with status bar at the top.
 
 <div styel="display:flex;">
 
-<img title="" src="./fetch.png" alt="fetch" data-align="inline">
+<img title="" align="center" src="./fetch.png" alt="fetch" data-align="inline">
 
 - color scheme: [catppuccin](https://github.com/catppuccin/catppuccin) mocha flavor
 
@@ -21,8 +21,8 @@ Run of the mill tiling window manager setup with status bar at the top.
 - wallpaper setter: [hsetroot](https://github.com/himdel/hsetroot)
   
   Wallpaper will randomly select file in `$HOME/Pictures/Wallpapers`
-
-</div>
+  
+  </div>
 
 *My Neovim [configuration](https://github.com/GazDuckington/nvim).*
 

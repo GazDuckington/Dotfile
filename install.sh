@@ -1,6 +1,7 @@
 #!/bin/sh
 
-dots=$(ls -I '*.md' -I '*.png' -I '*.sh' -I 'chrome')
+ignored_files='(.(md|png|sh)|chrome)'
+dots=$(ls | egrep -v "${ignored_files}")
 for f in $dots;do
 	stow "${f}/"
 done

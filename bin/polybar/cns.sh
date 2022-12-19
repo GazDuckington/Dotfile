@@ -6,9 +6,9 @@ scroll=$(xset -q | grep Scroll | awk '{ print $12 }')
 
 function capslock() {
   if [ $caps == 'off' ]; then
-    echo "%{F$overlay0}[cap]%{F-}" &
+    echo "%{F$overlay0}cap%{F-}" &
   else
-    echo "%{F$teal}[CAP]%{F-}"
+    echo "%{F$teal}CAP%{F-}"
   fi
 }
 

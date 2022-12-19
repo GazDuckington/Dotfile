@@ -4,6 +4,8 @@ Run of the mill tiling window manager setup with status bar at the top.
 
 ![desktop](./desktop.png)
 
+### SysInfo
+
 <div styel="display:flex;" align="center">
     <img title="" src="./fetch.png" alt="fetch" data-align="inline">
 </div>

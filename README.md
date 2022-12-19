@@ -23,3 +23,11 @@ Run of the mill tiling window manager setup with status bar at the top.
   Wallpaper will randomly select file in `$HOME/Pictures/Wallpapers`
 
 *My Neovim [configuration](https://github.com/GazDuckington/nvim).*
+
+# Installation
+
+*why? it's just my personal configuration*
+
+1. install stow
+
+2. run `bash install.sh`

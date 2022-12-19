@@ -1,4 +1,4 @@
-![desktop](/home/gaz/Dotfile/desktop.png)
+![desktop](./desktop.png)
 
 # My Dotfile
 

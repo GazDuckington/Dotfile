@@ -28,6 +28,6 @@ Run of the mill tiling window manager setup with status bar at the top.
 
 *why? it's just my personal configuration*
 
-1. install stow
+1. install [Stow](https://github.com/aspiers/stow)
 
 2. run `bash install.sh`

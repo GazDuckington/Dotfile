@@ -4,6 +4,7 @@ CURRENT_DATE=$(date +"%R_%d_%b_%y")
 FILE_NAME=$SCROT_DIR/$CURRENT_DATE.png
 
 function scrot_screen() {
+	sleep 5 &&
   scrot -z "$FILE_NAME"
   dunstify -i "$FILE_NAME" -a "Scrot-screen" "$FILE_NAME"
 }
@@ -19,7 +20,7 @@ function scrot_window() {
 
 function menu() {
   area=" Area"
-  screen=" Screen"
+	screen=" Screen (5s delay)"
   window=" Window"
 
   chs=$(echo -e "$screen\n$area\n$window" | rofi -dmenu -no-show-icons -p "  Scrot ")

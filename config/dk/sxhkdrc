@@ -32,7 +32,7 @@ ctrl + F1
 
 # terminal
 super + Return
-	kitty -1
+	kitty
 
 # screenshot and selection capture
 {_,alt +, ctrl +, shift + }@Print

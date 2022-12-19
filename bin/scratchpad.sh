@@ -4,7 +4,7 @@ wid=$(xdotool search --classname $1 | head -n 1)
 
 if [ -z "$wid" ]; then
   if [ $1 == "dropdown" ]; then
-		kitty -1 --class dropdown
+		kitty --class dropdown
   else
     ~/bin/kitty-launch.sh $1
     xdotool windowfocus $wid

@@ -4,25 +4,24 @@
 
 Run of the mill tiling window manager setup with status bar at the top.
 
-- color scheme: [catppuccin](https://github.com/catppuccin/catppuccin) mocha flavor
+<div styel="display:flex;flex-direction:row;flex:auto;">
+  <img title="" src="./fetch.png" alt="fetch" data-align="inline">
 
-- window manager: [DK](https://bitbucket.org/natemaia/dk)
+- color scheme: [catppuccin](https://github.com/catppuccin/catppuccin) mocha flavor
 
 - status bar: [Polybar](https://github.com/polybar/polybar/)
 
 - menu launcher: [Rofi](https://github.com/davatorium/rofi/)
 
-- terminal: [kitty](https://sw.kovidgoyal.net/kitty/)
-
 - sysfetch: [macchina](https://github.com/Macchina-CLI/macchina)
-
-- shell: [fish](https://fishshell.com)
 
 - idle manager: [xidlehook](https://github.com/jD91mZM2/xidlehook)
 
 - wallpaper setter: [hsetroot](https://github.com/himdel/hsetroot)
   
   Wallpaper will randomly select file in `$HOME/Pictures/Wallpapers`
+
+</div>
 
 *My Neovim [configuration](https://github.com/GazDuckington/nvim).*
 

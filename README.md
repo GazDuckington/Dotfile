@@ -4,7 +4,8 @@
 
 Run of the mill tiling window manager setup with status bar at the top.
 
-<div styel="display:flex;flex-direction:row;flex:auto;">
+<div align="center">
+<div styel="display:flex;">
 
 <img title="" src="./fetch.png" alt="fetch" data-align="inline">
 
@@ -23,6 +24,7 @@ Run of the mill tiling window manager setup with status bar at the top.
   Wallpaper will randomly select file in `$HOME/Pictures/Wallpapers`
 
 </div>
+  </div>
 
 *My Neovim [configuration](https://github.com/GazDuckington/nvim).*
 

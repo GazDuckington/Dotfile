@@ -1,5 +1,5 @@
 __pycache__/
-config/musikcube/.config/musikcube/1/
-config/musikcube/.config/musikcube/cache/
-config/musikcube/.config/musikcube/log.txt
-config/musikcube/.config/musikcube/stderr.txt
+musikcube/.config/musikcube/1/
+musikcube/.config/musikcube/cache/
+musikcube/.config/musikcube/log.txt
+musikcube/.config/musikcube/stderr.txt

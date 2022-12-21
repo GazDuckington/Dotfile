@@ -3,7 +3,7 @@
 
 # autostart
 WALL=$(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
-hsetroot -cover $WALL
+hsetroot -cover "$WALL" &
 dbus-launch &
 ~/bin/autostart.sh &
 

@@ -87,8 +87,9 @@ fi
 		ws=3 focus=true
 
 	# WS 4
-	dkcmd rule class="(Minecraft*|bottles|[Gg]ame*|\btlauncher\b)" ws=4 focus=true
-	dkcmd rule class="(Minecraft*|bottles|[Gg]ame*|\btlauncher\b)" float=true
+	dkcmd rule \
+		class="(Minecraft*|bottles|[Gg]ame*|ru-turikhay-tlauncher-bootstrap-Bootstrap)" \
+		ws=4 focus=true float=true
 
 	# WS 5
 	dkcmd rule \

@@ -1,0 +1,8 @@
+[Context]
+filesystems=xdg-cache;xdg-download;xdg-config;home;host-etc;host-os;host
+
+[Environment]
+GTK_THEME=Adwaita-dark
+QT_QPA_PLATFORMTHEME="qt5ct"
+QT_STYLE_OVERRIDE=Adwaita-Dark
+ICON_THEME=papirus-dark

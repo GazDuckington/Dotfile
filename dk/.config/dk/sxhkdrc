@@ -1,12 +1,9 @@
-# Example sxhkdrc for use with dk
-#########################################################
-
 # launcher
 super + {d, x, w}
 	rofi -show {drun,run -no-show-icons,window}
 
 super + e
-	rofi -modi "emoji:~/bin/rofi/rofiemoji.sh" -show emoji -no-show-icons
+	rofi -modi "emoji:rofimoji" -show emoji -no-show-icons
 
 # dropdown terminal
 alt + { F2, F3 }

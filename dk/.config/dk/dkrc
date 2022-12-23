@@ -1,9 +1,10 @@
 #!/bin/sh
-. ~/.config/dk/color.sh
+. "$HOME"/.config/dk/color.sh
 
 # autostart
 WALL=$(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
 hsetroot -cover "$WALL" &
+xsetroot -cursor_name left_ptr &
 dbus-launch &
 ~/bin/autostart.sh &
 
@@ -100,7 +101,7 @@ fi
 
 	# Floaters
 	dkcmd rule \
-		class="(Nitrogen|xdg-desktop-portal-gnome|copyq|nmtui|[Nn]m-connection-editor|[Gg]pick)" \
+		class="(Nitrogen|xdg-desktop-portal-gnome|copyq|nmtui|[Nn]m-connection-editor|[Gg]pick|[Ss]mile)" \
 		float=true focus=true stick=true y=center x=center
 	dkcmd rule title="(^Library$|^Pick$)" float=true focus=true
 

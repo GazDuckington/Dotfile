@@ -83,9 +83,7 @@ export PATH="$HOME/.local/share/pyenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.surrealdb:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
-export PATH="/usr/share/*/bin:$PATH"
-# export PATH="$HOME/.local/share/nvm/*/bin:$PATH"
-. "/home/gaz/cargo/env"
+. "$HOME/cargo/env"
 
 if [[ "$(tty)" == "/dev/tty1" ]];then
 	exec dk

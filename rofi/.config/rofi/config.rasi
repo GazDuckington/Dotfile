@@ -1,29 +1,29 @@
 configuration{
-    modi: "drun";
-    icon-theme: "Papirus-Dark";
-    show-icons: true;
-    terminal: "kitty";
-    drun-display-format: "{icon} {name}";
-    location: 0;
-    disable-history: false;
-    hide-scrollbar: true;
-    display-drun: "   Apps ";
-    display-run: "   Run ";
-    display-window: " 﩯  Window ";
-    display-Network: "   Network";
-		display-emoji: "  Emoji ";
-		display-calc: "  Calc ";
-    sidebar-mode: true;
-
-		kb-row-up:                      "Up,Alt+k,Shift+Tab,Shift+ISO_Left_Tab";
-		kb-row-down:                    "Down,Alt+j";
-		kb-page-next:										"Alt+l";
-		kb-page-prev:										"Alt+h";
-		kb-accept-entry:                "Control+m,Return,KP_Enter";
-		kb-remove-to-eol:               "Control+Shift+e";
-		kb-mode-next:                   "Shift+Right,Control+Tab";
-		kb-mode-previous:               "Shift+Left,Control+Shift+Tab,Control+h";
-		kb-remove-char-back:            "BackSpace";
+	modi:														"drun";
+	icon-theme:											"Papirus-Dark";
+	show-icons:											true;
+	terminal:												"kitty";
+	drun-display-format:						"{icon} {name}";
+	location:												0;
+	disable-history:								false;
+	hide-scrollbar:									true;
+	display-drun:										"   Apps ";
+	display-run:										"   Run ";
+	display-window:									" 﩯  Window ";
+	display-Network:								"   Network";
+	display-emoji:									"  Emoji ";
+	display-calc:										"  Calc ";
+	sidebar-mode:										true;
+	
+	kb-row-up:                      "Up,Alt+k,Shift+Tab,Shift+ISO_Left_Tab";
+	kb-row-down:                    "Down,Alt+j";
+	kb-page-next:										"Alt+l";
+	kb-page-prev:										"Alt+h";
+	kb-accept-entry:                "Control+m,Return,KP_Enter";
+	kb-remove-to-eol:               "Control+Shift+e";
+	kb-mode-next:                   "Shift+Right,Control+Tab";
+	kb-mode-previous:               "Shift+Left,Control+Shift+Tab,Control+h";
+	kb-remove-char-back:            "BackSpace";
 }
 
 @theme "layout-menu"

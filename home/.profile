@@ -42,37 +42,37 @@ export PATH="$PNPM_HOME:$PATH"
 # flutter-dev
 ## java
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
-export PATH=$JAVA_HOME/bin:$PATH
+export PATH="$JAVA_HOME/bin:$PATH"
 ## android
-export ANDROID=$HOME/Android
-export PATH=$ANDROID/cmdline-tools/latest:$PATH
-export PATH=$ANDROID/cmdline-tools/latest/bin:$PATH
-export PATH=$ANDROID/platform-tools:$PATH
+export ANDROID="$HOME/Android"
+export PATH="$ANDROID/cmdline-tools/latest:$PATH"
+export PATH="$ANDROID/cmdline-tools/latest/bin:$PATH"
+export PATH="$ANDROID/platform-tools:$PATH"
 ## android SDK
-export ANDROID_SDK=$HOME/ANDROID
-export PATH=$ANDROID_SDK:$PATH
+export ANDROID_SDK="$HOME/ANDROID"
+export PATH="$ANDROID_SDK:$PATH"
 ## flutter
-export FLUTTER=$ANDROID/flutter
-export PATH=$FLUTTER/bin:$PATH
+export FLUTTER="$ANDROID/flutter"
+export PATH="$FLUTTER/bin:$PATH"
 export CHROME_EXECUTABLE="/var/lib/flatpak/exports/bin/com.github.Eloston.UngoogledChromium"
 # flutter-dev end
 
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_STATE_HOME=$HOME/.local/state
-export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME="$HOME"/.local/share
+export XDG_CONFIG_HOME="$HOME"/.config
+export XDG_STATE_HOME="$HOME"/.local/state
+export XDG_CACHE_HOME="$HOME"/.cache
 
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export CARGO_HOME="$HOME"/cargo
 export GNUPGHOME="$HOME"/gnupg
 export GOPATH="$HOME"/go
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
-export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
+export XCURSOR_PATH=/usr/share/icons:"${XDG_DATA_HOME}"/icons
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc 
 
 export GO111MODULE=on
-
+export XCURSOR_PATH="${XCURSOR_PATH}":~/.local/share/icons
 # path
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/cargo/bin:$PATH"
@@ -83,9 +83,9 @@ export PATH="$HOME/.local/share/pyenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.surrealdb:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
-. "$HOME/cargo/env"
+. "$HOME"/cargo/env
 
-if [[ "$(tty)" == "/dev/tty1" ]];then
+if [ "$(tty)" = "/dev/tty1" ];then
 	exec dk
 fi
 

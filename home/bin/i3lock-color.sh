@@ -33,7 +33,7 @@ pgrep -x i3lock >/dev/null || i3lock \
 --clock               \
 --indicator           \
 --time-str="%H:%M:%S"  \
---date-str="%A, %m %Y" \
+--date-str="%a, %d %B %Y" \
 --radius=140         \
 \
 --date-font="$FONT" \

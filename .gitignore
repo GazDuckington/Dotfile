@@ -3,3 +3,6 @@ musikcube/.config/musikcube/1/
 musikcube/.config/musikcube/cache/
 musikcube/.config/musikcube/log.txt
 musikcube/.config/musikcube/stderr.txt
+musikcube/.config/musikcube/playback.json
+musikcube/.config/musikcube/session.json
+

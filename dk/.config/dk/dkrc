@@ -74,12 +74,12 @@ fi
 
 	# WS 1
 	dkcmd rule \
-		class="(alacritty|kitty|Zathura|firefox*|[Nn]avigator|\b[Cc]hromium\b)" \
+		class="(alacritty|kitty|Zathura|firefox*|[Nn]avigator|\b[Cc]hromium\b|\b[Bb]rave\b)" \
 		ws=1 focus=true
 
 	# WS 2
 	dkcmd rule \
-		class="([Mm]arktext|[Ii]nsomnia|[Ll]apce|[Cc]ode|DesktopEditors|glrnvim|[Vv]lc|[Cc]elluloid$|[Tt]otem)" \
+		class="([Mm]arktext|[Ii]nsomnia|[Ee]asy[Tt]ag|[Cc]ode|DesktopEditors|glrnvim|[Vv]lc|[Tt]otem)" \
 		ws=2 focus=true
 
 	# WS 3
@@ -94,7 +94,7 @@ fi
 
 	# WS 5
 	dkcmd rule \
-		class="(\bOBS\b|\bDejaDup\b|[Ff]ont-manager|\bFlatseal\b|btop|Lxappearance|qt5ct|Kvantum\ Manager|Firewall-config|[Aa]randr|[Gg]nome-disks)" \
+		class="(\bOBS\b|\bFlatseal\b|btop|Lxappearance|qt5ct|Kvantum\ Manager|Firewall-config|[Aa]randr|[Gg]nome-disks)" \
 		ws=5 focus=true
 
 	# WS 6

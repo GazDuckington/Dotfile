@@ -18,6 +18,7 @@ alias 'cl'='clear'
 alias 'icat'='kitty +kitten icat'
 alias 'j'='jupyter'
 alias 'jl'='jupyter-lab'
+alias 'f'='lfcd'
 
 alias 'br'='br.sh'
 alias 'rm'='trash'

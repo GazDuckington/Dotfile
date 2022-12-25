@@ -1,0 +1,17 @@
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean
+
+cmd trash %trash-put $fx
+cmd restore %trash-restore
+
+map y copy
+map x cut
+map p paste
+map d trash
+map <c-d> restore
+map D delete
+
+map gm cd /run/media/
+map gt cd ~/.local/share/Trash/files/
+
+map <enter> open

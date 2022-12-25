@@ -72,36 +72,36 @@ fi
 
 	# open window(s) on a specific workspace (assigned monitor)
 
-	# WS 1
+	# ws 1
 	dkcmd rule \
 		class="(alacritty|kitty|Zathura|firefox*|[Nn]avigator|\b[Cc]hromium\b|\b[Bb]rave\b)" \
 		ws=1 focus=true
 
-	# WS 2
+	# ws 2
 	dkcmd rule \
 		class="([Mm]arktext|[Ii]nsomnia|[Ee]asy[Tt]ag|[Cc]ode|DesktopEditors|glrnvim|[Vv]lc|[Tt]otem)" \
 		ws=2 focus=true
 
-	# WS 3
+	# ws 3
 	dkcmd rule \
 		class="(\b[Nn]autilus\b|[Nn]emo|[Cc]aja|Motrix|[Qq][Bb]ittorrent|[Kk]rita|[Gg]imp*|\b[Gg]ithub\b)" \
 		ws=3 focus=true
 
-	# WS 4
+	# ws 4
 	dkcmd rule \
 		class="([Ll]utris|Minecraft*|bottles|[Gg]ame*|ru-turikhay-tlauncher-bootstrap-Bootstrap)" \
 		ws=4 focus=true
 
-	# WS 5
+	# ws 5
 	dkcmd rule \
 		class="(\bOBS\b|\bFlatseal\b|btop|Lxappearance|qt5ct|Kvantum\ Manager|Firewall-config|[Aa]randr|[Gg]nome-disks)" \
 		ws=5 focus=true
 
-	# WS 6
+	# ws 6
 	dkcmd rule class="(Stremio|[Rr]hythmbox)" \
 		ws=6 focus=true
 
-	# Floaters
+	# floaters
 	dkcmd rule \
 		class="(Nitrogen|xdg-desktop-portal-gnome|copyq|nmtui|[Nn]m-connection-editor|[Gg]pick|[Ss]mile)" \
 		float=true focus=true stick=true y=center x=center

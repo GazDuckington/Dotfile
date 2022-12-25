@@ -73,6 +73,8 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 
 export GO111MODULE=on
 export XCURSOR_PATH="${XCURSOR_PATH}":~/.local/share/icons
+export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down'
+
 # path
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/cargo/bin:$PATH"

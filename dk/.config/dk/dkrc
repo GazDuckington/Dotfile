@@ -34,7 +34,6 @@ fi
 	dkcmd set ws=_ apply layout=tile master=1 stack=4 gap=5 msplit=0.55 ssplit=0.5 win_minwh=50
 	dkcmd set ws=5 layout=grid
 	dkcmd set ws=6 layout=mono
-	dkcmd set ws=4 layout=mono
 
 	# global settings
 	# ---------------------
@@ -89,7 +88,7 @@ fi
 
 	# WS 4
 	dkcmd rule \
-		class="(Minecraft*|bottles|[Gg]ame*|ru-turikhay-tlauncher-bootstrap-Bootstrap)" \
+		class="([Ll]utris|Minecraft*|bottles|[Gg]ame*|ru-turikhay-tlauncher-bootstrap-Bootstrap)" \
 		ws=4 focus=true
 
 	# WS 5

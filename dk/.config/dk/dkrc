@@ -89,12 +89,12 @@ fi
 
 	# ws 4
 	dkcmd rule \
-		class="([Ll]utris|Minecraft*|bottles|[Gg]ame*|ru-turikhay-tlauncher-bootstrap-Bootstrap)" \
+		class="([Ll]utris|[Ss]telaris|Minecraft*|\btlauncher\b)" \
 		ws=4 focus=true
 
 	# ws 5
 	dkcmd rule \
-		class="(\bOBS\b|\bFlatseal\b|btop|Lxappearance|qt5ct|Kvantum\ Manager|Firewall-config|[Aa]randr|[Gg]nome-disks)" \
+		class="(\bOBS\b|\bFlatseal\b|btop|Lxappearance|qt5ct|^Kvantum|^Firewall|[Aa]randr|disks$)" \
 		ws=5 focus=true
 
 	# ws 6
@@ -103,7 +103,7 @@ fi
 
 	# floaters
 	dkcmd rule \
-		class="(Nitrogen|xdg-desktop-portal-gnome|copyq|nmtui|[Nn]m-connection-editor|[Gg]pick|[Ss]mile)" \
+		class="(Nitrogen|xdg-desktop-portal-gnome|copyq|nmtui|[Nn]m-connection-editor|[Gg]pick)" \
 		float=true focus=true stick=true y=center x=center
 	dkcmd rule title="(^Library$|^Pick$)" float=true focus=true
 

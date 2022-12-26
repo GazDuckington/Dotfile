@@ -85,6 +85,7 @@ export PATH="$HOME/.local/share/pyenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.surrealdb:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"
 . "$HOME"/cargo/env
 
 if [ "$(tty)" = "/dev/tty1" ];then

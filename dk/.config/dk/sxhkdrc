@@ -37,15 +37,15 @@ super + Return
 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
-	amixer set Master {5%+, 5%-}
+	~/bin/changevol.sh {up, down}
 
 # toggle mute for output input devices
 {XF86AudioMute, XF86AudioMicMute}
-	amixer set {Master, Capture} toggle
+	{~/bin/changevol.sh mute, ~/bin/microphone.sh toggle}
 
 # dedicated backlight keys
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
-	xbacklight {+10,-10}
+	~/bin/changebrightness.sh {up, down}
 
 # reload sxhkd
 super + Escape

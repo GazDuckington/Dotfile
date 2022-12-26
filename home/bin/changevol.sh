@@ -1,20 +1,45 @@
 #!/bin/bash
-# changeVolume
-# changevol.sh 5+
+# https://github.com/shvedes/dotfiles
 
-# Arbitrary but unique message tag
-msgTag="myvolume"
+function get_volume {
+	volume="$(amixer get Master | tail -1 | awk '{print $5}' | sed 's/[^0-9]*//g')"
+	echo "$volume"
+}
 
-# Change the volume using alsa(might differ if you use pulseaudio)
-amixer set Master "$@" > /dev/null
+function is_mute {
+    mute=$(pactl get-sink-mute @DEFAULT_SINK@ | sed 's/Mute: //')
+    echo "$mute"
+}
 
-# Query amixer for the current volume and whether or not the speaker is muted
-volume="$(amixer get Master | tail -1 | awk '{print $5}' | sed 's/[^0-9]*//g')"
-mute="$(amixer get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
+function send_notification {
+    soundHigh="  "
+    soundMute="  "
+    volume=$(get_volume)
+    bar=$(seq --separator="❚" 0 "$((volume / 5))" | sed 's/[0-9]//g')
+    status=$(is_mute)
 
-if [[ $mute == "on" ]]; then
-	dunstify -a "Change Volume" -u low -r 555 -h int:value:"$volume" "Volume: ${volume}%"
-fi
+    if [ "$status" == "yes" ]; then
+			dunstify -r 999 -u normal "$soundMute $(get_volume)% $bar" -t 5000
+    else
+        if [ "$volume" = 0 ]; then
+					dunstify -r 999 -u normal "$soundMute $(get_volume)%" -t 5000
+        else
+					dunstify -r 999 -u normal "$soundHigh $(get_volume)% $bar" -t 5000
+        fi
+    fi
+}
 
-# Play the volume changed sound
-canberra-gtk-play -d "changeVolume"
+case $1 in 
+    up)
+				amixer sset Master 5%+
+        send_notification
+        ;;
+    down)
+				amixer sset Master 5%-
+        send_notification
+        ;;
+    mute)
+        amixer sset Master toggle
+        send_notification
+        ;;
+esac

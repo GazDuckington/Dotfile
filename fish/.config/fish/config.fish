@@ -40,6 +40,7 @@ alias 'gc'='git commit -am'
 alias 'gp'='git push'
 alias 'gs'='git status'
 
+alias 'dd'='cd ~/dev/(ls ~/dev/ | fzf)'
 # functions
 function ofetch
   if not set -q argv[1]

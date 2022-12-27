@@ -35,7 +35,7 @@ super + Return
 Print
 	~/bin/rofi/scrotting.sh
 ctrl + p
-	flatpak run org.flameshot.Flameshot gui
+	flatpak run org.flameshot.Flameshot gui --path ~/Pictures/Screen\ Shots/
 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}

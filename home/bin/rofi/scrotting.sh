@@ -22,8 +22,9 @@ menu() {
   area=" Area"
 	screen=" Screen"
   window=" Window"
+	select=" Select"
 
-  chs=$(printf "%s\n%s\n%s" "$screen" "$area" "$window" | rofi -dmenu -no-show-icons -p "  Scrot ")
+  chs=$(printf "%s\n%s\n%s\n%s" "$screen" "$area" "$window" "$select" | rofi -dmenu -no-show-icons -p "  Scrot ")
   case "$chs" in
   "$screen")
 		#scrot_screen
@@ -31,12 +32,15 @@ menu() {
 		;;
   "$area")
 		#scrot_select
-		flatpak run org.flameshot.Flameshot gui
+		flatpak run org.flameshot.Flameshot gui --path ~/Pictures/Screen\ Shots/
 		;;
   "$window")
 		#scrot_window
 		~/bin/flameshots.sh activewindow
 		;;
+	"$select")
+	~/bin/flameshots.sh selectwindow
+	;;
   esac
 }
 

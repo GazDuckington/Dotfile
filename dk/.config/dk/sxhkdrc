@@ -32,8 +32,10 @@ super + Return
 	kitty
 
 # screenshot and selection capture
-{_,alt +, ctrl +, shift + }@Print
-	~/bin/rofi/scrotting.sh {_, screen, area, window}
+Print
+	~/bin/rofi/scrotting.sh
+ctrl + p
+	flatpak run org.flameshot.Flameshot gui
 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}

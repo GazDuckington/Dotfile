@@ -20,32 +20,29 @@ scrot_window() {
 
 menu() {
   area=" Area"
-	screen=" Screen (5s delay)"
+	screen=" Screen"
   window=" Window"
 
   chs=$(printf "%s\n%s\n%s" "$screen" "$area" "$window" | rofi -dmenu -no-show-icons -p "  Scrot ")
   case "$chs" in
-  "$screen") scrot_screen ;;
-  "$area") scrot_select ;;
-  "$window") scrot_window ;;
+  "$screen")
+		#scrot_screen
+		~/bin/flameshots.sh
+		;;
+  "$area")
+		#scrot_select
+		flatpak run org.flameshot.Flameshot gui
+		;;
+  "$window")
+		#scrot_window
+		~/bin/flameshots.sh activewindow
+		;;
   esac
-}
-
-instant() {
-  if [ "$1" = "screen" ]; then
-    scrot_screen
-  elif [ "$1" = "area" ]; then
-    scrot_select
-  elif [ "$1" = "window" ]; then
-    scrot_window
-  fi
 }
 
 main() {
   if [ -z "$1" ]; then
     menu
-  else
-    instant "$1"
   fi
 }
 

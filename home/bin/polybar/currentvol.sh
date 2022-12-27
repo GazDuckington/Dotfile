@@ -9,7 +9,7 @@ if [ "$mute" = "off" ]; then
 elif [ "$vol" = 0 ]; then
 	echo "%{F$overlay0}奄 muted%{F-}"
 elif [ "$vol" -gt 50 ]||[ "$vol" = 100 ]; then
-	echo "墳 ${vol}%"
+	echo "%{F$teal}墳 ${vol}%%{F-}"
 else
-	echo "奔 ${vol}%"
+	echo "%{F$teal}奔 ${vol}%%{F-}"
 fi

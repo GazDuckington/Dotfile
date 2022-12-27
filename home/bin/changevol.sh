@@ -14,6 +14,7 @@ function is_mute {
 function send_notification {
     soundHigh="  "
     soundMute="  "
+		soundZero="  "
     volume=$(get_volume)
     bar=$(seq --separator="❚" 0 "$((volume / 5))" | sed 's/[0-9]//g')
     status=$(is_mute)
@@ -22,7 +23,7 @@ function send_notification {
 			dunstify -r 999 -u normal "$soundMute $(get_volume)% $bar" -t 5000
     else
         if [ "$volume" = 0 ]; then
-					dunstify -r 999 -u normal "$soundMute $(get_volume)%" -t 5000
+					dunstify -r 999 -u normal "$soundZero muted" -t 5000
         else
 					dunstify -r 999 -u normal "$soundHigh $(get_volume)% $bar" -t 5000
         fi

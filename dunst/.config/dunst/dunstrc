@@ -13,13 +13,13 @@ progress_bar_max_width = 100
 
 [urgency_low]
 background = "#11111B"
-foreground = "#CDD6F4"
+foreground = "#89B4FA"
 
 [urgency_normal]
 background = "#11111B"
-foreground = "#CDD6F4"
+foreground = "#89B4FA"
 
 [urgency_critical]
 background = "#11111B"
-foreground = "#CDD6F4"
-frame_color = "#f38ba8"
+foreground = "#F38BA8"
+frame_color = "#F38BA8"

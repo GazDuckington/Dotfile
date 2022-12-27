@@ -40,9 +40,11 @@ alias 'gc'='git commit -am'
 alias 'gp'='git push'
 alias 'gs'='git status'
 
-alias 'dd'='cd ~/dev/(ls ~/dev/ | fzf)'
-alias 'vd'='$EDITOR ~/dev/(ls ~/dev/ | fzf)'
 # functions
+function gd
+	$EDITOR (z -l | fzf | awk '{print $2}')
+end
+
 function ofetch
   if not set -q argv[1]
     onefetch --show-logo never -c 4

@@ -1,15 +1,15 @@
 #!/usr/bin/sh
 
-. ~/.config/dk/color.sh
+. /home/gaz/.config/dk/color.sh
 
-result=$(ps -ef | grep "xidlehook" | grep -v "grep" | wc -l)
+result=$(pgrep "xidlehook" | grep -vc "grep")
 
-function startidle() {
-  pgrep -x xidlehook >/dev/null || $HOME/cargo/bin/xidlehook \
+startidle() {
+  pgrep -x xidlehook >/dev/null || "$HOME"/cargo/bin/xidlehook \
     --not-when-fullscreen \
     --not-when-audio \
     --timer 600 \
-    '~/bin/i3lock-color.sh' \
+    "$HOME/bin/i3lock-color.sh" \
     '' \
     --timer 1200 \
     'systemctl suspend' \
@@ -18,9 +18,9 @@ function startidle() {
 
 }
 
-function checkidle() {
+checkidle() {
 
-  if [[ $result == 1 ]]; then
+  if [ "$result" = 1 ]; then
     echo "%{F$overlay0}up%{F-}"
   else
     echo "%{F$teal}UP%{F-}"
@@ -28,35 +28,35 @@ function checkidle() {
 
 }
 
-function toggleidle() {
+toggleidle() {
 
-  if [[ $result == 0 ]]; then
-    $HOME/bin/idle.sh -s &
+  if [ "$result" = 0 ]; then
+    "$HOME"/bin/idle.sh -s &
     xset dpms &
-		dunstify "Idle is on" -t 5000 &
+		dunstify " Idle is on" -t 5000 &
   else
     xset s off -dpms &
     xset s noblank &
     killall xidlehook &
-		dunstify "Staying up!" -t 5000 &
+		dunstify " Staying up!" -t 5000 &
   fi
 
 }
 
 main() {
 
-  if [[ "$1" == "-s" ]]; then
+  if [ "$1" = "-s" ]; then
     startidle
   fi
 
-  if [[ "$1" == "-c" ]]; then
+  if [ "$1" = "-c" ]; then
     checkidle
   fi
 
-  if [[ "$1" == "-t" ]]; then
+  if [ "$1" = "-t" ]; then
     toggleidle
   fi
 
 }
 
-main $1
+main "$1"

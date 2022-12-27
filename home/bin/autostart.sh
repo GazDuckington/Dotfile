@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/bin/sh
 
 pgrep -x xfce-polkit>/dev/null || /usr/libexec/xfce-polkit &
 

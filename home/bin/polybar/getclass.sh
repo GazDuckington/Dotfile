@@ -1,9 +1,9 @@
 #!/usr/bin/sh
 
-CLASS=$(xprop -id $(xdotool getwindowfocus) WM_CLASS | awk '{gsub(/"/,"", $4); print $4}')
+CLASS=$(xprop -id "$(xdotool getwindowfocus)" wm_class | awk '{gsub(/"/,"", $4); print $4}')
 
-if [ -z $CLASS ]; then
-	echo ${HOSTNAME^}
+if [ -z "$CLASS" ]; then
+	echo "${HOSTNAME^}"
 else
-	echo ${CLASS^}
+	echo "${CLASS^}"
 fi

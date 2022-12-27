@@ -1,5 +1,5 @@
 #!/bin/sh
-. ~/.config/dk/color.sh \
+. /home/gaz/.config/dk/color.sh \
 # Set the paused status of dunst
 dunstctl set-paused true;
 amixer set Master mute;

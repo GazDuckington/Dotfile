@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ~/.config/dk/color.sh
+. /home/gaz/.config/dk/color.sh
 
 if ! updates_arch=$(checkupdates 2> /dev/null | wc -l); then
 	updates_arch=0

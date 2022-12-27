@@ -1,9 +1,9 @@
-#! /usr/bin/env bash
+#!/bin/sh
 
 if pgrep "$1" > /dev/null
 then
-    killall -q $1
+    killall -q "$1"
 else
-    $1 $2
+    $1 "$2"
 fi
 

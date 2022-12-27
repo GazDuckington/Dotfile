@@ -1,36 +1,36 @@
-#!/bin/bash
-. ~/.config/dk/color.sh
+#!/bin/sh
+. /home/gaz/.config/dk/color.sh
 caps=$(xset -q | grep Caps | awk '{ print $4 }')
 num=$(xset -q | grep Num | awk '{ print $8 }')
 scroll=$(xset -q | grep Scroll | awk '{ print $12 }')
 
-function capslock() {
-  if [ $caps == 'off' ]; then
+capslock() {
+  if [ "$caps" = 'off' ]; then
     echo "%{F$overlay0}cap%{F-}" &
   else
     echo "%{F$teal}CAP%{F-}"
   fi
 }
 
-function capslock_toggle () {
+capslock_toggle() {
 	xdotool key Caps_Lock &
-	if [ $caps == 'off' ]; then
+	if [ "$caps" = 'off' ]; then
 		dunstify "Caps Lock is on." -t 5000
 	else
 		dunstify "Caps Lock is off." -t 5000
 	fi
 }
 
-function numlock() {
-  if [ $num == 'off' ]; then
+numlock() {
+  if [ "$num" = 'off' ]; then
     echo "%{F$overlay0}[num]%{F-}"
   else
     echo "%{F$teal}[num]%{F-}"
   fi
 }
 
-function scroll() {
-  if [ $scroll == 'off' ]; then
+scroll() {
+  if [ "$scroll" = 'off' ]; then
     echo "%{F$overlay0}[srl]%{F-}"
   else
     echo "%{F$teal}[srl]%{F-}"
@@ -38,23 +38,21 @@ function scroll() {
 }
 
 main () {
-
-  if [ "$1" == "-c"  ]; then
+  if [ "$1" = "-c"  ]; then
     capslock
   fi
 
-  if [ "$1" == "-n"  ]; then
+  if [ "$1" = "-n"  ]; then
     numlock
   fi
 
-  if [ "$1" == "-s"  ]; then
+  if [ "$1" = "-s"  ]; then
     scroll
   fi
 
-	if [ "$1" == "-ct" ]; then
+	if [ "$1" = "-ct" ]; then
 		capslock_toggle
 	fi
-
 }
 
-main $1
+main "$1"

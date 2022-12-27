@@ -2,6 +2,6 @@
 
 APP=$(compgen -c | fzf --layout reverse --border rounded --ansi)
 
-if [ ! -z $APP ]; then
+if [ -n "$APP" ]; then
 	$APP
 fi

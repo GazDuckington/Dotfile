@@ -1,8 +1,8 @@
-#!/usr/bin/sh
+#!/bin/sh
 x=$1
 
 if pgrep "$x" >/dev/null; then
-  killall -q $x
+  killall -q "$x"
 else
-  alacritty --class $x,$x --command tmux new -A -s $x $x
+  alacritty --class "$x","$x" --command tmux new -A -s "$x" "$x"
 fi

@@ -1,7 +1,6 @@
-#! /bin/bash
+#!/bin/sh
 
-function help
-{
+help(){
 	echo "Usage: vr [FOLDER]"
 	echo ""
 	echo "Open a list of filenames from FOLDER in vim for mass renaming."
@@ -17,7 +16,7 @@ function help
 	echo "deleted."
 }
 
-if [ "$1" == "--help" -o "$1" == '-h' ]
+if [ "$1" = "--help" ] || [ "$1" = '-h' ]
 then
 	help
 	exit
@@ -26,7 +25,7 @@ fi
 # If FOLDER is given first navigate to this filder
 if [ -n "$1" ]
 then
-	cd "$1"
+	cd "$1" || return
 fi
 
 # Temporary files
@@ -59,7 +58,7 @@ sed -i 's/^/"/' "$NEW_NAMES"
 sed -i 's/$/"/' "$NEW_NAMES"
 
 # Create the commands to rename or delete files
-paste -d' ' "$ORIG_NAMES" "$NEW_NAMES" | sed 's/^/mv /' | egrep -v 'mv (".*") \1' | sed 's/mv \("[^"]*"\) "\s*"*$/rm -rf \1/' > "$COMMANDS"
+paste -d' ' "$ORIG_NAMES" "$NEW_NAMES" | sed 's/^/mv /' | grep -E -v 'mv (".*") \1' | sed 's/mv \("[^"]*"\) "\s*"*$/rm -rf \1/' > "$COMMANDS"
 
 # Exectute the commands
 bash -x "$COMMANDS"

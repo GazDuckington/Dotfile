@@ -15,9 +15,9 @@ capslock() {
 capslock_toggle() {
 	xdotool key Caps_Lock &
 	if [ "$caps" = 'off' ]; then
-		dunstify "Caps Lock is on." -t 5000
+		dunstify -r 888 "Caps Lock is on." -t 500
 	else
-		dunstify "Caps Lock is off." -t 5000
+		dunstify -r 888 "Caps Lock is off." -t 500
 	fi
 }
 

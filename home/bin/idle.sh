@@ -33,12 +33,12 @@ toggleidle() {
   if [ "$result" = 0 ]; then
     "$HOME"/bin/idle.sh -s &
     xset dpms &
-		dunstify " Idle is on" -t 5000 &
+		dunstify -r 777 " Idle is on" -t 500 &
   else
     xset s off -dpms &
     xset s noblank &
     killall xidlehook &
-		dunstify " Staying up!" -t 5000 &
+		dunstify -r 777 " Staying up!" -t 500 &
   fi
 
 }

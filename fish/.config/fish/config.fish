@@ -4,6 +4,7 @@ set fish_greeting
 set fish_plugins vi-mode
 set vi_mode_default vi_mode_normal
 
+source ~/.config/fish/myfunc.fish
 bass source ~/.profile
 
 # aliases
@@ -39,39 +40,6 @@ alias 'ga'='git add'
 alias 'gc'='git commit -am'
 alias 'gp'='git push'
 alias 'gs'='git status'
-
-# functions
-function gd
-	$EDITOR (z -l | fzf | awk '{print $2}')
-end
-
-function ofetch
-  if not set -q argv[1]
-    onefetch --show-logo never -c 4
-  else
-    onefetch $argv --show-logo never -c 4
-  end
-end
-
-function lolban
-  figlet -f ANSI\ Shadow $argv | lolcat
-end
-
-function lol
-	$argv | lolcat
-end
-
-function take
-	mkdir -p $argv && cd $argv
-end
-
-function ginit
-	go mod init $MY_GITHUB/$argv
-end
-
-function fedora_up
-	sudo dnf system-upgrade download --releasever=$argv
-end
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths

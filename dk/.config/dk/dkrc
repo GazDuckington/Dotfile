@@ -2,10 +2,6 @@
 . "$HOME"/.config/dk/color.sh
 
 # autostart
-WALL=$(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
-hsetroot -cover "$WALL" &
-xsetroot -cursor_name left_ptr &
-dbus-launch &
 ~/bin/autostart.sh &
 
 # determine where to place the log file

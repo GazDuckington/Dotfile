@@ -38,7 +38,7 @@ case "$MIME" in
         unzip -l "$file"
         ;;
     # any plain text file that doesn't have a specific handler
-    *text/*)
+    *text/*|*application/json*)
         # return false to always repaint, in case terminal size changes
         bat --force-colorization --paging=never --style=changes,numbers \
             --terminal-width $(($2 - 3)) "$file" && false

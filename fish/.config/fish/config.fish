@@ -32,6 +32,7 @@ alias 'npm'='pnpm'
 alias 'grep'='rg'
 alias 'find'='fd'
 alias 'docker'='podman'
+alias 'kubectl'='minikube kubectl --'
 alias 'server'='python -m http.server'
 
 alias 'g'='git'

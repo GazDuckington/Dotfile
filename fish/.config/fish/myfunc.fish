@@ -1,5 +1,10 @@
 # functions
+
 function gd
+	cd (z -l | fzf | awk '{print $2}')
+end
+
+function vd
 	set target (z -l | fzf | awk '{print $2}')
 	if not test "$target" = ""
 		$EDITOR $target

@@ -5,18 +5,45 @@ h=$3
 x=$4
 y=$5
 
-filetype="$( file -Lb --mime-type "$file")"
 
-if [[ "$filetype" =~ ^image ]]; then
-    kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"
-    exit 1
-fi
+MIME=$(file --mime-type -b "$file")
 
-# if [[ "$filetype" =~ ^video ]]; then
-#     # vidthumb is from here:
-#     # https://raw.githubusercontent.com/duganchen/kitty-pistol-previewer/main/vidthumb
-#     kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" "$(vidthumb "$file")"
-#     exit 1
-# fi
-
-pistol "$file"
+case "$MIME" in
+		*image/*)
+				kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"
+				exit 1
+				;;
+    # .pdf
+    *application/pdf*)
+        pdftotext "$file" -
+        ;;
+    # .7z
+    *application/x-7z-compressed*)
+        7z l "$file"
+        ;;
+    # .tar .tar.Z
+    *application/x-tar*)
+        tar -tvf "$file"
+        ;;
+    # .tar.*
+    *application/x-compressed-tar*|*application/x-*-compressed-tar*)
+        tar -tvf "$file"
+        ;;
+    # .rar
+    *application/vnd.rar*)
+        unrar l "$file"
+        ;;
+    # .zip
+    *application/zip*)
+        unzip -l "$file"
+        ;;
+    # any plain text file that doesn't have a specific handler
+    *text/*)
+        # return false to always repaint, in case terminal size changes
+        bat --force-colorization --paging=never --style=changes,numbers \
+            --terminal-width $(($2 - 3)) "$file" && false
+        ;;
+    *)
+        echo "unknown format"
+        ;;
+esac

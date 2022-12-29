@@ -1,9 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/gaz/Dotfile
+- /home/gaz/dev/sensi
 - /home/gaz/.config/nvim
 - /home/gaz/repo/dk
-- /home/gaz/dev/sensi
 - /home/gaz/dev/kanbantea
 startuppopupversion: 5
 customcommandshistory: []

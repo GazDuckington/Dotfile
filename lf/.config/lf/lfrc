@@ -1,6 +1,7 @@
 set previewer ~/.config/lf/lf_kitty_preview
 set cleaner ~/.config/lf/lf_kitty_clean
 
+cmd open $xdg-open "$f"
 cmd trash %trash-put "$fx"
 cmd restore %trash-restore
 

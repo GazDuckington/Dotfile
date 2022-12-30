@@ -5,10 +5,15 @@
 # ██║     ██╔══╝  ██╔══██╗██║     
 # ███████╗██║     ██║  ██║╚██████╗
 # ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝
-                                
+
+# settings
+set shell				sh
 set previewer		~/.config/lf/lf_kitty_preview
 set cleaner			~/.config/lf/lf_kitty_clean
+set icons				true
+set ignorecase	true
 
+# commands
 cmd open				$xdg-open "$f"
 cmd trash				%trash-put -i "$fx"
 
@@ -24,13 +29,13 @@ cmd fzf-restore ${{
 }}
 
 cmd fzf_jump ${{
-    res="$(fd . --maxdepth 2											| \
+    res="$(fd . --maxdepth 2 -H										| \
 			fzf --reverse --header='Jump to location'		| \
 			sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
-        cmd="select"
+        cmd="\$xdg\-open"
     else
         exit 0
     fi
@@ -49,6 +54,7 @@ cmd fzf_search ${{
     [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
 }}
 
+# keybinds
 map gs					:fzf_search
 map gf					:fzf_jump
 map y						copy
@@ -58,7 +64,8 @@ map d						trash
 map gu					fzf-restore
 map D						delete
 map <enter>			open
-
-map gm					cd /run/media/
-map gt					cd ~/.local/share/Trash/files/
-map gc					$xdg-open ~/.config/lf/lfrc
+map <c-q>				quit
+# bookmark
+map bm					cd /run/media/
+map bh					cd ~/.local/share/Trash/files/
+map bc					$xdg-open ~/.config/lf/lfrc

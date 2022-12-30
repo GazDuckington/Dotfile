@@ -1,15 +1,61 @@
+# 
+# ██╗     ███████╗██████╗  ██████╗
+# ██║     ██╔════╝██╔══██╗██╔════╝
+# ██║     █████╗  ██████╔╝██║     
+# ██║     ██╔══╝  ██╔══██╗██║     
+# ███████╗██║     ██║  ██║╚██████╗
+# ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝
+                                
 set previewer		~/.config/lf/lf_kitty_preview
 set cleaner			~/.config/lf/lf_kitty_clean
 
 cmd open				$xdg-open "$f"
-cmd trash				%trash-put "$fx"
-cmd restore			%trash-restore
+cmd trash				%trash-put -i "$fx"
 
+cmd fzf-restore ${{
+    ids="$(echo -ne '\n'																				| \
+      trash-restore																							| \
+      awk '$1 ~ /^[0-9]+/ {print $0}'														| \
+      fzf --multi --reverse --header='Choose item to restore'		| \
+      awk '{print $1}'																					| \
+      sed -z 's/\n/,/g;s/,$/\n/')"
+    echo $ids | trash-restore 
+    clear
+}}
+
+cmd fzf_jump ${{
+    res="$(fd . --maxdepth 2											| \
+			fzf --reverse --header='Jump to location'		| \
+			sed 's/\\/\\\\/g;s/"/\\"/g')"
+    if [ -d "$res" ] ; then
+        cmd="cd"
+    elif [ -f "$res" ] ; then
+        cmd="select"
+    else
+        exit 0
+    fi
+    lf -remote "send $id $cmd \"$res\""
+}}
+
+cmd fzf_search ${{
+    res="$( \
+        RG_PREFIX="rg --column --line-number --no-heading --color=always \
+            --smart-case "
+        FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
+            fzf --bind "change:reload:$RG_PREFIX {q} || true" \
+            --ansi --layout=reverse --header 'Search in files' \
+            | cut -d':' -f1
+    )"
+    [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
+}}
+
+map gs					:fzf_search
+map gf					:fzf_jump
 map y						copy
 map x						cut
 map p						paste
 map d						trash
-map <c-d>				restore
+map gu					fzf-restore
 map D						delete
 map <enter>			open
 

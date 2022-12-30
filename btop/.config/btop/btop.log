@@ -12,3 +12,7 @@
 
 2022/12/28 (18:06:04) | ===> btop++ v.1.2.13
 2022/12/28 (18:06:04) | WARNING: Failed to join _runner thread on exit!
+
+2022/12/30 (15:22:57) | ===> btop++ v.1.2.13
+2022/12/30 (15:22:57) | ERROR: No tty detected!
+btop++ needs an interactive shell to run.

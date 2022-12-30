@@ -29,8 +29,7 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 # env variables
-export QT_STYLE_OVERRIDE=kvantum
-export QT_QPA_PLATFORMTHEME="kvantum"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 export MY_GITHUB="github.com/GazDuckington"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
 

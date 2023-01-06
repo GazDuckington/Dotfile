@@ -1,23 +1,26 @@
 #!/bin/sh
 
-dbus-launch &
-pgrep -x xfce-polkit>/dev/null || /usr/libexec/xfce-polkit &
-
+killall	dunst &
 WALL=$(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
+
+watch	-n 60 ~/bin/battery-watch.sh 2> /dev/null &
 hsetroot -cover "$WALL" &
 xsetroot -cursor_name left_ptr &
+picom	-b &
 
-picom -b &
+pgrep -x xfce-polkit								2> /dev/null || /usr/libexec/xfce-polkit &
+pgrep -x dunst											2> /dev/null || dunst &
+pgrep -x udiskie										2> /dev/null || udiskie -s &
+pgrep -x nm-applet									2> /dev/null || nm-applet &
+pgrep -x com.github.hluk.copyq			2> /dev/null || flatpak run com.github.hluk.copyq &
+# pgrep -x org.flameshot.Flameshot 2>/dev/null || flatpak run org.flameshot.Flameshot &
+
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Scrolling Pixel Distance" 15
+
 "$HOME"/bin/idle.sh -s &
 "$HOME"/bin/polybar/launch-polybar.sh main &
-"$HOME"/bin/toggle_touchpad.sh 0 &
-# "$HOME"/bin/scratchpad.sh dropdown &
+"$HOME"/bin/inputs.sh -t 0 &
+"$HOME"/bin/scratchpad.sh dropdown &
 
-# killall dunst &
-# pgrep -x dunst >/dev/null || dunst &
-# pgrep -x org.flameshot.Flameshot >/dev/null || flatpak run org.flameshot.Flameshot &
-pgrep -x com.github.hluk.copyq >/dev/null || flatpak run com.github.hluk.copyq &
-pgrep -x nm-applet >/dev/null || nm-applet &
-pgrep -x udiskie >/dev/null || udiskie -t &
-
-watch -n 60 ~/bin/battery-watch.sh >/dev/null &

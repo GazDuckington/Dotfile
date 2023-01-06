@@ -1,25 +1,25 @@
 [global]
-frame_color = "#89B4FA"
-highlight = "#89B4FA"
-separator_color= frame
-font = FiraCode Nerd Font 10
-width = 250
-frame_width = 2
-offset = 5x30
-gap_size = 10
-corner_radius = 0
-progress_bar_min_width = 50
-progress_bar_max_width = 100
+frame_color							= "#89B4FA"
+highlight								= "#89B4FA"
+separator_color					= frame
+font										= FiraCode Nerd Font 10
+width										= 250
+frame_width							= 1
+offset									= 5x30
+gap_size								= 10
+corner_radius						= 5
+progress_bar_min_width	= 50
+progress_bar_max_width	= 100
 
 [urgency_low]
-background = "#11111B"
-foreground = "#89B4FA"
+background							= "#11111B"
+foreground 							= "#89B4FA"
 
 [urgency_normal]
-background = "#11111B"
-foreground = "#89B4FA"
+background							= "#11111B"
+foreground 							= "#89B4FA"
 
 [urgency_critical]
-background = "#11111B"
-foreground = "#F38BA8"
-frame_color = "#F38BA8"
+background							= "#11111B"
+foreground 							= "#F38BA8"
+frame_color							= "#F38BA8"

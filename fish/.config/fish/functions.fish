@@ -1,14 +1,25 @@
 # functions
 
 function gd
-	cd (z -l | fzf | awk '{print $2}')
+	cd (z -l | fzf --preview 'lsd --tree --color=always {2}' --preview-window down | awk '{print $2}')
 end
 
 function vd
-	set target (z -l | fzf | awk '{print $2}')
+	set target (z -l | fzf --preview 'lsd --tree --color=always {2}' --preview-window down | awk '{print $2}')
 	if not test "$target" = ""
-		$EDITOR $target
+		nvim $target -c 'cd %:p:h' &
+		clear
 	end
+end
+
+function vs
+	set target (ls ~/vimsession/ | fzf  --preview 'bat --color=always ~/vimsession/{1}' --preview-window down | awk '{print $1}')
+	
+	if not test "$target" = ""
+		nvim +so ~/vimsession/$target
+		clear
+	end
+
 end
 
 function ofetch

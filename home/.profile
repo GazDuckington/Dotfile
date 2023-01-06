@@ -53,7 +53,7 @@ export PATH="$ANDROID_SDK:$PATH"
 ## flutter
 export FLUTTER="$ANDROID/flutter"
 export PATH="$FLUTTER/bin:$PATH"
-export CHROME_EXECUTABLE="/var/lib/flatpak/exports/bin/com.github.Eloston.UngoogledChromium"
+export CHROME_EXECUTABLE="/var/lib/flatpak/exports/bin/com.brave.Browser"
 # flutter-dev end
 
 export XDG_DATA_HOME="$HOME"/.local/share

@@ -27,6 +27,10 @@ alt + c
 ctrl + F1
 	polybar-msg cmd toggle
 
+# toggle idle manager
+ctrl + Escape
+	~/bin/idle.sh -t
+
 # terminal
 super + Return
 	kitty

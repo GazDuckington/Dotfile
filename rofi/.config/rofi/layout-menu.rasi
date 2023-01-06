@@ -1,92 +1,92 @@
 @import "mocha"
 * {
-	width: 400px;
-	font: "FiraCode Nerd Font 14";
+	width							: 400px;
+	font							: "FiraCode Nerd Font 14";
 }
 
 element-text, element-icon , mode-switcher {
-  background-color: inherit;
-  text-color:       inherit;
+  background-color	: inherit;
+  text-color				: inherit;
 }
 
 window {
-  height: 360px;
-  border: 2px;
-	border-radius: 0px;
-  border-color: @grey;
-  background-color: @bg-col;
+  height						: 360px;
+  border						: 2px;
+	border-radius			: 5px;
+  border-color			: @grey;
+  background-color	: @bg-col;
 }
 
 mainbox {
-	children: [inputbar, listview];
-  background-color: @bg-col;
+	children					: [inputbar, listview];
+  background-color	: @bg-col;
 }
 
 inputbar {
-	children: [prompt,entry];
-	background-color: @bg-col;
-	border-radius: 5px;
-	padding: 2px;
+	children					: [prompt,entry];
+	background-color	: @bg-col;
+	border-radius			: 5px;
+	padding						: 2px;
 }
 
 prompt {
- 	background-color: @blue;
-	padding: 6px;
-	text-color: @bg-col;
-	border-radius: 3px;
-	margin: 20px 0px 0px 20px;
+ 	background-color	: @blue;
+	padding						: 6px;
+	text-color				: @bg-col;
+	border-radius			: 3px;
+	margin						: 20px 0px 0px 20px;
 }
 
 textbox-prompt-colon {
-	expand: false;
-	str: ":";
+	expand						: false;
+	str								: ":";
 }
 
 entry {
-	placeholder: "Type to search";
-	placeholder-color: @grey;
-	padding: 6px;
-	margin: 20px 0px 0px 10px;
-	text-color: @fg-col;
-	background-color: @bg-col;
+	placeholder				: "Type to search";
+	placeholder-color	: @grey;
+	padding						: 6px;
+	margin						: 20px 0px 0px 10px;
+	text-color				: @fg-col;
+	background-color	: @bg-col;
 }
 
 listview {
-	border: 0px 0px 0px;
-	margin: 1em 1em 0 1em;
-	columns: 1;
-	lines: 15;
-	background-color: @bg-col;
+	border						: 0px 0px 0px;
+	margin						: 1em 1em 0 1em;
+	columns						: 1;
+	lines							: 15;
+	background-color	: @bg-col;
 }
 
 element {
-	padding: 5px;
-	background-color: @bg-col;
-	text-color: @fg-col  ;
+	padding						: 5px;
+	background-color	: @bg-col;
+	text-color				: @fg-col;
 }
 
 element-icon {
-	size: 25px;
+	size							: 25px;
 }
 
 element selected {
-	background-color:  @selected-col ;
-	text-color: @fg-col2  ;
+	background-color	:  @selected-col ;
+	text-color				: @fg-col2  ;
 }
 
 mode-switcher {
-	spacing: 0;
+	spacing						: 0;
 }
 
 button {
-	padding: 10px;
-	background-color: @bg-col-light;
-	text-color: @grey;
-	vertical-align: 0.5; 
-	horizontal-align: 0.5;
+	padding						: 10px;
+	background-color	: @bg-col-light;
+	text-color				: @grey;
+	vertical-align		: 0.5; 
+	horizontal-align	: 0.5;
 }
 
 button selected {
-	background-color: @bg-col;
-	text-color: @blue;
+	background-color	: @bg-col;
+	text-color				: @blue;
 }

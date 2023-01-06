@@ -17,6 +17,18 @@ set ignorecase	true
 cmd open				$xdg-open "$f"
 cmd trash				%trash-put -i "$fx"
 
+cmd mkdir %{{
+     printf "Make directory: "
+    read ans
+    mkdir -p $ans
+}}
+
+cmd touch %{{
+    printf "Make file: "
+    read ans
+    touch "$ans"
+}}
+
 cmd fzf-restore ${{
     ids="$(echo -ne '\n'																				| \
       trash-restore																							| \
@@ -55,16 +67,18 @@ cmd fzf_search ${{
 }}
 
 # keybinds
-map gs					:fzf_search
-map gf					:fzf_jump
+map gs					fzf_search
+map gf					fzf_jump
+map gu					fzf-restore
+map gd					mkdir
+map gf					touch
 map y						copy
 map x						cut
 map p						paste
 map d						trash
-map gu					fzf-restore
 map D						delete
-map <enter>			open
 map <c-q>				quit
+
 # bookmark
 map bm					cd /run/media/
 map bh					cd ~/.local/share/Trash/files/

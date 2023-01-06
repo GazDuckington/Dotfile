@@ -7,7 +7,7 @@ end
 function vd
 	set target (z -l | fzf --preview 'lsd --tree --color=always {2}' --preview-window down | awk '{print $2}')
 	if not test "$target" = ""
-		nvim $target -c 'cd %:p:h' &
+		nvim $target -c 'cd %:p:h'
 		clear
 	end
 end

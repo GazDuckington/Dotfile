@@ -4,8 +4,8 @@ WALL=$(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
 hsetroot -cover "$WALL" &
 
 pgrep -x xfce-polkit								2> /dev/null || /usr/libexec/xfce-polkit &
-pgerp -x polybar										2> /dev/null || polybar -q -r -c ~/.config/polybar/config.ini &
-pgerp -x dunst											2> /dev/null || pkill dunst && dunst &
+pgrep -x polybar										2> /dev/null || polybar -q -r -c ~/.config/polybar/config.ini &
+pgrep -x dunst											2> /dev/null || pkill dunst && dunst &
 pgrep -x udiskie										2> /dev/null || udiskie -s &
 pgrep -x nm-applet									2> /dev/null || nm-applet &
 pgrep -x com.github.hluk.copyq			2> /dev/null || flatpak run com.github.hluk.copyq &

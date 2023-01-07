@@ -1,11 +1,12 @@
 #!/bin/sh
 . /home/gaz/.config/dk/color.sh \
-# Set the paused status of dunst
-dunstctl set-paused true;
-amixer set Master mute;
-killall i3lock &
 
 B='#00000000' # blank
+FONT='FiraCode Nerd Font'
+
+playerctl play-pause;
+amixer set Master mute;
+dunstctl set-paused true;
 
 pgrep -x i3lock >/dev/null || i3lock \
 --color=$base \
@@ -44,7 +45,8 @@ pgrep -x i3lock >/dev/null || i3lock \
 --greeter-font="$FONT" \
 -n; 
 \
-amixer set Master unmute; \
-dunstctl set-paused false; \
-sleep 1; \
-exit
+playerctl play-pause;
+amixer set Master unmute;
+dunstctl set-paused false;
+sleep 1;
+exit;

@@ -3,20 +3,19 @@
 WALL=$(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
 hsetroot -cover "$WALL" &
 
-pgrep -x xfce-polkit								2> /dev/null || /usr/libexec/xfce-polkit &
-pgrep -x polybar										2> /dev/null || polybar -q -r -c ~/.config/polybar/config.ini &
-pgrep -x dunst											2> /dev/null || pkill dunst && dunst &
-pgrep -x udiskie										2> /dev/null || udiskie -s &
-pgrep -x nm-applet									2> /dev/null || nm-applet &
-pgrep -x com.github.hluk.copyq			2> /dev/null || flatpak run com.github.hluk.copyq &
 pgrep -x picom											2> /dev/null || picom -b &
+pgrep -x nm-applet									2> /dev/null || nm-applet &
+pgrep -x udiskie										2> /dev/null || udiskie -s &
+pgrep -x dunst											2> /dev/null || dunst && killall dunst &
+pgrep -x xfce-polkit								2> /dev/null || /usr/libexec/xfce-polkit &
+pgrep -x com.github.hluk.copyq			2> /dev/null || flatpak run com.github.hluk.copyq &
+pgrep -x polybar										2> /dev/null || polybar -q -r -c ~/.config/polybar/config.ini &
 # pgrep -x org.flameshot.Flameshot 2>/dev/null || flatpak run org.flameshot.Flameshot &
 
 xsetroot -cursor_name left_ptr &
 watch	-n 60 ~/bin/battery-watch.sh 2> /dev/null &
 
 "$HOME"/bin/idle.sh -s &
-"$HOME"/bin/polybar/launch-polybar.sh main &
 "$HOME"/bin/inputs.sh -t 0 &
 "$HOME"/bin/scratchpad.sh dropdown &
 

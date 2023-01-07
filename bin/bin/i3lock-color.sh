@@ -44,7 +44,7 @@ pgrep -x i3lock >/dev/null || i3lock \
 --greeter-font="$FONT" \
 -n; 
 \
-amixer set Master unmute \
-dunstctl set-paused false \
-sleep 1 \
+amixer set Master unmute; \
+dunstctl set-paused false; \
+sleep 1; \
 exit

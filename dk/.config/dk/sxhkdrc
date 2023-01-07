@@ -53,7 +53,8 @@ Print
 
 # reload sxhkd
 super + Escape
-	pkill -USR1 -x sxhkd -c "$HOME/.config/dk/sxhkdrc"
+	pkill sxhkd &&
+	sxhkd -c "$HOME/.config/dk/sxhkdrc" &
 
 # restart/reload dk
 {super, alt} + shift + r

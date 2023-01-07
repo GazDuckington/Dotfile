@@ -1,8 +1,8 @@
 [Context]
-filesystems=xdg-config;xdg-download;xdg-cache;home;host-etc;host-os;host
+filesystems=/home/$USER/.themes:ro;/usr/share/themes:ro;/home/$USER/.icons:ro;/usr/share/icons:ro;/home/$USER/.fonts:ro;/home/gaz/.icons:ro;xdg-cache;xdg-config/gtk-3.0:ro;xdg-config;xdg-download;home;host
 
 [Environment]
 GTK_THEME=Adwaita-dark
+ICON_THEME=Papirus-Dark
 QT_QPA_PLATFORMTHEME=qt5ct
 QT_STYLE_OVERRIDE=Adwaita-Dark
-ICON_THEME=papirus-dark

@@ -88,7 +88,7 @@ export PATH="$HOME/.deno/bin:$PATH"
 . "$HOME"/cargo/env
 
 if [ "$(tty)" = "/dev/tty1" ];then
-	exec dk
+	startx
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"

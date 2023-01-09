@@ -7,7 +7,6 @@ fish_vi_key_bindings
 
 source ~/.config/fish/functions.fish
 bass source ~/.profile
-bass source ~/.bashrc.d/aliases
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths

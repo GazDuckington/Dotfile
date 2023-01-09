@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+source ~/.aliases
+
 if [ "$TERM" = "linux" ]; then
 	printf %b '\e]P01E1E2E' # set background color to "Base"
 	printf %b '\e]P8585B70' # set bright black to "Surface2"
@@ -32,11 +34,6 @@ fi
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export MY_GITHUB="github.com/GazDuckington"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
-
-# pnpm
-export PNPM_HOME="/home/gaz/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
 
 # flutter-dev
 ## java
@@ -78,7 +75,6 @@ export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down'
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/cargo/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
-export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$HOME/.local/share/pyenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"

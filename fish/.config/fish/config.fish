@@ -3,7 +3,6 @@ set fish_greeting
 
 set fish_plugins vi-mode
 set vi_mode_default vi_mode_normal
-fish_vi_key_bindings 
 
 source ~/.config/fish/functions.fish
 bass source ~/.profile

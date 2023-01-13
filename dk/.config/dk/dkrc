@@ -29,9 +29,8 @@ fi
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
 	dkcmd set ws=_ apply layout=tile master=1 stack=4 gap=6 msplit=0.55 ssplit=0.5 win_minwh=50
+	dkcmd set ws=2 layout=mono
 	dkcmd set ws=4 layout=mono
-	dkcmd set ws=5 layout=grid
-	dkcmd set ws=6 layout=mono
 
 	# global settings
 	# ---------------------
@@ -81,7 +80,7 @@ fi
 
 	# ws 3
 	dkcmd rule \
-		class="(\b[Nn]autilus\b|[Nn]emo|[Cc]aja|Motrix|[Qq][Bb]ittorrent|[Kk]rita|[Gg]imp*|\b[Gg]ithub\b)" \
+		class="(\b[Nn]autilus\b|[Nn]emo|[Cc]aja|Motrix|[Qq][Bb]ittorrent|[Kk]rita|GIMP*|GNU*Image*|\b[Gg]ithub\b)" \
 		ws=3 focus=true
 
 	# ws 4

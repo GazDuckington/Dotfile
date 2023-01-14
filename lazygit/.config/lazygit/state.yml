@@ -1,8 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/gaz/Nextcloud/CV
-- /home/gaz/.config/nvim
 - /home/gaz/Dotfile
+- /home/gaz/.config/nvim
+- /home/gaz/dev/flask-sk
+- /home/gaz/Nextcloud/CV
 - /home/gaz/dev/sensi
 - /home/gaz/repo/dk
 - /home/gaz/dev/kanbantea

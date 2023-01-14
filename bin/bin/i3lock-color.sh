@@ -4,7 +4,7 @@
 B='#00000000' # blank
 FONT='FiraCode Nerd Font'
 
-playerctl play-pause;
+playerctl pause;
 amixer set Master mute;
 dunstctl set-paused true;
 
@@ -45,7 +45,6 @@ pgrep -x i3lock >/dev/null || i3lock \
 --greeter-font="$FONT" \
 -n; 
 \
-playerctl play-pause;
 amixer set Master unmute;
 dunstctl set-paused false;
 sleep 1;

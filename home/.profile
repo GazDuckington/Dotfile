@@ -2,6 +2,11 @@
 
 source ~/.aliases
 
+if [ -t 1 ];then
+	stty susp undef
+	bind '"\C-z":"fg\015"'
+fi
+
 if [ "$TERM" = "linux" ]; then
 	printf %b '\e]P01E1E2E' # set background color to "Base"
 	printf %b '\e]P8585B70' # set bright black to "Surface2"
@@ -62,8 +67,8 @@ export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export CARGO_HOME="$HOME"/cargo
 export GNUPGHOME="$HOME"/gnupg
 export GOPATH="$HOME"/go
-export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export XCURSOR_PATH=/usr/share/icons:"${XDG_DATA_HOME}"/icons
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc 
 

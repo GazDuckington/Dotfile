@@ -2,6 +2,7 @@
 alias c='code'
 alias v='nvim'
 alias nv='nvim'
+alias vi='nvim'
 alias vim='nvim'
 alias fzf='fzf --layout reverse --ansi'
 alias pm='pulsemixer'

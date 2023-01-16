@@ -9,7 +9,6 @@ source ~/.config/fish/my_functions.fish
 for x in (/usr/bin/find ~/.bashrc.d/ -type f)
   bass source $x
 end
-# bass source ~/.profile
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths

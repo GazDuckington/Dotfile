@@ -1,12 +1,5 @@
 #!/usr/bin/sh
 
-source ~/.aliases
-
-if [ -t 1 ];then
-	stty susp undef
-	bind '"\C-z":"fg\015"'
-fi
-
 if [ "$TERM" = "linux" ]; then
 	printf %b '\e]P01E1E2E' # set background color to "Base"
 	printf %b '\e]P8585B70' # set bright black to "Surface2"

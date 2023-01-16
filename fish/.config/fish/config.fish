@@ -4,8 +4,12 @@ set fish_greeting
 set fish_plugins vi-mode
 set vi_mode_default vi_mode_normal
 
-source ~/.config/fish/functions.fish
-bass source ~/.profile
+source ~/.config/fish/my_functions.fish
+
+for x in (/usr/bin/find ~/.bashrc.d/ -type f)
+  bass source $x
+end
+# bass source ~/.profile
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths

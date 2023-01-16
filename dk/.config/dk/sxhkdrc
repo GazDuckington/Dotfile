@@ -97,7 +97,7 @@ alt + {_,shift + ,ctrl + }{bracketleft,bracketright,BackSpace}
 	dkcmd ws {view,send,follow} {prev,next,last}
 
 # next non-empty, or prev non-empty workspace
-super + {h,l}
+super + {a,s}
 	dkcmd ws {prevne,nextne}
 
 # view, send, or follow to the next, previous, or last active monitor

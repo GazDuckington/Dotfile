@@ -11,9 +11,9 @@ element-text, element-icon , mode-switcher {
 
 window {
   height						: 360px;
-  border						: 2px;
-	border-radius			: 5px;
-  border-color			: @grey;
+  border						: 3px;
+	border-radius			: 0px;
+  border-color			: @border-col;
   background-color	: @bg-col;
 }
 
@@ -25,7 +25,7 @@ mainbox {
 inputbar {
 	children					: [prompt,entry];
 	background-color	: @bg-col;
-	border-radius			: 5px;
+	border-radius			: 0px;
 	padding						: 2px;
 }
 
@@ -70,8 +70,9 @@ element-icon {
 }
 
 element selected {
-	background-color	:  @selected-col ;
-	text-color				: @fg-col2  ;
+	background-color	: @selected-col;
+	text-color				: @border-col;
+	font-weight				: bold;
 }
 
 mode-switcher {

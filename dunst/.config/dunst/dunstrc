@@ -7,7 +7,7 @@ width										= 250
 frame_width							= 1
 offset									= 5x30
 gap_size								= 10
-corner_radius						= 5
+corner_radius						= 0
 progress_bar_min_width	= 50
 progress_bar_max_width	= 100
 

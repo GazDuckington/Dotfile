@@ -56,9 +56,13 @@ super + Escape
 	pkill sxhkd &&
 	sxhkd -c "$HOME/.config/dk/sxhkdrc" &
 
-# restart/reload dk
-{super, alt} + shift + r
-	dkcmd {restart, reload}
+# quit dk
+alt + shift + q
+	dkcmd exit
+
+# reload dkrc
+alt + shift + r
+	$HOME/.config/dk/dkrc
 
 # focus next or previous window
 super + {k,j}

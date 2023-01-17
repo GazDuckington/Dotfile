@@ -31,4 +31,5 @@ alias ga='git add'
 alias gc='git commit -am'
 alias gp='git push'
 alias gs='git status'
-
+alias t='install -m 644 -D /dev/null'
+alias wd='pwd && pwd | xsel -b'

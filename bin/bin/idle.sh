@@ -21,9 +21,9 @@ startidle() {
 checkidle() {
 
   if [ "$result" = 1 ]; then
-    echo "%{F$overlay0}%{F-}"
+    echo "%{F$surface0}﯈%{F-}"
   else
-    echo "%{F$green}%{F-}"
+    echo "%{F$green}﯈%{F-}"
   fi
 
 }

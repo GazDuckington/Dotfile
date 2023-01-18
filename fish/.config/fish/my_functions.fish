@@ -31,7 +31,7 @@ function ofetch
 end
 
 function lolban
-  figlet -f ANSI\ Shadow $argv | lolcat
+  figlet -w 140 -f ANSI\ Shadow $argv | lolcat
 end
 
 function lol

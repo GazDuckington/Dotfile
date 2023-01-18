@@ -79,7 +79,12 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.surrealdb:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
-. "$HOME"/cargo/env
+
+export PNPM_HOME="/home/gaz/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+export DENO_HOME="/home/gaz/.deno/bin"
+export PATH="$DENO_HOME:$PATH"
 
 if [ "$(tty)" = "/dev/tty1" ];then
 	startx

@@ -73,6 +73,7 @@ element selected {
 	background-color	: @selected-col;
 	text-color				: @border-col;
 	font-weight				: bold;
+	border-radius			: 3px;
 }
 
 mode-switcher {

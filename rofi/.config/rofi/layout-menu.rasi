@@ -11,7 +11,7 @@ element-text, element-icon , mode-switcher {
 
 window {
   height						: 360px;
-  border						: 3px;
+  border						: 2px;
 	border-radius			: 0px;
   border-color			: @border-col;
   background-color	: @bg-col;
@@ -71,7 +71,7 @@ element-icon {
 
 element selected {
 	background-color	: @selected-col;
-	text-color				: @border-col;
+	text-color				: @bg-col-light;
 	font-weight				: bold;
 	border-radius			: 3px;
 }

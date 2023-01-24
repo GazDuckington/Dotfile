@@ -1,11 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/gaz/Dotfile
+- /home/gaz/dev/sensi
 - /home/gaz/.config/nvim
+- /home/gaz/Nextcloud/CV
+- /home/gaz/Dotfile
 - /home/gaz/repo/dk
 - /home/gaz/dev/flask-sk
-- /home/gaz/Nextcloud/CV
-- /home/gaz/dev/sensi
 - /home/gaz/dev/kanbantea
 startuppopupversion: 5
 customcommandshistory: []

@@ -3,7 +3,7 @@
 
 # autostart
 dbus-launch &
-~/bin/autostart.sh &
+autostart.sh &
 
 # determine where to place the log file
 logfile="$HOME/.dkrc.log"

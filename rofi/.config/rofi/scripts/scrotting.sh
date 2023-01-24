@@ -12,7 +12,7 @@ scrot_screen() {
   dunstify -i "$image" -a "Scrot-screen" "$FILE_NAME" -t 3000
 	rm "$image"
 }
-scrot_select() {
+scrot_area() {
 	# select area
   scrot -z -s "$FILE_NAME"
   sleep 1s;
@@ -39,7 +39,7 @@ menu() {
 		flameshots.sh
 		;;
   "$area")
-		#scrot_select
+		#scrot_area
 		flatpak run org.flameshot.Flameshot gui --path ~/Pictures/Screen\ Shots/
 		;;
   "$window")

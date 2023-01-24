@@ -16,6 +16,8 @@ set ignorecase	true
 # commands
 cmd open				$xdg-open "$f"
 cmd trash				%trash-put -i "$fx"
+cmd bulk				$br.sh
+
 
 cmd mkdir %{{
      printf "Make directory: "
@@ -83,3 +85,4 @@ map <c-q>				quit
 map bm					cd /run/media/
 map bh					cd ~/.local/share/Trash/files/
 map bc					$xdg-open ~/.config/lf/lfrc
+map br					bulk

@@ -16,11 +16,11 @@ pgrep -x com.github.hluk.copyq			2> /dev/null || flatpak run com.github.hluk.cop
 # pgrep -x org.flameshot.Flameshot		2> /dev/null || flatpak run org.flameshot.Flameshot &
 
 xsetroot -cursor_name left_ptr &
-watch	-n 60 ~/bin/battery-watch.sh 2> /dev/null &
+watch	-n 60 "$XDG_DATA_HOME"/bin/battery-watch.sh 2> /dev/null &
 
-"$HOME"/bin/idle.sh -s &
-"$HOME"/bin/inputs.sh -t 0 &
-"$HOME"/bin/scratchpad.sh dropdown &
+"$XDG_DATA_HOME"/bin/idle.sh -s &
+"$XDG_DATA_HOME"/bin/inputs.sh -t 0 &
+"$XDG_DATA_HOME"/bin/scratchpad.sh dropdown &
 
 xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Scrolling Pixel Distance" 15

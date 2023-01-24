@@ -28,7 +28,7 @@ menu() {
   case "$chs" in
   "$screen")
 		#scrot_screen
-		~/bin/flameshots.sh
+		"$XDG_DATA_HOME/bin/flameshots.sh"
 		;;
   "$area")
 		#scrot_select
@@ -36,10 +36,10 @@ menu() {
 		;;
   "$window")
 		#scrot_window
-		~/bin/flameshots.sh activewindow
+		"$XDG_DATA_HOME/bin/flameshots.sh activewindow"
 		;;
 	"$select")
-	~/bin/flameshots.sh selectwindow
+	"$XDG_DATA_HOME/bin/flameshots.sh selectwindow"
 	;;
   esac
 }

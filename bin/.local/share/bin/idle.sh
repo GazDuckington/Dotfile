@@ -9,7 +9,7 @@ startidle() {
     --not-when-fullscreen \
     --not-when-audio \
     --timer 600 \
-    "$HOME/bin/i3lock-color.sh" \
+    "$XDG_DATA_HOME/bin/i3lock-color.sh" \
     '' \
     --timer 1200 \
     'systemctl suspend' \
@@ -31,7 +31,7 @@ checkidle() {
 toggleidle() {
 
   if [ "$result" = 0 ]; then
-    "$HOME"/bin/idle.sh -s &
+    "$XDG_DATA_HOME"/bin/idle.sh -s &
     xset dpms &
 		dunstify -r 777 " Idle is on" -t 1000 &
   else

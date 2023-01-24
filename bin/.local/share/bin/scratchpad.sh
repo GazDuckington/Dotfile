@@ -6,7 +6,7 @@ if [ -z "$wid" ]; then
   if [ "$1" = "dropdown" ]; then
 		kitty --class dropdown
   else
-    ~/bin/kitty-launch.sh "$1"
+    "$XDG_DATA_HOME"/bin/kitty-launch.sh "$1"
     xdotool windowfocus "$wid"
   fi
 else

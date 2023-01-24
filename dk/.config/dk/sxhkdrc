@@ -7,21 +7,21 @@ super + e
 
 # dropdown terminal
 alt + { F2, F3 }
-	$XDG_DATA_HOME/bin/scratchpad.sh { dropdown, musikcube }
+	scratchpad.sh { dropdown, musikcube }
 
 alt + F1
-	$XDG_DATA_HOME/bin/kitty-launch.sh pulsemixer -1
+	kitty-launch.sh pulsemixer -1
 
 alt + F4
   $XDG_CONFIG_HOME/rofi/scripts/powermenu.sh
 
 # system monitor
 ctrl + alt + Delete
-	$XDG_DATA_HOME/bin/kitty-launch.sh btop
+	kitty-launch.sh btop
 
 # color picker
 alt + c
-	gpick -p
+	color_picker.sh
 
 # toggle polybar
 ctrl + F1
@@ -29,7 +29,7 @@ ctrl + F1
 
 # toggle idle manager
 ctrl + Escape
-	$XDG_DATA_HOME/bin/idle.sh -t
+	idle.sh -t
 
 # terminal
 super + Return
@@ -41,15 +41,15 @@ Print
 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
-	$XDG_DATA_HOME/bin/changevol.sh {up, down}
+	changevol.sh {up, down}
 
 # toggle mute for output input devices
 {XF86AudioMute, XF86AudioMicMute}
-	{$XDG_DATA_HOME/bin/changevol.sh mute, $XDG_DATA_HOME/bin/microphone.sh toggle}
+	{changevol.sh mute, microphone.sh toggle}
 
 # dedicated backlight keys
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
-	$XDG_DATA_HOME/bin/changebrightness.sh {up, down}
+	changebrightness.sh {up, down}
 
 # reload sxhkd
 super + Escape

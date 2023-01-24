@@ -14,7 +14,7 @@ startidle() {
     --timer 1200 \
     'systemctl suspend' \
     '' \
-    --socket "/tmp/xidlehook.sock" &
+		&
 
 }
 
@@ -31,7 +31,7 @@ checkidle() {
 toggleidle() {
 
   if [ "$result" = 0 ]; then
-    "$XDG_DATA_HOME"/bin/idle.sh -s &
+    idle.sh -s &
     xset dpms &
 		dunstify -r 777 " Idle is on" -t 1000 &
   else

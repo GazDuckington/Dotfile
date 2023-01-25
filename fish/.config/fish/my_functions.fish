@@ -13,10 +13,10 @@ function vd
 end
 
 function vs
-	set target (ls ~/vimsession/ | fzf --preview-window right,60% --preview 'bat --color=always ~/vimsession/{1}' | awk '{print $1}')
+	set target (la ~/.vim/sessions/ | fzf --preview-window right,60% --preview 'bat --color=always ~/.vim/sessions/{1}' | awk '{print $1}')
 	
 	if not test "$target" = ""
-		nvim +so ~/vimsession/$target
+		nvim +so ~/.vim/sessions/$target
 		clear
 	end
 

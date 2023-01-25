@@ -9,7 +9,7 @@ startidle() {
     --not-when-fullscreen \
     --not-when-audio \
     --timer 600 \
-    "$XDG_DATA_HOME/bin/i3lock-color.sh" \
+    i3lock-color.sh \
     '' \
     --timer 1200 \
     'systemctl suspend' \

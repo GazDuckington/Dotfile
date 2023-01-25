@@ -16,7 +16,6 @@ set ignorecase	true
 # commands
 cmd open				$xdg-open "$f"
 cmd trash				%trash-put -i "$fx"
-cmd bulk				$br.sh
 
 
 cmd mkdir %{{
@@ -81,8 +80,8 @@ map d						trash
 map D						delete
 map <c-q>				quit
 
-# bookmark
-map bm					cd /run/media/
-map bh					cd ~/.local/share/Trash/files/
+# bookmarks
+map gm					cd /run/media/
+map gt					cd ~/.local/share/Trash/files/
 map bc					$xdg-open ~/.config/lf/lfrc
-map br					bulk
+map br					$br.sh

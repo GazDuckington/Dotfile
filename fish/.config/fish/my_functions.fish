@@ -34,6 +34,10 @@ function lolban
   figlet -w 140 -f ANSI\ Shadow $argv | lolcat
 end
 
+function ban
+  figlet -w 140 -f ANSI\ Shadow $argv
+end
+
 function lol
 	$argv | lolcat
 end

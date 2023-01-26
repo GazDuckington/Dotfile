@@ -6,9 +6,9 @@ scroll=$(xset -q | grep Scroll | awk '{ print $12 }')
 
 capslock() {
   if [ "$caps" = 'off' ]; then
-    echo "%{F$surface2} %{F-}" &
+    echo "%{F$surface2}caps%{F-}" &
   else
-    echo "%{F$green} %{F-}"
+    echo "%{F$green}caps%{F-}"
   fi
 }
 

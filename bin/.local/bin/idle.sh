@@ -21,9 +21,10 @@ startidle() {
 checkidle() {
 
   if [ "$result" = 1 ]; then
-    echo "%{F$surface2}﯈ %{F-}"
+    # echo "%{F$surface2}idle%{F-}"
+		echo ""
   else
-    echo "%{F$green}﯈ %{F-}"
+    echo "  "
   fi
 
 }

@@ -2,9 +2,6 @@
 super + {d, x, w}
 	rofi -show {drun,run -no-show-icons,window}
 
-super + e
-	rofi -modi "emoji:rofimoji --action copy" -show emoji -no-show-icons
-
 # dropdown terminal
 alt + { F2, F3 }
 	scratchpad.sh { dropdown, musikcube }
@@ -72,19 +69,19 @@ super + {q,space,Tab}
 	dkcmd win {kill,swap,cycle}
 
 # toggle fullscreen and fake fullscreen (enable manipulating fullscreen window)
-{_,alt + }F11
+super + {_,alt + }f
 	dkcmd win {full,fakefull}
 
 # toggle floating or sticky
-alt + {f, shift + s}
+alt + {_, shift +}space
 	dkcmd win {float,stick}
 
 # move window, signed (+/-) for relative changes
-ctrl + shift + alt + {h,j,k,l}
+ctrl + {h,j,k,l}
 	dkcmd win resize {x=-20,y=+20,y=-20,x=+20}
 
 # resize window, signed (+/-) for relative changes
-alt + ctrl + {h,j,k,l}
+super + {h,j,k,l}
 	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
 
 # move the active window up/down the stack

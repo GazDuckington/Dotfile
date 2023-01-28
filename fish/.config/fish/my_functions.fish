@@ -1,11 +1,11 @@
 # functions
 
 function gd
-	cd (z -l | fzf --preview 'lsd --tree --color=always {2}' --preview-window right,60% | awk '{print $2}')
+	cd (z -l | fzf --layout reverse --ansi --preview 'lsd --tree --color=always {2}' --preview-window right,60% | awk '{print $2}')
 end
 
 function vd
-	set target (z -l | fzf --preview 'lsd --tree --color=always {2}' --preview-window right,60% | awk '{print $2}')
+	set target (z -l | fzf --layout reverse --ansi --preview 'lsd --tree --color=always {2}' --preview-window right,60% | awk '{print $2}')
 	if not test "$target" = ""
 		nvim $target -c 'cd %:p:h'
 		clear
@@ -13,7 +13,7 @@ function vd
 end
 
 function vs
-	set target (la ~/.vim/sessions/ | fzf --preview-window right,60% --preview 'bat --color=always ~/.vim/sessions/{1}' | awk '{print $1}')
+	set target (la ~/.vim/sessions/ | fzf --layout reverse --ansi --preview-window right,60% --preview 'bat --color=always ~/.vim/sessions/{1}' | awk '{print $1}')
 	
 	if not test "$target" = ""
 		nvim +so ~/.vim/sessions/$target

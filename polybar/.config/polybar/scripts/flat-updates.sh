@@ -2,7 +2,8 @@
 
 . /home/gaz/.config/dk/color.sh
 
-updates=$(echo 'n' | flatpak update 2>/dev/null | tail -n +5 | head -2 | wc -l)
+call=$(echo 'n' | flatpak update 2>/dev/null | wc -l)
+updates=$((call - 5))
 
 if [ "$updates" -gt 0 ]; then
   echo " $updates"

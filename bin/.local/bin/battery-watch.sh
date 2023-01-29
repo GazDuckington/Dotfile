@@ -7,5 +7,5 @@ BAT_NOW=$BATPATH/energy_now
 bf=$(cat $BAT_FULL)
 bn=$(cat $BAT_NOW)
 if [ $((100 * bn / bf)) -lt 60 ] && [ "$BATSTAT" = "Discharging" ]; then
-  dunstify -u critical -t 8000 " low battery!" -a "Battery"
+  notify-send -u critical -t 8000 " low battery!" -a "Battery"
 fi 

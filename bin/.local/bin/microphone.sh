@@ -12,9 +12,9 @@ function send_notification {
     STATUS=$(get_status)
 
     if [ "$STATUS" == "off" ]; then
-        dunstify -r 999 -u normal "$ICON_MUTED Mic is Muted" -t 5000
+        notify-send -r 999 -u normal "$ICON_MUTED Mic is Muted" -t 5000
     else
-        dunstify -r 999 -u normal "$ICON Mic is Unmuted" -t 5000
+        notify-send -r 999 -u normal "$ICON Mic is Unmuted" -t 5000
     fi
 }
 

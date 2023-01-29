@@ -16,9 +16,9 @@ echo "$colorPicker" | tr -d "\n" | xclip -selection clipboard
 convert -size 64x64 xc:"$colorPicker" "${image}"
 
 # notify color above screen # 
-dunstify -u low --replace=69 -i "${image}" "$colorPicker, copied to clipboard."
+notify-send -u low --replace=69 -i "${image}" "$colorPicker, copied to clipboard."
 
 rm "$image"
 else
-	dunstify -t 1000 -u low --replace=69 "Color Picker cancelled."
+	notify-send -t 1000 -u low --replace=69 "Color Picker cancelled."
 fi

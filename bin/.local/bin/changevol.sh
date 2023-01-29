@@ -20,12 +20,12 @@ function send_notification {
     status=$(is_mute)
 
     if [ "$status" == "yes" ]; then
-			dunstify -r 999 -u normal "$soundMute $(get_volume)% Muted" -t 1000
+			notify-send -r 999 -u normal "$soundMute $(get_volume)% Muted" -t 1000
     else
         if [ "$volume" = 0 ]; then
-					dunstify -r 999 -u normal "$soundZero Muted" -t 1000
+					notify-send -r 999 -u normal "$soundZero Muted" -t 1000
         else
-					dunstify -r 999 -u normal "$soundHigh $(get_volume)% $bar" -t 1000
+					notify-send -r 999 -u normal "$soundHigh $(get_volume)% $bar" -t 1000
         fi
     fi
 }

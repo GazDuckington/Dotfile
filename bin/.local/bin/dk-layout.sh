@@ -13,21 +13,18 @@ case $LAYOUT in
 		echo "[M]"
 		;;
 	grid)
-		echo "[=]"
+		echo "[+]"
 		;;
 	spiral)
 		echo "[S]"
 		;;
 	dwindle)
-		echo "[D]"
+		echo "[W]"
 		;;
 	none)
 		echo "><>"
 		;;
 	tstack)
 		echo "TTT"
-		;;
-	*)
-		echo "[]="
 		;;
 esac

@@ -43,6 +43,11 @@ case "$MIME" in
         bat --force-colorization --paging=never --style=changes,numbers \
             --terminal-width $(($2 - 3)) "$file" && false
         ;;
+		video/*)
+			kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" \
+				"$(~/.config/lf/vidthumb "$file")"
+			exit 1
+		;;
     *)
         echo "unknown format"
         ;;

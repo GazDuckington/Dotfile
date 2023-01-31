@@ -2,6 +2,9 @@ lastupdatecheck: 0
 recentrepos:
 - /home/gaz/Dotfile
 - /home/gaz/.config/nvim
+- /home/gaz/dev/my-site
+- /home/gaz/dev/gazduckington.github.io
+- /home/gaz/dev/sensi-front
 - /home/gaz/dev/sensi
 - /home/gaz/Nextcloud/CV
 - /home/gaz/repo/dk

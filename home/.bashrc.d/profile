@@ -28,11 +28,6 @@ if [ "$TERM" = "linux" ]; then
 	clear
 fi
 
-# env variables
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export MY_GITHUB="github.com/GazDuckington"
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
-
 # flutter-dev
 ## java
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
@@ -51,10 +46,16 @@ export PATH="$FLUTTER/bin:$PATH"
 export CHROME_EXECUTABLE="/var/lib/flatpak/exports/bin/com.brave.Browser"
 # flutter-dev end
 
-export XDG_DATA_HOME="$HOME"/.local/share
-export XDG_CONFIG_HOME="$HOME"/.config
-export XDG_STATE_HOME="$HOME"/.local/state
-export XDG_CACHE_HOME="$HOME"/.cache
+export XDG_DESKTOP_DIR="$HOME/"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads/"
+export XDG_MUSIC_DIR="$HOME/Music/"
+export XDG_PICTURES_DIR="$HOME/Pictures/"
+export XDG_VIDEOS_DIR="$HOME/Videos/"
+export XDG_DOCUMENTS_DIR="$HOME/Documents/"
 
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export CARGO_HOME="$HOME"/cargo
@@ -81,13 +82,18 @@ export PATH="$HOME/.nix-profile/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 
-export PNPM_HOME="/home/gaz/.local/share/pnpm"
+export PNPM_HOME="/home/gaz/.local/share/pnpm/"
 export PATH="$PNPM_HOME:$PATH"
 
 export DENO_HOME="/home/gaz/.deno/bin"
 export PATH="$DENO_HOME:$PATH"
 
+# env variables
 . /home/gaz/cargo/env
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export MY_GITHUB="github.com/GazDuckington"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
 
 if [ "$(tty)" = "/dev/tty1" ];then
 	startx

@@ -12,6 +12,9 @@ alt + F1
 alt + F4
   $XDG_CONFIG_HOME/rofi/scripts/powermenu.sh
 
+alt + w
+	hsetroot -cover $(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
+
 # system monitor
 ctrl + alt + Delete
 	kitty-launch.sh btop
@@ -50,7 +53,7 @@ Print
 
 # reload sxhkd
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill sxhkd && sxhkd -c "$HOME/.config/dk/sxhkdrc"
 
 # quit dk
 alt + shift + q

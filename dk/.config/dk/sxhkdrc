@@ -80,7 +80,7 @@ alt + {_, shift +}space
 	dkcmd win {float,stick}
 
 # move window, signed (+/-) for relative changes
-ctrl + {h,j,k,l}
+ctrl + shift + {h,j,k,l}
 	dkcmd win resize {x=-20,y=+20,y=-20,x=+20}
 
 # resize window, signed (+/-) for relative changes

@@ -12,7 +12,7 @@ element-text, element-icon , mode-switcher {
 window {
   height						: 360px;
   border						: 2px;
-	border-radius			: 0px;
+	border-radius			: 13px;
   border-color			: @border-col;
   background-color	: @bg-col;
 }

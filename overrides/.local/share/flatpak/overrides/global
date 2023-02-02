@@ -1,8 +1,8 @@
 [Context]
-filesystems=/home/$USER/.themes:ro;/usr/share/themes:ro;/home/$USER/.icons:ro;/usr/share/icons:ro;/home/$USER/.fonts:ro;xdg-config/gtk-3.0:ro;xdg-download;xdg-config/Kvantum:ro;/home/$USER/.config/Kvantum:ro;home;host-etc;host-os;host
+filesystems=/home/$USER/.config/Kvantum:ro;xdg-config/Kvantum:ro;xdg-download;xdg-config/gtk-3.0:ro;/home/$USER/.fonts:ro;/usr/share/icons:ro;/home/$USER/.icons:ro;/usr/share/themes:ro;/home/$USER/.themes:ro;home;host-etc;host-os;host
 
 [Environment]
 GTK_THEME=Catppuccin-Mocha-Standard-Sky-Dark
 ICON_THEME=Papirus-Dark
-QT_QPA_PLATFORMTHEME=kvantum
+QT_QPA_PLATFORMTHEME=qt5ct
 QT_STYLE_OVERRIDE=kvantum

@@ -10,15 +10,15 @@ if [[ -n "$colorPicker" ]]; then
 image=/tmp/${colorPicker}.png
 
 # copy color code to clipboard
-echo "$colorPicker" | tr -d "\n" | xclip -selection clipboard
+echo "$colorPicker" | tr -d "\n" | xsel -ib
 
 # generate preview to notify it above screen #
 convert -size 64x64 xc:"$colorPicker" "${image}"
 
 # notify color above screen # 
-notify-send -u low --replace=69 -i "${image}" "$colorPicker, copied to clipboard."
+notify-send -u low -r 69 -i "${image}" "$colorPicker, copied to clipboard."
 
 rm "$image"
 else
-	notify-send -t 1000 -u low --replace=69 "Color Picker cancelled."
+	notify-send -t 1000 -u low -r 69 "Color Picker cancelled."
 fi

@@ -3,8 +3,8 @@ super + {d, x, w}
 	rofi -show {drun,run -no-show-icons,window}
 
 # dropdown terminal
-alt + { F2, F3 }
-	scratchpad.sh { dropdown, musikcube }
+alt + F2
+	scratchpad.sh dropdown
 
 alt + F1
 	kitty-launch.sh pulsemixer -1
@@ -12,7 +12,7 @@ alt + F1
 alt + F4
   $XDG_CONFIG_HOME/rofi/scripts/powermenu.sh
 
-alt + w
+ctrl + alt + w
 	hsetroot -cover $(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
 
 # system monitor
@@ -34,6 +34,9 @@ ctrl + Escape
 # terminal
 super + Return
 	kitty
+
+super + shift + Return
+	kitty --class neovim -e nvim
 
 # screenshot and selection capture
 Print

@@ -3,7 +3,7 @@
 
 # autostart
 dbus-launch &
-autostart.sh &
+"$XDG_CONFIG_HOME/dk/autostart.sh" &
 
 # determine where to place the log file
 logfile="$HOME/.dkrc.log"
@@ -76,7 +76,7 @@ fi
 
 	# ws 2
 	dkcmd rule \
-		class="([Mm]arktext|[Ii]nsomnia|[Ee]asy[Tt]ag|[Cc]ode|[Ll]apce|DesktopEditors|glrnvim|[Vv]lc|[Tt]otem)" \
+		class="(^beekeeper*|[Ii]nsomnia|[Ee]asy[Tt]ag|code|[Ll]apce|DesktopEditors|neovim)" \
 		ws=2 focus=true
 
 	# ws 3
@@ -95,7 +95,7 @@ fi
 		ws=5 focus=true
 
 	# ws 6
-	dkcmd rule class="(Stremio|[Rr]hythmbox|[Ll]ollypop)" \
+	dkcmd rule class="(Stremio|[Rr]hythmbox|[Qq]uod[Ll]ibet|[Vv]lc|[Tt]otem)" \
 		ws=6 focus=true
 
 	# floaters

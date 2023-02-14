@@ -40,7 +40,7 @@ menu() {
 		;;
 	"$area")
 		#scrot_area
-		flatpak run org.flameshot.Flameshot gui --path ~/Pictures/Screen\ Shots/
+		flatpak run org.flameshot.Flameshot gui #--path ~/Pictures/Screen\ Shots/
 		;;
 	"$window")
 		#scrot_window

@@ -11,7 +11,7 @@ startidle() {
     --timer 600 \
     i3lock-color.sh \
     '' \
-    --timer 1200 \
+    --timer 900 \
     'systemctl suspend' \
     '' \
 		&

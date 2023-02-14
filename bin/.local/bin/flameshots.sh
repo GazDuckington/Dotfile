@@ -15,4 +15,4 @@ else
 fi
 
 # Launch the screenshot gui
-flatpak run org.flameshot.Flameshot gui --region "$REGION" --path ~/Pictures/Screen\ Shots/
+flatpak run org.flameshot.Flameshot gui --region "$REGION" #--path ~/Pictures/Screen\ Shots/

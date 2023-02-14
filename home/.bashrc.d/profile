@@ -46,6 +46,11 @@ export PATH="$FLUTTER/bin:$PATH"
 export CHROME_EXECUTABLE="/var/lib/flatpak/exports/bin/com.brave.Browser"
 # flutter-dev end
 
+# fly.io
+export FLYCTL_INSTALL="/home/gaz/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+# end of fly.io
+
 export XDG_DESKTOP_DIR="$HOME/"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"

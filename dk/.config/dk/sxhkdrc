@@ -38,6 +38,9 @@ super + Return
 super + shift + Return
 	kitty --class neovim -e nvim
 
+super + alt + Return
+	alacritty
+
 # screenshot and selection capture
 Print
 	$XDG_CONFIG_HOME/rofi/scripts/scrotting.sh

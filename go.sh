@@ -282,6 +282,7 @@ function main() {
   fi
 
   test_installation
+	rm "$file_name"
 }
 
 main "$@"

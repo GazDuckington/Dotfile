@@ -16,6 +16,7 @@ set ignorecase	true
 # commands
 cmd open				$xdg-open "$f"
 cmd trash				%trash-put -i "$fx"
+cmd setroot			$hsetroot -cover "$f"
 
 
 cmd mkdir %{{

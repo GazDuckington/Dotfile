@@ -1,9 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/gaz/Dotfile
-- /home/gaz/dev/sensi
-- /home/gaz/dev/gazduckington.github.io
 - /home/gaz/.config/nvim
+- /home/gaz/dev/sensi
+- /home/gaz/Dotfile
+- /home/gaz/dev/gazduckington.github.io
 - /home/gaz/dev/sensi-api
 - /home/gaz/Nextcloud/CV
 - /home/gaz/repo/catppuccin-gtk

@@ -94,6 +94,9 @@ export PATH="$PNPM_HOME:$PATH"
 export DENO_HOME="/home/gaz/.deno/bin"
 export PATH="$DENO_HOME:$PATH"
 
+export QUARTO_HOME="$HOME/opt/quarto-1.2.335/"
+export PATH="$QUARTO_HOME/bin"
+
 # env variables
 . /home/gaz/cargo/env
 
@@ -109,5 +112,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 
 eval "$(pyenv init -)"
-
 eval "$(starship init bash)"

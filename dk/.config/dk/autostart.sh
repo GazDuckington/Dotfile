@@ -31,4 +31,4 @@ xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Scrolling Pixel Distance" 1
 xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
 
 # browser startpage
-# python -m http.server -d ~/repo/startpage/ port 6969 &
+# ws -p 6969 --directory ~/dev/startpage/ 2>/dev/null &

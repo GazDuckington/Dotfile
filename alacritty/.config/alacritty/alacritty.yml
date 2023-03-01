@@ -1,0 +1,35 @@
+import:
+  - ~/.config/alacritty/catppuccin-mocha.yml
+  - ~/.config/alacritty/keys.yml
+env:
+  TERM: xterm-256color
+font:
+  size: 10.0
+  normal:
+    family: BlexMono Nerd Font
+    style: Retina
+  bold:
+    family: BlexMono Nerd Font
+    style: Bold
+  italic:
+    family: BlexMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: BlexMono Nerd Font
+    style: Bold Italic
+cursor:
+  style:
+    blinking: Always
+    # blink_interval: 500
+window:
+  opacity: 0.9
+  padding:
+    x: 2
+    y: 2
+  dynamic_title: true
+shell:
+  program: /usr/bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"

@@ -1,0 +1,130 @@
+# launcher
+super + {d, x, w}
+	rofi -show {drun,run -no-show-icons,window}
+
+# dropdown terminal
+alt + F2
+	scratchpad.sh dropdown
+
+alt + F1
+	kitty-launch.sh pulsemixer -1
+
+alt + F4
+  $XDG_CONFIG_HOME/rofi/scripts/powermenu.sh
+
+ctrl + alt + w
+	hsetroot -cover $(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
+
+# system monitor
+ctrl + alt + Delete
+	kitty-launch.sh btop
+
+# color picker
+alt + c
+	color_picker.sh
+
+# toggle polybar
+ctrl + F1
+	polybar-msg cmd toggle
+
+# toggle idle manager
+ctrl + Escape
+	idle.sh -t
+
+# terminal
+super + Return
+	kitty
+
+super + shift + Return
+	kitty --class neovim -e nvim
+
+super + alt + Return
+	alacritty
+
+# screenshot and selection capture
+Print
+	$XDG_CONFIG_HOME/rofi/scripts/scrotting.sh
+
+# dedicated volume keys
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	changevol.sh {up, down}
+
+# toggle mute for output input devices
+{XF86AudioMute, XF86AudioMicMute}
+	{changevol.sh mute, microphone.sh toggle}
+
+# dedicated backlight keys
+{XF86MonBrightnessUp,XF86MonBrightnessDown}
+	changebrightness.sh {up, down}
+
+# reload sxhkd
+super + Escape
+	pkill sxhkd && sxhkd -c "$HOME/.config/dk/sxhkdrc"
+
+# quit dk
+alt + shift + q
+	dkcmd exit
+
+# reload dkrc
+alt + shift + r
+	$HOME/.config/dk/dkrc
+
+# focus next or previous window
+super + {k,j}
+	dkcmd win focus {next,prev}
+
+# close window, swap tiled window in/out of master, cycle tiled windows in place
+super + {q,space,Tab}
+	dkcmd win {kill,swap,cycle}
+
+# toggle fullscreen and fake fullscreen (enable manipulating fullscreen window)
+{_,alt + }F11
+	dkcmd win {full,fakefull}
+
+# toggle floating or sticky
+alt + {_, shift +}space
+	dkcmd win {float,stick}
+
+# move window, signed (+/-) for relative changes
+ctrl + shift + {h,j,k,l}
+	dkcmd win resize {x=-20,y=+20,y=-20,x=+20}
+
+# resize window, signed (+/-) for relative changes
+super + {h,j,k,l}
+	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
+
+# move the active window up/down the stack
+super + shift + {k,j}
+	dkcmd win mvstack {up,down}
+
+# view, send, or follow to a workspace (by number)
+super + {_,shift + ,ctrl + }{1-9,0}
+	dkcmd ws {view,send,follow} {1-9,10}
+
+# view, send, or follow to the next, previous, last active,
+alt + {_,shift + ,ctrl + }{bracketleft,bracketright,BackSpace}
+	dkcmd ws {view,send,follow} {prev,next,last}
+
+# next non-empty, or prev non-empty workspace
+super + {a,s}
+	dkcmd ws {prevne,nextne}
+
+# view, send, or follow to the next, previous, or last active monitor
+alt + {_,shift + ,ctrl + }{comma,period,backslash}
+	dkcmd mon {view,send,follow} {prev,next,last}
+
+# change active workspace layout
+ctrl + alt + {t,r,m,g,s,w,f,u}
+	dkcmd set layout {tile,rtile,mono,grid,spiral,dwindle,none,tstack}
+
+# change number of windows in master or first stack
+alt + {_,shift + }{i,d}
+	dkcmd set {master,stack} {+1,-1}
+
+# change gap width
+alt + {equal,minus}
+	dkcmd set gap {+5,-5}
+
+# change border widths
+alt + ctrl + {_,shift + }{equal,minus}
+	dkcmd set border {width,outer_width} {+1,-1}

@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 # aliases
 alias c='code'
 alias v='nvim'

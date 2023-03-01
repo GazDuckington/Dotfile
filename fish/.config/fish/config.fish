@@ -6,9 +6,11 @@ set vi_mode_default vi_mode_normal
 
 source ~/.config/fish/my_functions.fish
 
-for x in (/usr/bin/find ~/.bashrc.d/ -type f)
-  bass source $x
-end
+# for x in (/usr/bin/find ~/.bashrc.d/ -type f)
+  # bass source $x
+# end
+source ~/.bashrc.d/paths
+source ~/.bashrc.d/aliases
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths

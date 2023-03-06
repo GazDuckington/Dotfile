@@ -28,15 +28,8 @@ if [ "$TERM" = "linux" ]; then
 	clear
 fi
 
-# env variables
-. /home/gaz/cargo/env
-
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export MY_GITHUB="github.com/GazDuckington"
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
-
-if [ "$(tty)" = "/dev/tty1" ];then
-	startx
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec sway
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"

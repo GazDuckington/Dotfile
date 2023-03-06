@@ -10,7 +10,7 @@ MIME=$(file --mime-type -b "$file")
 
 case "$MIME" in
 		*image/*)
-				kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"
+				kitty +kitten icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"
 				exit 1
 				;;
     # .pdf
@@ -44,7 +44,7 @@ case "$MIME" in
             --terminal-width $(($2 - 3)) "$file" && false
         ;;
 		video/*)
-			kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" \
+			kitty +kitten icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" \
 				"$(~/.config/lf/vidthumb "$file")"
 			exit 1
 		;;

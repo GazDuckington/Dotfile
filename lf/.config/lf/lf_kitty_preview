@@ -46,7 +46,7 @@ case "$MIME" in
             --terminal-width $(($2 - 3)) "$file" && false
         ;;
     *application/json*)
-        cat "$file" | jq
+        cat "$file" | jq -C
         ;;
 	video/*)
 		kitty +kitten icat --silent --stdin no --transfer-mode file --place \

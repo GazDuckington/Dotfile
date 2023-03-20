@@ -40,16 +40,19 @@ case "$MIME" in
         unzip -l "$file"
         ;;
     # any plain text file that doesn't have a specific handler
-    *text/*|*application/json*)
+    *text/*)
         # return false to always repaint, in case terminal size changes
         bat --force-colorization --paging=never --style=changes,numbers \
             --terminal-width $(($2 - 3)) "$file" && false
         ;;
-		video/*)
-			    kitty +kitten icat --silent --stdin no --transfer-mode file --place \
-						"${w}x${h}@${x}x${y}" "$(~/.config/lf/vidthumb "$file")" \
-						< /dev/null > /dev/tty
-			exit 1
+    *application/json*)
+        cat "$file" | jq
+        ;;
+	video/*)
+		kitty +kitten icat --silent --stdin no --transfer-mode file --place \
+			"${w}x${h}@${x}x${y}" "$(~/.config/lf/vidthumb "$file")" \
+			< /dev/null > /dev/tty
+		exit 1
 		;;
     *)
         echo "unknown format"

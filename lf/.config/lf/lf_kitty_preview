@@ -24,7 +24,7 @@ case "$MIME" in
         7z l "$file"
         ;;
     # .tar .tar.Z
-    *application/x-tar*)
+    *application/x-tar*|*application/gzip)
         tar -tvf "$file"
         ;;
     # .tar.*

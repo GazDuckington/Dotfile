@@ -1,13 +1,11 @@
 #!/usr/bin/sh
 # aliases
 alias c='code'
-alias v='nvim'
 alias nv='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias lv='lvim'
 alias fzf='fzf --layout reverse --ansi'
-alias npm='pnpm'
 alias pn='pnpm'
 alias cl='clear'
 alias icat='kitty +kitten icat'

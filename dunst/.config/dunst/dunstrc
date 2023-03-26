@@ -7,7 +7,6 @@ width										= 310
 frame_width							= 2
 offset									= 5x10
 gap_size								= 10
-corner_radius						= 13
 progress_bar_min_width	= 50
 progress_bar_max_width	= 100
 icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/

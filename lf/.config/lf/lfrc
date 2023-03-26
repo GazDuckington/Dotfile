@@ -7,7 +7,7 @@
 # ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝
 
 # settings
-set shell				sh
+set shell				fish
 set previewer		~/.config/lf/lf_kitty_preview
 set cleaner			~/.config/lf/lf_kitty_clean
 set icons				true
@@ -16,11 +16,10 @@ set ignorecase	true
 # commands
 cmd open				$xdg-open "$f"
 cmd trash				%trash-put -i "$fx"
-cmd setroot			$hsetroot -cover "$f"
 
 
 cmd mkdir %{{
-     printf "Make directory: "
+    printf "Make directory: "
     read ans
     mkdir -p $ans
 }}

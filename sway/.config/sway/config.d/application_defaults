@@ -10,6 +10,7 @@ assign [class="Brave-browser"] 2
 for_window [class="Brave-browser"] focus
 
 assign [app_id="mpv"] 3
+assign [app_id="gnome-boxes"] 3
 assign [app_id="com.stremio.stremio"] 3
 for_window [app_id="com.stremio.stremio"] focus
 
@@ -28,6 +29,7 @@ assign [class="Motrix"] 6
 # set floating (nontiling)for apps needing it:
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="iriunwebcam"] floating enable
+for_window [app_id="cheese"] floating enable
 for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable; resize set width 400px; resize set height 600px
 for_window [app_id="pulsemixer"] floating enable; resize set width 600px; resize set height 250px
 for_window [app_id="nm-connection-editor"] floating enable

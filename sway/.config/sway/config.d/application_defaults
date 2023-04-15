@@ -1,6 +1,6 @@
 # Assign workspaces
-assign [app_id="kitty"] 1
-for_window [app_id="kitty"] focus
+assign [app_id="kitty|foot"] 1
+for_window [app_id="kitty|foot"] focus
 assign [class="VSCodium"] 1
 for_window [class="VSCodium"] focus
 

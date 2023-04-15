@@ -6,10 +6,10 @@ x=$4
 y=$5
 
 
-MIME=$(file --mime-type -b "$file")
+MIME=$(pistol "$file" | awk '{print $1}')
 
 case "$MIME" in
-	*image/*)
+	PNG)
 		kitty +kitten icat --silent --stdin no --transfer-mode file --place \
 			"${w}x${h}@${x}x${y}" "$file" \
 			< /dev/null > /dev/tty
@@ -56,5 +56,6 @@ case "$MIME" in
 		;;
     *)
         echo "unknown format"
+				# ~/Downloads/pistol-static-x86_64 "$file"
         ;;
 esac

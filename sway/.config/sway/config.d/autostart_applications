@@ -19,6 +19,7 @@ exec autotiling
 exec dbus-launch
 exec firewall-applet
 
+exec_always pgrep -x foot 2>/dev/null || foot --server
 exec_always pgrep -x nm-applet 2>/dev/null || nm-applet --indicator
 exec_always pgrep -x copyq 2>/dev/null || flatpak run com.github.hluk.copyq
 

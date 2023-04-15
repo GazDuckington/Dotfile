@@ -8,10 +8,15 @@
 
 # settings
 set shell				fish
-set previewer		~/.config/lf/lf_kitty_preview
-set cleaner			~/.config/lf/lf_kitty_clean
+# set previewer		~/.config/lf/lf_kitty_preview
+# set cleaner			~/.config/lf/lf_kitty_clean
 set icons				true
 set ignorecase	true
+
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
 
 # commands
 cmd open				$xdg-open "$f"

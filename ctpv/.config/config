@@ -1,0 +1,29 @@
+set chafasixel
+
+preview tar application/x-tar application/gzip application/x-xz {{
+	tar -tvf "$f"
+}}
+
+preview rar application/vnd.rar {{
+	unrar l "$f"
+}}
+
+preview zip application/zip {{
+	unzip -l "$f"
+}}
+
+preview 7zip application/x-7z-compressed {{
+	7z l "$f"
+}}
+
+preview iso application/x-iso9660-image {{
+	iso-info --no-header -l "$f"
+}}
+
+preview docx application/vnd.openxmlformats-officedocument.wordprocessingml.document {{
+	docx2txt "$f"
+}}
+
+preview manpage .[1-9] {{
+	man "$f"
+}}

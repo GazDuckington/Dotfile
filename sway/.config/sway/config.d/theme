@@ -34,6 +34,12 @@ exec_always ~/.config/sway/scripts/import-gsettings
 gaps inner 5
 gaps outer 0
 
+# border radius
+corner_radius 5
+
+# shadow
+shadows on
+
 # Hide titlebar on windows:
 default_border pixel 1
 

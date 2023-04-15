@@ -14,8 +14,8 @@ assign [app_id="gnome-boxes"] 3
 assign [app_id="com.stremio.stremio"] 3
 for_window [app_id="com.stremio.stremio"] focus
 
-assign [app_id="net.veloren.airshipper"] 4
-for_window [app_id="net.veloren.airshipper"] focus
+assign [app_id="airshipper"] 4
+for_window [app_id="airshipper"] focus
 assign [class="Minecraft*"] 4
 assign [class="Veloren*"] 4
 assign [class="ru-turikhay-tlauncher-bootstrap-Bootstrap"] 4

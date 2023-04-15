@@ -1,10 +1,10 @@
 lastupdatecheck: 0
 recentrepos:
+- /home/gaz/Dotfile
 - /home/gaz/.config/nvim
 - /home/gaz/dev/new-archangel
 - /home/gaz/dev/dj_tut/django_tutorial_advanced
 - /home/gaz/dev/my-site
-- /home/gaz/Dotfile
 - /home/gaz/dev/sensi
 startuppopupversion: 5
 customcommandshistory: []

@@ -1,0 +1,25 @@
+set chafasixel
+
+preview tar */x-tar */gzip */x-xz {{
+	tar -tvf "$f"
+}}
+
+preview rar */x-rar */vnd.rar {{
+	unrar l "$f"
+}}
+
+preview zip */zip {{
+	unzip -l "$f"
+}}
+
+preview szip */x-7z-compressed {{
+	7z l "$f"
+}}
+
+preview iso */x-iso9660-image {{
+	iso-info --no-header -l "$f"
+}}
+
+preview manpage .1 .2 .3 .4 .5 .6 .7 .8 {{
+	man "$f"
+}}

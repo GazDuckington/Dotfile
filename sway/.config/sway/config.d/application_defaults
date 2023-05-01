@@ -24,18 +24,24 @@ assign [app_id="com.github.tchx84.Flatseal"] 4
 
 assign [class="GitHub Desktop"] 5
 
-assign [class="Motrix"] 6
+assign [app_id="org.qbittorrent.qBittorrent"] 6
+
+assign [app_id="com.usebottles.bottles"] 7
 
 # set floating (nontiling)for apps needing it:
-for_window [class="Yad" instance="yad"] floating enable
-for_window [class="iriunwebcam"] floating enable
+for_window [app_id="com.usebottles.bottles"] floating enable
+for_window [app_id="com.github.hluk.copyq"] floating enable
 for_window [app_id="cheese"] floating enable
+for_window [app_id="nwg-displays"] floating enable
 for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable; resize set width 400px; resize set height 600px
 for_window [app_id="pulsemixer"] floating enable; resize set width 600px; resize set height 250px
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="yad"] floating enable
 for_window [app_id="com.github.hluk.copyq"] floating enable
 for_window [app_id="blueman-manager"] floating enable,  resize set width 40 ppt height 30 ppt
+
+for_window [class="iriunwebcam"] floating enable
+for_window [class="Yad" instance="yad"] floating enable
 
 # set floating (nontiling) for special apps:
 for_window [class="Xsane" instance="xsane"] floating enable

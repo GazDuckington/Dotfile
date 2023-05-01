@@ -1,0 +1,7 @@
+[Context]
+filesystems=!/home/$USER/.themes;!/usr/share/themes;!/home/$USER/.icons;!/usr/share/icons;!/home/$USER/.fonts;!xdg-config/gtk-3.0;!xdg-download;!xdg-config/Kvantum;!/home/$USER/.config/Kvantum;!xdg-music;!xdg-pictures;!xdg-run/app/com.discordapp.Discord;!home;!host-etc;!host-os;!host
+
+[Environment]
+GTK_THEME=
+ICON_THEME=
+QT_STYLE_OVERRIDE=

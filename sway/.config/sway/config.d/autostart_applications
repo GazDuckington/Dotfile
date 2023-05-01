@@ -1,7 +1,6 @@
 # Auth with polkit-gnome:
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-
 # GTK3 applications take a long time to start
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
@@ -17,7 +16,7 @@ exec swww init
 exec udiskie -t
 exec autotiling
 exec dbus-launch
-exec firewall-applet
+exec wl-paste --watch cliphist store
 
 exec_always nm-applet --indicator && killall nm-applet && nm-applet --indicator
 exec_always pgrep -x foot 2>/dev/null || foot --server

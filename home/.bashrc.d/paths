@@ -1,17 +1,16 @@
 #!/usr/bin/sh
 # flutter-dev
-## java
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+export JAVA_HOME="/usr/lib/jvm/default"
 export PATH="$JAVA_HOME/bin:$PATH"
-## android
 export ANDROID="$HOME/Android"
-export PATH="$ANDROID/cmdline-tools/latest:$PATH"
-export PATH="$ANDROID/cmdline-tools/latest/bin:$PATH"
+export ANDROID_HOME="$HOME/Android"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export PATH="$ANDROID/cmdline-tools/tools:$PATH"
+export PATH="$ANDROID/cmdline-tools/tools/bin:$PATH"
 export PATH="$ANDROID/platform-tools:$PATH"
-## android SDK
-export ANDROID_SDK="$HOME/ANDROID"
-export PATH="$ANDROID_SDK:$PATH"
-## flutter
+export PATH="$ANDROID:$PATH"
+export PATH="$ANDROID_HOME:$PATH"
+export PATH="$ANDROID_SDK_ROOT:$PATH"
 export FLUTTER="$ANDROID/flutter"
 export PATH="$FLUTTER/bin:$PATH"
 export CHROME_EXECUTABLE="/var/lib/flatpak/exports/bin/com.brave.Browser"
@@ -73,5 +72,3 @@ export PATH="$NPM_CONFIG_PREFIX/.npm-global/bin:$PATH"
 # export QUARTO_HOME="$HOME/opt/quarto-1.2.335/"
 # export PATH="$QUARTO_HOME/bin"
 
-export V_PATH="$HOME/v"
-export PATH="$V_PATH/:$PATH"

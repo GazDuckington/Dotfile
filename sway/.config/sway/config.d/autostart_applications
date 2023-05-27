@@ -11,13 +11,14 @@ exec dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 
 # Sway Fader
 # exec python3 ~/.config/sway/scripts/swayfader.py      
-exec dunst
+# exec dunst
 exec swww init
 exec udiskie -t
 exec autotiling
 exec dbus-launch
 exec wl-paste --watch cliphist store
 
+exec_always pgrep -x swaync 2>/dev/null || swaync
 exec_always nm-applet --indicator && killall nm-applet && nm-applet --indicator
 exec_always pgrep -x foot 2>/dev/null || foot --server
 exec_always pgrep -x copyq 2>/dev/null || flatpak run com.github.hluk.copyq

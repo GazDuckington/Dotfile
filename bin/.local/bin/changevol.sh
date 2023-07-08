@@ -16,16 +16,16 @@ function send_notification {
     soundMute="  "
 		soundZero="  "
     volume=$(get_volume)
-    bar=$(seq --separator="❚" 0 "$((volume / 5))" | sed 's/[0-9]//g')
+    bar=$(seq --separator="❚" 0 "$((volume / 4))" | sed 's/[0-9]//g')
     status=$(is_mute)
 
     if [ "$status" == "yes" ]; then
 			notify-send -r 999 -u normal "$soundMute $(get_volume)% Muted" -t 1000
     else
         if [ "$volume" = 0 ]; then
-					notify-send -r 999 -u normal "$soundZero Muted" -t 1000
+					notify-send -u normal "$soundZero Muted" -t 1000 -h string:x-canonical-private-synchronous:volume
         else
-					notify-send -r 999 -u normal "$soundHigh $(get_volume)% $bar" -t 1000
+					notify-send -u normal "$soundHigh $(get_volume)% $bar" -t 1000 -h string:x-canonical-private-synchronous:volume
         fi
     fi
 }

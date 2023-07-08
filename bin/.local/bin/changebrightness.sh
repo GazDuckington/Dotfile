@@ -4,8 +4,8 @@
 function send_notification {
     ICON=" "
     BRIGHTNESS=$(brightnessctl -m | awk -F, '{print $4}' | tr -d %)
-    BAR=$(seq -w --separator="❚" 0 "$((${BRIGHTNESS%.*} / 5))" | sed 's/[0-9]//g')
-    notify-send -r 999 -u normal "$ICON ${BRIGHTNESS%.*}% $BAR"
+    BAR=$(seq -w --separator="❚" 0 "$((${BRIGHTNESS%.*} / 4))" | sed 's/[0-9]//g')
+    notify-send -u normal "$ICON ${BRIGHTNESS%.*}% $BAR"  -h string:x-canonical-private-synchronous:backlight
 }
 
 case $1 in

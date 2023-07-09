@@ -175,15 +175,26 @@ Arc-Dark Color Scheme
 }
 
 #custom-power {
-    margin-left:2px;
+    margin-left:5px;
     margin-right:15px;
     font-size:15px;
+		color: @red;
+}
+
+#custom-notification {
+		margin-left: 5px;
+		margin-right: 10px;
+		color: @subtext0;
 }
 
 #custom-dropdown {
     font-size:15px;
     margin-left:15px;
     margin-right:10px;
+}
+
+#custom-audio_idle_inhibitor {
+		color: @green;
 }
 
 #backlight.icon {

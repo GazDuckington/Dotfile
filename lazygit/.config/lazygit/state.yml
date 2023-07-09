@@ -1,11 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/gaz/dev/sensi
-- /home/gaz/.config/nvim
 - /home/gaz/Dotfile
-- /home/gaz/dev/new-archangel
-- /home/gaz/dev/dj_tut/django_tutorial_advanced
-- /home/gaz/dev/my-site
+- /home/gaz/.config/nvim
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false

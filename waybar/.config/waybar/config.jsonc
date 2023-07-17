@@ -72,9 +72,9 @@
 		"format": "  {usage}% ({load})", // Icon: microchip
 		"states": {
 			"warning": 70,
-			"critical": 90,
+			"critical": 90
 		},
-		"on-click": "~/.local/bin/fool-launch.sh btop",
+		"on-click": "~/.local/bin/fool-launch.sh btop"
 	},
 	"custom/keyboard-layout": {
 		"exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",

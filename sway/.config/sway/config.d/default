@@ -210,5 +210,6 @@ bindsym Ctrl+F2 exec cliphist list | \
 	wl-copy
 bindsym Ctrl+F3 exec killall -SIGUSR1 waybar
 bindsym $mod+Shift+n exec swaync-client -t -sw
+bindsym Ctrl+Mod1+Delete exec ~/.local/bin/fool-launch.sh btop
 #
 

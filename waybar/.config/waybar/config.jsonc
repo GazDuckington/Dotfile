@@ -152,7 +152,8 @@
 				"󰕾"
 			]
 		},
-		"on-click": "~/.local/bin/fool-launch.sh pulsemixer",
+		"on-click-right": "~/.local/bin/fool-launch.sh pulsemixer",
+		"on-click": "~/.local/bin/changevol.sh mute",
 		"on-scroll-up": "~/.local/bin/changevol.sh up",
 		"on-scroll-down": "~/.local/bin/changevol.sh down"
 	},
@@ -192,7 +193,7 @@
 	},
 	"custom/dropdown": {
 		"format": " ",
-		"on-click": "swaymsg [app_id='dropdown-terminal'] scratchpad show || exec kitty --class dropdown-terminal,dropdown-terminal",
+		"on-click": "swaymsg [app_id='dropdown-terminal'] scratchpad show || exec kitty --class dropdown-terminal",
 		"tooltip": false
 	},
 	"custom/power": {

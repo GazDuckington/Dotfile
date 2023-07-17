@@ -1,6 +1,6 @@
 for_window [app_id="dropdown-terminal"] move scratchpad, scratchpad show
 bindsym Mod1+F2 exec swaymsg [app_id="dropdown-terminal"] scratchpad show || \
-	exec kitty --class dropdown-terminal,dropdown-terminal
+	exec kitty --class dropdown-terminal
 
 for_window [app_id="musikcube"] move scratchpad, scratchpad show
 bindsym Mod1+F3 exec swaymsg [app_id="musikcube"] scratchpad show || \

@@ -201,3 +201,7 @@ Arc-Dark Color Scheme
     padding-right:1px;
     font-size: 13px;
 }
+
+#keyboard-state lable.locked {
+	color: @green;
+}

@@ -1,23 +1,25 @@
 #!/bin/bash
  
-active="Active"
-screen="Screen"
-output="Output"
+output="Display"
 area="Area"
 window="Window"
-# wofi="wofi --style="$HOME"/.config/wofi/style.widgets.css --conf="$HOME"/.config/wofi/config.screenshot"
+prompt="  Scrot "
+rofi="rofi -dmenu -no-show-icons -p"
  
-selected=$(printf '%s\n%s\n%s\n%s\n%s\n' "$active" "$screen" "$output" "$area" "$window" | rofi -dmenu -no-show-icons -p "  Scrot ")
+selected=$(printf '%s\n%s\n%s\n' "$output" "$area" "$window" | $rofi "$prompt")
  
+swayshot_output() {
+	display=$(swaymsg -t get_outputs | jq -r '.[].name' | $rofi "$prompt")
+	 if [[ -n "$display" ]]; then
+        swayshot display "$display"
+    fi
+}
+
 case $selected in
-  "$active")
-    /usr/share/sway/scripts/grimshot --notify save active;;
-  "$screen")
-    /usr/share/sway/scripts/grimshot --notify save screen;;
   "$output")
-    /usr/share/sway/scripts/grimshot --notify save output;;
+    swayshot_output;;
   "$area")
-    /usr/share/sway/scripts/grimshot --notify save area;;
+    swayshot region;;
   "$window")
-    /usr/share/sway/scripts/grimshot --notify save window;;
+		swayshot window;;
 esac

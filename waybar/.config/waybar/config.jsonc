@@ -23,6 +23,7 @@
 		//"custom/PBPbattery",
 		//"backlight#icon",
 		// "backlight#value",
+		"keyboard-state",
 		"clock",
 		"pulseaudio",
 		"tray",
@@ -76,6 +77,15 @@
 		},
 		"on-click": "~/.local/bin/fool-launch.sh btop"
 	},
+	"keyboard-state": {
+		"numlock": false,
+		"capslock": true,
+		"format": "{icon} ",
+		"format-icons": {
+			"locked": "󰬈 a",
+			"unlocked": "󰯫"
+		}
+	},
 	"custom/keyboard-layout": {
 		"exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
 		// Interval set only as a fallback, as the value is updated by signal
@@ -121,7 +131,8 @@
 	"sway/workspaces": {
 		"disable-scroll": false,
 		"disable-markup": false,
-		"all-outputs": true
+		"all-outputs": true,
+		"warp-on-scroll": true
 		//"format": "  {icon}  ",
 		//"format":"{icon}",
 		//"format-icons": {

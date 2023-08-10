@@ -39,7 +39,7 @@ function ban
 end
 
 function lol
-	$argv | lolcat
+	echo "$argv" | lolcat
 end
 
 function take

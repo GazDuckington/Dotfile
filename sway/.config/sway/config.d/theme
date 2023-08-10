@@ -51,7 +51,8 @@ smart_borders off
 
 # Set wallpaper:
 # exec_always ~/.config/sway/scripts/swaypaper.sh
-output * bg #11111b solid_color
+# output * bg #11111b solid_color
+output * bg ~/Pictures/Wallpapers/cat_hacknet.png fit
 
 # Title format for windows
 for_window [shell="xdg_shell"] title_format "%title (%app_id)"

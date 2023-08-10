@@ -69,6 +69,8 @@ export PATH="$DENO_HOME:$PATH"
 export NPM_CONFIG_PREFIX=~/.npm-global
 export PATH="$NPM_CONFIG_PREFIX/.npm-global/bin:$PATH"
 
+export PATH="$HOME/.local/pipx/venvs/:$PATH"
 # export QUARTO_HOME="$HOME/opt/quarto-1.2.335/"
 # export PATH="$QUARTO_HOME/bin"
 
+export DOCKER_HOST=unix:///run/user/1000/docker.sock

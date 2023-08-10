@@ -53,7 +53,7 @@ Arc-Dark Color Scheme
 #waybar {
     background: transparent;
     color: @text;
-    background-color: @base;
+    background-color: @mantle;
     font-family: "BlexMono Nerd Font";
     font-size: 14px;
 }
@@ -89,6 +89,14 @@ Arc-Dark Color Scheme
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#battery.good {
+	color: @green;
+}
+
+#battery.charging {
+	color: @yellow;
 }
 
 #battery.warning {
@@ -161,6 +169,10 @@ Arc-Dark Color Scheme
     font-weight: bold;
 }
 
+#workspaces button {
+	border-radius: 5px;
+}
+
 #workspaces button:hover {
 	color: @mauve;
 }
@@ -202,6 +214,6 @@ Arc-Dark Color Scheme
     font-size: 13px;
 }
 
-#keyboard-state lable.locked {
+#keyboard-state label.locked {
 	color: @green;
 }

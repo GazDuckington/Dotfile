@@ -13,19 +13,19 @@
 		"sway/window"
 	],
 	"modules-right": [
-		//"network",
 		"custom/audio_idle_inhibitor",
 		"idle_inhibitor",
 		// "memory",
 		// "cpu",
 		//"custom/keyboard-layout",
-		"battery",
 		//"custom/PBPbattery",
 		//"backlight#icon",
 		// "backlight#value",
 		"keyboard-state",
 		"clock",
+		"battery",
 		"pulseaudio",
+		"network",
 		"tray",
 		//"custom/weather",
 		"custom/power",
@@ -41,13 +41,13 @@
 	},
 	"battery": {
 		"states": {
-			// "good": 95,
+			"good": 95,
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
-		"format-plugged": "{capacity}% ",
+		"format": "{icon}  {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
 		// "format-good": "", // An empty format will hide the module
 		// "format-full": "",
 		"format-icons": [
@@ -64,9 +64,9 @@
 	},
 	"clock": {
 		"interval": 10,
-		"format-alt": " {:%e %b %Y}", // Icon: calendar-alt
-		"format": " {:%H:%M}",
-		"tooltip-format": "{:%e %B %Y}"
+		"format-alt": " {:%A, %e %b %Y}", // Icon: calendar-alt
+		"format": " {:%H:%M (%a)}",
+		"tooltip-format": "{:%A, %e %B %Y}"
 	},
 	"cpu": {
 		"interval": 5,
@@ -82,7 +82,7 @@
 		"capslock": true,
 		"format": "{icon} ",
 		"format-icons": {
-			"locked": "󰬈 a",
+			"locked": "󰬈",
 			"unlocked": "󰯫"
 		}
 	},

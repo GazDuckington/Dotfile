@@ -1,7 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/gaz/Dotfile
+    - /home/gaz/dev/SICA-BE-master
     - /home/gaz/.config/nvim
+    - /home/gaz/dev/new-archangel
+    - /home/gaz/dev/sigma/djtest
+    - /home/gaz/dev/sensi
+    - /home/gaz/dev/my-site
+    - /home/gaz/dev/gazduckington.github.io
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false

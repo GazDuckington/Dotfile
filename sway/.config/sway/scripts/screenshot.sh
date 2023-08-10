@@ -1,5 +1,8 @@
-#!/bin/bash
+#!/bin/sh
  
+export XCURSOR_THEME="Qogir-dark"
+export XCURSOR_SIZE=10
+
 output="Display"
 area="Area"
 window="Window"

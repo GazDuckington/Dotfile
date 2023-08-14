@@ -13,10 +13,10 @@ function vd
 end
 
 function vs
-	set target (la ~/.vim/sessions/ | fzf --layout reverse --ansi --preview-window right,60% --preview 'bat --color=always ~/.vim/sessions/{1}' | awk '{print $1}')
+	set target (la ~/.local/share/nvim/sessions/ | fzf --layout reverse --ansi --preview-window right,60% --preview 'bat --color=always ~/.local/share/nvim/sessions/{1}' | awk '{print $1}')
 	
 	if not test "$target" = ""
-		nvim +so ~/.vim/sessions/$target
+		nvim +so ~/.local/share/nvim/sessions/$target
 		clear
 	end
 
@@ -24,9 +24,9 @@ end
 
 function ofetch
   if not set -q argv[1]
-    onefetch --show-logo never -c 4
+    onefetch -c 4
   else
-    onefetch $argv --show-logo never -c 4
+    onefetch $argv -c 4
   end
 end
 
@@ -47,6 +47,7 @@ function take
 end
 
 function ginit
+	set MY_GITHUB "https://github.com/GazDuckington"
 	go mod init $MY_GITHUB/$argv
 end
 

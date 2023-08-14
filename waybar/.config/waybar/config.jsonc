@@ -7,11 +7,10 @@
 	"modules-left": [
 		"custom/dropdown",
 		"sway/workspaces",
+		"sway/window",
 		"sway/mode"
 	],
-	"modules-center": [
-		"sway/window"
-	],
+	"modules-center": [],
 	"modules-right": [
 		"custom/audio_idle_inhibitor",
 		"idle_inhibitor",
@@ -124,7 +123,7 @@
 		"tooltip": false
 	},
 	"sway/window": {
-		"format": "{app_id}",
+		// "format": "{app_id}",
 		"icon": true,
 		"max-length": 120
 	},

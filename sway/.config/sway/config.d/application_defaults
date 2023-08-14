@@ -30,6 +30,8 @@ assign [app_id="com.usebottles.bottles"] 7
 
 assign [app_id="btop"] 9
 
+assign [class="F5 VPN"] 10
+
 # set floating (nontiling)for apps needing it:
 for_window [app_id="com.usebottles.bottles"] floating enable
 for_window [app_id="com.github.hluk.copyq"] floating enable

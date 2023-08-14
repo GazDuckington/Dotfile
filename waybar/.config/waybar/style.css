@@ -20,8 +20,7 @@ Arc-Dark Color Scheme
     }
 
     to {
-        color: @text;
-        background-color: @peach;
+        color: @peach;
     }
 }
 
@@ -31,8 +30,7 @@ Arc-Dark Color Scheme
     }
 
     to {
-        color: @text;
-        background-color: @red;
+        color: @red;
     }
 }
 
@@ -109,12 +107,12 @@ Arc-Dark Color Scheme
 
 #battery.warning.discharging {
     animation-name: blink-warning;
-    animation-duration: 3s;
+    animation-duration: 0.5s;
 }
 
 #battery.critical.discharging {
     animation-name: blink-critical;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
 }
 
 #cpu.warning {

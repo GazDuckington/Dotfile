@@ -74,3 +74,5 @@ export PATH="$HOME/.local/pipx/venvs/:$PATH"
 # export PATH="$QUARTO_HOME/bin"
 
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
+
+export NVIM_SESSION="$HOME/.local/share/nvim/sessions/"

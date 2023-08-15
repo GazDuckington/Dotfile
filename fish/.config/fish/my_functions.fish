@@ -13,10 +13,10 @@ function vd
 end
 
 function vs
-	set target (la ~/.local/share/nvim/sessions/ | fzf --layout reverse --ansi --preview-window right,60% --preview 'bat --color=always ~/.local/share/nvim/sessions/{1}' | awk '{print $1}')
+	set target (la "$NVIM_SESSION" | fzf --layout reverse --ansi --preview-window right,60% --preview 'bat --color=always $NVIM_SESSION{1}' | awk '{print $1}')
 	
 	if not test "$target" = ""
-		nvim +so ~/.local/share/nvim/sessions/$target
+		nvim +so "$NVIM_SESSION$target"
 		clear
 	end
 

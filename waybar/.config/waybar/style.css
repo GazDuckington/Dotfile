@@ -184,8 +184,9 @@ Arc-Dark Color Scheme
 }
 
 #workspaces button.urgent {
-    border-color: @maroon;
-    color: @maroon;
+		font-weight: bold;
+    background-color: @peach;
+    color: @crust;
 }
 
 #custom-power {

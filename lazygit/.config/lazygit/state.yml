@@ -1,12 +1,14 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/gaz/Dotfile
+- /home/gaz/dev/rms-backend
 - /home/gaz/dev/sigma/TMA
+- /home/gaz/.config/nvim
+- /home/gaz/training/vcs/version-control
 - /home/gaz/dev/training/ghazy
 - /home/gaz/dev/jesica-be
 - /home/gaz/.local/share/Trash/files/jesica_be
 - /home/gaz/dev/SICA-BE-master
-- /home/gaz/.config/nvim
 - /home/gaz/dev/new-archangel
 - /home/gaz/dev/sigma/djtest
 - /home/gaz/dev/sensi

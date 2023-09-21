@@ -7,12 +7,12 @@
 # ██╔╝ ██╗      ██║ ██║
 # ╚═╝  ╚═╝      ╚═╝ ╚═╝
 
-WALL=$(find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
+WALL=$(/usr/sbin/find ~/Pictures/Wallpapers/ -type f | shuf -n 1)
 
 pgrep -x hsetroot									2> /dev/null || hsetroot -cover "$WALL" &
 pgrep -x polybar									2> /dev/null || polybar -q -r &
-pgrep -x picom									 	2> /dev/null || picom -b &
-pgrep -x xfce-polkit						 	2> /dev/null || /usr/libexec/xfce-polkit &
+# pgrep -x picom									 	2> /dev/null || picom -b &
+pgrep -x polkit-gnome						 	2> /dev/null || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 pgrep -x dunst									 	2> /dev/null || dunst &
 pgrep -x nm-applet							 	2> /dev/null || nm-applet &
 pgrep -x udiskie								 	2> /dev/null || udiskie -s &

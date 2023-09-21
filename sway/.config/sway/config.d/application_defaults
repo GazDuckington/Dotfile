@@ -28,6 +28,9 @@ assign [app_id="org.qbittorrent.qBittorrent"] 6
 
 assign [app_id="com.usebottles.bottles"] 7
 
+assign [class="[Ss]potify"] 8
+assign [app_id="[Ss]potube"] 8
+
 assign [app_id="btop"] 9
 
 assign [class="F5 VPN"] 10

@@ -70,7 +70,8 @@ Arc-Dark Color Scheme
 #temperature,
 #tray,
 #idle_inhibitor,
-#custom-PBPbattery {
+#custom-PBPbattery,
+#custom-swww {
     padding:0.5rem 0.6rem;
     margin: 1px 0px;
 }
@@ -218,5 +219,9 @@ Arc-Dark Color Scheme
 }
 
 #keyboard-state label.locked {
+	color: @green;
+}
+
+#custom-swww {
 	color: @green;
 }

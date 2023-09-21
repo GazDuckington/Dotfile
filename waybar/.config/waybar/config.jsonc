@@ -28,6 +28,7 @@
 		"tray",
 		//"custom/weather",
 		"custom/power",
+		"custom/swww",
 		"custom/notification"
 	],
 	// Modules
@@ -142,12 +143,12 @@
 		//}
 	},
 	"pulseaudio": {
-		"scroll-step": 1, // %, can be a float
+		"scroll-step": 5, // %, can be a float
 		"format": "{icon} {volume}%",
-		"format-bluetooth": "{volume}% {icon}  {format_source}",
-		"format-bluetooth-muted": " {icon}  {format_source}",
+		"format-bluetooth": "{icon}  {volume}% {format_source}",
+		"format-bluetooth-muted": "{icon}  {format_source}",
 		"format-muted": "婢 {format_source}",
-		"format-source": "{volume}% ",
+		"format-source": " {volume}%",
 		"format-source-muted": "",
 		"format-icons": {
 			"headphone": "",
@@ -243,5 +244,10 @@
 		"on-click": "swaync-client -t -sw",
 		"on-click-right": "swaync-client -d -sw",
 		"escape": true
+	},
+	"custom/swww": {
+		"tooltip": false,
+		"format": "󰸉 ",
+		"on-click": "~/.config/sway/scripts/swaypaper.sh"
 	}
 }

@@ -74,7 +74,7 @@ export PATH="$HOME/.spicetify:$PATH"
 # export QUARTO_HOME="$HOME/opt/quarto-1.2.335/"
 # export PATH="$QUARTO_HOME/bin"
 
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+# export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 export NVIM_SESSION="$HOME/.local/share/nvim/sessions/"
 

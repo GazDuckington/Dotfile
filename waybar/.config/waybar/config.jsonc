@@ -12,6 +12,7 @@
 	],
 	"modules-center": [],
 	"modules-right": [
+		"custom/zypper",
 		"custom/audio_idle_inhibitor",
 		"idle_inhibitor",
 		// "memory",
@@ -249,5 +250,13 @@
 		"tooltip": false,
 		"format": "󰸉 ",
 		"on-click": "~/.config/sway/scripts/swaypaper.sh"
+	},
+	"custom/zypper": {
+		"format": "{} 󰏖",
+		"interval": 3600,
+		"exec": "count=$(zypper lu | grep 'v |' | wc -l); if [ $count -gt 0 ]; then echo $count 'packages to update'; fi",
+		"exec-if": "exit 0",
+		"on-click": "exec foot -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
+		"signal": 8
 	}
 }

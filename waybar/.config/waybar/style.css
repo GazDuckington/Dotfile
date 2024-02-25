@@ -71,7 +71,8 @@ Arc-Dark Color Scheme
 #tray,
 #idle_inhibitor,
 #custom-PBPbattery,
-#custom-swww {
+#custom-swww,
+#custom-zypper {
     padding:0.5rem 0.6rem;
     margin: 1px 0px;
 }
@@ -218,10 +219,8 @@ Arc-Dark Color Scheme
     font-size: 13px;
 }
 
-#keyboard-state label.locked {
-	color: @green;
-}
-
-#custom-swww {
+#keyboard-state label.locked,
+#custom-swww,
+#custom-zypper {
 	color: @green;
 }

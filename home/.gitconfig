@@ -29,3 +29,7 @@
 	colorMoved = default
 [credential]
 	helper = store
+[http]
+	sslverify = false
+[pull]
+	rebase = false

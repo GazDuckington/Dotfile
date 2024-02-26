@@ -9,6 +9,7 @@ source ~/.config/fish/my_functions.fish
 # for x in (/usr/bin/find ~/.bashrc.d/ -type f)
   # bass source $x
 # end
+set DOCKER_HOST
 source ~/.bashrc.d/paths
 source ~/.bashrc.d/aliases
 

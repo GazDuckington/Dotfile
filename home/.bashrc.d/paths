@@ -37,6 +37,7 @@ export HISTFILE="$XDG_STATE_HOME"/bash/history
 export CARGO_HOME="$HOME"/cargo
 export GNUPGHOME="$HOME"/gnupg
 export GOPATH="$HOME"/.go
+export GOBIN=$(go env GOPATH)/bin
 export XCURSOR_PATH=/usr/share/icons:"$XDG_DATA_HOME"/icons
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history

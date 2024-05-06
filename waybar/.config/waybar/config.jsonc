@@ -5,10 +5,11 @@
 	// If height property would be not present, it'd be calculated dynamically
 	"height": 30,
 	"modules-left": [
-		"custom/dropdown",
+		// "custom/dropdown",
 		"sway/workspaces",
-		"sway/window",
-		"sway/mode"
+		"hyperland/workspaces"
+		// "sway/window",
+		// "sway/mode"
 	],
 	"modules-center": [],
 	"modules-right": [
@@ -128,6 +129,11 @@
 		// "format": "{app_id}",
 		"icon": true,
 		"max-length": 120
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1"
 	},
 	"sway/workspaces": {
 		"disable-scroll": false,

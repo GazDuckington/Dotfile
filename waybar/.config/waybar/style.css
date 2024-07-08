@@ -15,23 +15,23 @@ Arc-Dark Color Scheme
 */
 
 @keyframes blink-warning {
-    70% {
-        color: @text;
-    }
+	70% {
+		color: @text;
+	}
 
-    to {
-        color: @peach;
-    }
+	to {
+		color: @peach;
+	}
 }
 
 @keyframes blink-critical {
-    70% {
-      color: @text;
-    }
+	70% {
+		color: @text;
+	}
 
-    to {
-        color: @red;
-    }
+	to {
+		color: @red;
+	}
 }
 
 /* -----------------------------------------------------------------------------
@@ -40,20 +40,20 @@ Arc-Dark Color Scheme
 
 /* Reset all styles */
 * {
-    border: none;
-    border-radius: 0;
-    min-height: 0;
-    margin: 1px;
-    padding: 0;
+	border: none;
+	border-radius: 0;
+	min-height: 0;
+	margin: 1px;
+	padding: 0;
 }
 
 /* The whole bar */
 #waybar {
-    background: transparent;
-    color: @text;
-    background-color: @mantle;
-    font-family: "BlexMono Nerd Font";
-    font-size: 14px;
+	background: transparent;
+	color: @text;
+	background-color: @mantle;
+	font-family: "BlexMono Nerd Font";
+	font-size: 14px;
 }
 
 /* Every modules */
@@ -73,8 +73,8 @@ Arc-Dark Color Scheme
 #custom-PBPbattery,
 #custom-swww,
 #custom-zypper {
-    padding:0.5rem 0.6rem;
-    margin: 1px 0px;
+	padding: 0.5rem 0.6rem;
+	margin: 1px 0px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -86,9 +86,9 @@ Arc-Dark Color Scheme
 }
 
 #battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 #battery.good {
@@ -100,69 +100,69 @@ Arc-Dark Color Scheme
 }
 
 #battery.warning {
-    color: @peach;
+	color: @peach;
 }
 
 #battery.critical {
-    color: @red;
+	color: @red;
 }
 
 #battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 0.5s;
+	animation-name: blink-warning;
+	animation-duration: 0.5s;
 }
 
 #battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 0.5s;
+	animation-name: blink-critical;
+	animation-duration: 0.5s;
 }
 
 #cpu.warning {
-    color: @peach;
+	color: @peach;
 }
 
 #cpu.critical {
-    color: @red;
+	color: @red;
 }
 
 #memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 #memory.warning {
-    color: @peach;
- }
+	color: @peach;
+}
 
 #memory.critical {
-    color: @red;
-    animation-name: blink-critical;
-    animation-duration: 2s;
-    padding-left:5px;
-    padding-right:5px;
+	color: @red;
+	animation-name: blink-critical;
+	animation-duration: 2s;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 #mode {
-    color: @blue;
-    margin-left: 5px;
-		font-weight: bold;
+	color: @blue;
+	margin-left: 5px;
+	font-weight: bold;
 }
 
 #network.disconnected {
-    color: @peach;
+	color: @peach;
 }
 
 #pulseaudio {
-    padding-top:6px;
+	padding-top: 6px;
 }
 
 #pulseaudio.muted {
-    color: @subtext0;
+	color: @subtext0;
 }
 
 #temperature.critical {
-    color: red;
+	color: red;
 }
 
 #window {
@@ -174,6 +174,7 @@ Arc-Dark Color Scheme
 
 #workspaces button {
 	border-radius: 5px;
+	color: red;
 }
 
 #workspaces button:hover {
@@ -186,37 +187,37 @@ Arc-Dark Color Scheme
 }
 
 #workspaces button.urgent {
-		font-weight: bold;
-    background-color: @peach;
-    color: @crust;
+	font-weight: bold;
+	background-color: @peach;
+	color: @crust;
 }
 
 #custom-power {
-    margin-left:5px;
-    margin-right:15px;
-    font-size:15px;
-		color: @red;
+	margin-left: 5px;
+	margin-right: 15px;
+	font-size: 15px;
+	color: @red;
 }
 
 #custom-notification {
-		margin-left: 5px;
-		margin-right: 10px;
-		color: @subtext0;
+	margin-left: 5px;
+	margin-right: 10px;
+	color: @subtext0;
 }
 
 #custom-dropdown {
-    font-size:15px;
-    margin-left:15px;
-    margin-right:10px;
+	font-size: 15px;
+	margin-left: 15px;
+	margin-right: 10px;
 }
 
 #custom-audio_idle_inhibitor {
-		color: @green;
+	color: @green;
 }
 
 #backlight.icon {
-    padding-right:1px;
-    font-size: 13px;
+	padding-right: 1px;
+	font-size: 13px;
 }
 
 #keyboard-state label.locked,

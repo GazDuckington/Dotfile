@@ -37,3 +37,5 @@ bin/.local/bin/wsdump
 musikcube/.config/musikcube/plugin_portaudioioutput.json
 icons/.local/share/icons/hicolor/scalable/apps/notebook.svg
 icons/.local/share/icons/hicolor/scalable/apps/nbclassic.svg
+lazygit/.config/lazygit/state.yml
+lazygit/.config/lazygit/state.yml

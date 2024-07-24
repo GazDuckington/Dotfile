@@ -2,7 +2,8 @@
 # Original: https://github.com/mmsaeed509/bspwm-dots/blob/master/bin/colorPicker
 
 # capture the color and save it to the color variable
-colorPicker=$(gpick -pso --no-newline)
+# colorPicker=$(gpick -pso --no-newline)
+colorPicker=$(hyprpicker --autocopy)
 
 if [[ -n "$colorPicker" ]]; then
 
@@ -16,7 +17,7 @@ echo "$colorPicker" | tr -d "\n" | xsel -ib
 convert -size 64x64 xc:"$colorPicker" "${image}"
 
 # notify color above screen # 
-notify-send -u low -r 69 -i "${image}" "$colorPicker, copied to clipboard."
+notify-send -u low -r 69 -i "${image}" " $colorPicker, copied to clipboard."
 
 rm "$image"
 else

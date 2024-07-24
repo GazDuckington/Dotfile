@@ -1,4 +1,12 @@
 # functions
+function yy
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
 
 function gd
 	cd (z -l | fzf --layout reverse --ansi --preview 'lsd --tree --color=always {2}' --preview-window right,60% | awk '{print $2}')

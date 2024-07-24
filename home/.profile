@@ -6,3 +6,6 @@ export SWAY_CURSOR_THEME="Qoqir-dark"
 export XCURSOR_THEME="Qoqir-dark"
 export XCURSOR_SIZE=10
 export PATH=~/.npm-global/bin:$PATH
+export BROWSER=cachy-browser
+export TERM=kitty
+export QT_QPA_PLATFORMTHEME="qt5ct"

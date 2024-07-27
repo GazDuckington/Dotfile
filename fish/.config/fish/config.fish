@@ -10,7 +10,6 @@ source ~/.config/fish/my_functions.fish
   # bass source $x
 # end
 set DOCKER_HOST
-source ~/.bashrc
 source ~/.bashrc.d/paths
 source ~/.bashrc.d/aliases
 

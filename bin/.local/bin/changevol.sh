@@ -25,7 +25,7 @@ function send_notification {
         if [ "$volume" = 0 ]; then
 					notify-send -u normal "$soundZero Muted" -t 1000 -h string:x-canonical-private-synchronous:volume
         else
-					notify-send -u normal "$soundHigh $(get_volume)% $bar" -t 1000 -h string:x-canonical-private-synchronous:volume
+					notify-send -u normal "$soundHigh  $(get_volume)% $bar" -t 1000 -h string:x-canonical-private-synchronous:volume
         fi
     fi
 }

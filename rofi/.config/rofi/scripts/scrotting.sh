@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 SCROT_DIR="$HOME"/Pictures/Screenshots
-CURRENT_DATE=$(date +"%R_%d_%b_%y")
+CURRENT_DATE=$(date +"%R_%d_%b_%y_%H:%M:%s")
 FILE_NAME="$SCROT_DIR/scot-$CURRENT_DATE.png"
 image="/tmp/thumb-$CURRENT_DATE.png"
 

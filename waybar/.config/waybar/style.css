@@ -1,8 +1,8 @@
 * {
 	/* `otf-font-awesome` is required to be installed for icons */
-	font-family: "JetBrainsMono Nerd Font";
-	font-size: 8pt;
-	font-weight: 900;
+	font-family: "BlexMono Nerd Font";
+	font-size: 9pt;
+	/* font-weight: 900; */
 	margin: 0;
 	padding: 0;
 	transition-property: background-color;
@@ -35,6 +35,11 @@ window#waybar.hidden {
 	opacity: 0.2;
 }
 
+window#waybar.empty #window {
+	background-color: transparent;
+	color: transparent;
+}
+
 #workspaces button {
 	padding: 0 0px;
 	color: #7984a4;
@@ -60,7 +65,8 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
-	background-color: #eb4d4b;
+	color: #eb4d4b;
+	font-weight: bold;
 }
 
 #window {
@@ -83,14 +89,18 @@ window#waybar.hidden {
 #wireplumber,
 #custom-media,
 #custom-screenshot_t,
+#keyboard-state,
 #tray,
 #mode,
 #idle_inhibitor,
 #mpd,
 #bluetooth,
 #custom-hyprPicker,
+#custom-power,
 #custom-power-menu,
 #custom-spotify,
+#custom-pacman,
+#custom-storage,
 #custom-weather,
 #custom-weather.severe,
 #custom-weather.sunnyDay,
@@ -262,11 +272,11 @@ label:focus {
 }
 
 #temperature {
-	background-color: #f0932b;
+	color: #ecf0f1;
 }
 
 #temperature.critical {
-	background-color: #eb4d4b;
+	color: #eb4d4b;
 }
 
 #tray>.passive {
@@ -283,8 +293,8 @@ label:focus {
 }
 
 #idle_inhibitor.activated {
-	background-color: #ecf0f1;
-	color: #2d3436;
+	color: #ecf0f1;
+	background-color: #2d3436;
 }
 
 #language {
@@ -296,9 +306,8 @@ label:focus {
 }
 
 #keyboard-state {
-	padding: 0px 0px;
-	/* border-radius: 20px; */
-	background-color: transparent;
+	padding: 0 0.8em;
+	background-color: #1b242b;
 }
 
 #keyboard-state>label {
@@ -308,4 +317,15 @@ label:focus {
 #keyboard-state>label.locked {
 	/* background: rgba(0, 0, 0, 0.2); */
 	color: #97e1ad;
+}
+
+#custom-pacman {
+	color: #26a65b;
+}
+
+#custom-power {
+	color: red;
+	border-radius: 20px;
+	background-color: #1b242b;
+	padding: 0 0.8em;
 }

@@ -1,5 +1,5 @@
 configuration{
-	modi:														"drun";
+	modi:														"run,drun,window";
 	icon-theme:											"Papirus-Dark";
 	show-icons:											true;
 	terminal:												"kitty";
@@ -9,11 +9,11 @@ configuration{
 	hide-scrollbar:									true;
 	display-drun:										"   Apps ";
 	display-run:										"   Run ";
-	display-window:									" 﩯  Window ";
+	display-window:									"   Window ";
 	display-Network:								"   Network";
 	display-emoji:									"  Emoji ";
-	display-calc:										"  Calc ";
-	display-clip:										"  Clip";
+	display-calc:										" 󱖦 Calc ";
+	display-clip:										" 󰅌 Clip";
 	sidebar-mode:										true;
 	
 	kb-row-up:                      "Up,Alt+k,Shift+Tab,Shift+ISO_Left_Tab";

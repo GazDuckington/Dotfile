@@ -41,12 +41,12 @@ scrot_window() {
 }
 
 menu() {
-	area=" Area"
-	screen=" Screen"
+	area="󰆟 Area"
+	screen="󰹑 Screen"
 	window=" Window"
 	all=" All Output(s)"
 
-	chs=$(printf "%s\n%s\n%s\n%s" "$screen" "$area" "$window" "$all" | rofi -dmenu -no-show-icons -p "  Scrot ")
+	chs=$(printf "%s\n%s\n%s\n%s" "$screen" "$area" "$window" "$all" | rofi -dmenu -no-show-icons -p "  Scrot " -theme-str "window {height: 270px;}")
 	case "$chs" in
 	"$screen")
 		scrot_output

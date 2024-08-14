@@ -1,3 +1,5 @@
+@import "mocha.css";
+
 * {
 	/* `otf-font-awesome` is required to be installed for icons */
 	font-family: "BlexMono Nerd Font";
@@ -23,7 +25,7 @@
 	/*background: @bg;*/
 	background-color: transparent;
 	/*color: @light;*/
-	color: #ffffff;
+	color: @text;
 	transition-property: background-color;
 	transition-duration: 0.5s;
 	/*border-top: 8px transparent;*/
@@ -42,7 +44,7 @@ window#waybar.empty #window {
 
 #workspaces button {
 	padding: 0 0px;
-	color: #7984a4;
+	color: @subtext0;
 	background-color: transparent;
 	/* Use box-shadow instead of border so the text isn't offset */
 	box-shadow: inset 0 -3px transparent;
@@ -52,29 +54,23 @@ window#waybar.empty #window {
 }
 
 #workspaces button.focused {
-	background-color: transparent;
-	color: #89B4FA;
+	color: @lavender;
 }
 
 #workspace button.hover {
-	background-color: transparent;
+	color: @sky;
 }
 
 #workspaces button.active {
-	color: #89B4FA;
-}
-
-#workspaces button.urgent {
-	color: #eb4d4b;
+	color: @blue;
 	font-weight: bold;
 }
 
-#window {
-	/* border-radius: 20px; */
-	/* padding-left: 10px; */
-	/* padding-right: 10px; */
-	color: #64727d;
+#workspaces button.urgent {
+	color: @red;
+	font-weight: bold;
 }
+
 
 /* Each module */
 #clock,
@@ -95,6 +91,8 @@ window#waybar.empty #window {
 #idle_inhibitor,
 #mpd,
 #bluetooth,
+#window,
+#workspaces,
 #custom-hyprPicker,
 #custom-power,
 #custom-power-menu,
@@ -113,26 +111,18 @@ window#waybar.empty #window {
 #custom-weather.snowyIcyNight,
 #custom-weather.default {
 	padding: 0px 15px;
-	color: #e5e5e5;
-	/* color: #bf616a; */
+	color: @text;
 	border-radius: 20px;
-	background-color: #1e1e1e;
-}
-
-#window,
-#workspaces {
-	border-radius: 20px;
-	padding: 0px 10px;
-	background-color: #1e1e1e;
+	background-color: @surface0;
 }
 
 #cpu {
-	color: #fb958b;
+	color: @peach;
 	background-color: #1e1e1e;
 }
 
 #memory {
-	color: #ebcb8b;
+	color: @yellow;
 	background-color: #1e1e1e;
 }
 
@@ -145,40 +135,40 @@ window#waybar.empty #window {
 
 #custom-launcher {
 	background-color: #1b242b;
-	color: #6a92d7;
+	color: @blue;
 	border-radius: 7.5px;
 	padding: 0 0px;
 }
 
 #custom-weather.severe {
-	color: #eb937d;
+	color: @peach;
 }
 
 #custom-weather.sunnyDay {
-	color: #c2ca76;
+	color: @yellow;
 }
 
 #custom-weather.clearNight {
-	color: #cad3f5;
+	color: @subtext1;
 }
 
 #custom-weather.cloudyFoggyDay,
 #custom-weather.cloudyFoggyNight {
-	color: #c2ddda;
+	color: @subtext0;
 }
 
 #custom-weather.rainyDay,
 #custom-weather.rainyNight {
-	color: #5aaca5;
+	color: @blue;
 }
 
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight {
-	color: #d6e7e5;
+	color: @text;
 }
 
 #custom-weather.default {
-	color: #dbd9d8;
+	color: @text;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -192,40 +182,29 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-	color: #7d9bba;
+	color: @lavender;
 }
 
 #backlight {
-	/* color: #EBCB8B; */
-	color: #8fbcbb;
+	color: @sapphire;
 }
 
-#clock {
-	color: #c8d2e0;
-	/* background-color: #14141e; */
-}
-
-#battery {
-	color: #c0caf5;
-	/* background-color: #90b1b1; */
-}
 
 #battery.charging,
 #battery.full,
 #battery.plugged {
-	color: #26a65b;
-	/* background-color: #26a65b; */
+	color: @green;
 }
 
 @keyframes blink {
 	to {
 		background-color: rgba(30, 34, 42, 0.5);
-		color: #abb2bf;
+		color: @overlay1;
 	}
 }
 
 #battery.critical:not(.charging) {
-	color: #f53c3c;
+	color: @red;
 	animation-name: blink;
 	animation-duration: 0.5s;
 	animation-timing-function: linear;
@@ -234,27 +213,27 @@ window#waybar.empty #window {
 }
 
 label:focus {
-	background-color: #000000;
+	background-color: @crust;
 }
 
 #disk {
-	background-color: #964b00;
+	background-color: @peach;
 }
 
 #bluetooth {
-	color: #707d9d;
+	color: @lavender;
 }
 
 #bluetooth.disconnected {
-	color: #f53c3c;
+	color: @red;
 }
 
 #network {
-	color: #b48ead;
+	color: @mauve;
 }
 
 #network.disconnected {
-	color: #f53c3c;
+	color: @red;
 }
 
 #custom-media {
@@ -272,11 +251,11 @@ label:focus {
 }
 
 #temperature {
-	color: #ecf0f1;
+	color: @text;
 }
 
 #temperature.critical {
-	color: #eb4d4b;
+	color: @red;
 }
 
 #tray>.passive {
@@ -285,16 +264,11 @@ label:focus {
 
 #tray>.needs-attention {
 	-gtk-icon-effect: highlight;
-	background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-	background-color: #2d3436;
+	background-color: @red;
 }
 
 #idle_inhibitor.activated {
-	color: #ecf0f1;
-	background-color: #2d3436;
+	color: @teal;
 }
 
 #language {
@@ -307,7 +281,6 @@ label:focus {
 
 #keyboard-state {
 	padding: 0 0.8em;
-	background-color: #1b242b;
 }
 
 #keyboard-state>label {
@@ -315,17 +288,15 @@ label:focus {
 }
 
 #keyboard-state>label.locked {
-	/* background: rgba(0, 0, 0, 0.2); */
-	color: #97e1ad;
+	color: @green;
 }
 
 #custom-pacman {
-	color: #26a65b;
+	color: @rosewater;
 }
 
 #custom-power {
-	color: red;
+	color: @red;
 	border-radius: 20px;
-	background-color: #1b242b;
 	padding: 0 0.8em;
 }

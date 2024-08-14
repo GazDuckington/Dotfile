@@ -132,8 +132,8 @@
         "format-alt": "{percent}% {icon}",
         "format-alt-click": "click-right",
         "format-icons": ["", ""],
-        "on-scroll-down": "brightnessctl s 5%-",
-        "on-scroll-up": "brightnessctl s +5%"
+		"on-scroll-up": "~/.local/bin/changebrightness.sh up 5",
+        "on-scroll-down": "~/.local/bin/changebrightness.sh down 5",
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -189,7 +189,20 @@
     "clock#date": {
         "format": "  {:%H:%M   %e %b}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "today-format": "<b>{}</b>"
+        "today-format": "<b>{}</b>",
+ "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#C8D2E0'>{}</span>",
+                              "weeks":      "<span color='#FAB387'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#81878F'><b>{}</b></span>",
+                              "today":      "<span color='#99ffdd'><b>{}</b></span>"
+                              }
+                    },
     },
 
     "custom/gammastep": {

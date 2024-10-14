@@ -16,3 +16,12 @@
 2022/12/30 (15:22:57) | ===> btop++ v.1.2.13
 2022/12/30 (15:22:57) | ERROR: No tty detected!
 btop++ needs an interactive shell to run.
+
+2024/10/01 (09:46:58) | ===> btop++ v.1.4.0
+2024/10/01 (09:46:58) | WARNING: Intel GPU: Failed to initialize PMU
+
+2024/10/02 (10:11:21) | ===> btop++ v.1.4.0
+2024/10/02 (10:11:21) | WARNING: Intel GPU: Failed to initialize PMU
+
+2024/10/02 (12:55:51) | ===> btop++ v.1.4.0
+2024/10/02 (12:55:51) | WARNING: Intel GPU: Failed to initialize PMU

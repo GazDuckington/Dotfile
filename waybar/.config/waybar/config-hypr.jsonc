@@ -1,6 +1,7 @@
 {
 
-    "layer": "top",
+		"ipc": true,
+    "layer": "bottom",
     "position": "top",
 
     "margin-left": 10,

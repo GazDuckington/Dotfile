@@ -1,74 +1,74 @@
 @import "mocha.css";
 
 * {
-	/* `otf-font-awesome` is required to be installed for icons */
-	font-family: "BlexMono Nerd Font";
-	font-size: 9pt;
-	/* font-weight: 900; */
-	margin: 0;
-	padding: 0;
-	transition-property: background-color;
-	transition-duration: 0.5s;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "BlexMono Nerd Font";
+  font-size: 9pt;
+  /* font-weight: 900; */
+  margin: 0;
+  padding: 0;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 
 /* Reset all styles */
 * {
-	border: none;
-	border-radius: 3px;
-	min-height: 0;
-	margin: 0.2em 0.3em 0.2em 0.3em;
+  border: none;
+  border-radius: 3px;
+  min-height: 0;
+  margin: 0.2em 0.3em 0.2em 0.3em;
 }
 
 /* The whole bar */
 #waybar {
-	/*background: @bg;*/
-	background-color: transparent;
-	/*color: @light;*/
-	color: @text;
-	transition-property: background-color;
-	transition-duration: 0.5s;
-	/*border-top: 8px transparent;*/
-	border-radius: 0px;
-	margin: 0px 0px;
+  /*background: @bg;*/
+  background-color: transparent;
+  /*color: @light;*/
+  color: @text;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  /*border-top: 8px transparent;*/
+  border-radius: 0px;
+  margin: 0px 0px;
 }
 
 window#waybar.hidden {
-	opacity: 0.2;
+  opacity: 0.2;
 }
 
 window#waybar.empty #window {
-	background-color: transparent;
-	color: transparent;
+  background-color: transparent;
+  color: transparent;
 }
 
 #workspaces button {
-	padding: 0 0px;
-	color: @subtext0;
-	background-color: transparent;
-	/* Use box-shadow instead of border so the text isn't offset */
-	box-shadow: inset 0 -3px transparent;
-	/* Avoid rounded borders under each workspace name */
-	border: none;
-	border-radius: 0;
+  padding: 0 0px;
+  color: @subtext0;
+  background-color: transparent;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each workspace name */
+  border: none;
+  border-radius: 0;
 }
 
 #workspaces button.focused {
-	color: @lavender;
+  color: @lavender;
 }
 
 #workspace button.hover {
-	color: @sky;
+  color: @sky;
 }
 
 #workspaces button.active {
-	color: @blue;
-	font-weight: bold;
+  color: @blue;
+  font-weight: bold;
 }
 
 #workspaces button.urgent {
-	color: @red;
-	font-weight: bold;
+  color: @red;
+  font-weight: bold;
 }
 
 
@@ -110,193 +110,193 @@ window#waybar.empty #window {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.default {
-	padding: 0px 15px;
-	color: @text;
-	border-radius: 20px;
-	background-color: @surface0;
+  padding: 0px 15px;
+  color: @text;
+  border-radius: 20px;
+  background-color: @surface0;
 }
 
 #cpu {
-	color: @peach;
-	background-color: #1e1e1e;
+  color: @peach;
+  background-color: #1e1e1e;
 }
 
 #memory {
-	color: @yellow;
-	background-color: #1e1e1e;
+  color: @yellow;
+  background-color: #1e1e1e;
 }
 
 #custom-power-menu {
-	border-radius: 9.5px;
-	background-color: #1b242b;
-	border-radius: 7.5px;
-	padding: 0 0px;
+  border-radius: 9.5px;
+  background-color: #1b242b;
+  border-radius: 7.5px;
+  padding: 0 0px;
 }
 
 #custom-launcher {
-	background-color: #1b242b;
-	color: @blue;
-	border-radius: 7.5px;
-	padding: 0 0px;
+  background-color: #1b242b;
+  color: @blue;
+  border-radius: 7.5px;
+  padding: 0 0px;
 }
 
 #custom-weather.severe {
-	color: @peach;
+  color: @peach;
 }
 
 #custom-weather.sunnyDay {
-	color: @yellow;
+  color: @yellow;
 }
 
 #custom-weather.clearNight {
-	color: @subtext1;
+  color: @subtext1;
 }
 
 #custom-weather.cloudyFoggyDay,
 #custom-weather.cloudyFoggyNight {
-	color: @subtext0;
+  color: @subtext0;
 }
 
 #custom-weather.rainyDay,
 #custom-weather.rainyNight {
-	color: @blue;
+  color: @blue;
 }
 
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight {
-	color: @text;
+  color: @text;
 }
 
 #custom-weather.default {
-	color: @text;
+  color: @text;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left>widget:first-child>#workspaces {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right>widget:last-child>#workspaces {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 #pulseaudio {
-	color: @lavender;
+  color: @lavender;
 }
 
 #backlight {
-	color: @sapphire;
+  color: @sapphire;
 }
 
 
 #battery.charging,
 #battery.full,
 #battery.plugged {
-	color: @green;
+  color: @green;
 }
 
 @keyframes blink {
-	to {
-		background-color: rgba(30, 34, 42, 0.5);
-		color: @overlay1;
-	}
+  to {
+    /* background-color: rgba(30, 34, 42, 0.5); */
+    color: @overlay1;
+  }
 }
 
 #battery.critical:not(.charging) {
-	color: @red;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 label:focus {
-	background-color: @crust;
+  background-color: @crust;
 }
 
 #disk {
-	background-color: @peach;
+  background-color: @peach;
 }
 
 #bluetooth {
-	color: @lavender;
+  color: @lavender;
 }
 
 #bluetooth.disconnected {
-	color: @red;
+  color: @red;
 }
 
 #network {
-	color: @mauve;
+  color: @mauve;
 }
 
 #network.disconnected {
-	color: @red;
+  color: @red;
 }
 
 #custom-media {
-	background-color: #66cc99;
-	color: #2a5c45;
-	min-width: 100px;
+  background-color: #66cc99;
+  color: #2a5c45;
+  min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-	background-color: #66cc99;
+  background-color: #66cc99;
 }
 
 #custom-media.custom-vlc {
-	background-color: #ffa000;
+  background-color: #ffa000;
 }
 
 #temperature {
-	color: @text;
+  color: @text;
 }
 
 #temperature.critical {
-	color: @red;
+  color: @red;
 }
 
 #tray>.passive {
-	-gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray>.needs-attention {
-	-gtk-icon-effect: highlight;
-	background-color: @red;
+  -gtk-icon-effect: highlight;
+  background-color: @red;
 }
 
 #idle_inhibitor.activated {
-	color: @teal;
+  color: @teal;
 }
 
 #language {
-	background: #00b093;
-	color: #740864;
-	padding: 0 0px;
-	margin: 0 5px;
-	min-width: 16px;
+  background: #00b093;
+  color: #740864;
+  padding: 0 0px;
+  margin: 0 5px;
+  min-width: 16px;
 }
 
 #keyboard-state {
-	padding: 0 0.8em;
+  padding: 0 0.8em;
 }
 
 #keyboard-state>label {
-	color: #45475B;
+  color: #45475B;
 }
 
 #keyboard-state>label.locked {
-	color: @green;
+  color: @green;
 }
 
 #custom-pacman {
-	color: @rosewater;
+  color: @rosewater;
 }
 
 #custom-power {
-	color: @red;
-	border-radius: 20px;
-	padding: 0 0.8em;
+  color: @red;
+  border-radius: 20px;
+  padding: 0 0.8em;
 }

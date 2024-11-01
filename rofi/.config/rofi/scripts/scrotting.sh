@@ -43,10 +43,11 @@ scrot_window() {
 menu() {
 	area="󰆟 Area"
 	screen="󰹑 Screen"
-	window=" Window"
+	# window=" Window"
 	all=" All Output(s)"
 
-	chs=$(printf "%s\n%s\n%s\n%s" "$screen" "$area" "$window" "$all" | rofi -dmenu -no-show-icons -p "  Scrot " -theme-str "window {height: 270px;}")
+	chs=$(printf "%s\n%s\n%s" "$screen" "$area" "$all" | rofi -dmenu -no-show-icons -p "  Scrot " -theme-str "window {height: 270px;}")
+	sleep 0.8
 	case "$chs" in
 	"$screen")
 		scrot_output
@@ -56,14 +57,17 @@ menu() {
 		scrot_area
 		# flatpak run org.flameshot.Flameshot gui #--path ~/Pictures/Screen\ Shots/
 		;;
-	"$window")
-		scrot_window
-		# flameshots.sh activewindow
-		;;
+	# "$window")
+	# 	scrot_window
+	# 	# flameshots.sh activewindow
+	# 	;;
 	"$all")
 		scrot_screen
 		;;
-	esac
+	*)
+	notify-send "Print screen canceled" -t 3000
+	;;
+esac
 }
 
 main() {

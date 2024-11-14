@@ -33,14 +33,14 @@ function send_notification {
 case $1 in 
     up)
 				amixer sset Master 5%+
-        send_notification
+        # send_notification
         ;;
     down)
 				amixer sset Master 5%-
-        send_notification
+        # send_notification
         ;;
     mute)
         amixer sset Master toggle
-        send_notification
+        # send_notification
         ;;
 esac

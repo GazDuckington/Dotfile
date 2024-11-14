@@ -6,7 +6,7 @@ export SWAY_CURSOR_THEME=Qoqir-dark
 export XCURSOR_THEME=Qoqir-dark
 export XCURSOR_SIZE=24
 export PATH=~/.npm-global/bin:$PATH
-export BROWSER=cachy-browser
-export TERM=kitty
+export BROWSER=zen-browser
+export TERM=footclient
 export QT_QPA_PLATFORMTHEME="qt5ct"
 . "/home/gaz/.deno/env"

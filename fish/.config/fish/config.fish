@@ -15,3 +15,7 @@ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 pyenv init - | source
 
 starship init fish | source
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

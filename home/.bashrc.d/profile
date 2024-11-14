@@ -29,7 +29,7 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec sway
+  exec hyprland
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"

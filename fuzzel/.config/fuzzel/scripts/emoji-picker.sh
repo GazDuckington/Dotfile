@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-list=$(cat ./data/*)
-selection=$(echo "$list" | fuzzel --dmenu --log-level=none --prompt="Emoji > ")
+list=$(cat $XDG_CONFIG_HOME/fuzzel/data/*)
+selection=$(echo "$list" | fuzzel --dmenu --log-level=none --prompt=" Emoji ")
 
 if [ -n "$selection" ]; then
     # Retreive the Emoji from the selection string

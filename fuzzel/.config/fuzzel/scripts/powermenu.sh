@@ -6,19 +6,19 @@ option1="󰩈 logout"
 option2="⏾ suspend"
 option5="⏾ scheduled suspend (30min)"
 option6=" reboot"
-option7=" shutdown"
+option7="⏻ shutdown"
 
 # options passed into variable
 options="$option0\n$option1\n$option2\n$option5\n$option6\n$option7"
 
-chosen="$(echo -e "$options" | rofi -no-show-icons -dmenu -p " ⏼ power ")"
+chosen="$(echo -e "$options" | fuzzel --dmenu -l 7 -p " ⏼ power ")"
 case $chosen in
     "$option0")
-			~/.config/sway/scripts/lockman.sh
+			playerctl pause &&
+			hyprlock
 			;;
     "$option1")
-      dkcmd exit
-			swaymsg exit
+			hyprctl dispatch exit
 			;;
     "$option2")
       exec systemctl suspend

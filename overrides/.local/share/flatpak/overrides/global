@@ -1,7 +1,6 @@
 [Context]
-filesystems=$HOME/.local/share/themes
+filesystems=$HOME/.local/share/themes;$HOME/.config/Kvantum:ro;xdg-config/Kvantum:ro;xdg-download;xdg-config/gtk-3.0:ro;$HOME/.fonts:ro;/usr/share/icons:ro;$HOME/.icons:ro;/usr/share/themes:ro;$HOME/.themes:ro;home;host-etc;host-os;host
 
-;$HOME/.config/Kvantum:ro;xdg-config/Kvantum:ro;xdg-download;xdg-config/gtk-3.0:ro;$HOME/.fonts:ro;/usr/share/icons:ro;$HOME/.icons:ro;/usr/share/themes:ro;$HOME/.themes:ro;home;host-etc;host-os;host
 [Environment]
 GTK_THEME=Colloid-Teal-Dark-Compact-Catppuccin
 ICON_THEME=Papirus-Dark

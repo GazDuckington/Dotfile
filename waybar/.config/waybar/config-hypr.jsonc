@@ -178,7 +178,7 @@
     "custom/power": {
         "format": "<big>󰤆</big>",
         "tooltip": false,
-        "on-click": "wlogout"
+        "on-click": "bash ~/.config/fuzzel/scripts/powermenu.sh"
     },
 
     "clock": {

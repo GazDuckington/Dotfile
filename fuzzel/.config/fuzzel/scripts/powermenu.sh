@@ -11,7 +11,7 @@ option7="⏻ shutdown"
 # options passed into variable
 options="$option0\n$option1\n$option2\n$option5\n$option6\n$option7"
 
-chosen="$(echo -e "$options" | fuzzel --dmenu -l 7 -p " ⏼ power ")"
+chosen="$(echo -e "$options" | fuzzel --dmenu -l 7 -p "⏼ power ")"
 case $chosen in
     "$option0")
 			playerctl pause &&

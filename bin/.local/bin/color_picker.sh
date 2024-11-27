@@ -19,6 +19,4 @@ magick -size 64x64 xc:"$colorPicker" "${image}"
 notify-send -u low -r 69 -i "${image}" " $colorPicker, copied to clipboard."
 
 rm "$image"
-else
-	notify-send -t 1000 -u low -r 69 "Color Picker cancelled."
 fi

@@ -20,12 +20,12 @@ function send_notification {
     status=$(is_mute)
 
     if [ "$status" == "yes" ]; then
-			notify-send -r 999 -u normal "$soundMute $(get_volume)% Muted" -t 1000
+			notify-send -r 999 -u normal "$soundMute $(get_volume)% Muted" -t 800
     else
         if [ "$volume" = 0 ]; then
-					notify-send -u normal "$soundZero Muted" -t 1000 -h string:x-canonical-private-synchronous:volume
+					notify-send -u normal "$soundZero Muted" -t 800 -h string:x-canonical-private-synchronous:volume
         else
-					notify-send -u normal "$soundHigh  $(get_volume)% $bar" -t 1000 -h string:x-canonical-private-synchronous:volume
+					notify-send -u normal "$soundHigh  $(get_volume)% $bar" -t 800 -h string:x-canonical-private-synchronous:volume
         fi
     fi
 }
@@ -33,14 +33,14 @@ function send_notification {
 case $1 in 
     up)
 				amixer sset Master 5%+
-        # send_notification
+        send_notification
         ;;
     down)
 				amixer sset Master 5%-
-        # send_notification
+        send_notification
         ;;
     mute)
         amixer sset Master toggle
-        # send_notification
+        send_notification
         ;;
 esac

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-list=$(cat $XDG_CONFIG_HOME/fuzzel/data/*)
+list=$(cat $XDG_CONFIG_HOME/emotes/data/*)
 selection=$(echo "$list" | fuzzel --dmenu --log-level=none --prompt=" Emoji ")
 
 if [ -n "$selection" ]; then

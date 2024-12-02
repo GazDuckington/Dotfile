@@ -13,7 +13,10 @@
       "show_generic": true,
       "show_icon_when_single": true,
       "show_sub_when_single": true,
-      "weight": 5
+      "weight": 5,
+			"actions": {
+				"enabled": false
+			}
     },
     "calc": {
       "icon": "accessories-calculator",
@@ -73,7 +76,8 @@
       "weight": 5
     },
     "runner": {
-      "generic_entry": false,
+      "generic_entry": true,
+			"shell_config": "~/.config/fish/config.fish",
       "history": true,
       "icon": "utilities-terminal",
       "name": "runner",

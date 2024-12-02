@@ -70,7 +70,7 @@
       "ignore_gitignore": true,
       "name": "finder",
       "placeholder": " Finder",
-			"prefix": "f",
+			"prefix": "//",
       "refresh": true,
       "switcher_only": true,
       "weight": 5
@@ -82,7 +82,7 @@
       "icon": "utilities-terminal",
       "name": "runner",
       "placeholder": " Runner",
-			"prefix": "r",
+			"prefix": ">",
       "refresh": true,
       "typeahead": true,
       "weight": 5
@@ -109,14 +109,14 @@
       "icon": "applications-internet",
       "name": "websearch",
       "placeholder": "󰜏 Websearch",
-			"prefix": "s",
+			"prefix": "?",
       "weight": 5
     },
     "windows": {
       "icon": "view-restore",
       "name": "windows",
       "placeholder": "󰖲 Windows",
-			"prefix": "w",
+			"prefix": "w ",
       "weight": 5
     }
 	},
@@ -140,7 +140,7 @@
 		{
 			"name": "power",
 			"placeholder": "⏼  Power",
-			"prefix": "p",
+			"prefix": "p ",
 			"switcher_only": true,
 			"recalculate_score": true,
 			"show_icon_when_single": true,
@@ -169,7 +169,7 @@
 		},
 		{
 			"name": "emotes",
-			"prefix": "e",
+			"prefix": "e ",
 			"placeholder": "  Emoticons ",
 			"switcher_only": true,
 			"recalculate_score": true,
@@ -180,7 +180,7 @@
 		{
 			"name": "scrot",
 			"placeholder": "  Screen Shot ",
-			"prefix": "b",
+			"prefix": "b ",
 			"switcher_only": true,
 			"recalculate_score": true,
 			"show_icon_when_single": true,

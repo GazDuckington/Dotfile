@@ -45,3 +45,4 @@ bin/.local/bin/trash-list
 bin/.local/bin/trash-put
 bin/.local/bin/trash-restore
 bin/.local/bin/trash-rm
+btop/.config/btop/btop.log

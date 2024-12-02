@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 # Function to run a command if it is not already running
 lazy_load() {
     if ! pgrep -f "$1" > /dev/null; then

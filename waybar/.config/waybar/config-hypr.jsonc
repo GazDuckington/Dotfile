@@ -25,7 +25,8 @@
 			"battery",
 			"backlight",
 			"wireplumber",
-			"keyboard-state",
+			// "keyboard-state",
+		"custom/caps",
 			"custom/power",
 			"tray",
 			"custom/pacman",
@@ -352,6 +353,15 @@
 						"unlocked": ""
 				}
 		},
+	"custom/caps": {
+		"format": "{icon}",
+		"return-type": "json",
+		"format-icons": {
+			"lock": "󰬈",
+			"unlock": "󰯫",
+		},
+		"exec": "bash ~/.config/waybar/scripts/check-caps.sh",
+	},
 		"custom/notification": {
 			"tooltip": false,
 			"format": "{icon} ",

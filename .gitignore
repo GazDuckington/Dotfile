@@ -46,3 +46,5 @@ bin/.local/bin/trash-put
 bin/.local/bin/trash-restore
 bin/.local/bin/trash-rm
 btop/.config/btop/btop.log
+bin/.local/bin/uv
+bin/.local/bin/uvx

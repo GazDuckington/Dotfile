@@ -15,7 +15,7 @@
       "show_sub_when_single": true,
       "weight": 5,
 			"actions": {
-				"enabled": false
+				"enabled": true
 			}
     },
     "calc": {

@@ -3,7 +3,7 @@
 * {
 	/* `otf-font-awesome` is required to be installed for icons */
 	font-family: "BlexMono Nerd Font";
-	font-size: 9pt;
+	font-size: 8pt;
 	/* font-weight: 900; */
 	margin: 0;
 	padding: 0;
@@ -17,12 +17,12 @@
 	border: none;
 	border-radius: 3px;
 	min-height: 0;
-	margin: 0.2em 0.3em 0.2em 0.3em;
+	padding: 0.2em 0.3em 0.2em 0.3em;
 }
 
 /* The whole bar */
 #waybar {
-	/*background: @bg;*/
+	/* background: @crust; */
 	background-color: transparent;
 	/*color: @light;*/
 	color: @text;
@@ -286,7 +286,7 @@ label:focus {
 }
 
 #keyboard-state>label,
-#custom-caps>label {
+#custom-caps.unlock {
 	color: #45475B;
 }
 

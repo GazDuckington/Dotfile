@@ -1,0 +1,47 @@
+return {
+{
+			"folke/snacks.nvim",
+			priority = 1000,
+			lazy = false,
+			opts = {
+				bigfile = { enabled = true },
+				notifier = { enabled = true },
+				quickfile = { enabled = true },
+				statuscolumn = { enabled = true },
+				words = { enabled = true },
+				dashboard = { enabled = true },
+				dim = { enabled = true },
+				zen = { enabled = true },
+				win = { enabled = true },
+				indent = { enabled = true },
+				scroll = { enabled = true },
+				rename = { enabled = true },
+				bufdelete = { enabled = true },
+				terminal = {
+					enabled = true,
+					win = {
+						-- position = "float",
+						keys = {
+							term_normal = {
+								"<esc>",
+								function()
+									return "<C-\\><C-n>"
+								end,
+								mode = "t",
+								expr = true,
+								desc = "Double escape to normal mode",
+							},
+							q = "hide",
+							["<esc>"] = "hide",
+						},
+					},
+				},
+				toggle = {
+					map = vim.keymap.set,
+					enabled = true,
+					which_key = true,
+					notify = true,
+				}
+			}
+		}
+}

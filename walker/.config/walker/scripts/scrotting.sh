@@ -10,6 +10,7 @@ gen_thumb(){
 
 scrot_output() {
 	# select whole screen
+	sleep 0.3
 	if grimblast copysave output "$FILE_NAME"; then
 		gen_thumb
 		notify-send -i "$image" -a "Scrot-screen" "$FILE_NAME" -t 3000
@@ -18,6 +19,7 @@ scrot_output() {
 }
 scrot_screen() {
 	# select whole screen
+	sleep 0.3
 	if grimblast copysave screen "$FILE_NAME"; then
 		gen_thumb
 		notify-send -i "$image" -a "Scrot-screen" "$FILE_NAME" -t 3000
@@ -26,6 +28,7 @@ scrot_screen() {
 }
 scrot_area() {
 	# select area
+	# sleep 0.5
 	if grimblast copysave area "$FILE_NAME"; then
 		gen_thumb
 		notify-send -i "$image" -a "Scrot-area" "$FILE_NAME" -t 3000
@@ -34,6 +37,7 @@ scrot_area() {
 }
 scrot_window() {
 	# select current window
+	# sleep 0.5
 	if grimblast copysave area "$FILE_NAME"; then
 		gen_thumb
 		notify-send -i "$image" -a "Scrot-window" "$FILE_NAME" -t 3000

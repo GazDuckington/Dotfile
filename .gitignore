@@ -48,3 +48,11 @@ bin/.local/bin/trash-rm
 btop/.config/btop/btop.log
 bin/.local/bin/uv
 bin/.local/bin/uvx
+bin/.local/bin/autotiling
+bin/.local/bin/dmypy
+bin/.local/bin/mypy
+bin/.local/bin/mypyc
+bin/.local/bin/pywayland-scanner
+bin/.local/bin/qtile
+bin/.local/bin/stubgen
+bin/.local/bin/stubtest

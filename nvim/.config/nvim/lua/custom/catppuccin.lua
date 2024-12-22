@@ -12,6 +12,7 @@ local scheme = name(vim.g.colors_name)
 if scheme == nil then
 	scheme = "mocha"
 end
+
 return {
 	{
 		"catppuccin/nvim",
@@ -21,10 +22,11 @@ return {
 			local color = require("catppuccin.palettes").get_palette(scheme)
 			require("catppuccin").setup({
 				flavour = scheme,
-				transparent_background = true,
+				transparent_background = false,
 				term_colors = true,
 				default_integrations = false,
 				integrations = {
+					snacks = true,
 					mason = true,
 					leap = true,
 					treesitter = true,
@@ -35,6 +37,7 @@ return {
 					which_key = true,
 					gitsigns = true,
 					mini = true,
+					blink_cmp = true,
 					native_lsp = {
 						enabled = true,
 						virtual_text = {

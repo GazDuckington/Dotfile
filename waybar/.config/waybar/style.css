@@ -53,14 +53,14 @@ window#waybar.empty #window {
 	border-radius: 0;
 }
 
-#workspaces button.focused {
-	color: @lavender;
-}
+/* #workspaces button.focused { */
+	/* color: @lavender; */
+/* } */
 
 #workspace button.hover {
 	color: @sky;
 }
-
+#workspaces button.focused,
 #workspaces button.active {
 	color: @blue;
 	font-weight: bold;
@@ -68,6 +68,11 @@ window#waybar.empty #window {
 
 #workspaces button.urgent {
 	color: @red;
+	font-weight: bold;
+}
+
+#mode {
+	color: @green;
 	font-weight: bold;
 }
 

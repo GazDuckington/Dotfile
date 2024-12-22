@@ -1,24 +1,6 @@
-local must_install = {
-	"lua_ls",
-	"pyright",
-	"gopls",
-	"svelte",
-	"eslint",
-	"tailwindcss",
-	"emmet_ls",
-	"marksman",
-	"sourcery",
-	"cssls",
-}
-local ts_ft = {
-	'javascript',
-	'javascriptreact',
-	'javascript.jsx',
-	'typescript',
-	'typescriptreact',
-	'typescript.tsx',
-	'vue',
-}
+local Constant = require("core.constant.lsp")
+local must_install = Constant.must_install
+local ts_ft = Constant.ts_filetypes
 
 return {
 	{

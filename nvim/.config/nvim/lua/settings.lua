@@ -1,12 +1,13 @@
+local Constant = require("core.constant.lsp")
 local M = {}
+
 M.setup = function()
-	require("core/command").setup()
-	require("core/autocommand").setup()
-	require("core/keybinding").setup()
-	vim.cmd.set("clipboard+=unnamedplus")
+	require("core.command").setup()
+	require("core.autocommand").setup()
+	require("core.keybinding").setup()
+	vim.opt.clipboard:append("unnamedplus")
 	vim.g.mapleader        = " "
-	vim.g.web_ft           = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte",
-		"pug", "typescriptreact", "vue" }
+	vim.g.web_ft           = Constant.web_filetypes
 	vim.opt_global.shell   = "fish"
 	vim.opt.undofile       = true
 	vim.opt.undodir        = os.getenv("HOME") .. "/.vim/undodir"
@@ -20,5 +21,7 @@ M.setup = function()
 	vim.opt.foldlevel      = 99
 	vim.opt.foldlevelstart = 99
 	vim.opt.foldenable     = true
+	vim.opt.number         = true
+	vim.opt.relativenumber = true
 end
 return M

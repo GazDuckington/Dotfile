@@ -7,10 +7,19 @@ return {
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
+			completion = {
+				list = {
+					selection = "preselect" -- | "manual" -- | "auto-insert"
+				},
+				trigger = {
+					show_on_keyword = true,
+					show_on_trigger_character = true
+				},
+			},
 			keymap = {
-				--preset = 'enter',
+				-- preset = 'enter',
 				['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-				['<C-e>'] = { 'hide', 'fallback' },
+				['<Esc>'] = { 'hide', 'fallback' },
 				['<CR>'] = { 'accept', 'fallback' },
 
 				['<C-p>'] = { 'snippet_forward', 'fallback' },
@@ -18,12 +27,18 @@ return {
 
 				['<Up>'] = { 'select_prev', 'fallback' },
 				['<Down>'] = { 'select_next', 'fallback' },
-				['<Tab>'] = { 'select_next', 'fallback' },
+				['<Tab>'] = {
+					function(cmp)
+						if not cmp.snippet_active() then
+							return cmp.show()
+						end
+					end,
+					'select_next', 'fallback'
+				},
 				['<S-Tab>'] = { 'select_prev', 'fallback' },
 
 				['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
 				['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
-
 			},
 
 			appearance = {
@@ -32,7 +47,7 @@ return {
 			},
 
 			sources = {
-				default = { 'lsp', 'path', 'snippets', 'buffer', 'emmet-ls' },
+				default = { 'lsp', 'path', 'snippets', 'buffer' },
 			},
 		},
 		opts_extend = { "sources.default" }

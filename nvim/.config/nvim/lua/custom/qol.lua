@@ -73,8 +73,8 @@ return {
 		config = function()
 			require("boole").setup({
 				mappings = {
-					increment = '<A-a>',
-					decrement = '<A-x>',
+					increment = "t",
+					decrement = "T"
 				}
 			})
 		end
@@ -92,4 +92,9 @@ return {
 			})
 		end,
 	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {}
+	}
 }

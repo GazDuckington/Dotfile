@@ -1,29 +1,10 @@
 local colors = require("catppuccin.palettes").get_palette "mocha"
-
-local catto = {
-	normal = {
-		a = { fg = colors.base, bg = colors.blue },
-		b = { fg = colors.text, bg = colors.surface0, gui = 'bold' },
-		c = { fg = colors.blue, bg = colors.mantle },
-	},
-	insert = { a = { fg = colors.base, bg = colors.green } },
-	visual = { a = { fg = colors.base, bg = colors.peach } },
-	replace = { a = { fg = colors.base, bg = colors.mauve } },
-	command = { a = { fg = colors.base, bg = colors.red } },
-	inactive = {
-		a = { fg = colors.text, bg = colors.mantle },
-		b = { fg = colors.text, bg = colors.mantle },
-		c = { fg = colors.surface2, bg = colors.mantle },
-	},
-}
-
 local line = {
 	function()
 		return " "
 	end,
 	padding = 0,
 }
-
 local md = {
 	'mode',
 	fmt = function(res)
@@ -31,6 +12,7 @@ local md = {
 	end,
 	color = { gui = 'bold' },
 }
+
 return {
 	{
 		"nvim-lualine/lualine.nvim",
@@ -69,7 +51,6 @@ return {
 				lualine_z = { line },
 			},
 			options = {
-				-- theme = catto,
 				theme = "catppuccin",
 				globalstatus = false,
 				component_separators = '',

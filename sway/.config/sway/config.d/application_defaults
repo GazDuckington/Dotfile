@@ -38,6 +38,7 @@ for_window [class="F5 VPN"] focus
 
 # set floating (nontiling)for apps needing it:
 for_window [app_id="com.usebottles.bottles"] floating enable
+for_window [app_id="walker"] floating enable; focus
 for_window [app_id="com.github.hluk.copyq"] floating enable
 for_window [app_id="cheese"] floating enable
 for_window [app_id="nwg-displays"] floating enable

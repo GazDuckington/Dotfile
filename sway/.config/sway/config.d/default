@@ -16,20 +16,19 @@ set $volume_mute $(pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-m
 set $mic_mute $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p")
 
 # Your preferred terminal emulators
-set $term-float kitty
+set $term-float footclient
 # set $term-float footclient
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show drun #wofi -c ~/.config/wofi/config -I
-
-set $powermenu ~/.config/rofi/scripts/powermenu.sh
+set $menu GSK_RENDERER=ngl walker
 
 ### Idle configuration
 exec swayidle\
 		timeout 3600 'systemctl suspend'\
-    timeout 1800 'swaylock -f -C ~/.config/swaylock/config'\
+    # timeout 1800 'swaylock -f -C ~/.config/swaylock/config'\
+		timeout 1800 'hyprlock -c ~/Dotfile/hypr/.config/hypr/hyprlock.conf'\
     timeout 300 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"' \
 		before-sleep 'playerctl pause'
@@ -51,8 +50,9 @@ focus_follows_mouse no
     bindsym $mod+Return exec $term-float
 
     # Open the power menu
-    bindsym Mod4+F4 exec $powermenu
-    bindsym Mod4+c exec ~/.config/sway/scripts/color_picker.sh
+    bindsym Mod4+F4 exec $menu -m power
+    bindsym Mod4+m exec $menu -m power
+    bindsym Mod4+c exec ~/.local/bin/color_picker.sh #~/.config/sway/scripts/color_picker.sh
 
     # Kill focused window
     bindsym $mod+q kill
@@ -114,19 +114,19 @@ focus_follows_mouse no
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-		bindsym $mod+z workspace prev
-		bindsym $mod+x workspace next
+		bindsym $mod+comma workspace prev
+		bindsym $mod+period workspace next
 #
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+Shift+b splith
+    bindsym $mod+Shift+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    bindsym $mod+Shift+f layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
@@ -196,21 +196,25 @@ bindsym $mod+r mode "resize"
 #
 # Screenshots
 #
-    bindsym print exec swayshot window
-    bindsym Shift+print exec ~/.config/sway/scripts/screenshot.sh
+    bindsym print exec $menu -m scrot
+    bindsym $mod+p exec $menu -m scrot
+    # bindsym Shift+print exec ~/.config/sway/scripts/screenshot.sh
 #
 
 #
 # Keybindings List
 #
-bindsym Ctrl+F1 exec ~/.local/bin/fool-launch.sh pulsemixer
-bindsym Ctrl+F2 exec cliphist list | \
-	rofi -dmenu -p "  Clip " -no-show-icons | \
-	cliphist decode | \
-	wl-copy
+bindsym $mod+z exec ~/.local/bin/footclient-launch.sh pulsemixer
+# bindsym Ctrl+F2 exec cliphist list | \
+# 	rofi -dmenu -p "  Clip " -no-show-icons | \
+# 	cliphist decode | \
+# 	wl-copy
+bindsym $mod+v exec $menu -m clipboard
+bindsym $mod+Escape exec $menu -m emoji
+
 bindsym Ctrl+F3 exec killall -SIGUSR1 waybar
 bindsym $mod+Shift+n exec swaync-client -t -sw
 bindsym Ctrl+Mod1+Delete exec ~/.local/bin/fool-launch.sh btop
-bindsym Ctrl+e exec rofi -modi emoji -show emoji
+# bindsym Ctrl+e exec rofi -modi emoji -show emoji
 #
 

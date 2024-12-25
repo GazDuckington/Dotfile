@@ -17,8 +17,8 @@ local mappings = {
 	{ "<leader>mm", "<cmd>Mason<cr>",                        desc = "Open Mason menu" },
 	{ "<leader>ms", ":saveas ",                              desc = "Save buffer as" },
 	{ "<leader>mi", ":LspInfo<cr>",                          desc = "LSP Info" },
-	{ "<leader>mn", ":Navbuddy<cr>",                         desc = "Navbuddy, explore breadcrumb" },
-	{ "<leader>mf", ":FocusToggle<cr>",                      desc = "FocusToggle" },
+	-- { "<leader>mn", ":Navbuddy<cr>",                         desc = "Navbuddy, explore breadcrumb" },
+	-- { "<leader>mf", ":FocusToggle<cr>",                      desc = "FocusToggle" },
 
 	{ "<leader>h",  group = "Helps" },
 	{ "<leader>hk", "<cmd>Telescope keymaps<cr>",            desc = "L:vnoremap < <gvist all keymaps" },

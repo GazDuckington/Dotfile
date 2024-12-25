@@ -3,7 +3,6 @@
     "labels": "jkl;asdf"
   },
   "as_window": false,
-	"force_keyboard_focus": true,
   "builtins": {
     "applications": {
       "context_aware": true,
@@ -149,7 +148,7 @@
         {
           "label": "Log Out",
           "icon": "system-log-out",
-          "exec": "loginctl terminate-user $(whoami) && killall sway && killall hyprland"
+          "exec": "loginctl terminate-user $(whoami) && sway exit && hyprctl dispatch exit"
         },
 				{
 					"label": "Shutdown",

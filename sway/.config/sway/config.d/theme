@@ -55,7 +55,7 @@ font pango:BlexMono Nerd Font 8
 smart_borders off
 
 # Set wallpaper:
-exec_always ~/.config/sway/scripts/swaypaper.sh
+exec_always ~/.local/bin/swaypaper.sh
 # output * bg #11111b solid_color
 #set $wpp $(/usr/sbin/find ~/Pictures/Wallpapers/ -type f | shuf -n1)
 #output * bg $wpp fill

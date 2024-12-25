@@ -1,10 +1,10 @@
 [Context]
-filesystems=xdg-config/gtk-4.0;$HOME/.themes:ro;/usr/share/themes:ro;$HOME/.icons:ro;/usr/share/icons:ro;$HOME/.fonts:ro;xdg-config/gtk-3.0:ro;xdg-download;xdg-config/Kvantum:ro;$HOME/.config/Kvantum:ro;$HOME/.local/share/themes;home;host-etc;host-os;host
+filesystems=host-etc;xdg-config/gtk-4.0:ro;xdg-download;home;xdg-config/gtk-3.0:ro;xdg-config/Kvantum:ro;/usr/share/icons:ro;/usr/share/themes:ro;host-os;host;
 
 [Environment]
 GTK_THEME=Colloid-Teal-Dark-Compact-Catppuccin
 ICON_THEME=Papirus-Dark
-QT_STYLE_OVERRIDE=kvantum
-XCURSOR_THEME=Qogir-dark
 QT_QPA_PLATFORM=wayland
 XCURSOR_SIZE=10
+QT_STYLE_OVERRIDE=kvantum
+XCURSOR_THEME=Qogir-dark

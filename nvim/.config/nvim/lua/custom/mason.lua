@@ -32,8 +32,11 @@ return {
 			ensure_installed = must_install,
 			automatic_installation = true,
 			handlers = {
+				function(server)
+					require('lspconfig')[server].setup({})
+				end,
 				volar = function()
-					require('lspconfig').volar.setup({})
+					require('lspconfig').volar.setup()
 				end,
 				ts_ls = function()
 					local vue_typescript_plugin = require('mason-registry')
@@ -52,9 +55,8 @@ return {
 								},
 							}
 						},
-						filetypes = ts_ft,
 					})
-				end
+				end,
 			}
 		}
 	},

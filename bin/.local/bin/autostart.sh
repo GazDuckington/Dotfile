@@ -13,7 +13,7 @@ lazy_load() {
 lazy_load "foot" "foot --server"
 lazy_load "walker --gapplication-service" "walker --gapplication-service"
 lazy_load "polkit-kde-auth" "/usr/lib/polkit-kde-authentication-agent-1"
-lazy_load "waybar" "waybar -c ~/.config/waybar/config-hypr.jsonc"
+lazy_load "waybar" "waybar"
 lazy_load "hypridle" "hypridle"
 lazy_load "nm-applet" "nm-applet"
 lazy_load "swaync" "swaync"

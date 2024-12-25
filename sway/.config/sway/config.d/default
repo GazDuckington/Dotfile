@@ -22,7 +22,8 @@ set $term-float footclient
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu GSK_RENDERER=ngl walker
+# set $menu GSK_RENDERER=ngl walker
+set $menu anyrun
 
 ### Idle configuration
 exec swayidle\
@@ -50,8 +51,8 @@ focus_follows_mouse no
     bindsym $mod+Return exec $term-float
 
     # Open the power menu
-    bindsym Mod4+F4 exec $menu -m power
-    bindsym Mod4+m exec $menu -m power
+    # bindsym Mod4+F4 exec $menu -m power
+    # bindsym Mod4+m exec $menu -m power
     bindsym Mod4+c exec ~/.local/bin/color_picker.sh #~/.config/sway/scripts/color_picker.sh
 
     # Kill focused window
@@ -196,8 +197,8 @@ bindsym $mod+r mode "resize"
 #
 # Screenshots
 #
-    bindsym print exec $menu -m scrot
-    bindsym $mod+p exec $menu -m scrot
+    bindsym print exec ~/.config/anyrun/scripts/scrot.sh
+    bindsym $mod+p exec ~/.config/anyrun/scripts/scrot.sh
     # bindsym Shift+print exec ~/.config/sway/scripts/screenshot.sh
 #
 
@@ -205,16 +206,22 @@ bindsym $mod+r mode "resize"
 # Keybindings List
 #
 bindsym $mod+z exec ~/.local/bin/footclient-launch.sh pulsemixer
-# bindsym Ctrl+F2 exec cliphist list | \
-# 	rofi -dmenu -p "  Clip " -no-show-icons | \
-# 	cliphist decode | \
-# 	wl-copy
-bindsym $mod+v exec $menu -m clipboard
-bindsym $mod+Escape exec $menu -m emoji
+bindsym $mod+v exec cliphist list | \
+	anyrun --plugins libstdin.so | \
+	cliphist decode | \
+	wl-copy
+# bindsym $mod+v exec $menu -m clipboard
+# bindsym $mod+Escape exec $menu -m emoji
 
 bindsym Ctrl+F3 exec killall -SIGUSR1 waybar
-bindsym $mod+Shift+n exec swaync-client -t -sw
+bindsym $mod+b bar mode toggle
+bindsym $mod+n exec swaync-client -t -sw
 bindsym Ctrl+Mod1+Delete exec ~/.local/bin/fool-launch.sh btop
 # bindsym Ctrl+e exec rofi -modi emoji -show emoji
 #
 
+#
+# bind gesture
+#
+bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:left workspace next

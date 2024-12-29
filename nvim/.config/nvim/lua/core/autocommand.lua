@@ -5,13 +5,13 @@ local gpinit = api.nvim_create_augroup("Init", { clear = true })
 
 M.setup = function()
 	-- Auto-reload init.lua on save
-	autocmd("BufWritePost", {
-		pattern = "init.lua",
-		callback = function()
-			vim.cmd([[source $MYVIMRC]])
-		end,
-		group = gpinit,
-	})
+	-- autocmd("BufWritePost", {
+	-- 	pattern = "init.lua",
+	-- 	callback = function()
+	-- 		vim.cmd([[source $MYVIMRC]])
+	-- 	end,
+	-- 	group = gpinit,
+	-- })
 
 	-- Run PackerSync on save
 	-- autocmd("BufWritePost", {
@@ -105,4 +105,3 @@ M.setup = function()
 end
 
 return M
-

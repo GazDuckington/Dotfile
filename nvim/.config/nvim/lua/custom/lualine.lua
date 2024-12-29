@@ -16,7 +16,7 @@ local md = {
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		config = {
+		opts = {
 			sections = {
 				lualine_a = {
 					md

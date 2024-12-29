@@ -56,3 +56,6 @@ bin/.local/bin/pywayland-scanner
 bin/.local/bin/qtile
 bin/.local/bin/stubgen
 bin/.local/bin/stubtest
+bin/.local/bin/pip
+bin/.local/bin/pip3
+bin/.local/bin/pip3.13

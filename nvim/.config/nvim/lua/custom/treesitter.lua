@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		config = {
+		opts = {
 			ensure_installed = "all",
 			context_commentstring = {
 				enable = true

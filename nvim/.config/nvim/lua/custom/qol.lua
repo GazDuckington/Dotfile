@@ -1,7 +1,7 @@
 return {
 	{
 		'levouh/tint.nvim',
-		config = {
+		opts = {
 			tint = -50,
 			window_ignore_function = function(winid)
 				local bufid = vim.api.nvim_win_get_buf(winid)
@@ -16,7 +16,7 @@ return {
 	{
 		'kevinhwang91/nvim-ufo',
 		dependencies = 'kevinhwang91/promise-async',
-		config = {
+		opts = {
 			provider_selector = function(bufnr, filetype, buftype)
 				return { 'treesitter', 'indent' }
 			end
@@ -24,7 +24,7 @@ return {
 	},
 	{
 		"chrisgrieser/nvim-spider",
-		config = {
+		opts = {
 			skipInsignificantPunctuation = false,
 			subwordMovement = true,
 			customPatterns = {}, -- check "Custom Movement Patterns" in the README for details
@@ -35,7 +35,7 @@ return {
 	},
 	{
 		"windwp/nvim-ts-autotag",
-		config = {
+		opts = {
 			opts = {
 				-- Defaults
 				enable_close = true,      -- Auto close tags
@@ -54,7 +54,7 @@ return {
 	},
 	{
 		"norcalli/nvim-colorizer.lua",
-		config = {
+		opts = {
 			"*",
 			conf = { rgb_fn = true, }
 		}
@@ -81,7 +81,7 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
-		config = function()
+		opts = function()
 			require('Comment').setup({
 				toggler = {
 					line = '<C-c>',

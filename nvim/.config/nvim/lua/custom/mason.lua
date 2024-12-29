@@ -1,7 +1,7 @@
 local Constant = require("core.constant.lsp")
 local must_install = Constant.must_install
 local ts_ft = Constant.ts_filetypes
-
+local web_ft = Constant.web_filetypes
 return {
 	{
 
@@ -13,7 +13,7 @@ return {
 				event = 'VeryLazy'
 			}
 		},
-		config = {
+		opts = {
 			ui = {
 				border = "rounded",
 				icons = {
@@ -28,7 +28,7 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-		config = {
+		opts = {
 			ensure_installed = must_install,
 			automatic_installation = true,
 			handlers = {
@@ -36,7 +36,14 @@ return {
 					require('lspconfig')[server].setup({})
 				end,
 				volar = function()
-					require('lspconfig').volar.setup()
+					require('lspconfig').volar.setup({
+						filetypes = ts_ft,
+						-- init_options = {
+						-- 	vue = {
+						-- 		hybridMode = false,
+						-- 	},
+						-- },
+					})
 				end,
 				ts_ls = function()
 					local vue_typescript_plugin = require('mason-registry')
@@ -51,10 +58,26 @@ return {
 								{
 									name = "@vue/typescript-plugin",
 									location = vue_typescript_plugin,
-									languages = ts_ft,
+									languages = { 'vue' },
 								},
 							}
 						},
+						filetypes = ts_ft,
+					})
+				end,
+				emmet_ls = function()
+					local capabilities = vim.lsp.protocol.make_client_capabilities()
+					capabilities.textDocument.completion.completionItem.snippetSupport = true
+					require('lspconfig').emmet_ls.setup({
+						capabilities = capabilities,
+						filetypes = web_ft,
+						init_options = {
+							html = {
+								options = {
+									["bem.enabled"] = true,
+								},
+							},
+						}
 					})
 				end,
 			}

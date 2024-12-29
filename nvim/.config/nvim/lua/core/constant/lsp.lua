@@ -23,7 +23,7 @@ M.ts_filetypes = {
 	'vue',
 }
 
-M.ts_filetypes = {
+M.web_filetypes = {
 	"css",
 	"eruby",
 	"html",

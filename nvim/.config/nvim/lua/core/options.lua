@@ -1,4 +1,5 @@
 local options = {
+	shell = "/bin/fish",
 	clipboard = "unnamedplus",
 	undofile = true,
 	undodir = os.getenv("HOME") .. "/.vim/undodir",

@@ -1,8 +1,4 @@
 # functions
-function nvmuse
-	set NPM_CONFIG_PREFIX
-	nvm use
-end
 function yy
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"

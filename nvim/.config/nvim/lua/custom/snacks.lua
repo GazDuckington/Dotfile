@@ -15,6 +15,7 @@ return {
 			win = { enabled = true },
 			indent = { enabled = true },
 			scroll = { enabled = true },
+			picker = {},
 			rename = { enabled = true },
 			bufdelete = { enabled = true },
 			terminal = {

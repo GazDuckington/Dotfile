@@ -1,4 +1,5 @@
 local options = {
+	shell = "/bin/fish",
 	clipboard = "unnamedplus",
 	undofile = true,
 	undodir = os.getenv("HOME") .. "/.vim/undodir",
@@ -15,6 +16,7 @@ local options = {
 	laststatus = 2,
 	number = true,
 	relativenumber = true,
+	updatetime = 100,
 }
 
 local function setup()

@@ -16,6 +16,8 @@ M.setup = function()
 	map("i", "<c-o>", "<C-O>o", opts)
 	map("v", "<", "<gv", opts)
 	map("v", ">", ">gv", opts)
+	--map('n', '<C-c>', ':Comment<CR>', opts)
+	--map('i', '<C-c>', '<Esc>:Comment<CR>i', opts)
 
 	-- save & quit
 	map("i", "<c-s>", "<ESC><cmd>w!<cr>", opts)
@@ -50,8 +52,8 @@ M.setup = function()
 	map("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
 
 	-- goto
-	map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-	map("n", "gD", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+	map("n", "gd", function() Snacks.picker.lsp_definitions() end, opts)
+	map("n", "gD", function() Snacks.picker.lsp_type_definitions() end, opts)
 	map("n", "]]", function() Snacks.words.jump(vim.v.count1) end, opts)
 	map("n", "[[", function() Snacks.words.jump(-vim.v.count1) end, opts)
 	map("n", "]c", ":Gitsigns next_hunk<cr>", opts)

@@ -1,10 +1,11 @@
 return {
 	{
-		'neovim/nvim-lspconfig',
+		"neovim/nvim-lspconfig",
 		dependencies = {
-			'saghen/blink.cmp',
-			'williamboman/mason.nvim',
+			"saghen/blink.cmp",
+			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
+			"nvim-treesitter/nvim-treesitter",
 		},
 
 		-- example using `opts` for defining servers

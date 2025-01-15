@@ -9,7 +9,7 @@ M.must_install = {
 	"tailwindcss",
 	"emmet_ls",
 	"marksman",
-	"sourcery",
+	-- "sourcery",
 	"cssls",
 }
 

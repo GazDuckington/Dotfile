@@ -16,6 +16,7 @@ local options = {
 	laststatus = 2,
 	number = true,
 	relativenumber = true,
+	updatetime = 100,
 }
 
 local function setup()

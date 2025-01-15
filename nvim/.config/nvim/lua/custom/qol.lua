@@ -81,16 +81,14 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
-		opts = function()
-			require('Comment').setup({
-				toggler = {
-					line = '<C-c>',
-				},
-				opleader = {
-					line = '<C-c>',
-				}
-			})
-		end,
+		opts = {
+			toggler = {
+				line = '<C-c>',
+			},
+			opleader = {
+				line = '<C-c>',
+			},
+		}
 	},
 	{
 		"folke/todo-comments.nvim",

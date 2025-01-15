@@ -1,41 +1,40 @@
 local mappings = {
-	{ "<leader>.",  ":cd ~/.config/nvim<cr>:e init.lua<cr>", desc = "Open Neovim Config" },
-	{ "<leader>n",  ":nohl<cr>",                             desc = "Reset highlight" },
-	{ "<leader>r",  "<cmd>Greyjoy<cr>",                      desc = "Greyjoy launcher" },
-	{ "<leader>i",  "<cmd>cd %:p:h<cr>",                     desc = "Cd to Buffer" },
-	{ "<leader>o",  ":e ",                                   desc = "Open/Create File" },
-	{ "<leader>c",  ":ColorizerToggle<cr>",                  desc = "Toggle colorizer" },
+	{ "<leader>.",  ":cd ~/.config/nvim<cr>:e init.lua<cr>",    desc = "Open Neovim Config" },
+	{ "<leader>n",  ":nohl<cr>",                                desc = "Reset highlight" },
+	{ "<leader>i",  "<cmd>cd %:p:h<cr>",                        desc = "Cd to Buffer" },
+	{ "<leader>o",  ":e ",                                      desc = "Open/Create File" },
+	{ "<leader>c",  ":ColorizerToggle<cr>",                     desc = "Toggle colorizer" },
 	-- { "<leader>C",  ":Telescope conventional_commits<cr>",                    desc = "conventional commit" },
 
 	-- file manager
-	{ "<leader>e",  "<cmd>NvimTreeToggle<cr>",               desc = "Open file manager" },
+	{ "<leader>e",  "<cmd>NvimTreeToggle<cr>",                  desc = "Open file manager" },
 	-- { "<leader>ec", "<cmd>Yazi cwd<cr>",                                      desc = "Open yazi file manager in current directory" },
 
 	{ "<leader>m",  group = "Menu" },
-	{ "<leader>mg", "<cmd>lua Snacks.lazygit()<cr>",         desc = "LazyGit" },
-	{ "<leader>ml", "<cmd>Lazy<cr>",                         desc = "Open Lazy.nvim menu" },
-	{ "<leader>mm", "<cmd>Mason<cr>",                        desc = "Open Mason menu" },
-	{ "<leader>ms", ":saveas ",                              desc = "Save buffer as" },
-	{ "<leader>mi", ":LspInfo<cr>",                          desc = "LSP Info" },
+	{ "<leader>mg", "<cmd>lua Snacks.lazygit()<cr>",            desc = "LazyGit" },
+	{ "<leader>ml", "<cmd>Lazy<cr>",                            desc = "Open Lazy.nvim menu" },
+	{ "<leader>mm", "<cmd>Mason<cr>",                           desc = "Open Mason menu" },
+	{ "<leader>ms", ":saveas ",                                 desc = "Save buffer as" },
+	{ "<leader>mi", ":LspInfo<cr>",                             desc = "LSP Info" },
 	-- { "<leader>mn", ":Navbuddy<cr>",                         desc = "Navbuddy, explore breadcrumb" },
 	-- { "<leader>mf", ":FocusToggle<cr>",                      desc = "FocusToggle" },
 
 	{ "<leader>h",  group = "Helps" },
-	{ "<leader>hk", "<cmd>Telescope keymaps<cr>",            desc = "L:vnoremap < <gvist all keymaps" },
-	{ "<leader>hh", "<cmd>Telescope help_tags<cr>",          desc = "Help Tags" },
+	{ "<leader>hk", function() Snacks.picker.keymaps() end,     desc = "L:vnoremap < <gvist all keymaps" },
+	{ "<leader>hh", function() Snacks.picker.help() end,        desc = "Help Tags" },
 
 	{ "<leader>v",  group = "Views" },
-	{ "<leader>vl", "<cmd>vsplit<cr><C-w>l",                 desc = "Focus split right" },
-	{ "<leader>vj", "<cmd>split<cr><C-w>j",                  desc = "Focus split down" },
+	{ "<leader>vl", "<cmd>vsplit<cr><C-w>l",                    desc = "Focus split right" },
+	{ "<leader>vj", "<cmd>split<cr><C-w>j",                     desc = "Focus split down" },
 
 	{ "<leader>q",  group = "Quickfix" },
-	{ "<leader>qN", ":cprevious<cr>",                        desc = "Previous" },
-	{ "<leader>qo", ":copen<cr>",                            desc = "Open" },
-	{ "<leader>qn", ":cnext<cr>",                            desc = "Next" },
+	{ "<leader>qN", ":cprevious<cr>",                           desc = "Previous" },
+	{ "<leader>qo", ":copen<cr>",                               desc = "Open" },
+	{ "<leader>qn", ":cnext<cr>",                               desc = "Next" },
 
 	{ "<leader>x",  group = "Trouble" },
-	{ "<leader>xx", "<cmd>Trouble diagnostics<cr>",          desc = "Worksapce Diagnostics" },
-	{ "<leader>xq", "<cmd>Trouble quickfix<cr>",             desc = "QuickFix" },
+	{ "<leader>xx", function() Snacks.picker.diagnostics() end, desc = "Worksapce Diagnostics" },
+	{ "<leader>xq", function() Snacks.picker.qflist() end,      desc = "QuickFix" },
 
 
 	{ "<leader>t",  group = "Git Signs" },
@@ -75,8 +74,6 @@ local mappings = {
 	{
 		"<leader>ti", ":<C-U>Gitsigns select_hunk<CR>", mode = { "o", "x" },
 	},
-	{ "<leader>l",  group = "Telescope LSP" },
-	{ "<leader>f",  group = "Telescope Fuzzy Finder" },
 	{ "<leader>b",  group = "Buffer Sorting" },
 	-- sort automatically by...
 	{ "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>",         desc = "Order By Number" },
@@ -91,14 +88,13 @@ local mappings = {
 
 
 	-- telescope stuff
-	{ "<leader>f",  group = "Telescope Find" },
-	{ "<leader>fg", "<cmd>Telescope git_files<cr>",               desc = "Telescope Find Git Files" },
-	{ "<leader>ff", "<cmd>Telescope find_files<cr>",              desc = "Telescope Find Files" },
-	{ "<leader>fr", "<cmd>Telescope live_grep<cr>",               desc = "Telescope Grep String" },
-	{ "<leader>fs", "<cmd>Telescope grep_string<cr>",             desc = "Telescope Find String" },
-	{ "<leader>fb", "<cmd>Telescope buffers<cr>",                 desc = "Telescope Find Buffers" },
-	{ "<leader>fu", "<cmd>Telescope undo<cr>",                    desc = "Telescope Undo" },
-	{ "<leader>ft", "<cmd>TodoTelescope<cr>",                     desc = "Telescope Find TODO" },
+	{ "<leader>f",  group = "Find" },
+	{ "<leader>fg", function() Snacks.picker.git_files() end,     desc = "Find Git Files" },
+	{ "<leader>ff", function() Snacks.picker.files() end,         desc = "Find Files" },
+	{ "<leader>fr", function() Snacks.picker.grep() end,          desc = "Grep String" },
+	{ "<leader>fb", function() Snacks.picker.buffers() end,       desc = "Find Buffers" },
+	{ "<leader>ft", function() Snacks.picker.todo_comments() end, desc = "Find TODO" },
+	{ "<leader>fs", function() Snacks.picker.lsp_symbols() end,   desc = "Find LSP Symbols" },
 	{
 		"<leader>?",
 		function()

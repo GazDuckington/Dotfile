@@ -1,8 +1,11 @@
+local Constant = require("core.constant.lsp")
+local must_install = Constant.must_install
+
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
-			ensure_installed = "all",
+			ensure_installed = must_install,
 			context_commentstring = {
 				enable = true
 			},

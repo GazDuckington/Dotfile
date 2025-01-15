@@ -9,7 +9,7 @@ return {
 		opts = {
 			completion = {
 				list = {
-					selection = "manual" -- | "preselect" -- | "auto-insert"
+					selection = { preselect = true } --"manual" -- | "preselect" -- | "auto-insert"
 				},
 				trigger = {
 					show_on_keyword = true,

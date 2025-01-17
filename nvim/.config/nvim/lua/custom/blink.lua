@@ -9,7 +9,7 @@ return {
 		opts = {
 			completion = {
 				list = {
-					selection = "manual" -- | "preselect" -- | "auto-insert"
+					selection = { preselect = true } --"manual" -- | "preselect" -- | "auto-insert"
 				},
 				trigger = {
 					show_on_keyword = true,
@@ -42,7 +42,7 @@ return {
 			},
 
 			appearance = {
-				use_nvim_cmp_as_default = true,
+				use_nvim_cmp_as_default = false,
 				nerd_font_variant = 'mono'
 			},
 

@@ -21,6 +21,25 @@ M.setup = function()
 	-- 	end,
 	-- 	group = gpinit,
 	-- })
+	-- highlights yanked text
+	vim.api.nvim_create_autocmd("TextYankPost", {
+		callback = function()
+			vim.highlight.on_yank({
+				higroup = "IncSearch",
+				timeout = 40,
+			})
+		end,
+	})
+	-- restore cursor on last position
+	vim.api.nvim_create_autocmd('BufReadPost', {
+		desc = 'Recover previous cursor position in buffer',
+		pattern = { '*' },
+		callback = function()
+			if (vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$")) then
+				vim.fn.execute("normal! g`\"zz")
+			end
+		end
+	})
 
 	local prev = { new_name = "", old_name = "" } -- Prevents duplicate events
 	autocmd("User", {

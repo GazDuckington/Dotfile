@@ -1,6 +1,9 @@
 {
-  "activation_mode": {
-    "labels": "jkl;asdf"
+"activation_mode": {
+    "disabled": true
+  },
+  "list": {
+    "keyboard_scroll_style": "vim"
   },
   "as_window": false,
   "builtins": {

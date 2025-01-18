@@ -51,23 +51,6 @@
 	},
 	"as_window": false,
 	"builtins": {
-		"ai": {
-			"weight": 5,
-			"placeholder": "AI",
-			"name": "ai",
-			"icon": "help-browser",
-			"prefix": "#",
-			"switcher_only": true,
-			"anthropic": {
-				"prompts": {
-					"model": "claude-3-5-sonnet-20241022",
-					"temperature": 1,
-					"max_tokens": "1_000",
-					"label": "General Assistant",
-					"prompt": "You are a helpful general assistant. Keep your answers short and precise."
-				}
-			}
-		},
 		"applications": {
 			"context_aware": true,
 			"name": "applications",

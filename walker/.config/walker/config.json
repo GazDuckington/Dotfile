@@ -2,9 +2,6 @@
 	"activation_mode": {
 		"disabled": true
 	},
-	"list": {
-		"keyboard_scroll_style": "vim"
-	},
 	"keys": {
 		"accept_typeahead": [
 			"tab"
@@ -30,11 +27,13 @@
 		},
 		"next": [
 			"down",
-			"ctrl j"
+			"ctrl j",
+			"tab"
 		],
 		"prev": [
 			"up",
-			"ctrl k"
+			"ctrl k",
+			"shift tab"
 		],
 		"close": [
 			"esc"
@@ -174,6 +173,7 @@
 		"placeholder": "No Results",
 		"show_initial_entries": true,
 		"single_click": true,
+		"keyboard_scroll_style": "vim",
 		"visibility_threshold": 20
 	},
 	"monitor": "",

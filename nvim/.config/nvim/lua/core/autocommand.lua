@@ -41,19 +41,19 @@ M.setup = function()
 		end
 	})
 
-	local prev = { new_name = "", old_name = "" } -- Prevents duplicate events
-	autocmd("User", {
-		pattern = "NvimTreeSetup",
-		callback = function()
-			local events = require("nvim-tree.api").events
-			events.subscribe(events.Event.NodeRenamed, function(data)
-				if prev.new_name ~= data.new_name or prev.old_name ~= data.old_name then
-					data = data
-					Snacks.rename.on_rename_file(data.old_name, data.new_name)
-				end
-			end)
-		end,
-	})
+	-- local prev = { new_name = "", old_name = "" } -- Prevents duplicate events
+	-- autocmd("User", {
+	-- 	pattern = "NvimTreeSetup",
+	-- 	callback = function()
+	-- 		local events = require("nvim-tree.api").events
+	-- 		events.subscribe(events.Event.NodeRenamed, function(data)
+	-- 			if prev.new_name ~= data.new_name or prev.old_name ~= data.old_name then
+	-- 				data = data
+	-- 				Snacks.rename.on_rename_file(data.old_name, data.new_name)
+	-- 			end
+	-- 		end)
+	-- 	end,
+	-- })
 
 	-- autoformat on save
 	autocmd("BufWritePre", {
@@ -112,11 +112,12 @@ M.setup = function()
 		{ "VimEnter" },
 		{
 			pattern = { "*" },
-			callback = function(data)
+			callback = function()
 				-- Check if the argument is a directory
-				if vim.fn.isdirectory(data.file) == 1 then
+				local dir = vim.fn.argv(0) --[[@as string]]
+				if dir ~= "" and vim.fn.isdirectory(dir) == 1 then
 					-- Change to the directory
-					vim.cmd("cd " .. data.file)
+					vim.cmd("cd " .. dir)
 				end
 			end
 		}

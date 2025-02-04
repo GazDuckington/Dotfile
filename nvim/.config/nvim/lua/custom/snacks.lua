@@ -35,6 +35,7 @@ return {
 					},
 				},
 			},
+			explorer = {},
 			terminal = {
 				enabled = true,
 				win = {

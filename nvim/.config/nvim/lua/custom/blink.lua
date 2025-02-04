@@ -7,6 +7,9 @@ return {
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
+			enabled = function()
+				return not vim.tbl_contains({ "snacks_picker_input" }, vim.bo.filetype)
+			end,
 			completion = {
 				list = {
 					selection = { preselect = true } --"manual" -- | "preselect" -- | "auto-insert"

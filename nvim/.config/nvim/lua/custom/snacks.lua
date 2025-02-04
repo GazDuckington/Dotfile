@@ -15,14 +15,30 @@ return {
 			win = { enabled = true },
 			indent = { enabled = true },
 			scroll = { enabled = true },
-			picker = {},
 			rename = { enabled = true },
 			bufdelete = { enabled = true },
+			picker = {
+				sources = {
+					explorer = {
+						layout = {
+							layout = {
+								position = "right",
+							},
+							preset = "sidebar",
+							preview = "main",
+						},
+						replace_netrw = true,
+						auto_close = true,
+						follow_file = true,
+						focus = "input",
+						jump = { close = true },
+					},
+				},
+			},
 			terminal = {
 				enabled = true,
 				win = {
 					position = "float",
-					colorize = true,
 					title = "terminal",
 					border = "rounded",
 					backdrop = 75,

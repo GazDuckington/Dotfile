@@ -10,7 +10,7 @@ lazy_load() {
 }
 
 # Start each service lazily
-lazy_load "foot" "foot --server"
+# lazy_load "foot" "foot --server"
 # lazy_load "walker" "walker --gapplication-service"
 lazy_load "polkit-kde-auth" "/usr/lib/polkit-kde-authentication-agent-1"
 lazy_load "waybar" "waybar"

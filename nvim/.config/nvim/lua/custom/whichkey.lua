@@ -1,13 +1,19 @@
 local mappings = {
-	{ "<leader>.",  ":cd ~/.config/nvim<cr>:e init.lua<cr>",    desc = "Open Neovim Config" },
-	{ "<leader>n",  ":nohl<cr>",                                desc = "Reset highlight" },
-	{ "<leader>i",  "<cmd>cd %:p:h<cr>",                        desc = "Cd to Buffer" },
-	{ "<leader>o",  ":e ",                                      desc = "Open/Create File" },
-	{ "<leader>c",  ":ColorizerToggle<cr>",                     desc = "Toggle colorizer" },
+	{ "<leader>.", ":cd ~/.config/nvim<cr>:e init.lua<cr>", desc = "Open Neovim Config" },
+	{ "<leader>n", ":nohl<cr>",                             desc = "Reset highlight" },
+	{ "<leader>i", "<cmd>cd %:p:h<cr>",                     desc = "Cd to Buffer" },
+	{ "<leader>o", ":e ",                                   desc = "Open/Create File" },
+	{ "<leader>c", ":ColorizerToggle<cr>",                  desc = "Toggle colorizer" },
 	-- { "<leader>C",  ":Telescope conventional_commits<cr>",                    desc = "conventional commit" },
 
 	-- file manager
-	{ "<leader>e",  "<cmd>NvimTreeToggle<cr>",                  desc = "Open file manager" },
+	{
+		"<leader>e",
+		function()
+			Snacks.picker.explorer()
+		end,
+		desc = "Open file manager"
+	},
 	-- { "<leader>ec", "<cmd>Yazi cwd<cr>",                                      desc = "Open yazi file manager in current directory" },
 
 	{ "<leader>m",  group = "Menu" },
@@ -102,6 +108,9 @@ local mappings = {
 		end,
 		desc = "Buffer Local Keymaps (which-key)",
 	},
+	{ "<leader>fv", function() Snacks.picker.cliphist() end,      desc = "Find in clipboard" },
+	{ "<leader>fe", function() Snacks.picker.icons() end,         desc = "Find icons" },
+	{ "<leader>fn", function() Snacks.picker.notifications() end, desc = "Notification History" },
 }
 
 for n = 1, 9 do

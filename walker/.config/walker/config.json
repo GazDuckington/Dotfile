@@ -61,7 +61,7 @@
 			"show_sub_when_single": true,
 			"weight": 5,
 			"actions": {
-				"enabled": false
+				"enabled": true
 			}
 		},
 		"calc": {
@@ -115,8 +115,9 @@
 			"icon": "folder",
 			"ignore_gitignore": true,
 			"name": "finder",
-			"placeholder": " Finder",
-			"prefix": "//",
+			"placeholder": "  Finder",
+			"prefix": "fd",
+			"preview_images": true,
 			"refresh": true,
 			"switcher_only": true,
 			"weight": 5

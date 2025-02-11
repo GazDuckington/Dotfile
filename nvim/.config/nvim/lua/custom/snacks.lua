@@ -32,11 +32,11 @@ return {
 			bufdelete = { enabled = true },
 			picker = {
 				sources = {
-					finder = "explorer",
 					explorer = {
+						finder = "explorer",
 						layout = {
 							layout = {
-								-- 	position = "float",
+								-- position = "right",
 								-- border = "rounded",
 								backdrop = 75,
 								width = 0.8,
@@ -52,8 +52,37 @@ return {
 						jump = { close = true },
 					},
 				},
+				explorer = {
+					win = {
+						list = {
+							keys = {
+								["<BS>"] = "explorer_up",
+								["l"] = "confirm",
+								["h"] = "explorer_close", -- close directory
+								["a"] = "explorer_add",
+								["d"] = "explorer_del",
+								["r"] = "explorer_rename",
+								["c"] = "explorer_copy",
+								["m"] = "explorer_move",
+								["o"] = "explorer_open", -- open with system application
+								["P"] = "toggle_preview",
+								["y"] = "explorer_yank",
+								["u"] = "explorer_update",
+								["<c-c>"] = "tcd",
+								["."] = "explorer_focus",
+								["I"] = "toggle_ignored",
+								["H"] = "toggle_hidden",
+								["Z"] = "explorer_close_all",
+								["]g"] = "explorer_git_next",
+								["[g"] = "explorer_git_prev",
+							},
+						},
+					},
+				},
 			},
-			explorer = { enabled = true },
+			explorer = {
+				enabled = true,
+			},
 			terminal = {
 				enabled = true,
 				win = {

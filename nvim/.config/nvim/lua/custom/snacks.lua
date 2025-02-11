@@ -48,7 +48,7 @@ return {
 						replace_netrw = true,
 						auto_close = true,
 						follow_file = true,
-						focus = "input",
+						-- focus = "input",
 						jump = { close = true },
 					},
 				},

@@ -13,7 +13,7 @@
 		"temperature",
 		"idle_inhibitor",
 		"hyprland/window",
-		"sway/window",
+		"sway/window"
 	],
 	"modules-center": [],
 	"modules-right": [
@@ -28,7 +28,7 @@
 		"custom/caps",
 		"custom/power",
 		"tray",
-		"custom/pacman",
+		// "custom/pacman",
 		"custom/notification"
 	],
 	"sway/window": {

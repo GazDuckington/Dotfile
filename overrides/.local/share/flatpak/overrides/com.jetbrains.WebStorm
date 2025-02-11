@@ -1,0 +1,2 @@
+[Environment]
+FLATPAK_ENABLE_SDK_EXT="golang,python"

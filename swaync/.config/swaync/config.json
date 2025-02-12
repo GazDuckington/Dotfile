@@ -46,10 +46,36 @@
 		"inhibitors",
 		"title",
 		"dnd",
+		"buttons-grid",
 		"mpris",
 		"notifications"
 	],
 	"widget-config": {
+		"buttons-grid": {
+			"actions": [
+				{
+					"label": " ",
+					"command": "sh -c '~/.local/bin/changevol.sh mute'",
+					"type": "toggle"
+				},
+				{
+					"label": "󱨩 ",
+					"command": "sh -c 'swaync-client -R && swaync-client -rs'"
+				},
+				{
+					"label": "󱑞 ",
+					"command": "sh -c 'hyprctl reload'"
+				},
+				{
+					"label": "󰸉 ",
+					"command": "sh -c '~/.local/bin/swaypaper.sh'"
+				},
+				{
+					"label": "󰴱 ",
+					"command": "sh -c '~/.local/bin/color_picker.sh'"
+				}
+			]
+		},
 		"inhibitors": {
 			"text": "Inhibitors",
 			"button-text": "Clear All",

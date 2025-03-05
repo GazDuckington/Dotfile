@@ -28,6 +28,7 @@
 		"custom/caps",
 		"custom/power",
 		"tray",
+		"network",
 		// "custom/pacman",
 		"custom/notification"
 	],
@@ -110,11 +111,11 @@
 		]
 	},
 	"network": {
-		"format-wifi": " {essid} ({signalStrength}%)",
+		"format-wifi": "  {essid} ({signalStrength}%)",
 		"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
 		"format-linked": "{ifname} (No IP) ",
 		"format": "",
-		"format-disconnected": "",
+		"format-disconnected": " ",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
 		"on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
 		"on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
@@ -321,7 +322,7 @@
 	},
 	"wireplumber": {
 		"on-click": "~/.local/bin/changevol.sh mute",
-		"on-click-right": "~/.local/bin/footclient-launch.sh pulsemixer",
+		"on-click-right": "pavucontrol",
 		"on-scroll-up": "~/.local/bin/changevol.sh up",
 		"on-scroll-down": "~/.local/bin/changevol.sh down",
 		"format": "<span foreground='#fab387'>{icon}</span>  {volume}%",

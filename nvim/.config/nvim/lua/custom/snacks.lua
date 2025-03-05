@@ -21,8 +21,13 @@ return {
 			picker = {
 				sources = {
 					explorer = {
-						auto_close = true,
-						layout = { layout = { position = "right" }, preview = false },
+						auto_close = false,
+						jump = { close = true },
+						layout = {
+							preset = "ivy_split",
+							-- layout = { position = "top" }
+							preview = false
+						},
 					},
 				},
 			},

@@ -9,4 +9,7 @@ export PATH=~/.npm-global/bin:$PATH
 export BROWSER=zen-browser
 export TERM=footclient
 export QT_QPA_PLATFORMTHEME="qt5ct"
-. "/home/gaz/.deno/env"
+
+if uwsm check may-start && uwsm select; then
+	exec systemd-cat -t uwsm_start uwsm start default
+fi

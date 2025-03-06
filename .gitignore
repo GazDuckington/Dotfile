@@ -62,3 +62,4 @@ bin/.local/bin/pip3.13
 bin/.local/bin/pulsemixer
 bin/.local/bin/posting
 bin/.local/bin/poetry
+bin/.local/bin/lovr

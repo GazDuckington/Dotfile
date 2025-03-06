@@ -12,10 +12,9 @@ source ~/.bashrc.d/aliases
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-pyenv init - | source
+
+if uwsm check may-start && uwsm select
+	exec systemd-cat -t uwsm_start uwsm start default
+end
 
 starship init fish | source
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH

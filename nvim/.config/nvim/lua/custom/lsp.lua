@@ -16,7 +16,11 @@ return {
 					settings = {
 						Lua = {
 							diagnostics = { globals = { "vim" } },
-							workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+							workspace = {
+								library = vim.api.nvim_get_runtime_file("", true),
+								userThirdParty = { os.getenv("HOME") .. ".local/share/lua-addons" },
+								checkThirdParty = "Apply"
+							},
 						},
 					},
 				},

@@ -13,8 +13,8 @@ source ~/.bashrc.d/aliases
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
-if uwsm check may-start && uwsm select
-	exec systemd-cat -t uwsm_start uwsm start default
+if uwsm check may-start; and uwsm select; then
+    exec systemd-cat -t uwsm_start uwsm start default
 end
 
 starship init fish | source

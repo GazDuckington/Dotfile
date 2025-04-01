@@ -28,8 +28,8 @@
 		"custom/caps",
 		"custom/power",
 		"tray",
-		"network",
-		"bluetooth",
+		// "network",
+		// "bluetooth",
 		// "custom/pacman",
 		"custom/notification"
 	],

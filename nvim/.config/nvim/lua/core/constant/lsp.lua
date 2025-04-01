@@ -11,6 +11,7 @@ M.must_install = {
 	"marksman",
 	-- "sourcery",
 	"cssls",
+	"html",
 }
 
 M.ts_filetypes = {

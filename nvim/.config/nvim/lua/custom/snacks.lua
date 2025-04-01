@@ -24,8 +24,8 @@ return {
 						auto_close = false,
 						jump = { close = true },
 						layout = {
-							preset = "ivy_split",
-							-- layout = { position = "top" }
+							-- preset = "ivy_split",
+							layout = { position = "top" },
 							preview = false
 						},
 					},

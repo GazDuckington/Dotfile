@@ -1,3 +1,4 @@
+local Constant = require("core.constant.lsp")
 return {
 	{
 		"neovim/nvim-lspconfig",
@@ -8,9 +9,9 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 		},
 
-		-- example using `opts` for defining servers
 		opts = {
 			servers = {
+				-- Lua LSP
 				lua_ls = {
 					settings = {
 						Lua = {
@@ -23,14 +24,34 @@ return {
 						},
 					},
 				},
+
+				-- HTML LSP
+				-- html = {
+				-- },
 			}
 		},
+
 		config = function(_, opts)
 			local lspconfig = require('lspconfig')
+			local capabilities = require('blink.cmp').get_lsp_capabilities()
 			for server, config in pairs(opts.servers) do
-				config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+				config.capabilities = capabilities
 				lspconfig[server].setup(config)
 			end
+			lspconfig.html.setup({
+				capabilities = capabilities,
+				init_options = {
+					configurationSection = { "html", "css", "javascript" },
+					embeddedLanguages = {
+						css = true,
+						javascript = true,
+					},
+					provideFormatter = true
+				},
+				filetypes = { "html" }, -- Make sure it's applied to HTML
+				settings = {},
+				single_file_support = true
+			})
 		end
 	}
 }

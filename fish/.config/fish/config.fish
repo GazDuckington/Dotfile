@@ -13,7 +13,7 @@ source ~/.bashrc.d/aliases
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
-if uwsm check may-start; and uwsm select; then
+if uwsm check may-start; and uwsm select
     exec systemd-cat -t uwsm_start uwsm start default
 end
 

@@ -14,8 +14,10 @@
     }
   },
   {
-    "context": "Editor",
+    "context": "Editor || Pane",
     "bindings": {
+      "alt-w": ["pane::CloseActiveItem", { "close_pinned": false }],
+      "alt-shift-w": ["pane::CloseInactiveItems", { "close_pinned": false }]
       // "j k": ["workspace::SendKeystrokes", "escape"]
     }
   },
@@ -55,8 +57,8 @@
       "ctrl-j": "workspace::ActivatePaneDown",
       "alt-h": "pane::ActivatePreviousItem",
       "alt-l": "pane::ActivateNextItem",
-      "alt-w": "pane::CloseActiveItem",
-      "alt-shift-w": ["pane::CloseInactiveItems", { "close_pinned": false }],
+      // "alt-w": ["pane::CloseActiveItem", { "close_pinned": false }],
+      // "alt-shift-w": ["pane::CloseInactiveItems", { "close_pinned": false }],
       "alt-shift-h": "pane::SwapItemLeft",
       "alt-shift-l": "pane::SwapItemRight",
       "ctrl-shift-w": "pane::CloseAllItems",

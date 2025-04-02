@@ -12,16 +12,18 @@
   "ui_font_family": "BlexMono Nerd Font",
   "buffer_font_family": "BlexMono Nerd Font",
   "ui_font_features": {
-    "calt": true
+    "calt": true,
+    "liga": true
   },
   "buffer_font_features": {
-    "calt": true
+    "calt": true,
+    "liga": true
   },
   "ui_font_size": 15,
   "buffer_font_size": 15,
   "theme": {
-    "mode": "system",
-    "light": "Catppuccin Mocha",
-    "dark": "Catppuccin Frappe"
+    "mode": "dark",
+    "dark": "Catppuccin Mocha",
+    "light": "Catppuccin Frappé"
   }
 }

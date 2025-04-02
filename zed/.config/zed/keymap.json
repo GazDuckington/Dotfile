@@ -9,16 +9,24 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
-      "space e": "workspace::ToggleLeftDock"
+      "space e": "workspace::ToggleLeftDock",
+      "space b": "workspace::ToggleRightDock",
+      "space j": "workspace::ToggleBottomDock"
     }
   },
   {
-    "context": "Editor || Pane",
+    "context": "Editor || Pane || Terminal",
     "bindings": {
       "alt-w": ["pane::CloseActiveItem", { "close_pinned": false }],
       "alt-shift-w": ["pane::CloseInactiveItems", { "close_pinned": false }]
       // "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-w": ["terminal::SendKeystroke", "alt-w"],
+      "alt-shift-w": ["terminal::SendKeystroke", "alt-shift-w"]
     }
   },
   {
@@ -51,6 +59,8 @@
   {
     "context": "VimControl && !menu && vim_mode == normal",
     "bindings": {
+      "t": "vim::Increment",
+      "shift-t": "vim::Decrement",
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",

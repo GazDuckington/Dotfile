@@ -1,6 +1,6 @@
 return {
 	{
-		'levouh/tint.nvim',
+		'sheimer/tint.nvim',
 		opts = {
 			tint = -50,
 			window_ignore_function = function(winid)

@@ -1,0 +1,76 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+      "space e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-c": "editor::ToggleComments", // vim default: return to normal mode
+      // "ctrl-x": "editor::Cut", // vim default: decrement
+      // "ctrl-v": "editor::Paste", // vim default: visual block mode
+      // "ctrl-y": "editor::Undo", // vim default: line up
+      "ctrl-f": "buffer_search::Deploy", // vim default: page down
+      "ctrl-o": "workspace::Open", // vim default: go back
+      "ctrl-a": "editor::SelectAll" // vim default: increment
+    }
+  },
+  {
+    "context": "VimControl && !menu && vim_mode != operator",
+    "bindings": {
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd"
+    }
+  },
+  {
+    "context": "VimControl && !menu && vim_mode == visual",
+    "bindings": {
+      "shift-s": ["vim::PushAddSurrounds", {}]
+    }
+  },
+  {
+    "context": "VimControl && !menu && vim_mode == normal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "alt-h": "pane::ActivatePreviousItem",
+      "alt-l": "pane::ActivateNextItem",
+      "alt-w": "pane::CloseActiveItem",
+      "alt-shift-w": ["pane::CloseInactiveItems", { "close_pinned": false }],
+      "alt-shift-h": "pane::SwapItemLeft",
+      "alt-shift-l": "pane::SwapItemRight",
+      "ctrl-shift-w": "pane::CloseAllItems",
+      "ctrl-shift-h": "workspace::SwapPaneLeft",
+      "ctrl-shift-l": "workspace::SwapPaneRight",
+      "ctrl-shift-k": "workspace::SwapPaneUp",
+      "ctrl-shift-j": "workspace::SwapPaneDown"
+    }
+  },
+  {
+    "context": "VimControl && !menu && vim_mode == normal || vim_mode==visual",
+    "bindings": {
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown"
+    }
+  }
+]

@@ -1,0 +1,10 @@
+{
+    "workspace.library": [
+        "/home/gaz/.config/nvim",
+        "/home/gaz/.local/share/nvim/lazy/lazy.nvim",
+        "/usr/share/nvim/runtime",
+        "/usr/lib64/nvim",
+        "/home/gaz/.local/state/nvim/lazy/readme",
+        "${3rd}/luassert/library"
+    ]
+}

@@ -1,22 +1,24 @@
-local wezterm = require("wezterm")
+local wezterm = require('wezterm')
+local config = wezterm.config_builder()
 
-return {
-	default_prog = { '/usr/bin/fish', '-l' },
-	font = wezterm.font {
-		family = 'BlexMono Nerd Font',
-		harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' },
-	},
-	font_size = 12.0,
-	cursor_thickness = 5,
-	window_background_opacity = 0.7,
-	use_fancy_tab_bar = false,
-	tab_bar_at_bottom = true,
-	hide_tab_bar_if_only_one_tab = true,
-	color_scheme = "Catppuccin Mocha",
-	colors = {
-		background = '#181825',
-		cursor_bg = '#EC2864',
-		cursor_fg = '#010409'
-	},
-	window_close_confirmation = 'NeverPrompt',
-}
+-- configurations
+local settings = require('config')
+
+-- Function to extend the target table with values from the source table
+local function extend_table(target, source)
+	for key, value in pairs(source) do
+		-- If the key already exists, and it's a table, we merge the tables recursively
+		if type(value) == "table" and type(target[key]) == "table" then
+			extend_table(target[key], value) -- Recursive call to merge nested tables
+		else
+			target[key] = value           -- Simply assign the value from source to target
+		end
+	end
+end
+
+
+for _, config_table in ipairs(settings) do
+	extend_table(config, config_table)
+end
+
+return config

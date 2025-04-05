@@ -1,4 +1,6 @@
 local Constant = require("core.constant.lsp")
+local ts_ft = Constant.ts_filetypes
+
 return {
 	{
 		"neovim/nvim-lspconfig",
@@ -51,6 +53,22 @@ return {
 				filetypes = { "html" }, -- Make sure it's applied to HTML
 				settings = {},
 				single_file_support = true
+			})
+
+			local vue_ls_path = vim.fn.expand("$MASON/packages/vue-language-server")
+			local vue_plugin_path = vue_ls_path .. "/node_modules/@vue/language-server"
+
+			lspconfig.ts_ls.setup({
+				init_options = {
+					plugins = {
+						{
+							name = "@vue/typescript-plugin",
+							location = vue_plugin_path,
+							languages = { 'vue' },
+						},
+					}
+				},
+				filetypes = ts_ft,
 			})
 		end
 	}

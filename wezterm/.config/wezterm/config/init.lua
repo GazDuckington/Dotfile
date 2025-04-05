@@ -11,6 +11,8 @@ local appearance = require('config.appearance')
 local M = {}
 
 M = {
+	enable_wayland = true,
+	enable_scroll_bar = true,
 	default_prog = { '/usr/bin/fish' },
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = true,

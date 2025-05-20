@@ -4,7 +4,6 @@ local ts_ft = Constant.ts_filetypes
 local web_ft = Constant.web_filetypes
 return {
 	{
-
 		'mason-org/mason.nvim',
 		dependencies = {
 			{

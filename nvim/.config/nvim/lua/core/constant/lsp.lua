@@ -12,6 +12,8 @@ M.must_install = {
 	-- "sourcery",
 	"cssls",
 	"html",
+	"volar",
+	"typescript",
 }
 
 M.ts_filetypes = {

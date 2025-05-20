@@ -1,6 +1,7 @@
-local Constant = require("core.constant.lsp")
-local ts_ft = Constant.ts_filetypes
-local web_ft = Constant.web_filetypes
+-- local client_capabilities = vim.lsp.protocol.make_client_capabilities()
+-- local Constant = require("core.constant.lsp")
+-- local ts_ft = Constant.ts_filetypes
+-- local web_ft = Constant.web_filetypes
 
 return {
 	{
@@ -31,6 +32,14 @@ return {
 		},
 
 		config = function(_, opts)
+			local lspconfig = require('lspconfig')
+			local capabilities = require('blink.cmp').get_lsp_capabilities()
+
+			for server, config in pairs(opts.servers) do
+				config.capabilities = capabilities
+				lspconfig[server].setup(config)
+			end
+
 			vim.lsp.config('volar', {
 				-- add filetypes for typescript, javascript and vue
 				filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },

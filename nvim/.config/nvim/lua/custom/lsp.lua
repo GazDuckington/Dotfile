@@ -1,5 +1,6 @@
 local Constant = require("core.constant.lsp")
 local ts_ft = Constant.ts_filetypes
+local web_ft = Constant.web_filetypes
 
 return {
 	{
@@ -26,50 +27,21 @@ return {
 						},
 					},
 				},
-
-				-- HTML LSP
-				-- html = {
-				-- },
 			}
 		},
 
 		config = function(_, opts)
-			local lspconfig = require('lspconfig')
-			local capabilities = require('blink.cmp').get_lsp_capabilities()
-			for server, config in pairs(opts.servers) do
-				config.capabilities = capabilities
-				lspconfig[server].setup(config)
-			end
-			lspconfig.html.setup({
-				capabilities = capabilities,
+			vim.lsp.config('volar', {
+				-- add filetypes for typescript, javascript and vue
+				filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 				init_options = {
-					configurationSection = { "html", "css", "javascript" },
-					embeddedLanguages = {
-						css = true,
-						javascript = true,
+					vue = {
+						-- disable hybrid mode
+						hybridMode = false,
 					},
-					provideFormatter = true
 				},
-				filetypes = { "html" }, -- Make sure it's applied to HTML
-				settings = {},
-				single_file_support = true
 			})
-
-			local vue_ls_path = vim.fn.expand("$MASON/packages/vue-language-server")
-			local vue_plugin_path = vue_ls_path .. "/node_modules/@vue/language-server"
-
-			lspconfig.ts_ls.setup({
-				init_options = {
-					plugins = {
-						{
-							name = "@vue/typescript-plugin",
-							location = vue_plugin_path,
-							languages = { 'vue' },
-						},
-					}
-				},
-				filetypes = ts_ft,
-			})
+			vim.lsp.config['ts_ls'] = {}
 		end
 	}
 }

@@ -18,19 +18,19 @@ return {
 			rename = { enabled = false },
 			bufdelete = { enabled = true },
 			explorer = { enabled = true },
-			picker = {
-				sources = {
-					explorer = {
-						auto_close = false,
-						jump = { close = true },
-						layout = {
-							-- preset = "ivy_split",
-							layout = { position = "top" },
-							preview = false
-						},
-					},
-				},
-			},
+			-- picker = {
+			-- 	sources = {
+			-- 		explorer = {
+			-- 			auto_close = false,
+			-- 			jump = { close = true },
+			-- 			layout = {
+			-- 				-- preset = "ivy_split",
+			-- 				layout = { position = "top" },
+			-- 				preview = false
+			-- 			},
+			-- 		},
+			-- 	},
+			-- },
 			terminal = {
 				enabled = true,
 				win = {

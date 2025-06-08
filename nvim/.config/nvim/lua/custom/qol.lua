@@ -12,7 +12,7 @@ return {
 	-- end
 	-- 	}
 	-- },
-	{ "miversen33/sunglasses.nvim", config = true },
+	{ "GazDuckington/sunglasses.nvim", config = true },
 	{
 		'kevinhwang91/nvim-ufo',
 		dependencies = 'kevinhwang91/promise-async',

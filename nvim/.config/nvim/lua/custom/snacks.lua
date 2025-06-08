@@ -49,6 +49,7 @@ return {
 							desc = "Double escape to normal mode",
 						},
 						q = "hide",
+						["<esc>"] = "hide",
 					},
 				},
 			},

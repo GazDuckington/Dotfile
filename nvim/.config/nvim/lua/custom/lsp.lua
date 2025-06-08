@@ -68,16 +68,12 @@ return {
 						{
 							name = "@vue/typescript-plugin",
 							location =
-							"~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/",
-							languages = { "javascript", "typescript", "vue" },
+							"~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
+							languages = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 						},
 					},
 				},
-				filetypes = {
-					"javascript",
-					"typescript",
-					"vue",
-				},
+				filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 			})
 		end
 	}

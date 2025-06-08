@@ -1,6 +1,6 @@
 -- local client_capabilities = vim.lsp.protocol.make_client_capabilities()
--- local Constant = require("core.constant.lsp")
--- local ts_ft = Constant.ts_filetypes
+local Constant = require("core.constant.lsp")
+local ts_ft = Constant.ts_filetypes
 -- local web_ft = Constant.web_filetypes
 
 return {
@@ -34,7 +34,7 @@ return {
 			})
 			vim.lsp.config('vue_ls', {
 				-- add filetypes for typescript, javascript and vue
-				filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+				filetypes = ts_ft, --{ 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 				init_options = {
 					-- vue = {
 					-- disable hybrid mode
@@ -61,15 +61,11 @@ return {
 						{
 							name = "@vue/typescript-plugin",
 							location = vue_plugin_path,
-							languages = { 'typescript', 'javascript', 'vue' },
+							languages = ts_ft, -- { 'typescript', 'javascript', 'vue' },
 						},
 					},
 				},
-				filetypes = {
-					'javascript',
-					'typescript',
-					'vue',
-				},
+				filetypes = ts_ft,
 			})
 		end
 	}

@@ -19,7 +19,7 @@ local mappings = {
 	-- { "<leader>ec", "<cmd>Yazi cwd<cr>",                                      desc = "Open yazi file manager in current directory" },
 
 	{ "<leader>m",  group = "Menu" },
-	{ "<leader>mg", "<cmd>lua Snacks.lazygit()<cr>",            desc = "LazyGit" },
+	{ "<leader>mg", function() Snacks.lazygit() end,            desc = "LazyGit" },
 	{ "<leader>ml", "<cmd>Lazy<cr>",                            desc = "Open Lazy.nvim menu" },
 	{ "<leader>mm", "<cmd>Mason<cr>",                           desc = "Open Mason menu" },
 	{ "<leader>ms", ":saveas ",                                 desc = "Save buffer as" },

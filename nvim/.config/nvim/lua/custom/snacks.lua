@@ -17,7 +17,7 @@ return {
 			scroll = { enabled = true },
 			rename = { enabled = false },
 			bufdelete = { enabled = true },
-			explorer = { enabled = true },
+			explorer = { enabled = false },
 			-- picker = {
 			-- 	sources = {
 			-- 		explorer = {

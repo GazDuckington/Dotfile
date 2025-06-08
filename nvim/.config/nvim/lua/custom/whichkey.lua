@@ -13,7 +13,8 @@ local mappings = {
 		-- Snacks.picker.explorer()
 		-- end,
 		-- "<cmd>Oil<cr>",
-		"<cmd>NvimTreeToggle<cr>",
+		-- "<cmd>NvimTreeToggle<cr>",
+		"<cmd>Neotree toggle float<cr>",
 		desc = "Open file manager"
 	},
 	-- { "<leader>ec", "<cmd>Yazi cwd<cr>",                                      desc = "Open yazi file manager in current directory" },

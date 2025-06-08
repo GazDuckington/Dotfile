@@ -28,7 +28,6 @@ M.ts_filetypes = {
 
 M.web_filetypes = {
 	"css",
-	"eruby",
 	"html",
 	"javascript",
 	"javascriptreact",
@@ -36,7 +35,7 @@ M.web_filetypes = {
 	"sass",
 	"scss",
 	"svelte",
-	"pug",
+	"typescript",
 	"typescriptreact",
 	"vue"
 }

@@ -86,7 +86,11 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
+		dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
 		opts = {
+			pre_hook = function()
+				require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()
+			end,
 			toggler = {
 				line = '<C-c>',
 			},
@@ -95,6 +99,33 @@ return {
 			},
 		}
 	},
+	-- {
+	-- 	'echasnovski/mini.comment',
+	-- 	version = '*',
+	-- 	dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
+	-- 	opts = {
+	-- 		hooks = {
+	-- 			pre = function()
+	-- 				require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()
+	-- 			end
+	-- 		}
+	-- 	},
+	-- 	mappings = {
+	-- 		-- Toggle comment (like `gcip` - comment inner paragraph) for both
+	-- 		-- Normal and Visual modes
+	-- 		comment = 'C-c',
+	--
+	-- 		-- Toggle comment on current line
+	-- 		comment_line = 'C-c',
+	--
+	-- 		-- Toggle comment on visual selection
+	-- 		comment_visual = 'C-c',
+	--
+	-- 		-- Define 'comment' textobject (like `dgc` - delete whole comment block)
+	-- 		-- Works also in Visual mode if mapping differs from `comment_visual`
+	-- 		textobject = 'C-c',
+	-- 	},
+	-- },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },

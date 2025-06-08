@@ -14,7 +14,7 @@ return {
 		},
 		config = function()
 			local vue_ls_path = vim.fn.expand("$MASON/packages/vue-language-server")
-			local vue_plugin_path = vue_ls_path .. "/node_modules/@vue/language-server"
+			local vue_plugin_path = vue_ls_path .. "/node_modules/@vue/language-server/node_modules/"
 			local vue_ts_plugin = vue_ls_path .. "/node_modules/typescript/lib"
 
 			vim.lsp.config('lua_ls', {

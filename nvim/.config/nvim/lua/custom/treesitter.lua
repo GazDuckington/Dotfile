@@ -1,5 +1,5 @@
 local Constant = require("core.constant.lsp")
-local must_install = Constant.must_install
+local must_install = Constant.web_filetypes
 
 return {
 	{

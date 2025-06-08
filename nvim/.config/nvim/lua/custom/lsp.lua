@@ -25,7 +25,14 @@ return {
 							globals = { 'bit', 'vim', 'it', 'describe', 'before_each', 'after_each' },
 						},
 						workspace = {
-							library = vim.api.nvim_get_runtime_file("", true),
+							library = {
+								vim.api.nvim_get_runtime_file("", true),
+								vim.env.VIMRUNTIME
+								-- Depending on the usage, you might want to add additional paths
+								-- here.
+								-- '${3rd}/luv/library'
+								-- '${3rd}/busted/library'
+							},
 							userThirdParty = { os.getenv("HOME") .. ".local/share/LLS-Addons/addons" },
 							checkThirdParty = "Apply"
 						},

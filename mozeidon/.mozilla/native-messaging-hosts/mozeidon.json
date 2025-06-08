@@ -1,0 +1,9 @@
+{
+  "name": "mozeidon",
+  "description": "Native messaging add-on to interact with your browser",
+  "path": "/home/gaz/.local/moz/bin/mozeidon-native-app",
+  "type": "stdio",
+  "allowed_extensions": [
+    "mozeidon-addon@egovelox.com"
+  ]
+}

@@ -9,7 +9,7 @@ source ~/.config/fish/my_functions.fish
 set DOCKER_HOST
 source ~/.bashrc.d/paths
 source ~/.bashrc.d/aliases
-source ~/.profile
+bass source ~/.profile
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths

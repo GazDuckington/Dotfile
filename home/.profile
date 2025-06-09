@@ -10,6 +10,6 @@ export BROWSER=zen-browser
 export TERM=kitty
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
-if uwsm check may-start && uwsm select; then
+if uwsm check may-start; then
   exec uwsm start default
 fi

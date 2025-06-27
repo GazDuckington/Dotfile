@@ -78,5 +78,6 @@ M.setup = function()
 		"<cmd>lua require('spider').motion('b')<CR>",
 		{ desc = "Spider-b" }
 	)
+	-- map('n', ':', '<cmd>FineCmdline<CR>', opts)
 end
 return M

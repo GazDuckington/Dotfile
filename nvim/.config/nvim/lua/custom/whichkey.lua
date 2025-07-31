@@ -14,7 +14,7 @@ local mappings = {
 		-- end,
 		-- "<cmd>Oil<cr>",
 		-- "<cmd>NvimTreeToggle<cr>",
-		"<cmd>Neotree toggle float<cr>",
+		"<cmd>Fyler toggle<cr>",
 		desc = "Open file manager"
 	},
 	-- { "<leader>ec", "<cmd>Yazi cwd<cr>",                                      desc = "Open yazi file manager in current directory" },

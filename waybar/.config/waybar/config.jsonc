@@ -185,7 +185,8 @@
 		"format": "<big>󰤆</big>",
 		"tooltip": false,
 		// "on-click": "bash ~/.config/fuzzel/scripts/powermenu.sh"
-		"on-click": "walker -m power"
+		// "on-click": "walker -m power"
+		"on-click": "wlogout"
 	},
 	"clock": {
 		"format": "  {:%H:%M   %e %b}",

@@ -16,9 +16,9 @@
 		"sway/window"
 	],
 	"modules-center": [
-"mpd"
 	],
 	"modules-right": [
+		"mpd",
 		"clock#date",
 		// "custom/storage",
 		// "memory",
@@ -247,12 +247,12 @@
 	"mpd": {
 		"max-length": 25,
 		"format": "<span foreground='#bb9af7'></span> {title}",
-		"format-paused": " {title}",
+		"format-paused": "  {title}",
 		"format-stopped": "<span foreground='#bb9af7'></span>",
 		"format-disconnected": "",
 		"on-click": "mpc --quiet toggle",
-		"on-click-right": "mpc update; mpc ls | mpc add",
-		"on-click-middle": "alacritty -e ncmpcpp",
+		"on-click-middle": "mpc update; mpc ls | mpc add",
+		"on-click-right": "footclient-launch.sh rmpc",
 		"on-scroll-up": "mpc --quiet prev",
 		"on-scroll-down": "mpc --quiet next",
 		"smooth-scrolling-threshold": 5,
@@ -297,7 +297,7 @@
 		"format": "{class}: {title}",
 		"icon": true,
 		"icon-size": 15,
-		"max-length": 100,
+		"max-length": 45,
 		"separate-outputs": true
 	},
 "bluetooth": {

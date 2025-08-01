@@ -29,7 +29,7 @@
 		"custom/power",
 		"tray",
 		// "network",
-		// "bluetooth",
+		"bluetooth",
 		// "custom/pacman",
 		"custom/notification"
 	],

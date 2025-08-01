@@ -15,7 +15,9 @@
 		"hyprland/window",
 		"sway/window"
 	],
-	"modules-center": [],
+	"modules-center": [
+"mpd"
+	],
 	"modules-right": [
 		"clock#date",
 		// "custom/storage",

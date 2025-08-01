@@ -101,15 +101,6 @@
 			"switcher_only": true,
 			"weight": 5
 		},
-		"emojis": {
-			"history": true,
-			"name": "emojis",
-			"placeholder": " Emojis",
-			"show_unqualified": false,
-			"switcher_only": true,
-			"typeahead": true,
-			"weight": 5
-		},
 		"finder": {
 			"concurrency": 8,
 			"icon": "folder",
@@ -222,7 +213,7 @@
 			"switcher_only": true,
 			"recalculate_score": true,
 			"show_icon_when_single": true,
-			"src_once": "cat ~/.config/emotes/data/*",
+			"src": "cat ~/.config/emotes/data/*",
 			"cmd": "echo \"%RESULT%\" | awk -F':' '{print $1}' | tr -d '\n' | wl-copy  && notify-send -t 800 \"Symbol Copied\n\" \"%RESULT%\""
 		},
 		{

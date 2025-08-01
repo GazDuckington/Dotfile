@@ -7,11 +7,11 @@
 	"margin-right": 10,
 	"spacing": 5,
 	"modules-left": [
+		"idle_inhibitor",
 		"sway/mode",
 		"hyprland/workspaces",
 		"sway/workspaces",
 		"temperature",
-		"idle_inhibitor",
 		"hyprland/window",
 		"sway/window"
 	],

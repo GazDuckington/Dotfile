@@ -253,9 +253,9 @@
 		"max-length": 25,
 		"format": "<span foreground='#bb9af7'></span> {title}",
 		"format-paused": "",
-		"format-stopped": "<span foreground='#bb9af7'></span>",
+		"format-stopped": "<span foreground='#bb9af7'></span>",
 		"format-disconnected": "",
-		"on-click": "playerctl play-pause && mpc --quiet toggle",
+		"on-click": "mpc --quiet toggle",
 		"on-click-middle": "mpc update; mpc ls | mpc add",
 		"on-click-right": "footclient-launch.sh rmpc",
 		"on-scroll-up": "mpc --quiet prev",
@@ -272,7 +272,7 @@
 	"status-icons": {
 		"paused": ""
 	},
-		"on-click": "playerctl play-pause && mpc --quiet toggle"
+		"on-click": "playerctl play-pause"
 },
 	"custom/title": {
 		"format": "{}",

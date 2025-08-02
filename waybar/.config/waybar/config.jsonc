@@ -19,6 +19,7 @@
 	],
 	"modules-right": [
 		"mpd",
+// "custom/media",
 		"clock#date",
 		// "custom/storage",
 		// "memory",
@@ -173,15 +174,18 @@
 		"min-length": 5
 	},
 	"custom/media": {
-		"format": "{icon} {}",
-		"return-type": "json",
+		"format": "<span foreground='#bb9af7'>{icon}</span> {text}",
 		"max-length": 40,
 		"format-icons": {
-			"spotify": "",
 			"default": "🎜"
 		},
 		"escape": true,
-		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+"on-click": "playerctl play-pause",
+"on-click-middle": "(playerctl metadata 2>/dev/null && playerctl stop && playerctl clear && playerctl load current_playlist && playerctl play)",
+"on-scroll-up": "playerctl previous",
+"on-scroll-down": "playerctl next",
+		"exec": "$HOME/.config/hypr/scripts/currentsong.sh",
+		"interval": 1000
 	},
 	"custom/power": {
 		"format": "<big>󰤆</big>",

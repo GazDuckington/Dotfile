@@ -7,7 +7,7 @@ export XCURSOR_THEME=Qoqir-dark
 export XCURSOR_SIZE=24
 export PATH=~/.npm-global/bin:$PATH
 export BROWSER=zen-browser
-export TERM=kitty
+export TERM=st-256color
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 if uwsm check may-start; then

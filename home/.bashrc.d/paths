@@ -1,4 +1,5 @@
 #!/usr/bin/sh
+export TERM=st-256color
 export EDITOR='nvim'
 export QT_QPA_PLATFORMTHEME='kvantum'
 # flutter-dev

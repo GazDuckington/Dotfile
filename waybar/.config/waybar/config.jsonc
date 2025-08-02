@@ -19,6 +19,7 @@
 	],
 	"modules-right": [
 		"mpd",
+		"mpris",
 // "custom/media",
 		"clock#date",
 		// "custom/storage",
@@ -251,10 +252,10 @@
 	"mpd": {
 		"max-length": 25,
 		"format": "<span foreground='#bb9af7'></span> {title}",
-		"format-paused": "  {title}",
+		"format-paused": "",
 		"format-stopped": "<span foreground='#bb9af7'></span>",
 		"format-disconnected": "",
-		"on-click": "mpc --quiet toggle",
+		"on-click": "playerctl play-pause && mpc --quiet toggle",
 		"on-click-middle": "mpc update; mpc ls | mpc add",
 		"on-click-right": "footclient-launch.sh rmpc",
 		"on-scroll-up": "mpc --quiet prev",
@@ -262,6 +263,17 @@
 		"smooth-scrolling-threshold": 5,
 		"tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
 	},
+"mpris": {
+	"format": "<span foreground='#bb9af7'>{player_icon}</span> {dynamic}",
+	"format-paused": "{status_icon}",
+	"player-icons": {
+		"default": "▶"
+	},
+	"status-icons": {
+		"paused": ""
+	},
+		"on-click": "playerctl play-pause && mpc --quiet toggle"
+},
 	"custom/title": {
 		"format": "{}",
 		"interval": 0,

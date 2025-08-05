@@ -7,16 +7,20 @@
 	"margin-right": 10,
 	"spacing": 5,
 	"modules-left": [
+		"idle_inhibitor",
 		"sway/mode",
 		"hyprland/workspaces",
 		"sway/workspaces",
 		"temperature",
-		"idle_inhibitor",
 		"hyprland/window",
 		"sway/window"
 	],
-	"modules-center": [],
+	"modules-center": [
+	],
 	"modules-right": [
+		"mpd",
+		"mpris",
+// "custom/media",
 		"clock#date",
 		// "custom/storage",
 		// "memory",
@@ -29,7 +33,7 @@
 		"custom/power",
 		"tray",
 		// "network",
-		// "bluetooth",
+		"bluetooth",
 		// "custom/pacman",
 		"custom/notification"
 	],
@@ -171,15 +175,18 @@
 		"min-length": 5
 	},
 	"custom/media": {
-		"format": "{icon} {}",
-		"return-type": "json",
+		"format": "<span foreground='#bb9af7'>{icon}</span> {text}",
 		"max-length": 40,
 		"format-icons": {
-			"spotify": "",
 			"default": "🎜"
 		},
 		"escape": true,
-		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+"on-click": "playerctl play-pause",
+"on-click-middle": "(playerctl metadata 2>/dev/null && playerctl stop && playerctl clear && playerctl load current_playlist && playerctl play)",
+"on-scroll-up": "playerctl previous",
+"on-scroll-down": "playerctl next",
+		"exec": "$HOME/.config/hypr/scripts/currentsong.sh",
+		"interval": 1000
 	},
 	"custom/power": {
 		"format": "<big>󰤆</big>",
@@ -245,17 +252,28 @@
 	"mpd": {
 		"max-length": 25,
 		"format": "<span foreground='#bb9af7'></span> {title}",
-		"format-paused": " {title}",
-		"format-stopped": "<span foreground='#bb9af7'></span>",
+		"format-paused": "",
+		"format-stopped": "<span foreground='#bb9af7'></span>",
 		"format-disconnected": "",
 		"on-click": "mpc --quiet toggle",
-		"on-click-right": "mpc update; mpc ls | mpc add",
-		"on-click-middle": "alacritty -e ncmpcpp",
+		"on-click-middle": "mpc update; mpc ls | mpc add",
+		"on-click-right": "footclient-launch.sh rmpc",
 		"on-scroll-up": "mpc --quiet prev",
 		"on-scroll-down": "mpc --quiet next",
 		"smooth-scrolling-threshold": 5,
 		"tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
 	},
+"mpris": {
+	"format": "<span foreground='#bb9af7'>{player_icon}</span> {dynamic}",
+	"format-paused": "{status_icon}",
+	"player-icons": {
+		"default": "▶"
+	},
+	"status-icons": {
+		"paused": ""
+	},
+		"on-click": "playerctl play-pause"
+},
 	"custom/title": {
 		"format": "{}",
 		"interval": 0,
@@ -295,7 +313,7 @@
 		"format": "{class}: {title}",
 		"icon": true,
 		"icon-size": 15,
-		"max-length": 100,
+		"max-length": 45,
 		"separate-outputs": true
 	},
 "bluetooth": {

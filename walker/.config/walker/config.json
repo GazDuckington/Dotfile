@@ -101,15 +101,6 @@
 			"switcher_only": true,
 			"weight": 5
 		},
-		"emojis": {
-			"history": true,
-			"name": "emojis",
-			"placeholder": " Emojis",
-			"show_unqualified": false,
-			"switcher_only": true,
-			"typeahead": true,
-			"weight": 5
-		},
 		"finder": {
 			"concurrency": 8,
 			"icon": "folder",
@@ -196,22 +187,22 @@
 				{
 					"label": "Log Out",
 					"icon": "system-log-out",
-					"exec": "loginctl terminate-user $(whoami) && sway exit && hyprctl dispatch exit"
+					"exec": "mpc pause && loginctl terminate-user $(whoami) && sway exit && hyprctl dispatch exit"
 				},
 				{
 					"label": "Shutdown",
 					"icon": "system-shutdown",
-					"exec": "shutdown now"
+					"exec": "mpc pause && shutdown now"
 				},
 				{
 					"label": "Reboot",
 					"icon": "system-reboot",
-					"exec": "reboot"
+					"exec": "mpc pause && reboot"
 				},
 				{
 					"label": "Lock Screen",
 					"icon": "system-lock-screen",
-					"exec": "playerctl --all-players pause & hyprlock"
+					"exec": "mpc pause && playerctl --all-players pause & hyprlock"
 				}
 			]
 		},
@@ -222,7 +213,7 @@
 			"switcher_only": true,
 			"recalculate_score": true,
 			"show_icon_when_single": true,
-			"src_once": "cat ~/.config/emotes/data/*",
+			"src": "cat ~/.config/emotes/data/*",
 			"cmd": "echo \"%RESULT%\" | awk -F':' '{print $1}' | tr -d '\n' | wl-copy  && notify-send -t 800 \"Symbol Copied\n\" \"%RESULT%\""
 		},
 		{

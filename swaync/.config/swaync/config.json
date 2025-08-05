@@ -57,23 +57,27 @@
 					"label": " ",
 					"command": "sh -c '~/.local/bin/changevol.sh mute'",
 					"type": "toggle"
-				},
+        },
 				{
-					"label": "󱨩 ",
+					"label": "󱨩",
 					"command": "sh -c 'swaync-client -R && swaync-client -rs'"
 				},
 				{
-					"label": "󱑞 ",
+					"label": "󱑞",
 					"command": "sh -c 'hyprctl reload'"
 				},
 				{
-					"label": "󰸉 ",
+					"label": "󰸉",
 					"command": "sh -c '~/.local/bin/swaypaper.sh'"
 				},
 				{
-					"label": "󰴱 ",
+					"label": "󰴱",
 					"command": "sh -c '~/.local/bin/color_picker.sh'"
-				}
+				},
+        {
+          "label": "󰏘",
+          "command": "nwg-look"
+        }
 			]
 		},
 		"inhibitors": {

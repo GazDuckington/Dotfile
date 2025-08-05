@@ -96,6 +96,7 @@ window#waybar.empty #window {
 #mode,
 #idle_inhibitor,
 #mpd,
+#mpris,
 #bluetooth,
 #window,
 #workspaces,
@@ -244,8 +245,6 @@ label:focus {
 }
 
 #custom-media {
-	background-color: #66cc99;
-	color: #2a5c45;
 	min-width: 100px;
 }
 

@@ -17,6 +17,11 @@ return {
 			local vue_plugin_path = vue_ls_path .. "/node_modules/@vue/language-server/node_modules/"
 			local vue_ts_plugin = vue_ls_path .. "/node_modules/typescript/lib"
 
+			vim.lsp.config('qmlls', {
+				settings = {
+					cmd = {"qmlls", "-E"}
+				},
+			})
 			vim.lsp.config('lua_ls', {
 				settings = {
 					Lua = {

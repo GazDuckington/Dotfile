@@ -13,7 +13,7 @@ return {
 	opts = {
 		-- fill any relevant options here
 		window = {
-			position = "right"
+			position = "float"
 		}
 	},
 }

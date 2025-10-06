@@ -1,33 +1,31 @@
---[[
--- Setup initial configuration,
---
--- Primarily just download and execute lazy.nvim
---]]
-local M = {}
-
-M.setup = function()
-	local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-	if not vim.loop.fs_stat(lazypath) then
-		vim.fn.system {
-			"git",
-			"clone",
-			"--filter=blob:none",
-			"https://github.com/folke/lazy.nvim.git",
-			"--branch=stable",
-			lazypath,
-		}
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out,                            "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
 	end
-
-	-- Add lazy to the `runtimepath`, this allows us to `require` it.
-	---@diagnostic disable-next-line: undefined-field
-	vim.opt.rtp:prepend(lazypath)
-
-	-- Set up lazy, and load my `lua/custom/` folder
-	require("lazy").setup({ import = "custom" }, {
-		change_detection = {
-			notify = true,
-		},
-		ui = { border = "rounded" },
-	})
 end
-return M
+vim.opt.rtp:prepend(lazypath)
+
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- Setup lazy.nvim
+require("lazy").setup({
+	spec = {
+		-- import your plugins
+		{ import = "custom" },
+	},
+	checker = { enabled = true },
+})

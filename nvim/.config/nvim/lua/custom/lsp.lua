@@ -19,7 +19,24 @@ return {
 
 			vim.lsp.config('qmlls', {
 				settings = {
-					cmd = {"qmlls", "-E"}
+					cmd = { "qmlls", "-E" }
+				},
+			})
+
+			vim.lsp.config('tailwindcss', {
+				css = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					}
+				},
+			})
+			vim.lsp.config('cssls', {
+				css = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					}
 				},
 			})
 			vim.lsp.config('lua_ls', {

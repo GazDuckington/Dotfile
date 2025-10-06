@@ -7,4 +7,4 @@
 -- https://gtihub.com/GazDuckington/nvim
 --
 require("settings").setup()
-require("plugins").setup()
+require("plugins")

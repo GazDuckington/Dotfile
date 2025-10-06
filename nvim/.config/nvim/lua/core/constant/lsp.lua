@@ -29,15 +29,10 @@ M.ts_filetypes = {
 M.web_filetypes = {
 	"css",
 	"html",
-	"javascript",
-	"javascriptreact",
-	"less",
-	"sass",
 	"scss",
 	"svelte",
+	"vue",
 	"typescript",
-	"typescriptreact",
-	"vue"
 }
 
 return M

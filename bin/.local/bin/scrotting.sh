@@ -45,6 +45,10 @@ scrot_window() {
 	fi
 }
 
+cancel(){
+		notify-send "Screenshot canceled" -t 3000
+}
+
 menu() {
 	area="󰆟  Area"
 	screen="󰹑  Screen"
@@ -84,7 +88,7 @@ main() {
             scrot_screen
             ;;
         *)
-					menu
+            cancel
             ;;
     esac
 }

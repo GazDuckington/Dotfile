@@ -32,12 +32,23 @@ default = [
   "runner",
   "menus",
   "websearch",
+  "clipboard",
 ] # providers to be queried by default
 empty = ["desktopapplications"] # providers to be queried when query is empty
 max_results = 50 # global max results
 
 [providers.sets] # define your own defaults/empty sets of providers
 [providers.max_results_provider] # define max results per provider in here
+
+[builtins.desktopapplications]
+launch_prefix = "uwsm app -- "
+placeholder = " Search..."
+prioritize_new = false
+context_aware = false
+show_sub_when_single = false
+history = false
+icon = ""
+hidden = true
 
 [[providers.prefixes]]
 prefix = ";"

@@ -1,0 +1,28 @@
+name = "window-switcher"
+name_pretty = "Window Switcher"
+icon = "preferences-system-windows"
+
+# Each window entry will be generated dynamically by a shell command.
+# You can still include static entries like "Refresh" or "Cancel" below.
+
+[[entries]]
+text = "Active Windows"
+icon = "window"
+async = """hyprctl -j clients | jq -r '.[] | select(.mapped == true) | "\(.workspace.name) | \(.title) | \(.address)"'"""
+keywords = ["window", "switcher", "hypr"]
+# The command above outputs one line per window: "<workspace> | <title> | <address>"
+
+# The "actions" section defines what to do when user selects a line
+[entries.actions]
+"focus_window" = """ADDR=$(echo '%VALUE%' | awk -F'|' '{print $3}' | xargs);
+hyprctl dispatch focuswindow address:$ADDR"""
+
+[[entries]]
+text = "Refresh List"
+icon = "view-refresh"
+actions = { "refresh" = "walker menu window-switcher" }
+
+[[entries]]
+text = "Cancel"
+icon = "window-close"
+actions = { "cancel" = "true" }

@@ -1,0 +1,18 @@
+[[entries]]
+default = true
+name = "Google"
+prefix = "ggl "
+url = "https://www.google.com/search?q=%TERM%"
+
+
+[[entries]]
+default = true
+name = "Ecosia"
+prefix = "ecs "
+url = "https://www.ecosia.org/search?q=%TERM%"
+
+[[entries]]
+default = false
+name = "DuckDuckGo"
+prefix = "ddg "
+url = "https://duckduckgo.com/?q=%TERM%"

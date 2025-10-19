@@ -166,6 +166,7 @@
 	},
 	"custom/pacman": {
 		"format": "<big>󰇚</big> {}",
+		"tooltip-format": "{} updates available",
 		"interval": 3600,
 		"exec": "yay -Qu | wc -l",
 		"exec-if": "exit 0",

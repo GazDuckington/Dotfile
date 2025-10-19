@@ -15,8 +15,9 @@
   --surface2: #5b6078;
   --base: #363a4f;
   --mantle: #1e2030;
+  --crust: #11111b;
 
-  --bg-primary: var(--mantle);
+  --bg-primary: var(--crust);
   --bg-secondary: var(--base);
   --accent: var(--blue);
   --accent-hover: var(--flamingo);
@@ -27,7 +28,7 @@
   --body: var(--subtext0);
   --time: var(--subtext0);
   --dnd: var(--subtext0);
-  --low: var(--surface1);
+  --low: var(--blue);
   --normal: var(--flamingo);
   --critical: var(--red);
 }
@@ -40,6 +41,10 @@
 }
 
 /* notifications */
+
+.notification-row {
+  margin-top: 1rem;
+}
 
 .floating-notifications > scrolledwindow,
 .control-center {
@@ -71,7 +76,7 @@
 
 .notification .notification-content overlay {
   /* icons */
-  margin: 4px;
+  margin: .5rem;
 }
 
 .notification-content .summary {
@@ -184,7 +189,7 @@
 }
 
 .control-center .notification-group {
-  margin-top: 10px;
+  margin-top: 2rem;
 }
 
 .control-center .notification-group .notification-background {
@@ -207,7 +212,7 @@ scrollbar trough {
 /* dnd */
 .widget-dnd {
   color: var(--dnd);
-  margin-top: 5px;
+  margin-bottom: 2rem;
   border-radius: 8px;
   font-size: 1.1rem;
 }

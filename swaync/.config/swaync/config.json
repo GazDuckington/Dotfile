@@ -43,8 +43,8 @@
 		}
 	},
 	"widgets": [
-    "title",
 		"dnd",
+    "title",
     "notifications",
 		"mpris"
 	],

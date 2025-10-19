@@ -18,7 +18,7 @@
 	"modules-center": [
 	],
 	"modules-right": [
-		// "mpd",
+		"mpd",
 		// "mpris",
 "custom/pacman",
 		"clock#date",
@@ -167,7 +167,7 @@
 	"custom/pacman": {
 		"format": "<big>󰇚</big> {}",
 		"interval": 3600,
-		"exec": "checkupdates; yay -Qua | wc -l",
+		"exec": "yay -Qu | wc -l",
 		"exec-if": "exit 0",
 		"on-click": "footclient -a update yay; pkill -SIGRTMIN+8 waybar",
 		"signal": 8,

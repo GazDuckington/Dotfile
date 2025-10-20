@@ -13,39 +13,135 @@ button {
 	text-decoration-color: #cdd6f4;
 	color: #cdd6f4;
 	background-color: #181825;
-	border-style: solid;
-	border-width: 1px;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 25%;
+	background-size: 10%;
+	animation: gradien_f 20s ease-in infinite;
 }
 
-button:focus, button:active, button:hover {
+button:focus,
+button:active,
+button:hover {
 	/* 20% Overlay 2, 80% mantle */
 	background-color: rgb(48, 50, 66);
 	outline-style: none;
 }
 
+/* button:focus { */
+/* 	background-size: 10%; */
+/* 	border-style: solid; */
+/* 	border-width: 0px; */
+/* 	border-radius: 0px; */
+/* 	border-color: #89b4fa; */
+/* 	animation: gradien_f 20s ease-in infinite; */
+/* 	transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682); */
+/* } */
+
+button:hover,
+button:focus {
+	background-size: 35%;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0px;
+	border-color: #89b4fa;
+	animation: gradien_f 20s ease-in infinite;
+	transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682);
+}
+
+button:focus {
+	color: #89b4fa;
+}
+
 #lock {
-    background-image: url("/home/gaz/.config/wlogout/icons/lock.svg");
+	background-image: url("/home/gaz/.config/wlogout/icons/lock.svg");
+	border-top-left-radius: 12px;
+}
+
+#lock:focus,
+#lock:hover {
+	margin-top: -2.5rem;
+	margin-left: -2.5rem;
+	border-width: 1px;
+	border-top-right-radius: 12px;
+	border-bottom-left-radius: 12px;
+	margin-bottom: .5rem;
+	margin-right: .5rem;
 }
 
 #logout {
-    background-image: url("/home/gaz/.config/wlogout/icons/logout.svg");
+	background-image: url("/home/gaz/.config/wlogout/icons/logout.svg");
+}
+
+#logout:focus,
+#logout:hover {
+	margin-top: -2.5rem;
+	border-width: 1px;
+	border-top-right-radius: 12px;
+	border-top-left-radius: 12px;
+	margin-right: .5rem;
+	margin-left: .5rem;
+	margin-bottom: .5rem;
 }
 
 #suspend {
-    background-image: url("/home/gaz/.config/wlogout/icons/suspend.svg");
+	background-image: url("/home/gaz/.config/wlogout/icons/suspend.svg");
+}
+
+#suspend:focus,
+#suspend:hover {
+	margin-top: -2.5rem;
+	margin-right: -2.5rem;
+	border-width: 1px;
+	border-top-right-radius: 12px;
+	border-top-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	margin-left: .5rem;
+	margin-bottom: .5rem;
 }
 
 #hibernate {
-    background-image: url("/home/gaz/.config/wlogout/icons/hibernate.svg");
+	background-image: url("/home/gaz/.config/wlogout/icons/hibernate.svg");
+}
+
+#hibernate:focus,
+#hibernate:hover {
+	margin-bottom: -2.5rem;
+	margin-left: -2.5rem;
+	border-width: 1px;
+	border-bottom-right-radius: 12px;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+	margin-right: .5rem;
+	margin-top: .5rem;
 }
 
 #shutdown {
-    background-image: url("/home/gaz/.config/wlogout/icons/shutdown.svg");
+	background-image: url("/home/gaz/.config/wlogout/icons/shutdown.svg");
+}
+
+#shutdown:focus,
+#shutdown:hover {
+	margin-bottom: -2.5rem;
+	border-width: 1px;
+	border-bottom-right-radius: 12px;
+	border-bottom-left-radius: 12px;
+	margin-right: .5rem;
+	margin-left: .5rem;
+	margin-top: .5rem;
 }
 
 #reboot {
-    background-image: url("/home/gaz/.config/wlogout/icons/reboot.svg");
+	background-image: url("/home/gaz/.config/wlogout/icons/reboot.svg");
+}
+
+#reboot:focus,
+#reboot:hover {
+	margin-bottom: -2.5rem;
+	margin-right: -2.5rem;
+	border-width: 1px;
+	border-bottom-right-radius: 12px;
+	border-bottom-left-radius: 12px;
+	border-top-right-radius: 12px;
+	margin-left: .5rem;
+	margin-top: .5rem;
 }

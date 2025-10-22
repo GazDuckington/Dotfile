@@ -3,6 +3,7 @@
 SCROT_DIR="$HOME"/Pictures/Screenshots
 CURRENT_DATE=$(date +"%R_%d_%b_%y_%H:%M:%s")
 FILE_NAME="$SCROT_DIR/scot-$CURRENT_DATE.png"
+export GRIMBLAST_EDITOR="satty --initial-tool=arrow --copy-command=wl-copy --actions-on-escape=save-to-file,exit --brush-smooth-history-size=5 --disable-notifications --output-filename $FILE_NAME --filename"
 image="/tmp/thumb-$CURRENT_DATE.png"
 
 gen_thumb() {
@@ -11,8 +12,8 @@ gen_thumb() {
 
 scrot_output() {
 	# select whole screen
-	sleep 0.3
-	if grimblast copysave output "$FILE_NAME"; then
+	sleep 0.5
+	if grimblast edit output "$FILE_NAME"; then
 		gen_thumb
 		notify-send -i "$image" -a "Scrot-screen" "$FILE_NAME" -t 3000
 		rm "$image"
@@ -20,8 +21,8 @@ scrot_output() {
 }
 scrot_screen() {
 	# select whole screen
-	sleep 0.3
-	if grimblast copysave screen "$FILE_NAME"; then
+	sleep 0.5
+	if grimblast edit screen "$FILE_NAME"; then
 		gen_thumb
 		notify-send -i "$image" -a "Scrot-screen" "$FILE_NAME" -t 3000
 		rm "$image"
@@ -29,8 +30,8 @@ scrot_screen() {
 }
 scrot_area() {
 	# select area
-	# sleep 0.5
-	if grimblast copysave area "$FILE_NAME"; then
+	sleep 0.5
+	if grimblast edit area "$FILE_NAME"; then
 		gen_thumb
 		notify-send -i "$image" -a "Scrot-area" "$FILE_NAME" -t 3000
 		rm "$image"
@@ -38,7 +39,7 @@ scrot_area() {
 }
 scrot_window() {
 	# select current window
-	# sleep 0.5
+	sleep 0.5
 	if grimblast copysave area "$FILE_NAME"; then
 		gen_thumb
 		notify-send -i "$image" -a "Scrot-window" "$FILE_NAME" -t 3000

@@ -1,0 +1,20 @@
+name = "screenshots"
+name_pretty = "Screenshots"
+fixed_order = true
+icon = " "
+action = "bash ~/.config/walker/scripts/scrot.sh %VALUE%"
+
+[[entries]]
+text = "Select Area"
+icon = "󰆟 "
+value = "area" 
+
+[[entries]]
+text = "Screen"
+icon = "󰹑 "
+value = "screen"
+
+[[entries]]
+text = "All Outputs"
+icon = " "
+value = "all"

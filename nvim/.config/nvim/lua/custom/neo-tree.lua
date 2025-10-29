@@ -12,6 +12,7 @@ return {
 	---@type neotree.Config?
 	opts = {
 		-- fill any relevant options here
+		hijack_netrw_behavior = "disabled",
 		window = {
 			position = "float"
 		}

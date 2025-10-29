@@ -1,171 +1,229 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = false
-command_timeout = 5000
+add_newline = true
 
-format = """
-$username\
-$hostname $directory\
-$git_branch\
-$git_state\
-$git_status\
-$git_metrics\
-$fill\
-$nodejs\
-$golang\
-$lua\
-$python\
-$package\
-$cmd_duration\
-$line_break\
-$jobs$character"""
+palette = "catppuccin_mocha"
 
-[fill]
-symbol = " "
-
-[line_break]
-disabled = false
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
 
 [character]
-success_symbol = "[](bold green)"
-error_symbol = "[](bold red)"
-vimcmd_symbol = "[](bold green)"
-vimcmd_visual_symbol = "[](bold purple)"
-vimcmd_replace_one_symbol = "[](bold yellow)"
-vimcmd_replace_symbol = "[](bold yellow)"
-
-[username]
-disabled = false
-show_always = true
-style_user = "bold blue"
-style_root = "bold red"
-format = "[$user]($style)"
-
-[hostname]
-disabled = false
-ssh_only = false
-format = "@[$hostname](bold purple)"
-
-[shell]
-disabled = false
-
-[directory]
-fish_style_pwd_dir_length = 1
-truncation_length = 3
-read_only = "⍉"
-format = "[$path](cyan) "
-
-[git_branch]
-symbol = " "
-format = "[$symbol$branch]($style) "
-style = "bright-black"
-
-[git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "cyan"
-
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
-
-[git_metrics]
-disabled = false
-added_style = "green"
-deleted_style = "red"
-
-[time]
-disabled = false
-style = "bright-black"
-format = "[$time]($style) "
-time_format = ' %H:%M'
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](subtext1)" 
 
 [aws]
 symbol = "  "
 
+[buf]
+symbol = " "
+
+[bun]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+
+[cmake]
+symbol = " "
+
 [conda]
-format = '[$symbol($version )]($style)'
 symbol = " "
 
+[crystal]
+symbol = " "
+
 [dart]
-format = '[$symbol($version )]($style)'
 symbol = " "
+
+[deno]
+symbol = " "
+
+[directory]
+read_only = " 󰌾"
 
 [docker_context]
 symbol = " "
 
 [elixir]
-format = '[$symbol$context]($style)'
-symbol = " "
+symbol = " "
 
 [elm]
-format = '[$symbol$context]($style)'
 symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
+symbol = "  "
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
 
 [hg_branch]
 symbol = " "
 
-[golang]
-format = '[$symbol($version )]($style)'
-symbol = " "
+[hostname]
+ssh_symbol = " "
 
 [java]
-format = '[$symbol($version )]($style)'
 symbol = " "
 
 [julia]
-format = '[$symbol($version )]($style)'
 symbol = " "
 
-[memory_usage]
-symbol = " "
-
-[nim]
-format = '[$symbol($version )]($style)'
-symbol = " "
-
-[nix_shell]
-symbol = " "
-
-[package]
-format = '[$symbol($version )]($style)'
-symbol = " "
-
-[perl]
-format = '[$symbol($version )]($style)'
-symbol = " "
-
-[php]
-format = '[$symbol($version )]($style)'
-symbol = " "
-
-[python]
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-symbol = " "
-
-[ruby]
-format = '[$symbol($version )]($style)'
-symbol = " "
-
-[rust]
-format = '[$symbol($version )]($style)'
-symbol = " "
-
-[scala]
-format = '[$symbol($version )]($style)'
-symbol = " "
-
-[shlvl]
-format = '[$symbol$shlvl]($style)'
-symbol = " "
-
-[swift]
-format = '[$symbol($version )]($style)'
-symbol = "ﯣ "
+[kotlin]
+symbol = " "
 
 [lua]
-format = '[$symbol($version )]($style)'
 symbol = " "
 
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
 [nodejs]
-format = '[$symbol($version )]($style)'
 symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[pixi]
+symbol = "󰏗 "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "

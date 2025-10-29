@@ -1,0 +1,24 @@
+name = "screenshots"
+name_pretty = "Screenshots"
+fixed_order = true
+icon = " "
+
+[[entries]]
+text = "Select Area"
+icon = "󰆟 "
+actions = {"scrot_area"="bash ~/.config/walker/scripts/scrot.sh area"}
+
+[[entries]]
+text = "Screen"
+icon = "󰹑 "
+actions = {"scrot_screen"="bash ~/.config/walker/scripts/scrot.sh screen"}
+
+[[entries]]
+text = "All Outputs"
+icon = " "
+actions = {"scrot_all"="bash ~/.config/walker/scripts/scrot.sh all"}
+
+[[entries]]
+text = "Record Screen"
+icon = " "
+actions = {"record"="flatpak run io.github.seadve.Kooha"}

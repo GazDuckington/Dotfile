@@ -2,6 +2,7 @@
 export TERM=st-256color
 export EDITOR='nvim'
 export QT_QPA_PLATFORMTHEME='kvantum'
+export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 # flutter-dev
 export JAVA_HOME="/usr/lib/jvm/default"
 export PATH="$JAVA_HOME/bin:$PATH"
@@ -44,7 +45,7 @@ export GOBIN=$(go env GOPATH)/bin
 export XCURSOR_PATH=/usr/share/icons:"$XDG_DATA_HOME"/icons
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc 
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 
 export GO111MODULE=on
 export XCURSOR_PATH="$XCURSOR_PATH":~/.local/share/icons

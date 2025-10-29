@@ -45,7 +45,7 @@ return {
 					-- },
 				},
 				lualine_x = {
-					'diff', 'branch', 'diagnostics', 'filetype', 'progress'
+					'diff', 'branch', 'diagnostics', 'filetype', 'progress', 'venv-selector'
 				},
 				lualine_y = {},
 				lualine_z = { line },

@@ -3,6 +3,8 @@ export TERM=st-256color
 export EDITOR='nvim'
 export QT_QPA_PLATFORMTHEME='kvantum'
 export STARSHIP_CONFIG="$HOME/.config/starship.toml"
+export QT_QML_GENERATE_QMLLS_INI="ON"
+
 # flutter-dev
 export JAVA_HOME="/usr/lib/jvm/default"
 export PATH="$JAVA_HOME/bin:$PATH"

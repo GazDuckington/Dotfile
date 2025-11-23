@@ -23,7 +23,7 @@
 
 /* The whole bar */
 #waybar {
-	/* background: @crust; */
+	/* background-color: @crust; */
 	background-color: transparent;
 	/*color: @light;*/
 	color: @text;
@@ -31,7 +31,7 @@
 	transition-duration: 0.5s;
 	/*border-top: 8px transparent;*/
 	border-radius: 0px;
-	margin: 0px 0px;
+	margin: 0;
 }
 
 window#waybar.hidden {

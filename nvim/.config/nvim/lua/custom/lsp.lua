@@ -18,9 +18,7 @@ return {
 			local vue_ts_plugin = vue_ls_path .. "/node_modules/typescript/lib"
 
 			vim.lsp.config('qmlls', {
-				settings = {
-					cmd = { "qmlls", "-E" }
-				},
+				cmd = { "qmlls6", "-E" },
 			})
 
 			vim.lsp.config('tailwindcss', {

@@ -13,7 +13,6 @@ return {
 			'<Esc>',
 			function()
 				local mode = vim.api.nvim_get_mode().mode
-
 				if mode == 'n' then
 					return '<cmd>GeminiToggle<cr>'
 				else

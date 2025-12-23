@@ -11,9 +11,18 @@ return {
 		{ '<leader>gS', '<cmd>GeminiSend<cr>',        mode = { 'x' },                        desc = 'Send selection to Gemini' },
 		{
 			'<Esc>',
-			'<C-\\><C-n>',
-			mode = 't',
-			desc = 'Exit terminal mode',
+			function()
+				local mode = vim.api.nvim_get_mode().mode
+
+				if mode == 'n' then
+					return '<cmd>GeminiToggle<cr>'
+				else
+					return '<C-\\><C-n>'
+				end
+			end,
+			expr = true,
+			mode = { 'n', 'i', 'v', 't' },
+			desc = 'Exit terminal or toggle Gemini',
 		},
 	}
 }

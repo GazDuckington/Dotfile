@@ -20,7 +20,7 @@
 	"modules-right": [
 		"mpd",
 		// "mpris",
-"custom/pacman",
+// "custom/pacman",
 		"clock#date",
 		// "custom/storage",
 		// "memory",
@@ -168,7 +168,7 @@
 		"format": "<big>󰇚</big> {}",
 		"tooltip-format": "{} updates available",
 		"interval": 3600,
-		"exec": "yay -Qu | wc -l",
+		"exec": "yay -Qua | wc -l",
 		"exec-if": "exit 0",
 		"on-click": "footclient -a update yay; pkill -SIGRTMIN+8 waybar",
 		"signal": 8,

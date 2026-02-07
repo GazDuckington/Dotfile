@@ -17,7 +17,7 @@ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 # 	 exec uwsm start default
 # end
 
-starship init fish | source
+# starship init fish | source
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"

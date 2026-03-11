@@ -1,3 +1,6 @@
+local Snacks = require("snacks")
+local Opencode = require("opencode")
+
 local mappings = {
 	{ "<leader>.", ":cd ~/.config/nvim<cr>:e init.lua<cr>", desc = "Open Neovim Config" },
 	{ "<leader>n", ":nohl<cr>",                             desc = "Reset highlight" },
@@ -85,25 +88,34 @@ local mappings = {
 	},
 	{ "<leader>b",  group = "Buffer Sorting" },
 	-- sort automatically by...
-	{ "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>",         desc = "Order By Number" },
-	{ "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>",            desc = "Order By Directory" },
-	{ "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>",             desc = "Order By Language" },
-	{ "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>",         desc = "Order By Window Number" },
+	{ "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>",                      desc = "Order By Number" },
+	{ "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>",                         desc = "Order By Directory" },
+	{ "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>",                          desc = "Order By Language" },
+	{ "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>",                      desc = "Order By Window Number" },
 
 	{ "<leader>z",  group = "Snacks Mode" },
-	{ "<leader>zz", function() Snacks.toggle.zen():toggle() end,  desc = "Zen Mode" },
-	{ "<leader>zd", function() Snacks.toggle.dim():toggle() end,  desc = "Dim Mode" },
-	{ "<leader>zf", function() Snacks.toggle.zoom():toggle() end, desc = "Zoom Mode" },
+	{ "<leader>zz", function() Snacks.toggle.zen():toggle() end,               desc = "Zen Mode" },
+	{ "<leader>zd", function() Snacks.toggle.dim():toggle() end,               desc = "Dim Mode" },
+	{ "<leader>zf", function() Snacks.toggle.zoom():toggle() end,              desc = "Zoom Mode" },
+
+	{ "<leader>j",  group = "OpenCode" },
+	{ "<leader>ja", function() Opencode.toggle() end,                          desc = "Toggle OpenCode",       mode = { "n", "t" } },
+	{ "<leader>jf", function() Opencode.ask("@this: ", { submit = true }) end, desc = "Ask about this",        mode = { "n", "x" } },
+	{ "<leader>js", function() Opencode.select() end,                          desc = "Select action",         mode = { "n", "x" } },
+	{ "<leader>jr", function() return Opencode.operator("@this ") end,         desc = "Add range",             expr = true,        mode = { "n", "x" } },
+	{ "<leader>jl", function() return Opencode.operator("@this ") .. "_" end,  desc = "Add line",              expr = true,        mode = "n" },
+	{ "<leader>ju", function() Opencode.command("session.half.page.up") end,   desc = "Scroll up",             mode = "n" },
+	{ "<leader>jd", function() Opencode.command("session.half.page.down") end, desc = "Scroll down",           mode = "n" },
 
 
 	-- telescope stuff
 	{ "<leader>f",  group = "Find" },
-	{ "<leader>fg", function() Snacks.picker.git_files() end,     desc = "Find Git Files" },
-	{ "<leader>ff", function() Snacks.picker.files() end,         desc = "Find Files" },
-	{ "<leader>fr", function() Snacks.picker.grep() end,          desc = "Grep String" },
-	{ "<leader>fb", function() Snacks.picker.buffers() end,       desc = "Find Buffers" },
-	{ "<leader>ft", function() Snacks.picker.todo_comments() end, desc = "Find TODO" },
-	{ "<leader>fs", function() Snacks.picker.lsp_symbols() end,   desc = "Find LSP Symbols" },
+	{ "<leader>fg", function() Snacks.picker.git_files() end,                  desc = "Find Git Files" },
+	{ "<leader>ff", function() Snacks.picker.files() end,                      desc = "Find Files" },
+	{ "<leader>fr", function() Snacks.picker.grep() end,                       desc = "Grep String" },
+	{ "<leader>fb", function() Snacks.picker.buffers() end,                    desc = "Find Buffers" },
+	{ "<leader>ft", function() Snacks.picker.todo_comments() end,              desc = "Find TODO" },
+	{ "<leader>fs", function() Snacks.picker.lsp_symbols() end,                desc = "Find LSP Symbols" },
 	{
 		"<leader>?",
 		function()

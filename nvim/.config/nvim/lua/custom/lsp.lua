@@ -94,6 +94,15 @@ return {
 				},
 				filetypes = ts_ft,
 			})
+
+			vim.lsp.config('sourcery', {
+				init_options = {
+					token = "user_sDKPJj6fcS_yFfhF9CvcqdHwSKcULb__toO47ZVFUSGSctyNvT3X20VOFZM",
+					editor_version = "vim",
+					extension_version = "vim.lsp"
+
+				}
+			})
 		end
 	}
 }

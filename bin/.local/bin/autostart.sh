@@ -4,9 +4,9 @@ set -x
 
 # Function to run a command if it is not already running
 lazy_load() {
-    if ! pgrep -f "$1" > /dev/null; then
-        eval "$2 &"
-    fi
+	if ! pgrep -f "$1" >/dev/null; then
+		eval "$2 &"
+	fi
 }
 
 # Start each service lazily

@@ -1,0 +1,93 @@
+{
+	"name": "iron-bar",
+	"popup_autohide": true,
+  "layer": "top",
+  "position": "top",
+  "height": 10,
+  "start": [
+    {
+      "type": "custom",
+      "bar": [
+        {
+          "type": "button",
+          "name": "os-icon",
+          "label": "",
+          "on_click": "!wlogout"
+        }
+      ]
+    },
+{
+  "type": "script",
+  "name": "idle-inhibitor",
+  "mode": "poll",
+  "interval": 2000,
+  "cmd": "~/.local/bin/hypidle-inhibit.sh",
+  "on_click_left": "~/.local/bin/hypidle-inhibit.sh toggle"
+},
+{
+      "type": "workspaces",
+      "name_map": {
+        "special:magic": ""
+      }
+    }
+  ],
+  "center": [
+    {
+      "type": "clock",
+      "name": "clock",
+      "format": "󰃭 %d/%m  %H:%M (%Z)"
+    }
+  ],
+  "end": [
+{
+    "type": "clipboard",
+    "max_items": 10,
+    "truncate": {
+      "mode": "end",
+      "length": 50
+    }
+    },
+		{
+      "type": "tray",
+			"icon_size": 10
+    },
+    {
+      "type": "volume",
+      "name": "pulseaudio",
+      "format": "{icon} {percentage}%",
+      "mute_format": " Muted",
+      "icons": {
+        "volume_high": "",
+        "volume_medium": "",
+        "volume_low": "",
+        "muted": " Muted"
+      },
+      "on_click_right": "~/.local/bin/kitty-launch.sh 'wiremix'"
+    },
+    {
+      "type": "sys_info",
+      "name": "temperature",
+      "format": [
+        " {temp_c@mean}°C"
+      ],
+      "interval": {
+        "temps": 5
+      }
+    },
+    {
+      "type": "sys_info",
+      "name": "memory",
+      "format": [
+        " {memory_percent}%"
+      ],
+      "interval": {
+        "memory": 30
+      },
+      "on_click_left": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+    {
+      "type": "notifications",
+      "name": "notifications"
+    }
+  ]
+}

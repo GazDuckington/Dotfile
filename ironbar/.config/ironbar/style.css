@@ -1,0 +1,230 @@
+@define-color base #191724;
+
+@define-color surface #1f1d2e;
+@define-color overlay #26233a;
+
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color text #e0def4;
+
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ebbcba;
+@define-color pine #31748f;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+
+@define-color highlightLow #21202e;
+@define-color highlightMed #403d52;
+@define-color highlightHigh #524f67;
+
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "BlexMono Nerd Font Propo";
+	font-weight: bold;
+	font-size: 12px;
+	min-height: 0;
+}
+
+.background {
+	background-color: rgba(21, 18, 27, 0);
+	color: @text;
+}
+
+tooltip {
+	background-color: @base;
+	border-radius: 10px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: @overlay;
+}
+
+#os-icon,
+#idle-inhibitor,
+#clock,
+.workspaces,
+.network_manager,
+#brightness,
+#bluetooth,
+.clipboard,
+#pulseaudio,
+#temperature,
+#memory,
+#battery,
+.tray,
+#notifications {
+	background-color: @base;
+	opacity: 0.9;
+	padding: 0px 10px;
+	border-left: 1px solid @overlay;
+	border-bottom: 1px solid @overlay;
+	border-right: 1px solid @overlay;
+}
+
+#os-icon {
+	color: @love;
+	border-radius: 0px 0px 0px 0px;
+	/* margin-left: 10px; */
+}
+
+#idle-inhibitor {
+	color: @text;
+	border-radius: 0px 0px 10px 0px;
+	margin-right: 10px;
+}
+
+#clock {
+	color: @gold;
+	border-radius: 0px 0px 10px 10px;
+	border-right: 0px;
+}
+
+.workspaces {
+	border: 0px;
+	border-radius: 0px 0px 10px 10px;
+	/* margin-left: 10px; */
+}
+
+.workspaces .item {
+	color: @text;
+	background-color: @base;
+	margin: 0px;
+	padding: 0px;
+}
+
+.workspaces .item.focused {
+	color: @foam;
+}
+
+.workspaces .item.urgent {
+	color: @love;
+}
+
+#music {
+	min-width: 140px;
+	padding: 0 10px;
+	color: @foam;
+	background-color: transparent;
+	opacity: 0.9;
+	padding: 0px 10px;
+	margin: 3px 0px;
+	margin-top: 10px;
+}
+
+.popup-music {
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.popup-music .album-art {
+	margin-right: 10px;
+	border-radius: 5px;
+}
+
+.popup-music .icon-box {
+	margin-right: 8pt;
+}
+
+.popup-music .title .icon,
+.popup-music .title .label {
+	font-size: 12pt;
+}
+
+.popup-music .artist .label,
+.popup-music .album .label {
+	margin-left: 6px;
+}
+
+.popup-music .volume .icon {
+	margin-right: 3px;
+}
+
+.network_manager {
+	color: @love;
+	border-radius: 0px 0px 0px 10px;
+	border-right: 0px;
+}
+
+.clipboard {
+	color: @rose;
+	border-radius: 0px 0px 0px 10px;
+	margin-right: 0px;
+}
+
+.tray {
+	background-color: @base;
+	border-radius: 0px;
+	margin: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.tray .item {
+	margin: 0px;
+	background-color: @base;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#pulseaudio {
+	color: @rose;
+	border-radius: 0 0px 10px 0;
+	margin-right: 10px;
+	border-left: 0px;
+}
+
+#pulseaudio.microphone {
+	color: #c4a7e7;
+	border-left: 0px;
+	border-right: 0px;
+	border-radius: 0px 0px 10px 0px;
+	margin-right: 10px;
+}
+
+#temperature {
+	color: @foam;
+	border-radius: 0px 0px 0px 10px;
+	border-right: 0px;
+}
+
+#memory {
+	color: @foam;
+	border-radius: 0px 0px 10px 0px;
+	margin-right: 10px;
+}
+
+#battery {
+	color: @iris;
+	border-radius: 0 0px 10px 0;
+	margin-right: 10px;
+	border-left: 0px;
+}
+
+#notifications {
+	border-radius: 0px 0px 0px 10px;
+	padding-right: 15px;
+	padding-left: 15px;
+	/* margin-right: 10px; */
+}
+
+.notifications .button {
+	background-color: @base;
+	min-width: 0;
+	padding: 0;
+}
+
+.popup-volume .device-box {
+	border-right: 1px solid @color_border;
+	background: transparent;
+}
+
+popover,
+.volume popover contents,
+.clock popover contents,
+.tray popover contents,
+.clipboard popover contents {
+	border-radius: 12px;
+	padding: .4rem;
+	background-color: @base;
+}

@@ -26,9 +26,21 @@
 },
 {
       "type": "workspaces",
-      "name_map": {
-        "special:magic": ""
-      }
+      "name": "workspaces",
+      "hidden": ["special:magic"],
+      "on_scroll_up": "hyprctl dispatch workspace -1",
+      "on_scroll_down": "hyprctl dispatch workspace +1"
+    },
+    {
+      "type": "custom",
+      "name": "special-workspace",
+      "bar": [
+        {
+          "type": "button",
+          "label": "",
+          "on_click_left": "hyprctl dispatch togglespecialworkspace magic"
+        }
+      ]
     }
   ],
   "center": [

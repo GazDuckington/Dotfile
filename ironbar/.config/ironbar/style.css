@@ -51,6 +51,7 @@ tooltip label {
 #idle-inhibitor,
 #clock,
 .workspaces,
+#special-workspace,
 .network_manager,
 #brightness,
 #bluetooth,
@@ -88,7 +89,32 @@ tooltip label {
 
 .workspaces {
 	border: 0px;
-	border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 0px 10px;
+	padding-right: 0px;
+}
+
+#special-workspace {
+	/* background-color: @base; */
+	opacity: 0.9;
+	border-radius: 0px 0px 10px 0px;
+	padding-left: 0px;
+	padding-right: 10px;
+}
+
+#special-workspace button {
+	color: @foam;
+	background-color: @base;
+	padding: 0px 4px;
+	margin: 0px;
+}
+
+#special-workspace button:hover {
+	color: @iris;
+	background-color: @highlightMed;
+}
+
+#special-workspace button:active {
+	background-color: @highlightHigh;
 }
 
 .workspaces .item {
@@ -341,7 +367,7 @@ tooltip label {
 	min-height: 6px;
 }
 
-.popup-volume scale trough > slider {
+.popup-volume scale trough>slider {
 	background-color: @text;
 	border-radius: 99px;
 	min-width: 18px;
@@ -351,11 +377,11 @@ tooltip label {
 	box-shadow: none;
 }
 
-.popup-volume scale trough > slider:hover {
+.popup-volume scale trough>slider:hover {
 	background-color: @foam;
 }
 
-.popup-volume scale trough > highlight {
+.popup-volume scale trough>highlight {
 	background-color: @rose;
 	border-radius: 6px;
 }
@@ -370,7 +396,7 @@ tooltip label {
 	padding: 2px 0;
 }
 
-.popup-volume .apps-box .app-box scale trough > slider {
+.popup-volume .apps-box .app-box scale trough>slider {
 	background-color: @text;
 	border-radius: 99px;
 	min-width: 18px;
@@ -380,11 +406,11 @@ tooltip label {
 	box-shadow: none;
 }
 
-.popup-volume .apps-box .app-box scale trough > slider:hover {
+.popup-volume .apps-box .app-box scale trough>slider:hover {
 	background-color: @foam;
 }
 
-.popup-volume .apps-box .app-box scale trough > highlight {
+.popup-volume .apps-box .app-box scale trough>highlight {
 	background-color: @rose;
 	border-radius: 6px;
 }
@@ -418,7 +444,7 @@ tooltip label {
 	border-radius: 6px;
 }
 
-.popup-clipboard .item + .item {
+.popup-clipboard .item+.item {
 	border-top: 1px solid @overlay;
 }
 

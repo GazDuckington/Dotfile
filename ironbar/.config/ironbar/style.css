@@ -18,6 +18,8 @@
 @define-color highlightMed #403d52;
 @define-color highlightHigh #524f67;
 
+@define-color color_border @overlay;
+
 * {
 	border: none;
 	border-radius: 0;
@@ -25,6 +27,7 @@
 	font-weight: bold;
 	font-size: 12px;
 	min-height: 0;
+	transition: all 150ms ease-in-out;
 }
 
 .background {
@@ -38,6 +41,10 @@ tooltip {
 	border-width: 2px;
 	border-style: solid;
 	border-color: @overlay;
+}
+
+tooltip label {
+	color: @text;
 }
 
 #os-icon,
@@ -65,7 +72,6 @@ tooltip {
 #os-icon {
 	color: @love;
 	border-radius: 0px 0px 0px 0px;
-	/* margin-left: 10px; */
 }
 
 #idle-inhibitor {
@@ -83,14 +89,26 @@ tooltip {
 .workspaces {
 	border: 0px;
 	border-radius: 0px 0px 10px 10px;
-	/* margin-left: 10px; */
 }
 
 .workspaces .item {
 	color: @text;
 	background-color: @base;
 	margin: 0px;
-	padding: 0px;
+	padding: 0px 4px;
+}
+
+.workspaces .item:hover {
+	color: @iris;
+	background-color: @highlightMed;
+}
+
+.workspaces .item:active {
+	background-color: @highlightHigh;
+}
+
+.workspaces .item.visible {
+	color: @subtle;
 }
 
 .workspaces .item.focused {
@@ -101,9 +119,12 @@ tooltip {
 	color: @love;
 }
 
+.workspaces .item.inactive {
+	color: @muted;
+}
+
 #music {
 	min-width: 140px;
-	padding: 0 10px;
 	color: @foam;
 	background-color: transparent;
 	opacity: 0.9;
@@ -167,6 +188,18 @@ tooltip {
 	padding-right: 2px;
 }
 
+.tray .item:hover {
+	background-color: @highlightMed;
+}
+
+.tray .item:active {
+	background-color: @highlightHigh;
+}
+
+.tray .item.urgent {
+	-gtk-icon-shadow: 0 0 4px @love;
+}
+
 #pulseaudio {
 	color: @rose;
 	border-radius: 0 0px 10px 0;
@@ -175,7 +208,7 @@ tooltip {
 }
 
 #pulseaudio.microphone {
-	color: #c4a7e7;
+	color: @iris;
 	border-left: 0px;
 	border-right: 0px;
 	border-radius: 0px 0px 10px 0px;
@@ -205,7 +238,6 @@ tooltip {
 	border-radius: 0px 0px 0px 10px;
 	padding-right: 15px;
 	padding-left: 15px;
-	/* margin-right: 10px; */
 }
 
 .notifications .button {
@@ -214,16 +246,268 @@ tooltip {
 	padding: 0;
 }
 
+.notifications .button:hover {
+	background-color: @highlightMed;
+}
+
 .popup-volume .device-box {
 	border-right: 1px solid @color_border;
 	background: transparent;
 }
 
+.popup-volume .device-box,
+.popup-volume .apps-box .app-box {
+	padding: 6px;
+}
+
+.popup-volume .apps-box .app-box .title {
+	color: @subtle;
+	padding: 2px 0;
+}
+
+.popup-volume scale {
+	background-color: transparent;
+	min-height: 80px;
+}
+
+.popup-volume scale trough {
+	background-color: @highlightMed;
+	border-radius: 4px;
+	min-width: 8px;
+}
+
+.popup-volume scale slider {
+	background-color: @text;
+	border-radius: 4px;
+	min-width: 12px;
+	min-height: 24px;
+	border: 2px solid @surface;
+}
+
+.popup-volume scale slider:hover {
+	background-color: @foam;
+}
+
+.popup-volume scale highlight {
+	background-color: @rose;
+	border-radius: 4px;
+}
+
+.popup-volume .apps-box .app-box scale {
+	background-color: transparent;
+	min-height: 60px;
+}
+
+.popup-volume .apps-box .app-box scale trough {
+	background-color: @highlightMed;
+	border-radius: 4px;
+	min-width: 6px;
+}
+
+.popup-volume .apps-box .app-box scale slider {
+	background-color: @text;
+	border-radius: 4px;
+	min-width: 10px;
+	min-height: 18px;
+	border: 2px solid @surface;
+}
+
+.popup-volume .apps-box .app-box scale slider:hover {
+	background-color: @foam;
+}
+
+.popup-volume .apps-box .app-box scale highlight {
+	background-color: @rose;
+	border-radius: 4px;
+}
+
+.popup-volume .apps-box .app-box .btn-mute {
+	background-color: transparent;
+	color: @subtle;
+	min-width: 24px;
+	min-height: 24px;
+	padding: 2px;
+}
+
+.popup-volume .apps-box .app-box .btn-mute:hover {
+	color: @text;
+	background-color: @highlightMed;
+	border-radius: 6px;
+}
+
+.popup-volume scale trough {
+	background-color: @highlightMed;
+	border-radius: 6px;
+	min-height: 6px;
+}
+
+.popup-volume scale trough > slider {
+	background-color: @text;
+	border-radius: 99px;
+	min-width: 18px;
+	min-height: 10px;
+	border: 2px solid @surface;
+	background-image: none;
+	box-shadow: none;
+}
+
+.popup-volume scale trough > slider:hover {
+	background-color: @foam;
+}
+
+.popup-volume scale trough > highlight {
+	background-color: @rose;
+	border-radius: 6px;
+}
+
+.popup-volume .device-box,
+.popup-volume .apps-box .app-box {
+	padding: 6px;
+}
+
+.popup-volume .apps-box .app-box .title {
+	color: @subtle;
+	padding: 2px 0;
+}
+
+.popup-volume .apps-box .app-box scale trough > slider {
+	background-color: @text;
+	border-radius: 99px;
+	min-width: 18px;
+	min-height: 10px;
+	border: 2px solid @surface;
+	background-image: none;
+	box-shadow: none;
+}
+
+.popup-volume .apps-box .app-box scale trough > slider:hover {
+	background-color: @foam;
+}
+
+.popup-volume .apps-box .app-box scale trough > highlight {
+	background-color: @rose;
+	border-radius: 6px;
+}
+
+.popup-volume .apps-box .app-box scale trough {
+	background-color: @highlightMed;
+	border-radius: 6px;
+	min-height: 6px;
+}
+
+.popup-volume .apps-box .app-box .btn-mute {
+	background-color: transparent;
+	color: @subtle;
+	min-width: 24px;
+	min-height: 24px;
+	padding: 2px;
+}
+
+.popup-volume .apps-box .app-box .btn-mute:hover {
+	color: @text;
+	background-color: @highlightMed;
+	border-radius: 6px;
+}
+
+.popup-clipboard {
+	padding: 4px;
+}
+
+.popup-clipboard .item {
+	padding: 4px 6px;
+	border-radius: 6px;
+}
+
+.popup-clipboard .item + .item {
+	border-top: 1px solid @overlay;
+}
+
+.popup-clipboard .item .btn {
+	background-color: transparent;
+	color: @text;
+	padding: 4px 8px;
+}
+
+.popup-clipboard .item .btn:hover {
+	background-color: @highlightMed;
+}
+
+.popup-clipboard .item .btn:checked {
+	background-color: @highlightMed;
+	color: @foam;
+}
+
+.popup-clipboard .item .btn.text label {
+	color: @text;
+}
+
+.popup-clipboard .item .btn-remove {
+	background-color: transparent;
+	color: @muted;
+	min-width: 0;
+	padding: 2px 6px;
+}
+
+.popup-clipboard .item .btn-remove:hover {
+	background-color: @highlightHigh;
+	color: @love;
+}
+
+.popup-clipboard .item .btn image {
+	-gtk-icon-filter: opacity(0.7);
+}
+
+.popup-clipboard .item .btn image:hover {
+	-gtk-icon-filter: opacity(1);
+}
+
+.popup-clock .calendar {
+	background-color: transparent;
+	color: @text;
+}
+
+.popup-clock .calendar:indeterminate {
+	color: @muted;
+}
+
+.popup-clock .calendar .button {
+	background-color: transparent;
+	color: @text;
+}
+
+.popup-clock .calendar .button:hover {
+	background-color: @highlightMed;
+}
+
+.popup-clock .calendar .header {
+	background-color: transparent;
+	color: @text;
+}
+
+.popup-clock .calendar .day-number {
+	color: @text;
+}
+
+.popup-clock .calendar .day-number.today {
+	background-color: @highlightMed;
+	color: @foam;
+	border-radius: 6px;
+}
+
+.popup-clock .calendar .day-number:hover {
+	background-color: @highlightMed;
+}
+
+button:hover {
+	background-color: @highlightMed;
+}
+
+button:active {
+	background-color: @highlightHigh;
+}
+
 popover,
-.volume popover contents,
-.clock popover contents,
-.tray popover contents,
-.clipboard popover contents {
+popover contents {
 	border-radius: 12px;
 	padding: .4rem;
 	background-color: @base;

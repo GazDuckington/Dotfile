@@ -12,9 +12,7 @@ lazy_load() {
 # Start each service lazily
 lazy_load "bauh-tray" "bauh-tray"
 lazy_load "polkit-kde-auth" "/usr/lib/polkit-kde-authentication-agent-1"
-# lazy_load "waybar" "waybar"
 lazy_load "hypridle" "hypridle"
-lazy_load "nm-applet" "nm-applet"
 lazy_load "swaync" "swaync"
 lazy_load "wl-paste" "wl-paste --watch cliphist store"
 lazy_load "blueman-applet" "blueman-applet"

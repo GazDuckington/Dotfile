@@ -44,7 +44,7 @@
 
 .floating-notifications>scrolledwindow,
 .control-center {
-	border-radius: 0px 0px 0px 12px;
+	border-radius: 12px 0px 0px 12px;
 	color: var(--text);
 	margin: 0px 0px;
 	background-color: var(--bg-primary);

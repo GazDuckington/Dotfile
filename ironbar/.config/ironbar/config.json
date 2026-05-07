@@ -51,13 +51,21 @@
     }
   ],
   "end": [
-{
-    "type": "clipboard",
-    "max_items": 10,
-    "truncate": {
-      "mode": "end",
-      "length": 50
-    }
+    {
+      "type": "clipboard",
+      "max_items": 10,
+      "truncate": {
+        "mode": "end",
+        "length": 50
+      }
+    },
+    {
+      "type": "script",
+      "name": "orbit-wifi",
+      "mode": "poll",
+      "interval": 5000,
+      "cmd": "~/.local/bin/orbit-status.sh",
+      "on_click_left": "orbit toggle top-right"
     },
 		{
       "type": "tray",
@@ -68,6 +76,8 @@
       "name": "pulseaudio",
       "format": "{icon} {percentage}%",
       "mute_format": " Muted",
+      "sink_slider_orientation": "vertical",
+      "source_slider_orientation": "vertical",
       "icons": {
         "volume_high": "",
         "volume_medium": "",

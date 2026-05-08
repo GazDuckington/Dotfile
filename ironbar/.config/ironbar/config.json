@@ -76,7 +76,7 @@
       "name": "pulseaudio",
       "format": "{icon} {percentage}%",
       "mute_format": "",
-			"popup_orientation": "vertical",
+			"popup_orientation": "horizontal",
       "sink_slider_orientation": "horizontal",
       "source_slider_orientation": "horizontal",
       "icons": {

@@ -75,9 +75,10 @@
       "type": "volume",
       "name": "pulseaudio",
       "format": "{icon} {percentage}%",
-      "mute_format": " Muted",
-      "sink_slider_orientation": "vertical",
-      "source_slider_orientation": "vertical",
+      "mute_format": "",
+			"popup_orientation": "vertical",
+      "sink_slider_orientation": "horizontal",
+      "source_slider_orientation": "horizontal",
       "icons": {
         "volume_high": "",
         "volume_medium": "",

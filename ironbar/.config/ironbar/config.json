@@ -69,7 +69,7 @@
     },
 		{
       "type": "tray",
-			"icon_size": 10
+			"icon_size": 15
     },
     {
       "type": "volume",

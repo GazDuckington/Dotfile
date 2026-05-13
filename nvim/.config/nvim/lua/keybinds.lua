@@ -73,5 +73,16 @@ M.setup = function()
 	map({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
 	map({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
 	map({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
+
+	-- dropbar
+	map("n", "<Leader>;", function()
+		require("dropbar.api").pick()
+	end, { desc = "Pick symbols in winbar" })
+	map("n", "[;", function()
+		require("dropbar.api").goto_context_start()
+	end, { desc = "Go to start of current context" })
+	map("n", "];", function()
+		require("dropbar.api").select_next_context()
+	end, { desc = "Select next context" })
 end
 return M

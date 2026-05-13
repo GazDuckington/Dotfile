@@ -1,29 +1,30 @@
--- local Constant = require("core.constant.lsp")
-local M = {}
+local options = {
+	shell = "/bin/fish",
+	clipboard = "unnamedplus",
+	undofile = true,
+	undodir = os.getenv("HOME") .. "/.vim/undodir",
+	termguicolors = true,
+	cursorline = true,
+	tabstop = 2,
+	softtabstop = 2,
+	shiftwidth = 2,
+	smartindent = true,
+	foldcolumn = "0",
+	foldlevel = 99,
+	foldlevelstart = 99,
+	foldenable = true,
+	laststatus = 2,
+	number = true,
+	relativenumber = true,
+	updatetime = 100,
+}
 
-M.setup = function()
-	require("core.command").setup()
-	require("core.autocommand").setup()
-	require("core.keybinding").setup()
-	require("core.options").setup()
-	vim.g.mapleader = " "
-	-- vim.g.web_ft    = Constant.web_filetypes
-	-- vim.opt_global.shell   = "fish"
-	-- vim.opt.clipboard:append("unnamedplus")
-	-- vim.opt.undofile       = true
-	-- vim.opt.undodir        = os.getenv("HOME") .. "/.vim/undodir"
-	-- vim.opt.termguicolors  = true
-	-- vim.opt.cursorline     = true
-	-- vim.opt.tabstop        = 2
-	-- vim.opt.softtabstop    = 2
-	-- vim.opt.shiftwidth     = 2
-	-- vim.opt.smartindent    = true
-	-- vim.opt.foldcolumn     = '0'
-	-- vim.opt.foldlevel      = 99
-	-- vim.opt.foldlevelstart = 99
-	-- vim.opt.foldenable     = true
-	-- vim.opt.laststatus     = 2
-	-- vim.opt.number         = true
-	-- vim.opt.relativenumber = true
+local function setup()
+	for key, value in pairs(options) do
+		vim.opt[key] = value
+	end
 end
-return M
+
+return {
+	setup = setup,
+}

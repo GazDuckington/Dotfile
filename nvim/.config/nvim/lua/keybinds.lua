@@ -38,10 +38,11 @@ M.setup = function()
 	map("n", "<C-k>", "<C-w>k", opts)
 	map("n", "<C-l>", "<C-w>l", opts)
 
+	-- barbar
 	-- buffer controls
 	map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
 	-- map("n", "<A-w>", "<cmd>BufferClose<cr>", opts)
-	map("n", "<A-w>", "<cmd>lua Snacks.bufdelete()<cr>", opts)
+	map("n", "<A-w>", "<cmd>BufferDelete<cr>", opts)
 	map("n", "<A-h>", "<cmd>BufferPrevious<cr>", opts)
 	map("n", "<A-l>", "<cmd>BufferNext<cr>", opts)
 	--
@@ -51,15 +52,16 @@ M.setup = function()
 	-- magic buffer picking
 	map("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
 
-	-- goto
+	-- snacks
 	map("n", "gd", function() Snacks.picker.lsp_definitions() end, opts)
 	map("n", "gD", function() Snacks.picker.lsp_type_definitions() end, opts)
 	map("n", "]]", function() Snacks.words.jump(vim.v.count1) end, opts)
 	map("n", "[[", function() Snacks.words.jump(-vim.v.count1) end, opts)
+	-- gitsigns
 	map("n", "]c", ":Gitsigns next_hunk<cr>", opts)
 	map("n", "[c", ":Gitsigns prev_hunk<cr>", opts)
-
-	-- movement
+	
+	-- Spider movement patterns
 	map(
 		{ "n", "o", "x" },
 		"w",
@@ -78,6 +80,5 @@ M.setup = function()
 		"<cmd>lua require('spider').motion('b')<CR>",
 		{ desc = "Spider-b" }
 	)
-	-- map('n', ':', '<cmd>FineCmdline<CR>', opts)
 end
 return M

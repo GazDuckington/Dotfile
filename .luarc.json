@@ -5,6 +5,7 @@
         "/usr/share/nvim/runtime",
         "/usr/lib64/nvim",
         "/home/gaz/.local/state/nvim/lazy/readme",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ]
 }

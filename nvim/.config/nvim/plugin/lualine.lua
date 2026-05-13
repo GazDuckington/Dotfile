@@ -1,4 +1,8 @@
-local colors = require("catppuccin.palettes").get_palette "mocha"
+vim.pack.add({
+    'https://github.com/nvim-lualine/lualine.nvim'
+})
+
+-- helpers
 local line = {
 	function()
 		return " "
@@ -13,10 +17,7 @@ local md = {
 	color = { gui = 'bold' },
 }
 
-return {
-	{
-		"nvim-lualine/lualine.nvim",
-		opts = {
+require("lualine").setup({
 			sections = {
 				lualine_a = {
 					md
@@ -29,20 +30,11 @@ return {
 						path = 3,
 						symbols = {
 							modified = '',
-							readonly = '',
+							readonly = '󰷧',
 							unnamed = '[No Name]',
 							newfile = '',
 						}
 					}
-					-- {
-					-- 	'buffers',
-					-- 	show_filename_only = true,
-					-- 	symbols = {
-					-- 		modified = ' ●',
-					-- 		alternate_file = '',
-					-- 		directory = '',
-					-- 	},
-					-- },
 				},
 				lualine_x = {
 					'diff', 'branch', 'diagnostics', 'filetype', 'progress', 'venv-selector'
@@ -51,12 +43,10 @@ return {
 				lualine_z = { line },
 			},
 			options = {
-				theme = "catppuccin",
+				theme = "auto",
 				globalstatus = false,
 				component_separators = '',
 				-- section_separators = { left = '🭐', right = '🭅' },
 				section_separators = { left = '', right = '' },
 			},
-		}
-	}
-}
+})

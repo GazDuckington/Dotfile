@@ -1,35 +1,29 @@
-local Snacks = require("snacks")
-local Opencode = require("opencode")
+vim.pack.add({"https://github.com/folke/which-key.nvim"})
 
+local wk = require("which-key")
+local Snacks = require("snacks")
 local mappings = {
 	{ "<leader>.", ":cd ~/.config/nvim<cr>:e init.lua<cr>", desc = "Open Neovim Config" },
 	{ "<leader>n", ":nohl<cr>",                             desc = "Reset highlight" },
 	{ "<leader>i", "<cmd>cd %:p:h<cr>",                     desc = "Cd to Buffer" },
 	{ "<leader>o", ":e ",                                   desc = "Open/Create File" },
 	{ "<leader>c", ":ColorizerToggle<cr>",                  desc = "Toggle colorizer" },
-	-- { "<leader>C",  ":Telescope conventional_commits<cr>",                    desc = "conventional commit" },
 
 	-- file manager
 	{
 		"<leader>e",
-		-- function()
-		-- Snacks.picker.explorer()
-		-- end,
-		-- "<cmd>Oil<cr>",
-		"<cmd>Neotree reveal toggle<cr>",
-		-- "<cmd>Fyler toggle<cr>",
+		function()
+		 Snacks.picker.explorer()
+		 end,
 		desc = "Open file manager"
 	},
 	-- { "<leader>ec", "<cmd>Yazi cwd<cr>",                                      desc = "Open yazi file manager in current directory" },
 
 	{ "<leader>m",  group = "Menu" },
 	{ "<leader>mg", function() Snacks.lazygit() end,            desc = "LazyGit" },
-	{ "<leader>ml", "<cmd>Lazy<cr>",                            desc = "Open Lazy.nvim menu" },
-	{ "<leader>mm", "<cmd>Mason<cr>",                           desc = "Open Mason menu" },
 	{ "<leader>ms", ":saveas ",                                 desc = "Save buffer as" },
 	{ "<leader>mi", ":LspInfo<cr>",                             desc = "LSP Info" },
-	-- { "<leader>mn", ":Navbuddy<cr>",                         desc = "Navbuddy, explore breadcrumb" },
-	-- { "<leader>mf", ":FocusToggle<cr>",                      desc = "FocusToggle" },
+	{ "<leader>mm", ":Mason<cr>",            desc = "Mason" },
 
 	{ "<leader>h",  group = "Helps" },
 	{ "<leader>hk", function() Snacks.picker.keymaps() end,     desc = "L:vnoremap < <gvist all keymaps" },
@@ -134,17 +128,5 @@ for n = 1, 9 do
 	table.insert(mappings, { key, term, hidden = true })
 end
 
-return {
-	{
-		"folke/which-key.nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		event = "VeryLazy",
-		config = function()
-			local wk = require("which-key")
-			wk.add(mappings)
-			wk.setup({})
-		end
-	}
-}
+wk.add(mappings)
+wk.setup({})

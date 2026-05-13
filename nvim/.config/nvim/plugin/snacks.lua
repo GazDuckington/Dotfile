@@ -1,9 +1,5 @@
-return {
-	{
-		"folke/snacks.nvim",
-		priority = 1000,
-		lazy = false,
-		opts = {
+vim.pack.add({"https://github.com/folke/snacks.nvim"})
+require("snacks").setup({
 			bigfile = { enabled = true },
 			notifier = { enabled = true },
 			quickfile = { enabled = true },
@@ -18,19 +14,6 @@ return {
 			rename = { enabled = false },
 			bufdelete = { enabled = true },
 			explorer = { enabled = false },
-			-- picker = {
-			-- 	sources = {
-			-- 		explorer = {
-			-- 			auto_close = false,
-			-- 			jump = { close = true },
-			-- 			layout = {
-			-- 				-- preset = "ivy_split",
-			-- 				layout = { position = "top" },
-			-- 				preview = false
-			-- 			},
-			-- 		},
-			-- 	},
-			-- },
 			terminal = {
 				enabled = true,
 				win = {
@@ -59,6 +42,4 @@ return {
 				which_key = true,
 				notify = true,
 			}
-		}
-	}
-}
+})

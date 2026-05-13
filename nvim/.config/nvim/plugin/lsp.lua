@@ -2,13 +2,42 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
 	callback = function(args)
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		local bufnr = args.buf
+		local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
 
-		-- The modern check for formatting capability
+		if client then
+			if filetype == "vue" and client.name == "ts_ls" then
+				client.server_capabilities.documentFormattingProvider = false
+				client.server_capabilities.semanticTokensProvider = nil
+			end
+		end
+
 		if client and client.server_capabilities.documentFormattingProvider then
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.format({
+						bufnr = bufnr,
+						id = client.id,
+						-- Adding a filter for safety
+						filter = function(c)
+							return c.name ~= "ts_ls"
+						end,
+					})
+				end,
+			})
+			-- Inside your LspAttach callback
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				buffer = args.buf,
 				callback = function()
-					vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+					vim.lsp.buf.format({
+						bufnr = args.buf,
+						id = client.id,
+						timeout_ms = 5000, -- Increase to 5 seconds
+						filter = function(c)
+							return c.name ~= "ts_ls"
+						end,
+					})
 				end,
 			})
 		end

@@ -35,7 +35,13 @@ require("snacks").setup({
 	scroll = { enabled = true },
 	rename = { enabled = false },
 	bufdelete = { enabled = true },
-	explorer = { enabled = true },
+	explorer = {
+		enabled = true,
+		layout = {
+			preset = "sidebar",
+			position = "right",
+		},
+	},
 	terminal = {
 		enabled = true,
 		win = {

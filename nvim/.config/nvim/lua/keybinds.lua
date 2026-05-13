@@ -12,7 +12,7 @@ M.setup = function()
 	map("n", "n", "nzzzv", opts)
 	map("n", "N", "Nzzzv", opts)
 	map("n", "<C-a>", "ggVG", opts)
-	map("x", "<leader>p", "\"_dP", opts)
+	map("x", "<leader>p", '"_dP', opts)
 	map("i", "<c-o>", "<C-O>o", opts)
 	map("v", "<", "<gv", opts)
 	map("v", ">", ">gv", opts)
@@ -53,32 +53,25 @@ M.setup = function()
 	map("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
 
 	-- snacks
-	map("n", "gd", function() Snacks.picker.lsp_definitions() end, opts)
-	map("n", "gD", function() Snacks.picker.lsp_type_definitions() end, opts)
-	map("n", "]]", function() Snacks.words.jump(vim.v.count1) end, opts)
-	map("n", "[[", function() Snacks.words.jump(-vim.v.count1) end, opts)
+	map("n", "gd", function()
+		require("snacks").picker.lsp_definitions()
+	end, opts)
+	map("n", "gD", function()
+		require("snacks").picker.lsp_type_definitions()
+	end, opts)
+	map("n", "]]", function()
+		require("snacks").words.jump(vim.v.count1)
+	end, opts)
+	map("n", "[[", function()
+		require("snacks").words.jump(-vim.v.count1)
+	end, opts)
 	-- gitsigns
 	map("n", "]c", ":Gitsigns next_hunk<cr>", opts)
 	map("n", "[c", ":Gitsigns prev_hunk<cr>", opts)
-	
+
 	-- Spider movement patterns
-	map(
-		{ "n", "o", "x" },
-		"w",
-		"<cmd>lua require('spider').motion('w')<CR>",
-		{ desc = "Spider-w" }
-	)
-	map(
-		{ "n", "o", "x" },
-		"e",
-		"<cmd>lua require('spider').motion('e')<CR>",
-		{ desc = "Spider-e" }
-	)
-	map(
-		{ "n", "o", "x" },
-		"b",
-		"<cmd>lua require('spider').motion('b')<CR>",
-		{ desc = "Spider-b" }
-	)
+	map({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+	map({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
+	map({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 end
 return M

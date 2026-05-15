@@ -10,9 +10,12 @@ M.setup = function()
 		general = {
 			gaps_in = 5,
 			gaps_out = 5,
-			border_size = 2,
+			border_size = 1,
 			col = {
-				active_border = { colors = { color.sky, color.blue }, angle = 45 },
+				active_border = {
+					colors = { color.sky, color.blue },
+					angle = 45,
+				},
 				inactive_border = color.mantle,
 			},
 			resize_on_border = false,

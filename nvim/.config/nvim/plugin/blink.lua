@@ -1,10 +1,14 @@
 vim.pack.add({
 	"https://github.com/saghen/blink.lib",
 	"https://github.com/saghen/blink.cmp",
+		"https://github.com/rafamadriz/friendly-snippets",
 })
 local cmp = require("blink.cmp")
 cmp.build():wait(60000)
 cmp.setup({
+					enabled = function()
+				return not vim.tbl_contains({ "snacks_picker_input" }, vim.bo.filetype)
+			end,
 	-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
 	-- 'super-tab' for mappings similar to vscode (tab to accept)
 	-- 'enter' for enter to accept
@@ -18,43 +22,30 @@ cmp.setup({
 	--
 	-- See :h blink-cmp-config-keymap for defining your own keymap
 	keymap = {
-		preset = "enter",
-		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-		["<C-e>"] = { "hide", "fallback" },
-		["<CR>"] = { "accept", "fallback" },
+		-- 
 
-		["<Tab>"] = {
-			function(cmp)
-				if cmp.is_menu_visible() then
-					return cmp.select_next()
-				end
-				if cmp.is_snippet_active() then
-					return cmp.snippet_forward()
-				end
-			end,
-			"fallback",
-		},
-		["<S-Tab>"] = {
-			function(cmp)
-				if cmp.is_menu_visible() then
-					return cmp.select_prev()
-				end
-				if cmp.is_snippet_active() then
-					return cmp.snippet_backward()
-				end
-			end,
-			"fallback",
-		},
+							-- preset = 'enter',
+				['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+				['<Esc>'] = { 'hide', 'fallback' },
+				['<CR>'] = { 'accept', 'fallback' },
 
-		["<Up>"] = { "select_prev", "fallback" },
-		["<Down>"] = { "select_next", "fallback" },
-		["<C-p>"] = { "select_prev", "fallback_to_mappings" },
-		["<C-n>"] = { "select_next", "fallback_to_mappings" },
+				['<C-p>'] = { 'snippet_forward', 'fallback' },
+				['<C-n>'] = { 'snippet_backward', 'fallback' },
 
-		["<C-b>"] = { "scroll_documentation_up", "fallback" },
-		["<C-f>"] = { "scroll_documentation_down", "fallback" },
+				['<Up>'] = { 'select_prev', 'fallback' },
+				['<Down>'] = { 'select_next', 'fallback' },
+				['<Tab>'] = {
+					function(cmp)
+						if not cmp.snippet_active() then
+							return cmp.show()
+						end
+					end,
+					'select_next', 'fallback'
+				},
+				['<S-Tab>'] = { 'select_prev', 'fallback' },
 
-		["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+				['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+				['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
 	},
 
 	-- (Default) Only show the documentation popup when manually triggered
@@ -63,6 +54,11 @@ cmp.setup({
 		list = {
 			selection = { preselect = true, auto_insert = false },
 		},
+							trigger = {
+					show_on_keyword = true,
+					show_on_trigger_character = true
+				},
+
 		ghost_text = { enabled = true },
 		menu = {
 			draw = {

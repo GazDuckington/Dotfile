@@ -3,18 +3,21 @@ M.autostart = {
 	-- Environment and System Services
 	"systemctl --user import-environment &",
 	"hyprctl setcursor 'capitaine-cursors-light' 24",
+	"/usr/lib/polkit-kde-authentication-agent-1",
 
 	-- Daemons and UI Components
 	"awww-daemon",
 	"orbit daemon",
-	"swaync",
-	"ironbar",
+	"qs",
+	"hypridle",
+	"wl-paste --watch cliphist store",
 	"elephant",
 	"walker --gapplication-service",
 
+	"blueman-applet",
+	"udiskie --smart-tray -f --terminal kitty",
 	-- Scripts and Personal Autostarts
 	"~/.local/bin/swaypaper.sh",
-	"bash ~/.local/bin/autostart.sh",
 
 	-- Optional/Commented out (Uncomment to enable)
 	-- "systemctl enable --now --user vicinae.service",
@@ -33,6 +36,8 @@ M.setup = function()
 
 	-- Register your keybinds here as well
 	-- (Previous logic for hl.bind loops goes here)
+	-- hl.exec_cmd("awww-daemon")
+	-- hl.exec_cmd("orbit daemon")
 end
 
 return M

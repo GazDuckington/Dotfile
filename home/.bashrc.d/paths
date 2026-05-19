@@ -84,3 +84,4 @@ export NVIM_SESSION="$HOME/.local/share/nvim/sessions/"
 
 export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
+export QML2_IMPORT_PATH="/usr/lib/qt6/qml:/usr/local/lib/qt6/qml"

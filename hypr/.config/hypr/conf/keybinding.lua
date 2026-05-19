@@ -11,12 +11,14 @@ local d = hl.dsp
 M.binds = {
 	-- General Actions
 	{ main_mod,             "F4",     d.exec_cmd("wlogout") },
-	{ main_mod,             "Z",      d.exec_cmd("~/.local/bin/footclient-launch.sh pulsemixer") },
+	{ main_mod,             "Z",      d.exec_cmd("~/.local/bin/kitty-launch.sh wiremix") },
 	{ main_mod,             "Return", d.exec_cmd(terminal) },
 	{ main_mod,             "Q",      d.window.close() },
 	{ main_mod,             "E",      d.exec_cmd(menu .. " -m files") },
 	{ main_mod,             "F",      d.window.float({ action = "toggle" }) },
 	{ main_mod,             "D",      d.exec_cmd(menu_socket) },
+	{ main_mod,             "C",      d.exec_cmd("bash -c '~/.local/bin/color_picker.sh'") },
+	{ main_mod,             "N",      d.exec_cmd("bash -c 'qs ipc call notificationMenu toggle'") },
 
 	-- Layout & Master
 	{ main_mod .. " SHIFT", "SPACE",  d.layout("swapwithmaster master") },

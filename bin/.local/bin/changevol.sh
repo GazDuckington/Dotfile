@@ -20,7 +20,7 @@ function send_notification {
 	status=$(is_mute)
 
 	if [ "$status" == "yes" ]; then
-		notify-send -r 999 -u normal "$soundMute $(get_volume)% Muted" -t 800
+		notify-send -r 999 -u normal -a "PACTL" "$soundMute $(get_volume)% Muted" -t 800
 	else
 		if [ "$volume" = 0 ]; then
 			notify-send -u normal "$soundZero Muted" -t 800 -h string:x-canonical-private-synchronous:volume

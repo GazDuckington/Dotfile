@@ -16,7 +16,7 @@ image=/tmp/${colorPicker}.png
 magick -size 64x64 xc:"$colorPicker" "${image}"
 
 # notify color above screen # 
-notify-send -u low -r 69 -i "${image}" " $colorPicker, copied to clipboard."
+notify-send -u low -r 69 -a "Hyprpicker" " $colorPicker, copied to clipboard." -i "${image}"
 
-rm "$image"
+#rm "$image"
 fi

@@ -18,7 +18,7 @@ M.binds = {
 	{ main_mod,             "F",      d.window.float({ action = "toggle" }) },
 	{ main_mod,             "D",      d.exec_cmd(menu_socket) },
 	{ main_mod,             "C",      d.exec_cmd("bash -c '~/.local/bin/color_picker.sh'") },
-	{ main_mod,             "N",      d.exec_cmd("bash -c 'qs ipc call notificationMenu toggle'") },
+	{ main_mod,             "N",      d.exec_cmd("bash -c 'qs ipc call cc toggle'") },
 
 	-- Layout & Master
 	{ main_mod .. " SHIFT", "SPACE",  d.layout("swapwithmaster master") },

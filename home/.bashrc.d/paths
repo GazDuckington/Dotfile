@@ -1,7 +1,8 @@
 #!/usr/bin/sh
 export TERM=xterm-256color #st-256color
 export EDITOR='nvim'
-export QT_QPA_PLATFORMTHEME='kvantum'
+export QT_QPA_PLATFORMTHEME='qt6ct'
+export QT_STYLE_OVERRIDE='qt6ct'
 export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 export QT_QML_GENERATE_QMLLS_INI="ON"
 

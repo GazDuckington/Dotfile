@@ -1,7 +1,14 @@
 #!/bin/sh
 
-WALL=$(/usr/bin/find ~/Pictures/Wallpapers/ -type f | /usr/bin/shuf -n1)
-#WALL=~/Downloads/sunlight-grass-moewalls-com.gif
-# swaybg -i "$WALL" -m fill &
-awww img "$WALL" --transition-type grow # --transition-pos 0.977,0.977
-#--transition-type wipe --transition-angle 30 --transition-step 90
+WALL="${1:-$(/usr/bin/find ~/Pictures/Wallpapers/ -type f -not -name ".*" | /usr/bin/shuf -n1)}"
+
+case "${WALL##*.}" in
+    mp4|webm|mov|mkv|avi)
+        pkill mpvpaper 2>/dev/null
+        OUTPUT=$(hyprctl monitors -j | jq -r '.[0].name')
+        [ -n "$OUTPUT" ] && mpvpaper -f -o "no-audio loop" "$OUTPUT" "$WALL"
+        ;;
+    *)
+        awww img "$WALL" --transition-type grow
+        ;;
+esac

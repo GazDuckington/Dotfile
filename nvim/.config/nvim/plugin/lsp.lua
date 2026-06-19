@@ -19,21 +19,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 					vim.lsp.buf.format({
 						bufnr = bufnr,
 						id = client.id,
-						-- Adding a filter for safety
-						filter = function(c)
-							return c.name ~= "ts_ls"
-						end,
-					})
-				end,
-			})
-			-- Inside your LspAttach callback
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				buffer = args.buf,
-				callback = function()
-					vim.lsp.buf.format({
-						bufnr = args.buf,
-						id = client.id,
-						timeout_ms = 5000, -- Increase to 5 seconds
+						timeout_ms = 5000,
 						filter = function(c)
 							return c.name ~= "ts_ls"
 						end,

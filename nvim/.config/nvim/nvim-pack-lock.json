@@ -46,11 +46,11 @@
     },
     "mason-lspconfig.nvim": {
       "rev": "eaa34887d444cb002e1b165fac399ae4bbc771f7",
-      "src": "https://github.com/williamboman/mason-lspconfig.nvim"
+      "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
       "rev": "e54f5bf5f12c560da31c17eee5b3e1bd369f3ff9",
-      "src": "https://github.com/williamboman/mason.nvim"
+      "src": "https://github.com/mason-org/mason.nvim"
     },
     "nvim": {
       "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
@@ -115,6 +115,10 @@
     "ultimate-autopair.nvim": {
       "rev": "6b58234de921437836efe27714b2026ed2ee235a",
       "src": "https://github.com/altermo/ultimate-autopair.nvim"
+    },
+    "venv-selector.nvim": {
+      "rev": "cc4bb3975de8835291f9bb45889e96c6b2795fc4",
+      "src": "https://github.com/linux-cultist/venv-selector.nvim"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",

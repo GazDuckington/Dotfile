@@ -1,4 +1,5 @@
 vim.pack.add({ "https://github.com/folke/which-key.nvim" })
+vim.cmd("packadd which-key.nvim")
 
 local wk = require("which-key")
 local Snacks = require("snacks")
@@ -8,8 +9,6 @@ local mappings = {
 	{ "<leader>i", "<cmd>cd %:p:h<cr>", desc = "Cd to Buffer" },
 	{ "<leader>o", ":e ", desc = "Open/Create File" },
 	{ "<leader>c", ":ColorizerToggle<cr>", desc = "Toggle colorizer" },
-
-	-- file manager
 	{
 		"<leader>e",
 		function()
@@ -17,7 +16,6 @@ local mappings = {
 		end,
 		desc = "Open file manager",
 	},
-	-- { "<leader>ec", "<cmd>Yazi cwd<cr>",                                      desc = "Open yazi file manager in current directory" },
 
 	{ "<leader>m", group = "Menu" },
 	{
@@ -37,7 +35,7 @@ local mappings = {
 		function()
 			Snacks.picker.keymaps()
 		end,
-		desc = "L:vnoremap < <gvist all keymaps",
+		desc = "List all keymaps",
 	},
 	{
 		"<leader>hh",
@@ -62,7 +60,7 @@ local mappings = {
 		function()
 			Snacks.picker.diagnostics()
 		end,
-		desc = "Worksapce Diagnostics",
+		desc = "Workspace Diagnostics",
 	},
 	{
 		"<leader>xq",
@@ -73,68 +71,20 @@ local mappings = {
 	},
 
 	{ "<leader>t", group = "Git Signs" },
-	{
-		"<leader>ts",
-		":Gitsigns stage_hunk<CR>",
-		mode = { "n", "v" },
-	},
-	{
-		"<leader>tr",
-		":Gitsigns reset_hunk<CR>",
-		mode = { "n", "v" },
-	},
-	{
-		"<leader>tS",
-		":Gitsigns stage_buffer<CR>",
-		mode = "n",
-	},
-	{
-		"<leader>tu",
-		":Gitsigns undo_stage_hunk<CR>",
-		mode = "n",
-	},
-	{
-		"<leader>tR",
-		":Gitsigns reset_buffer<CR>",
-		mode = "n",
-	},
-	{
-		"<leader>tp",
-		":Gitsigns preview_hunk<CR>",
-		mode = "n",
-	},
-	{
-		"<leader>tb",
-		":Gitsigns blame_line full=true<CR>",
-		mode = "n",
-	},
-	{
-		"<leader>tB",
-		":Gitsigns toggle_current_line_blame<CR>",
-		mode = "n",
-	},
-	{
-		"<leader>td",
-		":Gitsigns diffthis<CR>",
-		mode = "n",
-	},
-	{
-		"<leader>tD",
-		":Gitsigns diffthis ~<CR>",
-		mode = "n",
-	},
-	{
-		"<leader>tt",
-		":Gitsigns toggle_deleted<CR>",
-		mode = "n",
-	},
-	{
-		"<leader>ti",
-		":<C-U>Gitsigns select_hunk<CR>",
-		mode = { "o", "x" },
-	},
+	{ "<leader>ts", ":Gitsigns stage_hunk<CR>", mode = { "n", "v" } },
+	{ "<leader>tr", ":Gitsigns reset_hunk<CR>", mode = { "n", "v" } },
+	{ "<leader>tS", ":Gitsigns stage_buffer<CR>", mode = "n" },
+	{ "<leader>tu", ":Gitsigns undo_stage_hunk<CR>", mode = "n" },
+	{ "<leader>tR", ":Gitsigns reset_buffer<CR>", mode = "n" },
+	{ "<leader>tp", ":Gitsigns preview_hunk<CR>", mode = "n" },
+	{ "<leader>tb", ":Gitsigns blame_line full=true<CR>", mode = "n" },
+	{ "<leader>tB", ":Gitsigns toggle_current_line_blame<CR>", mode = "n" },
+	{ "<leader>td", ":Gitsigns diffthis<CR>", mode = "n" },
+	{ "<leader>tD", ":Gitsigns diffthis ~<CR>", mode = "n" },
+	{ "<leader>tt", ":Gitsigns toggle_deleted<CR>", mode = "n" },
+	{ "<leader>ti", ":<C-U>Gitsigns select_hunk<CR>", mode = { "o", "x" } },
+
 	{ "<leader>b", group = "Buffer Sorting" },
-	-- sort automatically by...
 	{ "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>", desc = "Order By Number" },
 	{ "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>", desc = "Order By Directory" },
 	{ "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>", desc = "Order By Language" },
@@ -163,16 +113,6 @@ local mappings = {
 		desc = "Zoom Mode",
 	},
 
-	{ "<leader>j", group = "OpenCode" },
-	-- { "<leader>ja", function() Opencode.toggle() end,                          desc = "Toggle OpenCode",       mode = { "n", "t" } },
-	-- { "<leader>jf", function() Opencode.ask("@this: ", { submit = true }) end, desc = "Ask about this",        mode = { "n", "x" } },
-	-- { "<leader>js", function() Opencode.select() end,                          desc = "Select action",         mode = { "n", "x" } },
-	-- { "<leader>jr", function() return Opencode.operator("@this ") end,         desc = "Add range",             expr = true,        mode = { "n", "x" } },
-	-- { "<leader>jl", function() return Opencode.operator("@this ") .. "_" end,  desc = "Add line",              expr = true,        mode = "n" },
-	-- { "<leader>ju", function() Opencode.command("session.half.page.up") end,   desc = "Scroll up",             mode = "n" },
-	-- { "<leader>jd", function() Opencode.command("session.half.page.down") end, desc = "Scroll down",           mode = "n" },
-
-	-- telescope stuff
 	{ "<leader>f", group = "Find" },
 	{
 		"<leader>fg",
@@ -221,7 +161,7 @@ local mappings = {
 		function()
 			require("which-key").show({ global = false })
 		end,
-		desc = "Buffer Local Keymaps (which-key)",
+		desc = "Buffer Local Keymaps",
 	},
 	{
 		"<leader>fv",

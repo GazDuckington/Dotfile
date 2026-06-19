@@ -1,10 +1,12 @@
 vim.pack.add({ "https://github.com/folke/snacks.nvim" })
+vim.cmd("packadd snacks.nvim")
 require("snacks").setup({
 	bigfile = { enabled = true },
 	notifier = { enabled = true },
 	quickfile = { enabled = true },
 	statuscolumn = { enabled = true },
 	words = { enabled = true },
+	input = { enabled = true },
 	dashboard = {
 		enabled = true,
 		sections = {
@@ -18,7 +20,6 @@ require("snacks").setup({
 				desc = "Packages Loaded",
 				padding = 1,
 				indent = 2,
-				-- Use the 'text' key with a generated string instead of a raw function
 				text = {
 					{
 						"󰚥 " .. #vim.api.nvim_list_runtime_paths() .. " packages in runtime",

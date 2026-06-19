@@ -1,7 +1,9 @@
-vim.pack.add({
-	"https://github.com/sudo-tee/opencode.nvim",
-	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
-})
+vim.pack.add(
+	{ "https://github.com/sudo-tee/opencode.nvim" },
+	{ "https://github.com/MeanderingProgrammer/render-markdown.nvim" }
+)
+vim.cmd("packadd render-markdown.nvim")
+vim.cmd("packadd opencode.nvim")
 require("render-markdown").setup({
 	anti_conceal = { enabled = false },
 	file_types = { "markdown", "opencode_output" },

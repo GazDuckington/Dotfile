@@ -1,12 +1,15 @@
 vim.pack.add({ "https://github.com/folke/snacks.nvim" })
-vim.cmd("packadd snacks.nvim")
 require("snacks").setup({
 	bigfile = { enabled = true },
-	notifier = { enabled = true },
 	quickfile = { enabled = true },
+	notifier = { enabled = true },
 	statuscolumn = { enabled = true },
 	words = { enabled = true },
 	input = { enabled = true },
+	picker = {
+		enabled = true,
+		ui_select = true,
+	},
 	dashboard = {
 		enabled = true,
 		sections = {
@@ -72,3 +75,5 @@ require("snacks").setup({
 		notify = true,
 	},
 })
+
+vim.cmd("packadd snacks.nvim")

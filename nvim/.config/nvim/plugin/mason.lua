@@ -4,7 +4,6 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
 	callback = function()
 		vim.pack.add({
 			"https://github.com/mason-org/mason.nvim",
-			"https://github.com/stevearc/dressing.nvim",
 			"https://github.com/mason-org/mason-lspconfig.nvim",
 			"https://github.com/neovim/nvim-lspconfig",
 		})

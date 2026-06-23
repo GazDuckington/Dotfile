@@ -66,12 +66,12 @@ local mappings = {
 		desc = "Buffer Diagnostics (Trouble)",
 	},
 	{
-		"<leader>cs",
+		"<leader>xs",
 		"<cmd>Trouble symbols toggle focus=false<cr>",
 		desc = "Symbols (Trouble)",
 	},
 	{
-		"<leader>cl",
+		"<leader>xl",
 		"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
 		desc = "LSP Definitions / references / ... (Trouble)",
 	},
@@ -160,9 +160,7 @@ local mappings = {
 	},
 	{
 		"<leader>ft",
-		function()
-			Snacks.picker.todo_comments()
-		end,
+		"<cmd>Trouble todo<cr>",
 		desc = "Find TODO",
 	},
 	{
@@ -199,6 +197,21 @@ local mappings = {
 			Snacks.picker.notifications()
 		end,
 		desc = "Notification History",
+	},
+	{
+		"<leader>sr",
+		function()
+			local grug = require("grug-far")
+			local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+			grug.open({
+				transient = true,
+				prefills = {
+					filesFilter = ext and ext ~= "" and "*." .. ext or nil,
+				},
+			})
+		end,
+		mode = { "n", "x" },
+		desc = "Search and Replace",
 	},
 }
 

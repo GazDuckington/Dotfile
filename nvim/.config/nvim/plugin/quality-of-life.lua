@@ -55,3 +55,7 @@ require("nvim-ts-autotag").setup({
 		enable_close_on_slash = false,
 	},
 })
+
+vim.pack.add({ "https://github.com/folke/todo-comments.nvim" })
+vim.cmd("packadd todo-comments.nvim")
+require("todo-comments").setup()

@@ -10,7 +10,7 @@ local line = {
 local md = {
 	"mode",
 	fmt = function(res)
-		return res:sub(1, 3)
+		return res:sub(1, 1)
 	end,
 	color = { gui = "bold" },
 }

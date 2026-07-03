@@ -55,6 +55,11 @@ cmp.setup({
 			preset = "none",
 		},
 	},
+	cmdline = {
+		keymap = {
+			preset = "none",
+		},
+	},
 
 	-- (Default) Only show the documentation popup when manually triggered
 	completion = {

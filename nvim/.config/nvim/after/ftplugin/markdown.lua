@@ -40,5 +40,5 @@ local function checkbox(direction)
 	end
 end
 
-vim.keymap.set("n", "t", checkbox("inc"), { buffer = true })
-vim.keymap.set("n", "T", checkbox("dec"), { buffer = true })
+vim.keymap.set("n", "<c-x>", checkbox("inc"), { buffer = true })
+vim.keymap.set("n", "<c-X>", checkbox("dec"), { buffer = true })

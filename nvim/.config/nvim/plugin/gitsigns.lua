@@ -1,8 +1,8 @@
-vim.pack.add({ "https://github.com/lewis6991/gitsigns.nvim" })
-vim.cmd("packadd gitsigns.nvim")
-require("gitsigns").setup({
+vim.pack.use("gitsigns.nvim", function()
+	require("gitsigns").setup({
 	current_line_blame = false,
 	current_line_blame_opts = {
 		delay = 0,
 	},
-})
+	})
+end)

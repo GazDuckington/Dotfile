@@ -1,5 +1,5 @@
-vim.pack.add({ "https://github.com/folke/snacks.nvim" })
-require("snacks").setup({
+vim.pack.use("snacks.nvim", function()
+	require("snacks").setup({
 	bigfile = { enabled = true },
 	quickfile = { enabled = true },
 	notifier = { enabled = true },
@@ -74,6 +74,5 @@ require("snacks").setup({
 		which_key = true,
 		notify = true,
 	},
-})
-
-vim.cmd("packadd snacks.nvim")
+	})
+end)

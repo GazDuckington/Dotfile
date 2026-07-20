@@ -1,14 +1,13 @@
-vim.pack.add({ "https://github.com/folke/which-key.nvim" })
-vim.cmd("packadd which-key.nvim")
+vim.pack.use("which-key.nvim")
 
 local wk = require("which-key")
 local Snacks = require("snacks")
 local mappings = {
 	{ "<leader>.", ":cd ~/.config/nvim<cr>:e init.lua<cr>", desc = "Open Neovim Config" },
-	{ "<leader>n", ":nohl<cr>", desc = "Reset highlight" },
-	{ "<leader>i", "<cmd>cd %:p:h<cr>", desc = "Cd to Buffer" },
-	{ "<leader>o", ":e ", desc = "Open/Create File" },
-	{ "<leader>c", ":ColorizerToggle<cr>", desc = "Toggle colorizer" },
+	{ "<leader>n", ":nohl<cr>",                             desc = "Reset highlight" },
+	{ "<leader>i", "<cmd>cd %:p:h<cr>",                     desc = "Cd to Buffer" },
+	{ "<leader>o", ":e ",                                   desc = "Open/Create File" },
+	{ "<leader>c", ":ColorizerToggle<cr>",                  desc = "Toggle colorizer" },
 	{
 		"<leader>e",
 		function()
@@ -17,7 +16,7 @@ local mappings = {
 		desc = "Open file manager",
 	},
 
-	{ "<leader>m", group = "Menu" },
+	{ "<leader>m",  group = "Menu" },
 	{
 		"<leader>mg",
 		function()
@@ -25,11 +24,18 @@ local mappings = {
 		end,
 		desc = "LazyGit",
 	},
-	{ "<leader>ms", ":saveas ", desc = "Save buffer as" },
+	{ "<leader>ms", ":saveas ",     desc = "Save buffer as" },
 	{ "<leader>mi", ":LspInfo<cr>", desc = "LSP Info" },
-	{ "<leader>mm", ":Mason<cr>", desc = "Mason" },
+	{ "<leader>mm", ":Mason<cr>",   desc = "Mason" },
+	{
+		"<leader>mp",
+		function()
+			require("plugin-view").open()
+		end,
+		desc = "vim packs",
+	},
 
-	{ "<leader>h", group = "Helps" },
+	{ "<leader>h",  group = "Helps" },
 	{
 		"<leader>hk",
 		function()
@@ -45,16 +51,16 @@ local mappings = {
 		desc = "Help Tags",
 	},
 
-	{ "<leader>v", group = "Views" },
+	{ "<leader>v",  group = "Views" },
 	{ "<leader>vl", "<cmd>vsplit<cr><C-w>l", desc = "Focus split right" },
-	{ "<leader>vj", "<cmd>split<cr><C-w>j", desc = "Focus split down" },
+	{ "<leader>vj", "<cmd>split<cr><C-w>j",  desc = "Focus split down" },
 
-	{ "<leader>q", group = "Quickfix" },
-	{ "<leader>qN", ":cprevious<cr>", desc = "Previous" },
-	{ "<leader>qo", ":copen<cr>", desc = "Open" },
-	{ "<leader>qn", ":cnext<cr>", desc = "Next" },
+	{ "<leader>q",  group = "Quickfix" },
+	{ "<leader>qN", ":cprevious<cr>",        desc = "Previous" },
+	{ "<leader>qo", ":copen<cr>",            desc = "Open" },
+	{ "<leader>qn", ":cnext<cr>",            desc = "Next" },
 
-	{ "<leader>x", group = "Trouble" },
+	{ "<leader>x",  group = "Trouble" },
 	{
 		"<leader>xx",
 		"<cmd>Trouble diagnostics toggle<cr>",
@@ -86,27 +92,27 @@ local mappings = {
 		desc = "QuickFix",
 	},
 
-	{ "<leader>t", group = "Git Signs" },
-	{ "<leader>ts", ":Gitsigns stage_hunk<CR>", mode = { "n", "v" } },
-	{ "<leader>tr", ":Gitsigns reset_hunk<CR>", mode = { "n", "v" } },
-	{ "<leader>tS", ":Gitsigns stage_buffer<CR>", mode = "n" },
-	{ "<leader>tu", ":Gitsigns undo_stage_hunk<CR>", mode = "n" },
-	{ "<leader>tR", ":Gitsigns reset_buffer<CR>", mode = "n" },
-	{ "<leader>tp", ":Gitsigns preview_hunk<CR>", mode = "n" },
-	{ "<leader>tb", ":Gitsigns blame_line full=true<CR>", mode = "n" },
+	{ "<leader>t",  group = "Git Signs" },
+	{ "<leader>ts", ":Gitsigns stage_hunk<CR>",                mode = { "n", "v" } },
+	{ "<leader>tr", ":Gitsigns reset_hunk<CR>",                mode = { "n", "v" } },
+	{ "<leader>tS", ":Gitsigns stage_buffer<CR>",              mode = "n" },
+	{ "<leader>tu", ":Gitsigns undo_stage_hunk<CR>",           mode = "n" },
+	{ "<leader>tR", ":Gitsigns reset_buffer<CR>",              mode = "n" },
+	{ "<leader>tp", ":Gitsigns preview_hunk<CR>",              mode = "n" },
+	{ "<leader>tb", ":Gitsigns blame_line full=true<CR>",      mode = "n" },
 	{ "<leader>tB", ":Gitsigns toggle_current_line_blame<CR>", mode = "n" },
-	{ "<leader>td", ":Gitsigns diffthis<CR>", mode = "n" },
-	{ "<leader>tD", ":Gitsigns diffthis ~<CR>", mode = "n" },
-	{ "<leader>tt", ":Gitsigns toggle_deleted<CR>", mode = "n" },
-	{ "<leader>ti", ":<C-U>Gitsigns select_hunk<CR>", mode = { "o", "x" } },
+	{ "<leader>td", ":Gitsigns diffthis<CR>",                  mode = "n" },
+	{ "<leader>tD", ":Gitsigns diffthis ~<CR>",                mode = "n" },
+	{ "<leader>tt", ":Gitsigns toggle_deleted<CR>",            mode = "n" },
+	{ "<leader>ti", ":<C-U>Gitsigns select_hunk<CR>",          mode = { "o", "x" } },
 
-	{ "<leader>b", group = "Buffer Sorting" },
-	{ "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>", desc = "Order By Number" },
-	{ "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>", desc = "Order By Directory" },
-	{ "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>", desc = "Order By Language" },
-	{ "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>", desc = "Order By Window Number" },
+	{ "<leader>b",  group = "Buffer Sorting" },
+	{ "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>",      desc = "Order By Number" },
+	{ "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>",         desc = "Order By Directory" },
+	{ "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>",          desc = "Order By Language" },
+	{ "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>",      desc = "Order By Window Number" },
 
-	{ "<leader>z", group = "Snacks Mode" },
+	{ "<leader>z",  group = "Snacks Mode" },
 	{
 		"<leader>zz",
 		function()

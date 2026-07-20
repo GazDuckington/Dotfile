@@ -1,3 +1,3 @@
-vim.pack.add({ "https://github.com/romus204/tree-sitter-manager.nvim" })
-vim.cmd("packadd tree-sitter-manager.nvim")
-require("tree-sitter-manager").setup({})
+vim.pack.use("nvim-treesitter", function()
+	require("nvim-treesitter").setup({})
+end)

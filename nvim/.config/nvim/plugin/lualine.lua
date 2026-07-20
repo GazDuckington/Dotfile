@@ -1,5 +1,4 @@
-vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
-vim.cmd("packadd lualine.nvim")
+vim.pack.use("lualine.nvim")
 
 local line = {
 	function()

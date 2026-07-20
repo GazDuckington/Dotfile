@@ -1,5 +1,4 @@
-vim.pack.add({ "https://github.com/catppuccin/nvim" })
-vim.cmd("packadd catppuccin")
+vim.pack.use("catppuccin")
 
 local name = function(str)
 	local pattern = "^[^-]+-(.+)$"

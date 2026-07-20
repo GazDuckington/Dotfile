@@ -1,6 +1,5 @@
-vim.pack.add({ "https://github.com/catgoose/nvim-colorizer.lua" })
-vim.cmd("packadd nvim-colorizer.lua")
-require("colorizer").setup({
+vim.pack.use("nvim-colorizer.lua", function()
+	require("colorizer").setup({
 	filetypes = { "*" },
 	user_default_options = {
 		rgb_fn = true,
@@ -9,4 +8,5 @@ require("colorizer").setup({
 			update_names = true,
 		},
 	},
-})
+	})
+end)

@@ -5,6 +5,7 @@ local opts = { noremap = true, silent = true }
 M.setup = function()
 	-- quality of life
 	-- map("i", "jk", "<ESC>", opts)
+	map("t", "<Esc>", "<C-\\><C-n>")
 	map("n", "P", '"0p', opts)
 	map("n", "J", "mzJ`z", opts)
 	map("n", "<c-d>", "<C-d>zz", opts)

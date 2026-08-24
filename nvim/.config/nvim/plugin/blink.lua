@@ -33,10 +33,17 @@ cmp.setup({
 		["<Down>"] = { "select_next", "fallback" },
 		["<Tab>"] = {
 			function(cmp)
-				if not cmp.snippet_active() then
-					return cmp.show()
+				if cmp.snippet_active() or cmp.is_menu_visible() then
+					return
 				end
+				local prefix = vim.api.nvim_get_current_line():sub(1, vim.api.nvim_win_get_cursor(0)[2])
+				if prefix:match("[%w_]+$") then
+					cmp.show()
+					return true
+				end
+				return false
 			end,
+			"snippet_forward",
 			"select_next",
 			"fallback",
 		},

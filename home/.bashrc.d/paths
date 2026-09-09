@@ -1,8 +1,8 @@
 #!/usr/bin/sh
 export TERM=xterm-256color #st-256color
 export EDITOR='nvim'
-export QT_QPA_PLATFORMTHEME='qt6ct'
-export QT_STYLE_OVERRIDE='qt6ct'
+export QT_QPA_PLATFORMTHEME=qt6ct
+# export QT_STYLE_OVERRIDE=qt6ct
 export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 export QT_QML_GENERATE_QMLLS_INI="ON"
 
@@ -80,7 +80,7 @@ export PATH="$HOME/.spicetify:$PATH"
 # export QUARTO_HOME="$HOME/opt/quarto-1.2.335/"
 # export PATH="$QUARTO_HOME/bin"
 
-export DOCKER_HOST=unix:///var/run/docker.sock
+export DOCKER_HOST="unix:///run/user/$(id -u)/docker.sock"
 
 export NVIM_SESSION="$HOME/.local/share/nvim/sessions/"
 

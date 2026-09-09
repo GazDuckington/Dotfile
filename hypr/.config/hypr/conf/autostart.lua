@@ -3,21 +3,10 @@ M.autostart = {
 	-- Environment and System Services
 	"systemctl --user import-environment &",
 	"hyprctl setcursor 'capitaine-cursors-light' 24",
-	"/usr/lib/polkit-kde-authentication-agent-1",
 
 	-- Daemons and UI Components
-	"awww-daemon",
-	"orbit daemon",
-	"qs",
-	"hypridle",
+	"noctalia",
 	"wl-paste --watch cliphist store",
-	"elephant",
-	"walker --gapplication-service",
-
-	"blueman-applet",
-	"udiskie --smart-tray -f --terminal kitty",
-	-- Scripts and Personal Autostarts
-	"~/.local/bin/swaypaper.sh",
 
 	-- Optional/Commented out (Uncomment to enable)
 	-- "systemctl enable --now --user vicinae.service",

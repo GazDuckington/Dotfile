@@ -32,7 +32,9 @@ M.rules = {
 		float = true,
 	},
 	{
-		match = { class = "^(blueman-manager|xdg-desktop-portal-.*|org.kde.polkit-.*|CachyOSHello|zenity)$" },
+		match = {
+			class = "^(blueman-manager|xdg-desktop-portal-.*|org.kde.polkit-.*|hyprpolkitagent|CachyOSHello|zenity)$",
+		},
 		float = true,
 	},
 	{
@@ -63,8 +65,8 @@ M.rules = {
 		tile = true,
 	},
 	{
-		match = { class = "^([Vv]esktop)$" },
-		workspace = "5",
+		match = { class = "^([Ee]quibop)$" },
+		workspace = 5,
 	},
 	{
 		match = { class = "^([Ss]team_app_.*|gamescope)$" },
@@ -74,11 +76,11 @@ M.rules = {
 
 	-- OPACITY
 	{
-		match = { class = "^(Thunar|Nautilus)$" },
+		match = { class = "^(Thunar|Nautilus|[Dd]olphin)$" },
 		opacity = 0.92,
 	},
 	{
-		match = { class = "^(discord|armcord|webcord|vesktop)$" },
+		match = { class = "^(discord|armcord|webcord|equibop)$" },
 		opacity = 0.96,
 	},
 	{

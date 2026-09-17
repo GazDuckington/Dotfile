@@ -1,5 +1,3 @@
-local color = require("conf.mocha")
-
 local M = {}
 M.setup = function()
 	hl.config({
@@ -10,36 +8,28 @@ M.setup = function()
 		general = {
 			gaps_in = 5,
 			gaps_out = 5,
-			border_size = 1,
-			col = {
-				active_border = {
-					colors = { color.sky, color.blue },
-					angle = 45,
-				},
-				inactive_border = color.mantle,
-			},
+			border_size = 2,
 			resize_on_border = false,
 			allow_tearing = false,
-			layout = "master",
+			layout = "scrolling",
 		},
 
 		decoration = {
-			rounding = 10,
+			rounding = 15,
 
 			active_opacity = 1.0,
 			inactive_opacity = 1.0,
 
 			shadow = {
-				enabled = true,
+				enabled = false,
 				range = 4,
 				render_power = 3,
-				color = color.mantle,
 			},
 
 			blur = {
 				enabled = true,
-				size = 5,
-				passes = 1,
+				size = 1,
+				passes = 2,
 				vibrancy = 0.1696,
 			},
 		},
@@ -47,6 +37,10 @@ M.setup = function()
 		-- layout
 		master = {
 			new_status = "slave",
+		},
+
+		scrolling = {
+			direction = "right",
 		},
 
 		input = {
@@ -70,6 +64,10 @@ M.setup = function()
 			force_default_wallpaper = 0,
 			-- Set to 0 or 1 to disable the anime mascot wallpapers
 			disable_hyprland_logo = true, -- If true disables the random hyprland logo / anime girl background. :(
+		},
+
+		xwayland = {
+			enabled = true,
 		},
 	})
 end

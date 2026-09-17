@@ -1,7 +1,8 @@
 local M = {}
 M.autostart = {
 	-- Environment and System Services
-	"systemctl --user import-environment &",
+	"systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &",
+	"dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &",
 	"hyprctl setcursor 'capitaine-cursors-light' 24",
 
 	-- Daemons and UI Components

@@ -8,6 +8,7 @@ M.autostart = {
 	-- Daemons and UI Components
 	"noctalia",
 	"wl-paste --watch cliphist store",
+	-- "skwd-wall-v2",
 
 	-- Optional/Commented out (Uncomment to enable)
 	-- "systemctl enable --now --user vicinae.service",

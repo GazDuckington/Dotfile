@@ -10,9 +10,6 @@ set DOCKER_HOST
 source ~/.bashrc.d/paths
 source ~/.bashrc.d/aliases
 
-set -Ux PYENV_ROOT $HOME/.pyenv
-set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-
 # if uwsm check may-start;
 # 	 exec uwsm start default
 # end

@@ -6,9 +6,9 @@ hl.monitor({
 })
 hl.monitor({
 	output = "eDP-1",
-	mode = "1920x1200@60",
+	mode = "1920x1200@144",
 	position = "0x0",
-	scale = "1.07",
+	scale = "1",
 })
 require("conf.environtments").setup()
 require("conf.keybinding").setup()

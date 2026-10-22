@@ -101,8 +101,8 @@
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "opencode.nvim": {
-      "rev": "e708ba355effd4b7e75eb1441c30dd47c1671c32",
-      "src": "https://github.com/sudo-tee/opencode.nvim"
+      "rev": "e7643e9efc878876bb9c68da6cf30c45d6c34e5a",
+      "src": "https://github.com/nickjvandyke/opencode.nvim"
     },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",

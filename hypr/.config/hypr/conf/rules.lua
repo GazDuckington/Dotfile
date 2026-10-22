@@ -49,7 +49,7 @@ M.rules = {
 	},
 	{
 		match = { class = "^(com.[Ss]tremio.[Ss]tremio|[Ss]remio)$" },
-		workspace = "2",
+		workspace = "5",
 	},
 	{
 		match = { class = "^([Bb]eekeeper-studio)$" },

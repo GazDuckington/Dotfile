@@ -6,7 +6,7 @@ local name = function(str)
 end
 
 if vim.g.colors_name == nil then
-	vim.g.colors_name = "cattpuccin-mocha"
+	vim.g.colors_name = "catppuccin-mocha"
 end
 
 local scheme = name(vim.g.colors_name)

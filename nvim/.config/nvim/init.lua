@@ -4,27 +4,37 @@
 -- ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
 -- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
--- https://gtihub.com/GazDuckington/Dotfile/nvim
+-- https://github.com/GazDuckington/Dotfile/nvim
 --
 local pack_base = vim.fn.stdpath("data") .. "/site/pack"
 local pack_dir = pack_base .. "/core/opt"
 
 function vim.pack.add(...)
 	vim.fn.mkdir(pack_dir, "p")
-	local urls = {}
+
+	local specs = {}
 	for i = 1, select("#", ...) do
 		local arg = select(i, ...)
-		if type(arg) == "table" then
-			for _, url in ipairs(arg) do
-				table.insert(urls, url)
+		if type(arg) == "string" then
+			table.insert(specs, { src = arg })
+		elseif type(arg) == "table" then
+			if arg.src ~= nil then
+				table.insert(specs, arg)
+			else
+				for _, item in ipairs(arg) do
+					if type(item) == "string" then
+						table.insert(specs, { src = item })
+					elseif type(item) == "table" and item.src ~= nil then
+						table.insert(specs, item)
+					end
+				end
 			end
-		elseif type(arg) == "string" then
-			table.insert(urls, arg)
 		end
 	end
-	for _, url in ipairs(urls) do
-		local src_url = type(url) == "string" and url or type(url) == "table" and url.src
-		if src_url then
+
+	for _, spec in ipairs(specs) do
+		local src_url = spec.src
+		if type(src_url) == "string" then
 			local name = src_url:match("/([^/]+)$")
 			if name and vim.fn.isdirectory(pack_dir .. "/" .. name) == 0 then
 				vim.fn.system({ "git", "clone", "--depth", "1", src_url, pack_dir .. "/" .. name })
@@ -56,7 +66,7 @@ vim.pack.add(
 	{ src = "https://github.com/Bekaboo/dropbar.nvim" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
-	{ src = "https://github.com/sudo-tee/opencode.nvim" },
+	{ src = "https://github.com/nickjvandyke/opencode.nvim" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 	{ src = "https://github.com/kylechui/nvim-surround" },
 	{ src = "https://github.com/nat-418/boole.nvim" },
@@ -68,6 +78,9 @@ vim.pack.add(
 	{ src = "https://github.com/altermo/ultimate-autopair.nvim" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
 	{ src = "https://github.com/folke/todo-comments.nvim" },
+	{ src = "https://github.com/MagicDuck/grug-far.nvim" },
+	{ src = "https://github.com/folke/flash.nvim" },
+	{ src = "https://github.com/folke/trouble.nvim" },
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/folke/which-key.nvim" },

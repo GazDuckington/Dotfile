@@ -82,9 +82,12 @@ vim.lsp.config("vue_ls", {
 		},
 	},
 	before_init = function(params, config)
-		local lib_path = vim.fs.find("node_modules/typescript/lib", { path = new_root_dir, upward = true })[1]
-		if lib_path then
-			config.init_options.typescript.tsdk = lib_path
+		local root = params.rootUri and vim.uri_to_fname(params.rootUri) or params.rootPath
+		if root then
+			local lib_path = vim.fs.find("node_modules/typescript/lib", { path = root, upward = true })[1]
+			if lib_path then
+				config.init_options.typescript.tsdk = lib_path
+			end
 		end
 	end,
 })
@@ -101,3 +104,17 @@ vim.lsp.config("ts_ls", {
 	},
 	filetypes = ts_ft,
 })
+
+-- Rune / Halley config files (.rune): Neovim has no filetype for them, and
+-- the `rune-languageserver` binary (crates.io) is not in the lspconfig registry,
+-- so it has to be enabled explicitly.
+vim.filetype.add({ extension = { rune = "rune" } })
+
+vim.lsp.config("rune-languageserver", {
+	cmd = { "rune-languageserver" },
+	filetypes = { "rune" },
+	root_dir = function(bufnr, on_dir)
+		on_dir(vim.fs.root(bufnr, { ".git", "Rune.toml" }) or vim.fs.dirname(vim.api.nvim_buf_get_name(bufnr)))
+	end,
+})
+vim.lsp.enable("rune-languageserver")

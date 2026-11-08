@@ -1,0 +1,169 @@
+# Window rules
+# Rules combine in order, with later values overriding earlier ones.
+# https://docs.noctalia.dev/umbriel/window-rules/
+
+# Blur windows over the cached wallpaper blur. Set blur_optimized = false to
+# include overlapping windows behind them, at a GPU cost on every frame that
+# moves anything behind them.
+[[window_rule]]
+blur = true
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.Noctalia$"
+default_floating = true
+default_floating_size_px = { width = 1020, height = 900 }
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.UmbrielSharePicker$"
+default_floating = true
+default_floating_size_px = { width = 800, height = 600 }
+
+[[window_rule]]
+match.title = "^(Picture-in-Picture|Picture in picture)$"
+default_floating = true
+default_maximize = false
+default_position = { x = 20, y = 20, anchor = "bottom_right" }
+
+[[window_rule]]
+match.title = "^notificationtoasts_.+_desktop"
+default_position = { x = 0, y = 0, anchor = "bottom_right" }
+default_focused = false
+default_pinned = true
+
+# Named scratchpads can launch an application when toggled while empty.
+[[window_rule]]
+match.app_id = "^kitty$"
+default_scratchpad = "default"
+opacity = 0.8
+
+# Keep game menus inside their window; a focus or workspace keybind releases the pointer.
+# [[window_rule]]
+# match.app_id = "^steam_app_.*$"
+# confine_pointer = true
+
+# Keep compositor shortcuts available while a virtual machine window is focused.
+# [[window_rule]]
+# match.app_id = "^virt-manager$"
+# allow_shortcuts_inhibit = false
+
+# Keep an application drawing while it is hidden on another workspace, for programs whose other work stalls without it.
+# [[window_rule]]
+# match.app_id = "^obs$"
+# background_render = true
+
+# Keep matching windows visible locally but absent from screenshots and recordings.
+# See docs/user/window-rules.md#capture-protection.
+# [[window_rule]]
+# match.app_id = "^private-app$"
+# block_capture = true
+
+# Keep one application's modal dialogs as ordinary windows.
+# [[window_rule]]
+# match.app_id = "^gimp"
+# match.is_dialog = true
+# attach_to_parent = false
+
+# Give scratchpad windows their own border colors.
+# [[window_rule]]
+# match.is_scratchpad = true
+# border_color_focused = "#E5C07BFF"
+# border_color_unfocused = "#5C4A2AFF"
+
+# Hyprland window rules (converted from Hyprland config.lua)
+# Blur windows over the cached wallpaper blur. Set blur_optimized = false to
+# include overlapping windows behind them, at a GPU cost on every frame that
+# moves anything behind them.
+
+[[window_rule]]
+match.app_id = "^(pulsemixer|termmenu|/home/gaz/.local/bin/hyprswitch.sh|wiremix)$"
+default_floating = true
+default_floating_size_px = { width = 768, height = 200 }
+
+[[window_rule]]
+match.app_id = "^(pavucontrol|org.pulseaudio.pavucontrol|com.gabm.satty)$"
+default_floating = true
+default_floating_size_px = { width = 768, height = 200 }
+
+[[window_rule]]
+match.app_id = "^(nwg-look|[Kk]vantummanager|update|bauh|nm-connection-editor|rpmc|Rofi)$"
+default_floating = true
+
+[[window_rule]]
+match.title = "^(Picture in picture)$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^(brave)$"
+match.title = "^(Save File|Open File)$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^(LibreWolf|[Zz]en.*|[Ff]ire[Ff]ox)$"
+match.title = "^(Picture-in-Picture)$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^(blueman-manager|xdg-desktop-portal-.*|org.kde.polkit-.*|hyprpolkitagent|CachyOSHello|zenity)$"
+# Note: backslash-dot not allowed in TOML; plain "." works fine.
+default_floating = true
+
+[[window_rule]]
+match.title = "^(Steam - Self Updater)$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^(firefox|zen|helium|.*-[Bb]rowser.*)$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^(com.Streamium|Streamium)"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^([Bb]eekeeper-studio)$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^([Ss]team)$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^(ru-turikhay-tlauncher-bootstrap-Bootstrap|[Mm]inecraft.*)$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^([Ee]quibop)$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^([Ss]team_app_.*|gamescope)$"
+default_floating = true
+
+# Workspace assignments (from Hyprland workspace rules)
+[[window_rule]]
+match.app_id = "^(firefox|zen|helium|.*-[Bb]rowser.*)$"
+default_workspace = 1
+
+[[window_rule]]
+match.app_id = "^(com.Streamium|Streamium)"
+default_workspace = 5
+
+[[window_rule]]
+match.app_id = "^([Bb]eekeeper-studio)$"
+default_workspace = 3
+
+[[window_rule]]
+match.app_id = "^([Ss]team)$"
+default_workspace = 4
+
+[[window_rule]]
+match.app_id = "^(ru-turikhay-tlauncher-bootstrap-Bootstrap|[Mm]inecraft.*)$"
+default_workspace = 5
+
+[[window_rule]]
+match.app_id = "^([Ee]quibop)$"
+default_workspace = 5
+
+[[window_rule]]
+match.app_id = "^([Ss]team_app_.*|gamescope)$"
+default_workspace = 10

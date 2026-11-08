@@ -1,0 +1,19 @@
+[include]
+files = [
+    "conf/general.toml",
+    "conf/events.toml",
+    "conf/screencast.toml",
+    "conf/outputs.toml",
+    "conf/appearance.toml",
+    "conf/effects.toml",
+    "conf/input.toml",
+    "conf/layout.toml",
+    "conf/keybinds.toml",
+    "conf/window-rules.toml",
+    "conf/layer-rules.toml",
+    "conf/overview.toml",
+    "conf/animation.toml",
+]
+
+[include.optional]
+files = []

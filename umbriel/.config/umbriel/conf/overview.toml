@@ -1,0 +1,10 @@
+# Overview
+# Built-in overview and animation values are used. The top-left hot corner opens
+# the overview after a short delay.
+# https://docs.noctalia.dev/umbriel/workspaces-overview/
+# Animation: https://docs.noctalia.dev/umbriel/animation/
+
+[hot_corners.top_left]
+enabled = true
+delay_ms = 500
+action = "overview-open"

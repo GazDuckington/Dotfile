@@ -1,0 +1,5 @@
+# Scratchpad configuration
+# Named scratchpads can launch an application when toggled while empty.
+[[scratchpad]]
+name = "default"
+spawn_when_empty = "kitty"
